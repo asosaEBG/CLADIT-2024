@@ -16,15 +16,15 @@ const Programa = () => {
             style={{ padding: "5%", textAlign: "justify" }}
           >
             <Stack spacing={4}>
-              <Typography variant="h1">Programa Académico</Typography>
+              <Typography variant="h2">Programa Académico</Typography>
               <Typography variant="p" style={{ fontSize: "1.5em" }}>
                 Para el CLADIT de este año, organizado por la Asociación
-                Bancaria de Guatemala y entidades educativas, se ha
-                diseñado un programa que aborda temas fundamentales en la lucha
-                contra el lavado de dinero y el financiamiento del terrorismo.
-                El objetivo principal es proporcionar a los participantes una
-                amplia gama de conocimientos y herramientas para fortalecer sus
-                estrategias de prevención y cumplimiento normativo.
+                Bancaria de Guatemala y entidades educativas, se ha diseñado un
+                programa que aborda temas fundamentales en la lucha contra el
+                lavado de dinero y el financiamiento del terrorismo. El objetivo
+                principal es proporcionar a los participantes una amplia gama de
+                conocimientos y herramientas para fortalecer sus estrategias de
+                prevención y cumplimiento normativo.
               </Typography>
               <Button startIcon={<PictureAsPdfIcon />}>
                 Click para ver programa

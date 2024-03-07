@@ -87,10 +87,10 @@ const Inicio = () => {
           </ImageList>
         </Stack>
         <Stack spacing={5} justifyContent="center" alignItems="center">
-          <Typography variant="h1" style={{ textAlign: "center" }}>
+          <Typography variant="h4" style={{ textAlign: "center" }}>
             Patrocinadores
           </Typography>
-          <Typography variant="h2" style={{ textAlign: "center" }}>
+          <Typography variant="h5" style={{ textAlign: "center" }}>
             Top Diamante
           </Typography>
           <img
@@ -99,7 +99,7 @@ const Inicio = () => {
             alt="westin-img"
             loading="lazy"
           />
-          <Typography variant="h2" style={{ textAlign: "center" }}>
+          <Typography variant="h5" style={{ textAlign: "center" }}>
             Diamante
           </Typography>
           <img
@@ -108,7 +108,7 @@ const Inicio = () => {
             alt="westin-img"
             loading="lazy"
           />
-          <Typography variant="h2" style={{ textAlign: "center" }}>
+          <Typography variant="h5" style={{ textAlign: "center" }}>
             Oro
           </Typography>
           <img
@@ -129,7 +129,7 @@ const Inicio = () => {
           </Grid>
           <Grid xs={12} md={6} lg={6}>
             <Stack spacing={2} style={{ padding: "6%" }}>
-              <Typography variant="h2" style={{ textAlign: "center" }}>
+              <Typography variant="h4" style={{ textAlign: "center" }}>
                 Dirigido a:
               </Typography>
               <Typography
