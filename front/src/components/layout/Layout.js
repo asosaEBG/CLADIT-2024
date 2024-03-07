@@ -129,13 +129,23 @@ export default function Layout(props) {
       >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <Stack spacing={2}>
-              <Grid>
-                <img
-                  src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/1697209244529-CLADIT%202024.png"
-                  loading="lazy"
-                  style={{ width: "15vw" }}
-                />
+            <Stack spacing={2} style={{ width: "100%" }}>
+              <Grid container justifyContent="center" >
+                <Grid xs={4} md={4} lg={4} style={{ textAlign: 'center' }}>
+                  <img
+                    src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/1697209244529-CLADIT%202024.png"
+                    loading="lazy"
+                    style={{ width: "25vh" }}
+                  />
+                </Grid>
+                <Grid xs={4} md={4} lg={4}></Grid>
+                <Grid xs={4} md={4} lg={4} style={{ textAlign: 'center' }}>
+                  <img
+                    src="https://test-escuelabancaria.s3.us-east-2.amazonaws.com/Medios+General/Logotipos+Finales+ABG+2022-01.png"
+                    loading="lazy"
+                    style={{ width: "25vh" }}
+                  />
+                </Grid>
               </Grid>
               <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
                 <IconButton
@@ -183,7 +193,11 @@ export default function Layout(props) {
                 </Menu>
               </Box>
 
-              <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+              <Box
+                sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
+                justifyContent="center"
+                alignItems={"center"}
+              >
                 {pages.map((page, index) => (
                   <MenuItem
                     key={`MENU-ITEM-${index}`}
