@@ -95,7 +95,7 @@ const Inicio = () => {
           </Typography>
           <img
             style={{ width: "25%" }}
-            src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/1698423404458-WhatsApp%20Image%202023-06-19%20at%2011.54.34.jpeg`}
+            src={`https://elearning-ebg.s3.amazonaws.com/1+BANRURAL.png`}
             alt="westin-img"
             loading="lazy"
           />
