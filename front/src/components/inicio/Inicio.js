@@ -1,0 +1,168 @@
+import React from "react";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import "./style.css";
+import { Grid, Typography } from "@mui/material";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import EventIcon from "@mui/icons-material/Event";
+import Button from "@mui/material/Button";
+import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutline";
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
+const Inicio = () => {
+  return (
+    <Box>
+      <Stack spacing={4}>
+        <Grid container>
+          <Grid xs={12} md={6} lg={6} style={{ padding: "5%" }}>
+            <Stack spacing={5} alignItems="center" justifyContent="center">
+              <img
+                src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/1697209244529-CLADIT%202024.png"
+                loading="lazy"
+                style={{ width: "100%" }}
+              />
+
+              <Typography variant="h3" style={{ textAlign: "center" }}>
+                <LocationOnIcon /> &nbsp;Hotel Westin Camino Real
+              </Typography>
+              <Typography variant="h4" style={{ textAlign: "center" }}>
+                <EventIcon /> &nbsp;15 y 16 de mayo
+              </Typography>
+              <Button
+                style={{ width: "60%" }}
+                variant="outlined"
+                startIcon={<DriveFileRenameOutlineIcon />}
+                onClick={() => {
+                  window.open(
+                    "https://ebg.edu.gt/inscripcion/129f0d0c6df63b15f4c71caef724c6cbd0101c7c62123b5f3a78e50411555a2f",
+                    "_blank"
+                  );
+                }}
+              >
+                Inscríbete en Línea
+              </Button>
+            </Stack>
+          </Grid>
+        </Grid>
+        <Stack alignItems="center" justifyContent="center" spacing={5}>
+          <img
+            src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/WESTIN-CAMINO-REAL.png"
+            style={{ width: "60%", loading: "lazy" }}
+          />
+          <ImageList cols={5}>
+            <ImageListItem>
+              <img
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/8435967419_201ba5b16b_b.jpg`}
+                alt="westin-img"
+                loading="lazy"
+              />
+            </ImageListItem>
+            <ImageListItem>
+              <img
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/The-Westin-Camino-Real-Guatemala-Hotel-Exterior.jpg`}
+                alt="westin-img"
+                loading="lazy"
+              />
+            </ImageListItem>
+            <ImageListItem>
+              <img
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/leonardo-71833-169718937-743043.jpg`}
+                alt="westin-img"
+                loading="lazy"
+              />
+            </ImageListItem>
+            <ImageListItem>
+              <img
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/hq720.jpg`}
+                alt="westin-img"
+                loading="lazy"
+              />
+            </ImageListItem>
+            <ImageListItem>
+              <img
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/home-westin-camino-real-2-1.jpg`}
+                alt="westin-img"
+                loading="lazy"
+              />
+            </ImageListItem>
+          </ImageList>
+        </Stack>
+        <Stack spacing={5} justifyContent="center" alignItems="center">
+          <Typography variant="h1" style={{ textAlign: "center" }}>
+            Patrocinadores
+          </Typography>
+          <Typography variant="h2" style={{ textAlign: "center" }}>
+            Top Diamante
+          </Typography>
+          <img
+            style={{ width: "25%" }}
+            src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/1698423404458-WhatsApp%20Image%202023-06-19%20at%2011.54.34.jpeg`}
+            alt="westin-img"
+            loading="lazy"
+          />
+          <Typography variant="h2" style={{ textAlign: "center" }}>
+            Diamante
+          </Typography>
+          <img
+            style={{ width: "25%" }}
+            src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/LEXIS+NEXIS.png`}
+            alt="westin-img"
+            loading="lazy"
+          />
+          <Typography variant="h2" style={{ textAlign: "center" }}>
+            Oro
+          </Typography>
+          <img
+            style={{ width: "25%" }}
+            src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/CHN.png`}
+            alt="westin-img"
+            loading="lazy"
+          />
+        </Stack>
+        <Grid container>
+          <Grid xs={12} md={6} lg={6}>
+            <img
+              style={{ width: "100%" }}
+              src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/IMG_7454+(2).jpg`}
+              alt="westin-img"
+              loading="lazy"
+            />
+          </Grid>
+          <Grid xs={12} md={6} lg={6}>
+            <Stack spacing={2} style={{ padding: "6%" }}>
+              <Typography variant="h2" style={{ textAlign: "center" }}>
+                Dirigido a:
+              </Typography>
+              <Typography
+                variant="p"
+                style={{ textAlign: "left", fontSize: "1.5em" }}
+              >
+                <ul>
+                  <li>Oficial de cumplimiento</li>
+                  <li>Analista de riesgos de cumplimiento</li>
+                  <li>Analista de inteligencia financiera</li>
+                  <li>Gerente de prevención de lavado de dinero</li>
+                  <li>Auditor de cumplimiento</li>
+                </ul>
+              </Typography>
+            </Stack>
+          </Grid>
+        </Grid>
+      </Stack>
+    </Box>
+  );
+};
+
+export default Inicio;
+
+{
+  /*<Box component="section" className="video-section">
+          <Grid container></Grid>
+          <video autoPlay muted loop id="myVideo">
+            <source
+              src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/RESUMEN+CLADIT+2023.mp4"
+              type="video/mp4"
+            />
+          </video>
+  </Box>*/
+}
