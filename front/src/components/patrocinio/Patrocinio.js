@@ -7,6 +7,15 @@ const Patrocinio = () => {
     <Box>
       <Stack spacing={4} style={{ padding: "5%" }}>
         <Typography variant="h1" style={{ textAlign: "center" }}>
+          PLANOS STAND
+        </Typography>
+        <img
+          src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/unnamed+(4).jpg"
+          style={{ width: "100%" }}
+          loading="lazy"
+        />
+
+        <Typography variant="h1" style={{ textAlign: "center" }}>
           BRIEF PATROCINIOS
         </Typography>
         <Typography
@@ -168,6 +177,10 @@ const Patrocinio = () => {
             </li>
           </ul>
         </Typography>
+        <img
+          src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/a536ba50-a89d-4477-850a-5657ec42197b+(2).JPG"
+          style={{ width: "100%" }}
+        />
       </Stack>
     </Box>
   );

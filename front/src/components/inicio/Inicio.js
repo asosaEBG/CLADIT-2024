@@ -13,74 +13,73 @@ const Inicio = () => {
   return (
     <Box>
       <Stack spacing={4}>
-        <Grid container>
-          <Grid xs={12} md={6} lg={6} style={{ padding: "5%" }}>
-            <Stack spacing={5} alignItems="center" justifyContent="center">
-              <img
-                src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/1697209244529-CLADIT%202024.png"
-                loading="lazy"
-                style={{ width: "100%" }}
-              />
+        <Stack spacing={5} alignItems="center" justifyContent="center">
+  
 
-              <Typography variant="h3" style={{ textAlign: "center" }}>
-                <LocationOnIcon /> &nbsp;Hotel Westin Camino Real
-              </Typography>
-              <Typography variant="h4" style={{ textAlign: "center" }}>
-                <EventIcon /> &nbsp;15 y 16 de mayo
-              </Typography>
-              <Button
-                style={{ width: "60%" }}
-                variant="outlined"
-                startIcon={<DriveFileRenameOutlineIcon />}
-                onClick={() => {
-                  window.open(
-                    "https://ebg.edu.gt/inscripcion/129f0d0c6df63b15f4c71caef724c6cbd0101c7c62123b5f3a78e50411555a2f",
-                    "_blank"
-                  );
-                }}
-              >
-                Inscríbete en Línea
-              </Button>
-            </Stack>
-          </Grid>
-        </Grid>
+          <Typography variant="h3" style={{ textAlign: "center" }}>
+            <LocationOnIcon /> &nbsp;Hotel Épica AVIA
+          </Typography>
+          <Typography variant="h4" style={{ textAlign: "center" }}>
+            <EventIcon /> &nbsp;15 y 16 de mayo
+          </Typography>
+          <Button
+            style={{ width: "60%" }}
+            variant="outlined"
+            startIcon={<DriveFileRenameOutlineIcon />}
+            onClick={() => {
+              window.open(
+                "https://ebg.edu.gt/inscripcion/129f0d0c6df63b15f4c71caef724c6cbd0101c7c62123b5f3a78e50411555a2f",
+                "_blank"
+              );
+            }}
+          >
+            Inscríbete en Línea
+          </Button>
+        </Stack>
+
+        <video autoPlay muted loop style={{ width: "100%" }}>
+          <source
+            src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/RESUMEN+CLADIT+2023.mp4"
+            type="video/mp4"
+          />
+        </video>
         <Stack alignItems="center" justifyContent="center" spacing={5}>
           <img
-            src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/WESTIN-CAMINO-REAL.png"
-            style={{ width: "60%", loading: "lazy" }}
+            src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/EPICA-LOGO.png"
+            style={{ width: "40%", loading: "lazy" }}
           />
           <ImageList cols={5}>
             <ImageListItem>
               <img
-                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/8435967419_201ba5b16b_b.jpg`}
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/epica-1.jpg`}
                 alt="westin-img"
                 loading="lazy"
               />
             </ImageListItem>
             <ImageListItem>
               <img
-                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/The-Westin-Camino-Real-Guatemala-Hotel-Exterior.jpg`}
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/epica-2.jpg`}
                 alt="westin-img"
                 loading="lazy"
               />
             </ImageListItem>
             <ImageListItem>
               <img
-                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/leonardo-71833-169718937-743043.jpg`}
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/epica-3.jpg`}
                 alt="westin-img"
                 loading="lazy"
               />
             </ImageListItem>
             <ImageListItem>
               <img
-                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/hq720.jpg`}
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/epica-4.jpg`}
                 alt="westin-img"
                 loading="lazy"
               />
             </ImageListItem>
             <ImageListItem>
               <img
-                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/home-westin-camino-real-2-1.jpg`}
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/epica-6.jpg`}
                 alt="westin-img"
                 loading="lazy"
               />
