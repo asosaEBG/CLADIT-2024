@@ -6,17 +6,6 @@ const Tarifas = () => {
   return (
     <Box>
       <Stack spacing={3} style={{ padding: "5%" }}>
-        <Typography
-          variant="h2"
-          style={{ color: "#1e3d52", textAlign: "center" }}
-        >
-          TARIFAS DE INSCRIPCIÓN
-        </Typography>
-        <img
-          src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/tarifas+CLADIT.png"
-          loading="lazy"
-          style={{ width: "100%" }}
-        />
         <Typography variant="h5" style={{ textAlign: "left" }}>
           <strong>El registro incluye:</strong>
         </Typography>
@@ -34,6 +23,17 @@ const Tarifas = () => {
             <li>Tarifa especial a parqueo</li>
           </ul>
         </Typography>
+        <Typography
+          variant="h2"
+          style={{ color: "#1e3d52", textAlign: "center" }}
+        >
+          TARIFAS DE INSCRIPCIÓN
+        </Typography>
+        <img
+          src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/tarifas+CLADIT.png"
+          loading="lazy"
+          style={{ width: "100%" }}
+        />
       </Stack>
     </Box>
   );

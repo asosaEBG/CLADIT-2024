@@ -32,7 +32,15 @@ const Registro = () => {
                 le enviará al administrador de dicho grupo una nota de cargo
                 para que tramite el pago correspondiente.
               </Typography>
-              <Button startIcon={<DriveFileRenameOutlineIcon />}>
+              <Button
+                startIcon={<DriveFileRenameOutlineIcon />}
+                onClick={() => {
+                  window.open(
+                    "https://ebg.edu.gt/inscripcion/129f0d0c6df63b15f4c71caef724c6cbd0101c7c62123b5f3a78e50411555a2f",
+                    "_blank"
+                  );
+                }}
+              >
                 Click para registrarse
               </Button>
             </Stack>
