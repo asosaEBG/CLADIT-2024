@@ -135,7 +135,7 @@ export default function Layout(props) {
                   <img
                     src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/1697209244529-CLADIT%202024.png"
                     loading="lazy"
-                    style={{ width: "25vh" }}
+                    className="img-header"
                   />
                 </Grid>
                 <Grid xs={4} md={4} lg={4}></Grid>
@@ -143,7 +143,7 @@ export default function Layout(props) {
                   <img
                     src="https://test-escuelabancaria.s3.us-east-2.amazonaws.com/Medios+General/Logotipos+Finales+ABG+2022-01.png"
                     loading="lazy"
-                    style={{ width: "25vh" }}
+                    className="img-header"
                   />
                 </Grid>
               </Grid>

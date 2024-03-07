@@ -6,8 +6,11 @@ const Tarifas = () => {
   return (
     <Box>
       <Stack spacing={3} style={{ padding: "5%" }}>
-        <Typography variant="h5" style={{ textAlign: "left" }}>
-          <strong>El registro incluye:</strong>
+        <Typography
+          variant="h2"
+          style={{ color: "#1e3d52", textAlign: "center" }}
+        >
+          EL REGISTRO INCLUYE
         </Typography>
         <Typography
           variant="p"
@@ -21,6 +24,7 @@ const Tarifas = () => {
             <li>Acceso al área de stands</li>
             <li>Certificado de participación digital</li>
             <li>Tarifa especial a parqueo</li>
+            <li>Grabación de conferencias</li>
           </ul>
         </Typography>
         <Typography

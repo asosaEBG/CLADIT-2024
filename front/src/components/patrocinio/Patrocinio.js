@@ -6,7 +6,7 @@ const Patrocinio = () => {
   return (
     <Box>
       <Stack spacing={4} style={{ padding: "5%" }}>
-        <Typography variant="h1" style={{ textAlign: "center" }}>
+        <Typography variant="h3" style={{ textAlign: "center" }}>
           PLANOS STAND
         </Typography>
         <img
@@ -15,11 +15,11 @@ const Patrocinio = () => {
           loading="lazy"
         />
 
-        <Typography variant="h1" style={{ textAlign: "center" }}>
+        <Typography variant="h3" style={{ textAlign: "center" }}>
           BRIEF PATROCINIOS
         </Typography>
         <Typography
-          variant="h2"
+          variant="h4"
           style={{ color: "#1e3d52", textAlign: "center" }}
         >
           Diamante - US$6,700*
@@ -79,7 +79,7 @@ const Patrocinio = () => {
           </ul>
         </Typography>
         <Typography
-          variant="h2"
+          variant="h4"
           style={{ color: "#1e3d52", textAlign: "center" }}
         >
           {" "}
@@ -130,7 +130,7 @@ const Patrocinio = () => {
         </Typography>
 
         <Typography
-          variant="h2"
+          variant="h4"
           style={{ color: "#1e3d52", textAlign: "center" }}
         >
           Plata - US$3,900*
