@@ -14,11 +14,6 @@ const Inicio = () => {
     <Box>
       <Stack spacing={4}>
         <Stack spacing={5} alignItems="center" justifyContent="center">
-  
-
-          <Typography variant="h3" style={{ textAlign: "center" }}>
-            <LocationOnIcon /> &nbsp;Hotel Épica AVIA
-          </Typography>
           <Typography variant="h4" style={{ textAlign: "center" }}>
             <EventIcon /> &nbsp;15 y 16 de mayo
           </Typography>
@@ -44,10 +39,20 @@ const Inicio = () => {
           />
         </video>
         <Stack alignItems="center" justifyContent="center" spacing={5}>
-          <img
-            src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/EPICA-LOGO.png"
-            style={{ width: "40%", loading: "lazy" }}
-          />
+          <Grid container alignItems="center" justifyContent="center">
+            <Grid xs={12} md={6} lg={6} style={{ textAlign: "center" }}>
+              <Typography variant="h4">ÉPICA</Typography>
+              <Typography variant="h5">
+                Eventos y Convenciones en AVIA
+              </Typography>
+            </Grid>
+            <Grid xs={12} md={6} lg={6} style={{ textAlign: "center" }}>
+              <img
+                src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/SELECCIONADA-20.jpg"
+                style={{ width: "60%", loading: "lazy" }}
+              />
+            </Grid>
+          </Grid>
           <ImageList cols={5}>
             <ImageListItem>
               <img
@@ -95,7 +100,7 @@ const Inicio = () => {
           </Typography>
           <img
             style={{ width: "25%" }}
-            src={`https://elearning-ebg.s3.amazonaws.com/1+BANRURAL.png`}
+            src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/1+BANRURAL.png`}
             alt="westin-img"
             loading="lazy"
           />
