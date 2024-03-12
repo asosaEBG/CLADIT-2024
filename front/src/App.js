@@ -7,6 +7,7 @@ import Registro from "./components/registro/Registro";
 import Patrocinio from "./components/patrocinio/Patrocinio";
 import Tarifas from "./components/tarifas/Tarifas";
 import Contacto from "./components/contacto/Contacto";
+import Galeria from "./components/galeria/Galeria";
 function App() {
   return (
     <Router>
@@ -18,6 +19,7 @@ function App() {
           <Route path="/patrocinio" element={<Patrocinio />} />
           <Route path="/tarifas" element={<Tarifas />} />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/galeria" element={<Galeria />} />
 
         </Route>
       </Routes>
