@@ -43,6 +43,10 @@ const pages = [
     label: "Contacto",
     href: "/contacto",
   },
+  {
+    label: "Galeria",
+    href: "/galeria",
+  },
 ];
 function ScrollTop(props) {
   const { children, window } = props;
@@ -130,8 +134,8 @@ export default function Layout(props) {
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Stack spacing={2} style={{ width: "100%" }}>
-              <Grid container justifyContent="center" >
-                <Grid xs={4} md={4} lg={4} style={{ textAlign: 'center' }}>
+              <Grid container justifyContent="center">
+                <Grid xs={4} md={4} lg={4} style={{ textAlign: "center" }}>
                   <img
                     src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/1697209244529-CLADIT%202024.png"
                     loading="lazy"
@@ -139,7 +143,7 @@ export default function Layout(props) {
                   />
                 </Grid>
                 <Grid xs={4} md={4} lg={4}></Grid>
-                <Grid xs={4} md={4} lg={4} style={{ textAlign: 'center' }}>
+                <Grid xs={4} md={4} lg={4} style={{ textAlign: "center" }}>
                   <img
                     src="https://test-escuelabancaria.s3.us-east-2.amazonaws.com/Medios+General/Logotipos+Finales+ABG+2022-01.png"
                     loading="lazy"
