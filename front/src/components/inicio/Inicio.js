@@ -34,7 +34,7 @@ const Inicio = () => {
 
         <video autoPlay muted loop style={{ width: "100%" }}>
           <source
-            src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/RESUMEN+CLADIT+2023.mp4"
+            src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/2024+CLADIT.mp4"
             type="video/mp4"
           />
         </video>
@@ -57,35 +57,35 @@ const Inicio = () => {
             <ImageListItem>
               <img
                 src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/epica-1.jpg`}
-                alt="westin-img"
+                alt="cladit-img"
                 loading="lazy"
               />
             </ImageListItem>
             <ImageListItem>
               <img
                 src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/epica-2.jpg`}
-                alt="westin-img"
+                alt="cladit-img"
                 loading="lazy"
               />
             </ImageListItem>
             <ImageListItem>
               <img
                 src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/epica-3.jpg`}
-                alt="westin-img"
+                alt="cladit-img"
                 loading="lazy"
               />
             </ImageListItem>
             <ImageListItem>
               <img
                 src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/epica-4.jpg`}
-                alt="westin-img"
+                alt="cladit-img"
                 loading="lazy"
               />
             </ImageListItem>
             <ImageListItem>
               <img
                 src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/epica-6.jpg`}
-                alt="westin-img"
+                alt="cladit-img"
                 loading="lazy"
               />
             </ImageListItem>
@@ -101,7 +101,7 @@ const Inicio = () => {
           <img
             style={{ width: "25%" }}
             src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/1+BANRURAL.png`}
-            alt="westin-img"
+            alt="cladit-img"
             loading="lazy"
           />
           <Typography variant="h5" style={{ textAlign: "center" }}>
@@ -110,7 +110,7 @@ const Inicio = () => {
           <img
             style={{ width: "25%" }}
             src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/LEXIS+NEXIS.png`}
-            alt="westin-img"
+            alt="cladit-img"
             loading="lazy"
           />
           <Typography variant="h5" style={{ textAlign: "center" }}>
@@ -119,7 +119,7 @@ const Inicio = () => {
           <img
             style={{ width: "25%" }}
             src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/CHN.png`}
-            alt="westin-img"
+            alt="cladit-img"
             loading="lazy"
           />
         </Stack>
@@ -128,7 +128,7 @@ const Inicio = () => {
             <img
               style={{ width: "100%" }}
               src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/IMG_7454+(2).jpg`}
-              alt="westin-img"
+              alt="cladit-img"
               loading="lazy"
             />
           </Grid>
