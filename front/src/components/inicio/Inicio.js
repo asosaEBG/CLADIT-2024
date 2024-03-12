@@ -11,7 +11,7 @@ import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 const Inicio = () => {
   return (
-    <Box>
+    <Box paddingTop={10}>
       <Stack spacing={4}>
         <Stack spacing={5} alignItems="center" justifyContent="center">
           <Typography variant="h4" style={{ textAlign: "center" }}>
