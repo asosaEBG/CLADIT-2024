@@ -26,7 +26,11 @@ const Programa = () => {
                 conocimientos y herramientas para fortalecer sus estrategias de
                 prevención y cumplimiento normativo.
               </Typography>
-              <Button startIcon={<PictureAsPdfIcon />}>
+              <Button
+                startIcon={<PictureAsPdfIcon />}
+                href="https://escuela-bancaria.s3.us-east-2.amazonaws.com/Programa+CLADIT+2024.pdf"
+                target="_blank"
+              >
                 Click para ver programa
               </Button>
             </Stack>
