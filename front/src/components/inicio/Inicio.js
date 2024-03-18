@@ -39,6 +39,59 @@ const Inicio = () => {
           />
         </video>
         <Stack alignItems="center" justifyContent="center" spacing={5}>
+          <Grid
+            container
+            alignItems="center"
+            justifyContent="center"
+            style={{ textAlign: "justify" }}
+          >
+            <Grid xs={12} md={6} lg={6} p={3}>
+              <video controls style={{ width: "100%" }}>
+                <source
+                  src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/V3+B+Invitacion+Juan+Carlos+Medrano.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </Grid>
+            <Grid xs={12} md={6} lg={6} p={3}>
+              <Typography variant="h4">¿Qué es CLADIT?</Typography>
+              <Typography variant="p">
+                <br />
+                La Asociación Bancaria de Guatemala -ABG- a través de sus entes
+                educativos, suman esfuerzos en fortalecer los esquemas de
+                control y seguridad en los sistemas de Prevención y
+                Administración de Riesgos de Lavado de Dinero u Otros Activos;
+                las tendencias en la tecnologia como los activos virtuales han
+                propiciado desafíos atípicos, particularmente en temas como la
+                Ciberseguridad, la Inteligencia Artificial, los Criptoactivos,
+                el Derisking y otros, en la búsqueda de asegurar la prevención
+                del lavado de dinero y la expansión del Fraude Cibernético, a
+                través de ataques a la integridad de los datos y de los
+                sistemas.
+                <br />
+                <br />
+                Para ello, invita a participar en su
+                <strong>
+                  XXI CONGRESO REGIONAL PARA LA PREVENCIÓN DE LAVADO DE DINERO U
+                  OTROS ACTIVOS Y EL FINANCIAMIENTO DEL TERRORISMO -CLADIT-.
+                </strong>
+                Este congreso esta diseñado para toda persona que tenga un
+                impacto en el marco del Riesgo de LA-FT, entre otras que
+                conforme la Ley son entes obligados y tienen la responsabilidad
+                de capacitarse en la prevención de lavado de dinero u otros
+                activos y el financiamiento del terrorismo; por medio de
+                conferencias nacionales e internacionales, paneles de discusión,
+                opinión, análisis y criterios de expertos en temas relacionados
+                con la prevención del lavado de dinero y el financiamiento del
+                terrorismo.
+                <br />
+                <br />
+                CLADIT 2024 presenta una serie de invitados del más alto nivel y
+                diferentes actividades que será toda una experiencia novedosa
+                para los participantes.
+              </Typography>
+            </Grid>
+          </Grid>
           <Grid container alignItems="center" justifyContent="center">
             <Grid xs={12} md={6} lg={6} style={{ textAlign: "center" }}>
               <Typography variant="h4">ÉPICA</Typography>
@@ -123,7 +176,7 @@ const Inicio = () => {
             loading="lazy"
           />
         </Stack>
-        <Grid container>
+        <Grid container alignItems="center" justifyContent="center">
           <Grid xs={12} md={6} lg={6}>
             <img
               style={{ width: "100%" }}
@@ -142,11 +195,36 @@ const Inicio = () => {
                 style={{ textAlign: "left", fontSize: "1.5em" }}
               >
                 <ul>
-                  <li>Oficial de cumplimiento</li>
-                  <li>Analista de riesgos de cumplimiento</li>
-                  <li>Analista de inteligencia financiera</li>
-                  <li>Gerente de prevención de lavado de dinero</li>
-                  <li>Auditor de cumplimiento</li>
+                  <li>Entidades Bancarias</li>
+                  <li>Cooperativas</li>
+                  <li>Financieras</li>
+                  <li>Off-Shore </li>
+                  <li>Casas de Cambio</li>
+                  <li>Emisores de Tarjetas de Crédito</li>
+                  <li>Seguros</li>
+                  <li>Factoraje</li>
+                  <li>Arrendamiento Financiero</li>
+                  <li>Casas de Bolsa</li>
+                  <li>Promoción inmobiliaria o compraventa de inmuebles</li>
+                  <li>Compraventa de vehículos</li>
+                  <li>Comercio de joyas, piedras y metales preciosos</li>
+                  <li>Objetos de arte y antigüedades</li>
+                  <li>Loterías</li>
+                  <li>Rifas y similares</li>
+                  <li>Entidades de Gobierno, entre otras</li>
+                  <li>PEP´S</li>
+                  <li>Abogados y Notarios</li>
+                  <li>Contadores Públicos y Auditores</li>
+                  <li>Contadores</li>
+                  <li>Consultores</li>
+                  <li>Estudiantes y público en general y todos los</li>
+                  <li>
+                    Entes obligados por la Superintendencia de Bancos de
+                    Guatemala SIB
+                  </li>
+                  <li>
+                    Entre otros órganos de supervisión a nivel internacional{" "}
+                  </li>
                 </ul>
               </Typography>
             </Stack>
