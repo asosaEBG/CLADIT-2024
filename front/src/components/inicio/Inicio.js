@@ -70,7 +70,7 @@ const Inicio = () => {
                 sistemas.
                 <br />
                 <br />
-                Para ello, invita a participar en su
+                Para ello, invita a participar en su&nbsp;
                 <strong>
                   XXI CONGRESO REGIONAL PARA LA PREVENCIÓN DE LAVADO DE DINERO U
                   OTROS ACTIVOS Y EL FINANCIAMIENTO DEL TERRORISMO -CLADIT-.
