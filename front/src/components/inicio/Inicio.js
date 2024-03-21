@@ -12,13 +12,17 @@ import ImageListItem from "@mui/material/ImageListItem";
 const Inicio = () => {
   return (
     <Box paddingTop={10}>
-      <Stack spacing={4}>
+      <Stack spacing={4} alignItems="center">
         <Stack spacing={5} alignItems="center" justifyContent="center">
           <Typography variant="h4" style={{ textAlign: "center" }}>
             <EventIcon /> &nbsp;15 y 16 de mayo
           </Typography>
           <Button
-            style={{ width: "60%" }}
+            style={{
+              backgroundColor: "#397d51",
+              color: "white",
+              border: "1px solid transparent",
+            }}
             variant="outlined"
             startIcon={<DriveFileRenameOutlineIcon />}
             onClick={() => {
@@ -32,7 +36,7 @@ const Inicio = () => {
           </Button>
         </Stack>
 
-        <video autoPlay muted loop style={{ width: "100%" }}>
+        <video autoPlay muted loop style={{ width: "50%" }}>
           <source
             src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/2024+CLADIT.mp4"
             type="video/mp4"
@@ -98,6 +102,15 @@ const Inicio = () => {
               <Typography variant="h5">
                 Eventos y Convenciones en AVIA
               </Typography>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.9721045721803!2d-90.5165557242587!3d14.600664977073766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a315f398a111%3A0x815473dae1d82d1!2sEpic%20Avia!5e0!3m2!1ses!2sgt!4v1709838039558!5m2!1ses!2sgt"
+                width="75%"
+                height="450"
+                style={{ border: "0" }}
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
             </Grid>
             <Grid xs={12} md={6} lg={6} style={{ textAlign: "center" }}>
               <img
@@ -145,10 +158,10 @@ const Inicio = () => {
           </ImageList>
         </Stack>
         <Stack spacing={5} justifyContent="center" alignItems="center">
-          <Typography variant="h4" style={{ textAlign: "center" }}>
+          <Typography variant="h3" style={{ textAlign: "center" }}>
             Patrocinadores
           </Typography>
-          <Typography variant="h5" style={{ textAlign: "center" }}>
+          <Typography variant="h3" style={{ textAlign: "center" }}>
             Top Diamante
           </Typography>
           <img
@@ -157,11 +170,11 @@ const Inicio = () => {
             alt="cladit-img"
             loading="lazy"
           />
-          <Typography variant="h5" style={{ textAlign: "center" }}>
+          <Typography variant="h4" style={{ textAlign: "center" }}>
             Diamante
           </Typography>
           <img
-            style={{ width: "25%" }}
+            style={{ width: "20%" }}
             src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/LEXIS+NEXIS.png`}
             alt="cladit-img"
             loading="lazy"
@@ -170,16 +183,16 @@ const Inicio = () => {
             Oro
           </Typography>
           <img
-            style={{ width: "25%" }}
+            style={{ width: "15%" }}
             src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/CHN.png`}
             alt="cladit-img"
             loading="lazy"
           />
-           <Typography variant="h5" style={{ textAlign: "center" }}>
+          <Typography variant="h6" style={{ textAlign: "center" }}>
             Plata
           </Typography>
           <img
-            style={{ width: "25%" }}
+            style={{ width: "10%" }}
             src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/logo+AMLC+original.png`}
             alt="cladit-img"
             loading="lazy"

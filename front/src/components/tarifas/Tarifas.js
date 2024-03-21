@@ -5,7 +5,7 @@ import { Grid, Typography } from "@mui/material";
 const Tarifas = () => {
   return (
     <Box>
-      <Grid container justifyContent="center" p={5}>
+      <Grid container justifyContent="center" alignItems="center" p={5}>
         <Grid xs={12} md={12} lg={6} textAlign="center">
           <Typography
             variant="h4"

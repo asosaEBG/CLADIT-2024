@@ -1,30 +1,60 @@
 import React from "react";
-import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
-import { Grid, ImageList, ImageListItem, Typography } from "@mui/material";
+import { ImageList, ImageListItem, Typography } from "@mui/material";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 const Talleres = () => {
   return (
-    <Stack spacing={5} p={5} alignItems="center">
+    <Stack spacing={2} p={5} alignItems="center">
       <Typography
         variant="h3"
         style={{ color: "#1e3d52", textAlign: "center" }}
       >
-        Talleres Pre Congreso
+        <strong>Talleres PreCongreso</strong>
       </Typography>
-      <Typography variant="p" style={{ textAlign: "center" }}>
+      <Typography
+        variant="h5"
+        style={{ color: "#1e3d52", textAlign: "center" }}
+      >
+        <strong>
+          <LocationOnIcon />
+          &nbsp;Hotel Westin Camino Real z.10
+        </strong>
+      </Typography>
+      <Typography variant="p" style={{ textAlign: "center", color: "#1e3d52" }}>
         <strong>*Cupo limitado</strong>
       </Typography>
-      <ImageList cols={2} sx={{ width: { lg: "60%", md: "100%", xs: "100%" } }}>
-        <ImageListItem>
+      <ImageList cols={2} sx={{ width: { lg: "50%", md: "100%", xs: "100%" } }}>
+        <ImageListItem cols={2}>
           <img
-            src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/Taller+1+Sector+Cooperativas.jpg`}
+            src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/bancario.png`}
             alt="taller-pre-congreso"
             loading="lazy"
           />
         </ImageListItem>
-        <ImageListItem>
+        <ImageListItem cols={1}>
           <img
-            src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/Taller+1+Sector+Bancario.jpg`}
+            src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/Talleres+1+SB.png`}
+            alt="taller-pre-congreso"
+            loading="lazy"
+          />
+        </ImageListItem>
+        <ImageListItem cols={1}>
+          <img
+            src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/TallerES+2+SB.png`}
+            alt="taller-pre-congreso"
+            loading="lazy"
+          />
+        </ImageListItem>
+        <ImageListItem cols={2}>
+          <img
+            src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/cooperativa.png`}
+            alt="taller-pre-congreso"
+            loading="lazy"
+          />
+        </ImageListItem>
+        <ImageListItem cols={2}>
+          <img
+            src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/Talleres+1+Sc.png`}
             alt="taller-pre-congreso"
             loading="lazy"
           />
