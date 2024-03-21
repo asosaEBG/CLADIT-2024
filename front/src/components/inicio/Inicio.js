@@ -175,6 +175,15 @@ const Inicio = () => {
             alt="cladit-img"
             loading="lazy"
           />
+           <Typography variant="h5" style={{ textAlign: "center" }}>
+            Plata
+          </Typography>
+          <img
+            style={{ width: "25%" }}
+            src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/logo+AMLC+original.png`}
+            alt="cladit-img"
+            loading="lazy"
+          />
         </Stack>
         <Grid container alignItems="center" justifyContent="center">
           <Grid xs={12} md={6} lg={6}>
