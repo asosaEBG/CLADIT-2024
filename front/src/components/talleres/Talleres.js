@@ -113,7 +113,7 @@ const Talleres = () => {
               <strong>TALLER</strong>
             </Typography>
             <Typography variant="P" style={{ fontSize: "2em" }}>
-              Matrices de riesgo LDFT según guía IVE
+              Matrices de Riesgo LDFT según guía IVE
             </Typography>
             <Typography variant="p" style={{ fontSize: "1.5em" }}>
               <AccessTimeIcon />
