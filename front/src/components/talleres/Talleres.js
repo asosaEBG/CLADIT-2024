@@ -3,17 +3,18 @@ import Stack from "@mui/material/Stack";
 import { Grid, Typography } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 const Talleres = () => {
   return (
     <Stack spacing={3} alignItems="center">
       <Typography
-        variant="h5"
+        variant="h2"
         style={{ color: "#1e3d52", textAlign: "center" }}
       >
         <strong>Talleres PreCongreso</strong>
       </Typography>
       <Typography
-        variant="h6"
+        variant="h3"
         style={{ color: "#1e3d52", textAlign: "center" }}
       >
         <strong>
@@ -22,7 +23,7 @@ const Talleres = () => {
         </strong>
       </Typography>
       <Typography
-        variant="h6"
+        variant="h4"
         style={{ color: "#1e3d52", textAlign: "center" }}
       >
         <strong>
@@ -42,10 +43,10 @@ const Talleres = () => {
           marginBottom={4}
         >
           <Typography
-            variant="h5"
+            variant="h3"
             style={{ color: "white", textAlign: "center" }}
           >
-            Sector Bancario
+            <strong>Sector Bancario</strong>
           </Typography>
         </Grid>
         <Grid xs={12} md={12} lg={4} style={{ textAlign: "center" }}>
@@ -63,6 +64,10 @@ const Talleres = () => {
             <Typography variant="P" style={{ fontSize: "2em" }}>
               Como realizar investigaciones de manera eficiente en el área de
               cumplimiento
+            </Typography>
+            <Typography variant="p" style={{ fontSize: "1.5em" }}>
+              <AccessTimeIcon />
+              &nbsp;8:30 AM - 10:30 AM
             </Typography>
             <Typography
               variant="p"
@@ -89,10 +94,10 @@ const Talleres = () => {
           marginBottom={4}
         >
           <Typography
-            variant="h5"
+            variant="h3"
             style={{ color: "white", textAlign: "center" }}
           >
-            Sector Cooperativas
+            <strong>Sector Cooperativas</strong>
           </Typography>
         </Grid>
         <Grid xs={12} md={12} lg={4} style={{ textAlign: "center" }}>
@@ -108,7 +113,11 @@ const Talleres = () => {
               <strong>TALLER</strong>
             </Typography>
             <Typography variant="P" style={{ fontSize: "2em" }}>
-             Matrices de riesgo LDFT según guía IVE
+              Matrices de riesgo LDFT según guía IVE
+            </Typography>
+            <Typography variant="p" style={{ fontSize: "1.5em" }}>
+              <AccessTimeIcon />
+              &nbsp;8:30 AM - 12:30 AM
             </Typography>
             <Typography
               variant="p"

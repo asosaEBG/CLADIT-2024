@@ -2,6 +2,8 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import { Typography } from "@mui/material";
+import Divider from "@mui/material/Divider";
+
 const Patrocinio = () => {
   return (
     <Box>
@@ -18,6 +20,7 @@ const Patrocinio = () => {
         <Typography variant="h3" style={{ textAlign: "center" }}>
           BRIEF PATROCINIOS
         </Typography>
+        <Divider style={{ backgroundColor: "#397d51", height: "5px" }} />
         <Typography
           variant="h4"
           style={{ color: "#1e3d52", textAlign: "center" }}
@@ -78,11 +81,12 @@ const Patrocinio = () => {
             </li>
           </ul>
         </Typography>
+        <Divider style={{ backgroundColor: "#397d51", height: "5px" }} />
+
         <Typography
           variant="h4"
           style={{ color: "#1e3d52", textAlign: "center" }}
         >
-          {" "}
           Oro - US$5,000*
         </Typography>
         <Typography variant="h5" style={{ textAlign: "left" }}>
@@ -128,7 +132,7 @@ const Patrocinio = () => {
             <li>Participaciones de cortesía</li>
           </ul>
         </Typography>
-
+        <Divider style={{ backgroundColor: "#397d51", height: "5px" }} />
         <Typography
           variant="h4"
           style={{ color: "#1e3d52", textAlign: "center" }}
@@ -177,6 +181,7 @@ const Patrocinio = () => {
             </li>
           </ul>
         </Typography>
+        <Divider style={{ backgroundColor: "#397d51", height: "5px" }} />
         <img
           src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/a536ba50-a89d-4477-850a-5657ec42197b+(2).JPG"
           style={{ width: "100%" }}
