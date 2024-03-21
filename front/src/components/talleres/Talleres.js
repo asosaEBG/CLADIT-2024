@@ -4,14 +4,17 @@ import Stack from "@mui/material/Stack";
 import { Grid, ImageList, ImageListItem, Typography } from "@mui/material";
 const Talleres = () => {
   return (
-    <Stack spacing={5} p={5}>
+    <Stack spacing={5} p={5} alignItems="center">
       <Typography
-        variant="h4"
+        variant="h3"
         style={{ color: "#1e3d52", textAlign: "center" }}
       >
         Talleres Pre Congreso
       </Typography>
-      <ImageList cols={2}>
+      <Typography variant="p" style={{ textAlign: "center" }}>
+        <strong>*Cupo limitado</strong>
+      </Typography>
+      <ImageList cols={2} sx={{ width: { lg: "60%", md: "100%", xs: "100%" } }}>
         <ImageListItem>
           <img
             src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/Taller+1+Sector+Cooperativas.jpg`}
