@@ -40,6 +40,10 @@ const pages = [
     href: "/tarifas",
   },
   {
+    label: "Talleres",
+    href: "/talleres",
+  },
+  {
     label: "Contacto",
     href: "/contacto",
   },
