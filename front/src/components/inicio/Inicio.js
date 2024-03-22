@@ -158,7 +158,7 @@ const Inicio = () => {
           </ImageList>
         </Stack>
         <Stack spacing={5} justifyContent="center" alignItems="center">
-          <Typography variant="h3" style={{ textAlign: "center" }}>
+          <Typography variant="h2" style={{ textAlign: "center" }}>
             Patrocinadores
           </Typography>
           <Typography variant="h3" style={{ textAlign: "center" }}>
