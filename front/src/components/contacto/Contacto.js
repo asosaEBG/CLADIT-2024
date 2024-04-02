@@ -19,7 +19,7 @@ const Contacto = () => {
               <Typography variant="h6">
                 <strong>Teléfono:</strong>
               </Typography>
-              <Typography variant="p">+502 2382-7200</Typography>
+              <Typography variant="p">+502 2382-7223</Typography>
             </Stack>
           </Grid>
           <Grid item xs={12} md={6} lg={6} style={{ textAlign: "center" }}>
