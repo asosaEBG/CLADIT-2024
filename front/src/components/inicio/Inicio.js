@@ -2,7 +2,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import "./style.css";
-import { Grid, Typography } from "@mui/material";
+import { Divider, Grid, Typography } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EventIcon from "@mui/icons-material/Event";
 import Button from "@mui/material/Button";
@@ -157,64 +157,106 @@ const Inicio = () => {
             </ImageListItem>
           </ImageList>
         </Stack>
-        <Stack spacing={5} justifyContent="center" alignItems="center">
-          <Typography variant="h2" style={{ textAlign: "center" }}>
+        <Stack spacing={1}>
+          <Typography variant="h3" style={{ textAlign: "center" }}>
             Patrocinadores
           </Typography>
-          <Typography variant="h3" style={{ textAlign: "center" }}>
+          <Divider style={{ backgroundColor: "#397d51", height: "5px" }} />
+          <Typography variant="h4" style={{ textAlign: "center" }}>
             Top Diamante
           </Typography>
-          <img
-            style={{ width: "25%" }}
-            src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/1+BANRURAL.png`}
-            alt="cladit-img"
-            loading="lazy"
-          />
+          <ImageList cols={10}>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem cols={2}>
+              <img
+                style={{ width: "100%" }}
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/1+BANRURAL.png`}
+                alt="cladit-img"
+                loading="lazy"
+              />
+            </ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+          </ImageList>
+          <Divider style={{ backgroundColor: "#397d51", height: "5px" }} />
           <Typography variant="h4" style={{ textAlign: "center" }}>
             Diamante
           </Typography>
-          <img
-            style={{ width: "20%" }}
-            src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/LNRS_CMYK_POS_+(2).jpg`}
-            alt="cladit-img"
-            loading="lazy"
-          />
-          <Typography variant="h5" style={{ textAlign: "center" }}>
+          <ImageList cols={10}>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem cols={2}>
+              <img
+                style={{ width: "100%" }}
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/LNRS_CMYK_POS_+(2).jpg`}
+                alt="cladit-img"
+                loading="lazy"
+              />
+            </ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+          </ImageList>
+          <Divider style={{ backgroundColor: "#397d51", height: "5px" }} />
+
+          <Typography variant="h4" style={{ textAlign: "center" }}>
             Oro
           </Typography>
-          <Grid
-            container
-            width="100%"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Grid xs={12} md={12} lg={6} style={{ textAlign: "center" }}>
+          <ImageList cols={10}>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem cols={2} style={{ padding: "5%" }}>
               <img
-                style={{ width: "35%" }}
+                style={{ width: "100%" }}
                 src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/CHN.png`}
                 alt="cladit-img"
                 loading="lazy"
               />
-            </Grid>
-            <Grid xs={12} md={12} lg={6} style={{ textAlign: "center" }}>
+            </ImageListItem>
+            <ImageListItem cols={2} style={{ padding: "5%" }}>
               <img
-                style={{ width: "35%" }}
+                style={{ width: "100%" }}
                 src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/1710520505224-2%20BI.png`}
                 alt="cladit-img"
                 loading="lazy"
               />
-            </Grid>
-          </Grid>
-
-          <Typography variant="h6" style={{ textAlign: "center" }}>
+            </ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+          </ImageList>
+          <Divider style={{ backgroundColor: "#397d51", height: "5px" }} />
+          <Typography variant="h4" style={{ textAlign: "center" }}>
             Plata
           </Typography>
-          <img
-            style={{ width: "10%" }}
-            src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/logo+AMLC+original.png`}
-            alt="cladit-img"
-            loading="lazy"
-          />
+
+          <ImageList cols={10}>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem cols={2}>
+              <img
+                style={{ width: "100%" }}
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/logo+AMLC+original.png`}
+                alt="cladit-img"
+                loading="lazy"
+              />
+            </ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+          </ImageList>
         </Stack>
         <Grid container alignItems="center" justifyContent="center">
           <Grid xs={12} md={6} lg={6}>
@@ -227,14 +269,14 @@ const Inicio = () => {
           </Grid>
           <Grid xs={12} md={6} lg={6}>
             <Stack spacing={2} style={{ padding: "6%" }}>
-              <Typography variant="h4" style={{ textAlign: "center" }}>
+              <Typography variant="h5" style={{ textAlign: "center" }}>
                 Dirigido a:
               </Typography>
               <Typography
                 variant="p"
-                style={{ textAlign: "left", fontSize: "1.5em" }}
+                style={{ textAlign: "left", fontSize: "0.9em" }}
               >
-                <ul>
+                <ul className="columns">
                   <li>Entidades Bancarias</li>
                   <li>Cooperativas</li>
                   <li>Financieras</li>
