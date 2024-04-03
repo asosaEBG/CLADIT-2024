@@ -12,7 +12,7 @@ const Patrocinio = () => {
           PLANOS STAND
         </Typography>
         <img
-          src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/1712078757472-2%20Plano%20CLADIT%202024.jpg"
+          src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/1712109851996-WhatsApp%20Image%202024-04-02%20at%205.11.42%20PM.jpeg"
           style={{ width: "100%" }}
           loading="lazy"
         />
