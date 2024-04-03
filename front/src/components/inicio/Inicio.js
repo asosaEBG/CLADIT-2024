@@ -175,7 +175,7 @@ const Inicio = () => {
           </Typography>
           <img
             style={{ width: "20%" }}
-            src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/LEXIS+NEXIS.png`}
+            src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/LNRS_CMYK_POS_+(2).jpg`}
             alt="cladit-img"
             loading="lazy"
           />
