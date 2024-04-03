@@ -182,12 +182,30 @@ const Inicio = () => {
           <Typography variant="h5" style={{ textAlign: "center" }}>
             Oro
           </Typography>
-          <img
-            style={{ width: "15%" }}
-            src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/CHN.png`}
-            alt="cladit-img"
-            loading="lazy"
-          />
+          <Grid
+            container
+            width="100%"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Grid xs={12} md={12} lg={6} style={{ textAlign: "center" }}>
+              <img
+                style={{ width: "35%" }}
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/CHN.png`}
+                alt="cladit-img"
+                loading="lazy"
+              />
+            </Grid>
+            <Grid xs={12} md={12} lg={6} style={{ textAlign: "center" }}>
+              <img
+                style={{ width: "35%" }}
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/1710520505224-2%20BI.png`}
+                alt="cladit-img"
+                loading="lazy"
+              />
+            </Grid>
+          </Grid>
+
           <Typography variant="h6" style={{ textAlign: "center" }}>
             Plata
           </Typography>
