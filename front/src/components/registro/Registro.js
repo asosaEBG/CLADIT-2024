@@ -33,6 +33,11 @@ const Registro = () => {
                 para que tramite el pago correspondiente.
               </Typography>
               <Button
+                 style={{
+                  backgroundColor: "#397d51",
+                  color: "white",
+                  border: "1px solid transparent",
+                }}
                 startIcon={<DriveFileRenameOutlineIcon />}
                 onClick={() => {
                   window.open(
