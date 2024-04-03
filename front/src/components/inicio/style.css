@@ -4,3 +4,9 @@
     position: relative;
     bottom: 25%;
 }
+.columns {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    padding: 0.2%;
+  }
