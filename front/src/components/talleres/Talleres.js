@@ -7,33 +7,56 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 const Talleres = () => {
   return (
     <Stack spacing={3} alignItems="center">
-      <Typography
-        variant="h2"
-        style={{ color: "#1e3d52", textAlign: "center" }}
-      >
-        <strong>Talleres PreCongreso</strong>
-      </Typography>
-      <Typography
-        variant="h3"
-        style={{ color: "#1e3d52", textAlign: "center" }}
-      >
-        <strong>
-          <CalendarMonthIcon />
-          &nbsp;15 de mayo
-        </strong>
-      </Typography>
-      <Typography
-        variant="h4"
-        style={{ color: "#1e3d52", textAlign: "center" }}
-      >
-        <strong>
-          <LocationOnIcon />
-          &nbsp;Hotel Westin Camino Real z.10
-        </strong>
-      </Typography>
-      <Typography variant="p" style={{ textAlign: "center", color: "#1e3d52" }}>
-        <strong>*Cupo limitado</strong>
-      </Typography>
+      <Grid container p={2}>
+        <Grid xs={12} md={12} lg={6} style={{ textAlign: "center" }}>
+          <Typography
+            variant="h2"
+            style={{ color: "#1e3d52", textAlign: "center" }}
+          >
+            <strong>Talleres PreCongreso</strong>
+          </Typography>
+          <Typography
+            variant="h3"
+            style={{ color: "#1e3d52", textAlign: "center" }}
+          >
+            <strong>
+              <CalendarMonthIcon />
+              &nbsp;15 de mayo
+            </strong>
+          </Typography>
+          <Typography
+            variant="h4"
+            style={{ color: "#1e3d52", textAlign: "center" }}
+          >
+            <strong>
+              <LocationOnIcon />
+              &nbsp;Hotel Westin Camino Real z.10
+            </strong>
+          </Typography>
+          <Typography
+            variant="p"
+            style={{ textAlign: "center", color: "#1e3d52" }}
+          >
+            <strong>*Cupo limitado</strong>
+          </Typography>
+        </Grid>
+        <Grid xs={12} md={12} lg={6} style={{ textAlign: "center" }}>
+          <Typography
+            variant="h6"
+            style={{ textAlign: "center", color: "#1e3d52" }}
+          >
+            <strong>
+              Ruta de Westin Camino Real a Epica Avia vía 2da av. z.10
+            </strong>
+          </Typography>
+
+          <img
+            src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/como+llegar+epic.png"
+            style={{ width: "50%" }}
+            alt="img-how-to-get-epic"
+          />
+        </Grid>
+      </Grid>
       <Grid container p={5}>
         <Grid
           xs={12}
@@ -97,7 +120,7 @@ const Talleres = () => {
             variant="h3"
             style={{ color: "white", textAlign: "center" }}
           >
-            <strong>Sector Cooperativas</strong>
+            <strong>Sector Cooperativas de Ahorro y Crédito</strong>
           </Typography>
         </Grid>
         <Grid xs={12} md={12} lg={4} style={{ textAlign: "center" }}>
