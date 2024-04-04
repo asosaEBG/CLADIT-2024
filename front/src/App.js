@@ -9,6 +9,7 @@ import Tarifas from "./components/tarifas/Tarifas";
 import Contacto from "./components/contacto/Contacto";
 import Galeria from "./components/galeria/Galeria";
 import Talleres from "./components/talleres/Talleres";
+import CladitXela from "./components/cladit-xela/CladitXela";
 function App() {
   return (
     <Router>
@@ -22,6 +23,7 @@ function App() {
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/galeria" element={<Galeria />} />
           <Route path="/talleres" element={<Talleres />} />
+          <Route path="/cladit-xela" element={<CladitXela />} />
         </Route>
       </Routes>
     </Router>

@@ -51,6 +51,10 @@ const pages = [
     label: "Galeria",
     href: "/galeria",
   },
+  {
+    label: "CLADIT XELA",
+    href: "/cladit-xela",
+  },
 ];
 function ScrollTop(props) {
   const { children, window } = props;
