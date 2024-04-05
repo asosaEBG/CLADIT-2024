@@ -96,10 +96,13 @@ const Talleres = () => {
               variant="p"
               style={{ color: "#397d51", fontSize: "1.5em" }}
             >
-              Lic. Juan Carlos Medrano
+              Juan Carlos Medrano
             </Typography>
-            <Typography variant="p">PRESIDENTE Y FUNDADOR</Typography>
-            <Typography variant="p">J&A Global Compliance</Typography>
+            <Typography variant="p">Especialista AML</Typography>
+            <Typography variant="p">
+              Invitado especial del Crédito Hipotecario Nacional, CHN
+            </Typography>
+            <Typography variant="p">Venezuela, Miami</Typography>
             <img
               src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/Banderas+USA+y+VENEZUELA.png"
               alt="img-paises"
