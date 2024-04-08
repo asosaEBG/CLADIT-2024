@@ -213,35 +213,31 @@ const Inicio = () => {
           <ImageList cols={10}>
             <ImageListItem></ImageListItem>
             <ImageListItem></ImageListItem>
-            <ImageListItem></ImageListItem>
-            <ImageListItem></ImageListItem>
 
             <ImageListItem cols={2} style={{ padding: "5%" }}>
               <img
                 style={{ width: "100%", objectFit: "contain" }}
-                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/CHN.png`}
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/logo+CHN.jpg`}
                 alt="cladit-img"
                 loading="lazy"
               />
             </ImageListItem>
-            <ImageListItem></ImageListItem>
-            <ImageListItem></ImageListItem>
-            <ImageListItem></ImageListItem>
-            <ImageListItem></ImageListItem>
-            <ImageListItem></ImageListItem>
-            <ImageListItem></ImageListItem>
-            <ImageListItem></ImageListItem>
-            <ImageListItem></ImageListItem>
             <ImageListItem cols={2} style={{ padding: "5%" }}>
               <img
                 style={{ width: "100%", objectFit: "contain" }}
-                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/1710520505224-2%20BI.png`}
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/logo+BI.png`}
                 alt="cladit-img"
                 loading="lazy"
               />
             </ImageListItem>
-            <ImageListItem></ImageListItem>
-            <ImageListItem></ImageListItem>
+            <ImageListItem cols={2} style={{ padding: "5%" }}>
+              <img
+                style={{ width: "100%", objectFit: "contain" }}
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/logo+Banco+Promerica.png`}
+                alt="cladit-img"
+                loading="lazy"
+              />
+            </ImageListItem>
             <ImageListItem></ImageListItem>
             <ImageListItem></ImageListItem>
           </ImageList>
@@ -254,16 +250,22 @@ const Inicio = () => {
             <ImageListItem></ImageListItem>
             <ImageListItem></ImageListItem>
             <ImageListItem></ImageListItem>
-            <ImageListItem></ImageListItem>
             <ImageListItem cols={2}>
               <img
                 style={{ width: "100%" }}
-                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/logo+AMLC+original.png`}
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/logo+AMLC.png`}
                 alt="cladit-img"
                 loading="lazy"
               />
             </ImageListItem>
-            <ImageListItem></ImageListItem>
+            <ImageListItem cols={2}>
+              <img
+                style={{ width: "100%" }}
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/logo+interbanco.png`}
+                alt="cladit-img"
+                loading="lazy"
+              />
+            </ImageListItem>
             <ImageListItem></ImageListItem>
             <ImageListItem></ImageListItem>
             <ImageListItem></ImageListItem>
