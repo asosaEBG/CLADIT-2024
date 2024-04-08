@@ -214,22 +214,33 @@ const Inicio = () => {
             <ImageListItem></ImageListItem>
             <ImageListItem></ImageListItem>
             <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+
             <ImageListItem cols={2} style={{ padding: "5%" }}>
               <img
-                style={{ width: "100%" }}
+                style={{ width: "100%", objectFit: "contain" }}
                 src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/CHN.png`}
                 alt="cladit-img"
                 loading="lazy"
               />
             </ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
             <ImageListItem cols={2} style={{ padding: "5%" }}>
               <img
-                style={{ width: "100%" }}
+                style={{ width: "100%", objectFit: "contain" }}
                 src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/1710520505224-2%20BI.png`}
                 alt="cladit-img"
                 loading="lazy"
               />
             </ImageListItem>
+            <ImageListItem></ImageListItem>
             <ImageListItem></ImageListItem>
             <ImageListItem></ImageListItem>
             <ImageListItem></ImageListItem>
