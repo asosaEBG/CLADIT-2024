@@ -3,12 +3,16 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import "./style.css";
 import { Divider, Grid, Typography } from "@mui/material";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EventIcon from "@mui/icons-material/Event";
 import Button from "@mui/material/Button";
 import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutline";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import { CardActionArea, CardActions } from "@mui/material";
+import conferencistas_json from "../../info/conferencistas.json";
 const Inicio = () => {
   return (
     <Box paddingTop={10}>
@@ -191,16 +195,22 @@ const Inicio = () => {
             <ImageListItem></ImageListItem>
             <ImageListItem></ImageListItem>
             <ImageListItem></ImageListItem>
-            <ImageListItem></ImageListItem>
-            <ImageListItem cols={2}>
+            <ImageListItem cols={2} style={{ padding: "5%" }}>
               <img
-                style={{ width: "100%" }}
+                style={{ width: "100%", objectFit: "contain" }}
                 src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/LNRS_CMYK_POS_+(2).jpg`}
                 alt="cladit-img"
                 loading="lazy"
               />
             </ImageListItem>
-            <ImageListItem></ImageListItem>
+            <ImageListItem cols={2} style={{ padding: "5%" }}>
+              <img
+                style={{ width: "100%", objectFit: "contain" }}
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/Risk+Consulting+Global+Group+-+1.png`}
+                alt="cladit-img"
+                loading="lazy"
+              />
+            </ImageListItem>
             <ImageListItem></ImageListItem>
             <ImageListItem></ImageListItem>
             <ImageListItem></ImageListItem>
@@ -270,6 +280,54 @@ const Inicio = () => {
             <ImageListItem></ImageListItem>
             <ImageListItem></ImageListItem>
           </ImageList>
+        </Stack>
+        <Stack spacing={5}>
+          <Divider style={{ backgroundColor: "#397d51", height: "5px" }} />
+          <Typography variant="h3" style={{ textAlign: "center" }}>
+            Conferencistas
+          </Typography>
+          <Grid container justifyContent="center">
+            {conferencistas_json.conferencistas.map((actual, index) => (
+              <Grid
+                xs={6}
+                md={3}
+                lg={2}
+                p={5}
+                key={index}
+                style={{ display: "flex" }}
+              >
+                <Card
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    width: "100%",
+                  }}
+                >
+                  <CardActionArea>
+                    <CardMedia
+                      component="img"
+                      style={{
+                        width: "100%",
+                        height: "140px",
+                        objectFit: "contain",
+                      }}
+                      image={actual.foto}
+                      alt="conferencista-cladit"
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        {actual.nombre}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {actual.pais}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+          <Divider style={{ backgroundColor: "#397d51", height: "5px" }} />
         </Stack>
         <Grid container alignItems="center" justifyContent="center">
           <Grid xs={12} md={6} lg={6}>
