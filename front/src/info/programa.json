@@ -1,0 +1,419 @@
+{
+    "programa": [
+        {
+            "fecha": "Miércoles 15 de Mayo",
+            "hora_inicio": "08:30",
+            "hora_fin": "10:30",
+            "concepto": "Taller 1: Como realizar investigaciones de manera eficiente en el área de cumplimiento",
+            "speakers": [
+                {
+                    "nombre": "Juan Carlos Medrano",
+                    "puesto": "Especialista AML",
+                    "institucion": "Invitado especial del Crédito Hipotecario Nacional, CHN",
+                    "pais": "VENEZUELA, MIAMI",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.58.56.jpeg"
+                }
+            ]
+        },
+        {
+            "fecha": "Miércoles 15 de Mayo",
+            "hora_inicio": "10:30",
+            "hora_fin": "12:30",
+            "concepto": "KYC Perpetuo: Garantizando la integridad financiera en el sector bancario de Guatemala",
+            "speakers": [
+                {
+                    "nombre": "Juan Uribe",
+                    "puesto": "Gerente Planeación de Mercados LATAM, Crímenes Financieros y Cumplimiento",
+                    "institucion": "LexisNexis Risk Solutions",
+                    "pais": "COLOMBIA - USA",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.08.jpeg"
+                }
+            ]
+        },
+        {
+            "fecha": "Miércoles 15 de Mayo",
+            "hora_inicio": "08:30",
+            "hora_fin": "11:30",
+            "concepto": "Taller 1: Matrices de riesgo LDFT según guía IVE",
+            "speakers": [
+                {
+                    "nombre": "Lic. Jorge Gonzalez",
+                    "puesto": "Oficial de Cumplimiento",
+                    "institucion": "INTERBANCO",
+                    "pais": "GUATEMALA",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.16.jpeg"
+                }
+            ]
+        },
+        {
+            "fecha": "Miércoles 15 de Mayo",
+            "hora_inicio": "11:30",
+            "hora_fin": "12:30",
+            "concepto": "Tema pendiente",
+            "speakers": [
+                {
+                    "nombre": "Gabriel Quinteros",
+                    "puesto": "Presidente",
+                    "institucion": "ASOCUPA",
+                    "pais": "PANAMÁ",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.25.jpeg"
+                }
+            ]
+        },
+        {
+            "fecha": "Miércoles 15 de Mayo",
+            "hora_inicio": "08:30",
+            "hora_fin": "12:30",
+            "concepto": "Taller 1: Pendiente",
+            "speakers": [
+                {
+                    "nombre": "Representante",
+                    "puesto": "",
+                    "institucion": "EMPRESA",
+                    "pais": "GUATEMALA",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.40.jpeg"
+                }
+            ]
+        },
+        {
+            "fecha": "Miércoles 15 de Mayo",
+            "hora_inicio": "14:00",
+            "hora_fin": "14:30",
+            "concepto": "Registro de Participantes",
+            "speakers": []
+        },
+        {
+            "fecha": "Miércoles 15 de Mayo",
+            "hora_inicio": "14:30",
+            "hora_fin": "15:00",
+            "concepto": "Palabras de Bienvenida e Inauguración",
+            "speakers": [
+                {
+                    "nombre": "Representante",
+                    "puesto": "",
+                    "institucion": "Junta Monetaria y del Banco de Guatemala",
+                    "pais": "GUATEMALA",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.40.jpeg"
+                },
+                {
+                    "nombre": "Representante",
+                    "puesto": "",
+                    "institucion": "Superintendencia de Bancos de Guatemala",
+                    "pais": "GUATEMALA",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.40.jpeg"
+                },
+                {
+                    "nombre": "Representante",
+                    "puesto": "",
+                    "institucion": "Asociación Bancaria de Guatemala",
+                    "pais": "GUATEMALA",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.40.jpeg"
+                }
+            ]
+        },
+        {
+            "fecha": "Miércoles 15 de Mayo",
+            "hora_inicio": "15:00",
+            "hora_fin": "15:45",
+            "concepto": "La tecnología aplicada al monitoreo efec tivo PLD-FT (AI, Datamining, otros)",
+            "speakers": [
+                {
+                    "nombre": "Representante",
+                    "puesto": "",
+                    "institucion": "PLUS TI",
+                    "pais": "GUATEMALA",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.40.jpeg"
+                }
+            ]
+        },
+        {
+            "fecha": "Miércoles 15 de Mayo",
+            "hora_inicio": "15:45",
+            "hora_fin": "16:30",
+            "concepto": "Cómo las cooperativas pueden implementar y beneficiarse de un programa de cumplimiento normativo y ético.",
+            "speakers": [
+                {
+                    "nombre": "Gabriel Quinteros",
+                    "puesto": "Presidente",
+                    "institucion": "ASOCUPA",
+                    "pais": "PANAMÁ",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.25.jpeg"
+                }
+            ]
+        },
+        {
+            "fecha": "Miércoles 15 de Mayo",
+            "hora_inicio": "16:30",
+            "hora_fin": "17:00",
+            "concepto": "Coffee break y visita a los stands",
+            "speakers": []
+        },
+        {
+            "fecha": "Miércoles 15 de Mayo",
+            "hora_inicio": "17:00",
+            "hora_fin": "17:45",
+            "concepto": "Auditoría: El pilar que valida la efectividad de los programas PLD-FT",
+            "speakers": [
+                {
+                    "nombre": "Representante",
+                    "puesto": "",
+                    "institucion": "BDO",
+                    "pais": "GUATEMALA",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.40.jpeg"
+                }
+            ]
+        },
+        {
+            "fecha": "Miércoles 15 de Mayo",
+            "hora_inicio": "17:45",
+            "hora_fin": "18:30",
+            "concepto": "La Gestión de Riesgos Eficiente de los Sistemas de monitoreo. ¿Son suficientes los modelos tradicionales si no se contemplan estándares de gestión y el uso de herramientas como IA?",
+            "speakers": [
+                {
+                    "nombre": "Franco Rojas Sagarnaga",
+                    "puesto": "Gerente General",
+                    "institucion": "Grupo AMLC",
+                    "pais": "BOLIVIA",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.00.36.jpeg"
+                }
+            ]
+        },
+        {
+            "fecha": "Miércoles 15 de Mayo",
+            "hora_inicio": "18:30",
+            "hora_fin": "18:45",
+            "concepto": "Cierre del primer día",
+            "speakers": []
+        },
+        {
+            "fecha": "Jueves 16 de Mayo",
+            "hora_inicio": "08:15",
+            "hora_fin": "08:30",
+            "concepto": "Bienvenida",
+            "speakers": []
+        },
+        {
+            "fecha": "Jueves 16 de Mayo",
+            "hora_inicio": "08:30",
+            "hora_fin": "09:15",
+            "concepto": "La prevención y represión del financiamiento del terrorismo y su interconexión con otras formas de delincuencia organizada",
+            "speakers": [
+                {
+                    "nombre": "Celina Realuyo",
+                    "puesto": "Profesora de práctica",
+                    "institucion": "Centro de Estudios de Defensa Hemisférica William J. Perry en la Universidad Nacional de Defensa",
+                    "pais": "ESTADOS UNIDOS",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.00.52.jpeg"
+                }
+            ]
+        },
+        {
+            "fecha": "Jueves 16 de Mayo",
+            "hora_inicio": "09:15",
+            "hora_fin": "10:15",
+            "concepto": "Risk Assessment, aplicación metodológica para medir el riesgo LD/FT",
+            "speakers": [
+                {
+                    "nombre": "Ana Maria de Alba",
+                    "puesto": "Presidente CSMB",
+                    "institucion": "RiskRator",
+                    "pais": "ESTADOS UNIDOS",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.01.00.jpeg"
+                }
+            ]
+        },
+        {
+            "fecha": "Jueves 16 de Mayo",
+            "hora_inicio": "10:15",
+            "hora_fin": "10:45",
+            "concepto": "Coffee break y visita a los stands",
+            "speakers": []
+        },
+        {
+            "fecha": "Jueves 16 de Mayo",
+            "hora_inicio": "10:45",
+            "hora_fin": "11:45",
+            "concepto": "FORO Riesgos PLD-FT asociados al negocio VASP proveedor de servicios de activos virtuales (Criptoactivos)",
+            "speakers": [
+                {
+                    "nombre": "David Aw",
+                    "puesto": "Co-Fundador y CEO",
+                    "institucion": "Inbestgo",
+                    "pais": "GUATEMALA",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.01.24.jpeg"
+                },
+                {
+                    "nombre": "Ana Maria de Alba",
+                    "puesto": "Presidente CSMB",
+                    "institucion": "RiskRator",
+                    "pais": "ESTADOS UNIDOS",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.01.00.jpeg"
+                },
+                {
+                    "nombre": "Glenda Morales",
+                    "puesto": "Gerente de cumplimiento",
+                    "institucion": "Banco PROMERICA",
+                    "pais": "GUATEMALA",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.01.33.jpeg",
+                    "tipo_speaker": "MODERADORA"
+                }
+            ]
+        },
+        {
+            "fecha": "Jueves 16 de Mayo",
+            "hora_inicio": "11:45",
+            "hora_fin": "12:30",
+            "concepto": "Tema pendiente",
+            "speakers": [
+                {
+                    "nombre": "Representante",
+                    "puesto": "",
+                    "institucion": "BAC Latam",
+                    "pais": "PAIS",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.40.jpeg"
+                }
+            ]
+        },
+        {
+            "fecha": "Jueves 16 de Mayo",
+            "hora_inicio": "12:30",
+            "hora_fin": "13:15",
+            "concepto": "KYC en la era digital, gestionando el ciclo de la vida del cliente",
+            "speakers": [
+                {
+                    "nombre": "Adrián Sánchez",
+                    "puesto": "Director, América Latina y el Caribe, Crímenes Financieros y Cumplimiento",
+                    "institucion": "LexisNexis Risk Solutions",
+                    "pais": "MÉXICO- USA",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.01.56.jpeg"
+                }
+            ]
+        },
+        {
+            "fecha": "Jueves 16 de Mayo",
+            "hora_inicio": "13:15",
+            "hora_fin": "14:15",
+            "concepto": "Almuerzo y visita a los stands",
+            "speakers": []
+        },
+        {
+            "fecha": "Jueves 16 de Mayo",
+            "hora_inicio": "14:15",
+            "hora_fin": "14:45",
+            "concepto": "OFAC, Sanciones y listas internacionales: Impacto en instituciones Financieras en América Latina",
+            "speakers": [
+                {
+                    "nombre": "Juan Carlos Medrano",
+                    "puesto": "Especialista AML",
+                    "institucion": "Invitado especial del Crédito Hipotecario Nacional, CHN",
+                    "pais": "VENEZUELA, MIAMI",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.58.56.jpeg"
+                }
+            ]
+        },
+        {
+            "fecha": "Jueves 16 de Mayo",
+            "hora_inicio": "14:45",
+            "hora_fin": "15:45",
+            "concepto": "Clasificación y gestión de clientes de mayor riesgo LD/FT según el Regulador",
+            "speakers": [
+                {
+                    "nombre": "Luis Alfredo Nájera",
+                    "puesto": "",
+                    "institucion": "Intendencia de Verifcación Especial -IVE",
+                    "pais": "GUATEMALA",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.40.jpeg"
+                }
+            ]
+        },
+        {
+            "fecha": "Jueves 16 de Mayo",
+            "hora_inicio": "15:45",
+            "hora_fin": "16:30",
+            "concepto": "Tema pendiente",
+            "speakers": [
+                {
+                    "nombre": "Representante",
+                    "puesto": "",
+                    "institucion": "EMPRESA",
+                    "pais": "GUATEMALA",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.40.jpeg"
+                }
+            ]
+        },
+        {
+            "fecha": "Jueves 16 de Mayo",
+            "hora_inicio": "16:30",
+            "hora_fin": "17:00",
+            "concepto": "Coffee break y visita a los stands",
+            "speakers": []
+        },
+        {
+            "fecha": "Jueves 16 de Mayo",
+            "hora_inicio": "17:00",
+            "hora_fin": "17:45",
+            "concepto": "Tema pendiente",
+            "speakers": [
+                {
+                    "nombre": "Representante",
+                    "puesto": "",
+                    "institucion": "EMPRESA",
+                    "pais": "GUATEMALA",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.40.jpeg"
+                }
+            ]
+        },
+        {
+            "fecha": "Jueves 16 de Mayo",
+            "hora_inicio": "17:45",
+            "hora_fin": "18:30",
+            "concepto": "FORO \"Preguntemos a la IVE\" / Auditorías, RTS, FEIC, FEIS",
+            "speakers": [
+                {
+                    "nombre": "Juan Fernando Argueta",
+                    "puesto": "Director del Departamento de Prevención y Cumplimiento",
+                    "institucion": "Intendencia de Verifcación Especial -IVE-",
+                    "pais": "GUATEMALA",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.40.jpeg"
+                },
+                {
+                    "nombre": "Juan Carlos Monroy",
+                    "puesto": "Director",
+                    "institucion": "Superintendencia de Bancos de Guatemala -SIB",
+                    "pais": "GUATEMALA",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.02.29.jpeg"
+                },
+                {
+                    "nombre": "Lic. Jorge Gonzalez",
+                    "puesto": "Oficial de Cumplimiento",
+                    "institucion": "INTERBANCO",
+                    "pais": "GUATEMALA",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.16.jpeg",
+                    "tipo_speaker": "MODERADOR"
+                }
+            ]
+        },
+        {
+            "fecha": "Jueves 16 de Mayo",
+            "hora_inicio": "18:30",
+            "hora_fin": "18:45",
+            "concepto": "Panel de conclusiones del evento",
+            "speakers": [
+                {
+                    "nombre": "Licda. Sandra Zayas",
+                    "puesto": "Consultora Independiente y Facilitadora de la EBG",
+                    "institucion": "ESCUELA BANCARIA DE GUATEMALA",
+                    "pais": "GUATEMALA",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.02.43.jpeg"
+                },
+                {
+                    "nombre": "Lic. Ricardo Vélez",
+                    "puesto": "Consultor Independiente, Facilitador EBG",
+                    "institucion": "ESCUELA BANCARIA DE GUATEMALA",
+                    "pais": "GUATEMALA",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.02.52.jpeg"
+                }
+            ]
+        }
+    ]
+}
