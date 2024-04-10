@@ -14,7 +14,7 @@
                             "puesto": "Especialista AML",
                             "institucion": "Invitado especial del Crédito Hipotecario Nacional, CHN",
                             "pais": "VENEZUELA, MIAMI",
-                            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/USA-banderas.png",
+                            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/VENEZUELA-USA-banderas.png",
                             "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/foto+de+Medarano.png"
                         }
                     ]
@@ -30,6 +30,7 @@
                             "puesto": "Gerente Planeación de Mercados LATAM, Crímenes Financieros y Cumplimiento",
                             "institucion": "LexisNexis Risk Solutions",
                             "pais": "COLOMBIA - USA",
+                            "bandera":"https://escuela-bancaria.s3.us-east-2.amazonaws.com/COLOMBIA-USA-banderas.png",
                             "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/URIBE-Conferencistas-CLADIT-2024.png"
                         }
                     ]
