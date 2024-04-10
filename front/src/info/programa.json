@@ -2,78 +2,10 @@
     "programa": [
         {
             "fecha": "Miércoles 15 de Mayo",
-            "hora_inicio": "08:30",
-            "hora_fin": "10:30",
-            "concepto": "Taller 1: Como realizar investigaciones de manera eficiente en el área de cumplimiento",
-            "speakers": [
-                {
-                    "nombre": "Juan Carlos Medrano",
-                    "puesto": "Especialista AML",
-                    "institucion": "Invitado especial del Crédito Hipotecario Nacional, CHN",
-                    "pais": "VENEZUELA, MIAMI",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.58.56.jpeg"
-                }
-            ]
-        },
-        {
-            "fecha": "Miércoles 15 de Mayo",
-            "hora_inicio": "10:30",
-            "hora_fin": "12:30",
-            "concepto": "KYC Perpetuo: Garantizando la integridad financiera en el sector bancario de Guatemala",
-            "speakers": [
-                {
-                    "nombre": "Juan Uribe",
-                    "puesto": "Gerente Planeación de Mercados LATAM, Crímenes Financieros y Cumplimiento",
-                    "institucion": "LexisNexis Risk Solutions",
-                    "pais": "COLOMBIA - USA",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.08.jpeg"
-                }
-            ]
-        },
-        {
-            "fecha": "Miércoles 15 de Mayo",
-            "hora_inicio": "08:30",
-            "hora_fin": "11:30",
-            "concepto": "Taller 1: Matrices de riesgo LDFT según guía IVE",
-            "speakers": [
-                {
-                    "nombre": "Lic. Jorge Gonzalez",
-                    "puesto": "Oficial de Cumplimiento",
-                    "institucion": "INTERBANCO",
-                    "pais": "GUATEMALA",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.16.jpeg"
-                }
-            ]
-        },
-        {
-            "fecha": "Miércoles 15 de Mayo",
-            "hora_inicio": "11:30",
-            "hora_fin": "12:30",
-            "concepto": "Tema pendiente",
-            "speakers": [
-                {
-                    "nombre": "Gabriel Quinteros",
-                    "puesto": "Presidente",
-                    "institucion": "ASOCUPA",
-                    "pais": "PANAMÁ",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.25.jpeg"
-                }
-            ]
-        },
-        {
-            "fecha": "Miércoles 15 de Mayo",
-            "hora_inicio": "08:30",
-            "hora_fin": "12:30",
-            "concepto": "Taller 1: Pendiente",
-            "speakers": [
-                {
-                    "nombre": "Representante",
-                    "puesto": "",
-                    "institucion": "EMPRESA",
-                    "pais": "GUATEMALA",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.40.jpeg"
-                }
-            ]
+            "hora_inicio": "12:30",
+            "hora_fin": "14:00",
+            "concepto": "Almuerzo",
+            "speakers": []
         },
         {
             "fecha": "Miércoles 15 de Mayo",
@@ -93,21 +25,24 @@
                     "puesto": "",
                     "institucion": "Junta Monetaria y del Banco de Guatemala",
                     "pais": "GUATEMALA",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.40.jpeg"
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/SILUETA-Conferencistas-CLADIT-2024.png"
                 },
                 {
                     "nombre": "Representante",
                     "puesto": "",
                     "institucion": "Superintendencia de Bancos de Guatemala",
                     "pais": "GUATEMALA",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.40.jpeg"
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/SILUETA-Conferencistas-CLADIT-2024.png"
                 },
                 {
                     "nombre": "Representante",
                     "puesto": "",
                     "institucion": "Asociación Bancaria de Guatemala",
                     "pais": "GUATEMALA",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.40.jpeg"
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/SILUETA-Conferencistas-CLADIT-2024.png"
                 }
             ]
         },
@@ -115,14 +50,15 @@
             "fecha": "Miércoles 15 de Mayo",
             "hora_inicio": "15:00",
             "hora_fin": "15:45",
-            "concepto": "La tecnología aplicada al monitoreo efec tivo PLD-FT (AI, Datamining, otros)",
+            "concepto": "La tecnología aplicada al monitoreo efectivo PLD-FT (AI, Datamining, otros)",
             "speakers": [
                 {
                     "nombre": "Representante",
                     "puesto": "",
                     "institucion": "PLUS TI",
                     "pais": "GUATEMALA",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.40.jpeg"
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/SILUETA-Conferencistas-CLADIT-2024.png"
                 }
             ]
         },
@@ -137,7 +73,8 @@
                     "puesto": "Presidente",
                     "institucion": "ASOCUPA",
                     "pais": "PANAMÁ",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.25.jpeg"
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/PANAMA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/QUINTEROS-Conferencistas-CLADIT-2024.png"
                 }
             ]
         },
@@ -157,9 +94,10 @@
                 {
                     "nombre": "Representante",
                     "puesto": "",
-                    "institucion": "BDO",
+                    "institucion": "Risk Consulting Global Group",
                     "pais": "GUATEMALA",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.40.jpeg"
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/SILUETA-Conferencistas-CLADIT-2024.png"
                 }
             ]
         },
@@ -174,7 +112,8 @@
                     "puesto": "Gerente General",
                     "institucion": "Grupo AMLC",
                     "pais": "BOLIVIA",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.00.36.jpeg"
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/BOLIVIA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/ROJAS-Conferencistas-CLADIT-2024+(1).png"
                 }
             ]
         },
@@ -203,7 +142,8 @@
                     "puesto": "Profesora de práctica",
                     "institucion": "Centro de Estudios de Defensa Hemisférica William J. Perry en la Universidad Nacional de Defensa",
                     "pais": "ESTADOS UNIDOS",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.00.52.jpeg"
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/USA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/REALUYO-Conferencistas-CLADIT-2024.png"
                 }
             ]
         },
@@ -218,7 +158,8 @@
                     "puesto": "Presidente CSMB",
                     "institucion": "RiskRator",
                     "pais": "ESTADOS UNIDOS",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.01.00.jpeg"
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/USA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/ANA-MARIA-Conferencistas-CLADIT-2024.png"
                 }
             ]
         },
@@ -240,21 +181,24 @@
                     "puesto": "Co-Fundador y CEO",
                     "institucion": "Inbestgo",
                     "pais": "GUATEMALA",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.01.24.jpeg"
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/DAVID-AW-Conferencistas-CLADIT-2024.png"
                 },
                 {
                     "nombre": "Ana Maria de Alba",
                     "puesto": "Presidente CSMB",
                     "institucion": "RiskRator",
                     "pais": "ESTADOS UNIDOS",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.01.00.jpeg"
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/USA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/ANA-MARIA-Conferencistas-CLADIT-2024.png"
                 },
                 {
                     "nombre": "Glenda Morales",
                     "puesto": "Gerente de cumplimiento",
                     "institucion": "Banco PROMERICA",
                     "pais": "GUATEMALA",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.01.33.jpeg",
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GLENDA-MORALES-Conferencistas-CLADIT-2024.png",
                     "tipo_speaker": "MODERADORA"
                 }
             ]
@@ -270,7 +214,7 @@
                     "puesto": "",
                     "institucion": "BAC Latam",
                     "pais": "PAIS",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.40.jpeg"
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/SILUETA-Conferencistas-CLADIT-2024.png"
                 }
             ]
         },
@@ -285,7 +229,8 @@
                     "puesto": "Director, América Latina y el Caribe, Crímenes Financieros y Cumplimiento",
                     "institucion": "LexisNexis Risk Solutions",
                     "pais": "MÉXICO- USA",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.01.56.jpeg"
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/MEXICO-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/SANCHEZ-Conferencistas-CLADIT-2024.png"
                 }
             ]
         },
@@ -307,7 +252,8 @@
                     "puesto": "Especialista AML",
                     "institucion": "Invitado especial del Crédito Hipotecario Nacional, CHN",
                     "pais": "VENEZUELA, MIAMI",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.58.56.jpeg"
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/USA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/foto+de+Medarano.png"
                 }
             ]
         },
@@ -322,7 +268,8 @@
                     "puesto": "",
                     "institucion": "Intendencia de Verifcación Especial -IVE",
                     "pais": "GUATEMALA",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.40.jpeg"
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/SILUETA-Conferencistas-CLADIT-2024.png"
                 }
             ]
         },
@@ -335,9 +282,10 @@
                 {
                     "nombre": "Representante",
                     "puesto": "",
-                    "institucion": "EMPRESA",
+                    "institucion": "Risk Consulting Global Group",
                     "pais": "GUATEMALA",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.40.jpeg"
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/SILUETA-Conferencistas-CLADIT-2024.png"
                 }
             ]
         },
@@ -352,14 +300,15 @@
             "fecha": "Jueves 16 de Mayo",
             "hora_inicio": "17:00",
             "hora_fin": "17:45",
-            "concepto": "Tema pendiente",
+            "concepto": "Auditoría: El pilar que valida la efectividad de los programas PLD-FT",
             "speakers": [
                 {
                     "nombre": "Representante",
                     "puesto": "",
-                    "institucion": "EMPRESA",
+                    "institucion": "BDO",
                     "pais": "GUATEMALA",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.40.jpeg"
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/SILUETA-Conferencistas-CLADIT-2024.png"
                 }
             ]
         },
@@ -374,21 +323,24 @@
                     "puesto": "Director del Departamento de Prevención y Cumplimiento",
                     "institucion": "Intendencia de Verifcación Especial -IVE-",
                     "pais": "GUATEMALA",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.40.jpeg"
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/SILUETA-Conferencistas-CLADIT-2024.png"
                 },
                 {
                     "nombre": "Juan Carlos Monroy",
                     "puesto": "Director",
                     "institucion": "Superintendencia de Bancos de Guatemala -SIB",
                     "pais": "GUATEMALA",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.02.29.jpeg"
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/MONROY-Conferencistas-CLADIT-2024.png"
                 },
                 {
                     "nombre": "Lic. Jorge Gonzalez",
                     "puesto": "Oficial de Cumplimiento",
                     "institucion": "INTERBANCO",
                     "pais": "GUATEMALA",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.16.jpeg",
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/Lic+Gonzalez.png",
                     "tipo_speaker": "MODERADOR"
                 }
             ]
@@ -404,14 +356,16 @@
                     "puesto": "Consultora Independiente y Facilitadora de la EBG",
                     "institucion": "ESCUELA BANCARIA DE GUATEMALA",
                     "pais": "GUATEMALA",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.02.43.jpeg"
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/ZAYAS-Conferencistas-CLADIT-2024.png"
                 },
                 {
                     "nombre": "Lic. Ricardo Vélez",
                     "puesto": "Consultor Independiente, Facilitador EBG",
                     "institucion": "ESCUELA BANCARIA DE GUATEMALA",
                     "pais": "GUATEMALA",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.02.52.jpeg"
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/VELEZ-Conferencistas-CLADIT-2024.png"
                 }
             ]
         }
