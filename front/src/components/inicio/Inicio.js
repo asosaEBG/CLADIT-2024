@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import "./style.css";
@@ -13,7 +13,35 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import { CardActionArea, CardActions } from "@mui/material";
 import conferencistas_json from "../../info/conferencistas.json";
+import { useTheme } from "@mui/material/styles";
+import MobileStepper from "@mui/material/MobileStepper";
+import Paper from "@mui/material/Paper";
+import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
+import SwipeableViews from "react-swipeable-views";
+import { autoPlay } from "react-swipeable-views-utils";
+const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+
 const Inicio = () => {
+  const [cambios, setCambios] = useState(0);
+  const theme = useTheme();
+  const [activeStep, setActiveStep] = React.useState(0);
+  const maxSteps = conferencistas_json.conferencistas.length;
+  useEffect(() => {}, [cambios]);
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    setCambios(cambios + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    setCambios(cambios + 1);
+  };
+
+  const handleStepChange = (step) => {
+    setActiveStep(step);
+    setCambios(cambios + 1);
+  };
   return (
     <Box paddingTop={10}>
       <Stack spacing={4} alignItems="center">
@@ -161,11 +189,10 @@ const Inicio = () => {
             </ImageListItem>
           </ImageList>
         </Stack>
-        <Stack spacing={1}>
+        <Stack spacing={3}>
           <Typography variant="h3" style={{ textAlign: "center" }}>
             Patrocinadores
           </Typography>
-          <Divider style={{ backgroundColor: "#397d51", height: "5px" }} />
           <Typography variant="h4" style={{ textAlign: "center" }}>
             Top Diamante
           </Typography>
@@ -223,7 +250,6 @@ const Inicio = () => {
           <ImageList cols={10}>
             <ImageListItem></ImageListItem>
             <ImageListItem></ImageListItem>
-
             <ImageListItem cols={2} style={{ padding: "5%" }}>
               <img
                 style={{ width: "100%", objectFit: "contain" }}
@@ -255,7 +281,6 @@ const Inicio = () => {
           <Typography variant="h4" style={{ textAlign: "center" }}>
             Plata
           </Typography>
-
           <ImageList cols={10}>
             <ImageListItem></ImageListItem>
             <ImageListItem></ImageListItem>
@@ -280,55 +305,102 @@ const Inicio = () => {
             <ImageListItem></ImageListItem>
             <ImageListItem></ImageListItem>
           </ImageList>
-        </Stack>
-        <Stack spacing={5}>
           <Divider style={{ backgroundColor: "#397d51", height: "5px" }} />
-          <Typography variant="h3" style={{ textAlign: "center" }}>
-            Conferencistas
-          </Typography>
-          <Grid container justifyContent="center">
-            {conferencistas_json.conferencistas.map((actual, index) => (
-              <Grid
-                xs={6}
-                md={3}
-                lg={2}
-                p={5}
-                key={index}
-                style={{ display: "flex" }}
-              >
-                <Card
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    width: "100%",
-                  }}
+        </Stack>
+        <Typography variant="h3" style={{ textAlign: "center" }}>
+          Conferencistas
+        </Typography>
+        <Grid container justifyContent="center" alignItems="center">
+          <Grid xs={12} md={12} lg={12}>
+            <AutoPlaySwipeableViews
+              axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+              index={activeStep}
+              onChangeIndex={handleStepChange}
+              enableMouseEvents
+            >
+              {conferencistas_json.conferencistas.map((actual, index) => (
+                <Box
+                  alignItems="center"
+                  justifyContent="center"
+                  key={index}
+                  style={{ width: "100%" }}
                 >
-                  <CardActionArea>
-                    <CardMedia
-                      component="img"
+                  {Math.abs(activeStep - index) <= 2 ? (
+                    <Card
                       style={{
+                        display: "flex",
+                        flexDirection: "column",
                         width: "100%",
-                        height: "140px",
-                        objectFit: "contain",
+                        padding: "5%",
                       }}
-                      image={actual.foto}
-                      alt="conferencista-cladit"
-                    />
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        {actual.nombre}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {actual.pais}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </Grid>
-            ))}
+                    >
+                      <CardActionArea>
+                        <CardMedia
+                          component="img"
+                          style={{
+                            width: "100%",
+                            height: "140px",
+                            objectFit: "contain",
+                          }}
+                          image={actual.foto}
+                          alt="conferencista-cladit"
+                        />
+                        <CardContent>
+                          <Typography gutterBottom variant="h5" component="div">
+                            {actual.nombre}
+                          </Typography>
+                          <Typography variant="body" color="text.secondary">
+                            {actual.puesto}
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            {actual.institucion}
+                          </Typography>
+                          <Typography variant="body3" color="text.secondary">
+                            {actual.pais}
+                          </Typography>
+                        </CardContent>
+                      </CardActionArea>
+                    </Card>
+                  ) : null}
+                </Box>
+              ))}
+            </AutoPlaySwipeableViews>
           </Grid>
-          <Divider style={{ backgroundColor: "#397d51", height: "5px" }} />
-        </Stack>
+          <Grid xs={12} md={12} lg={12} style={{ width: "100%" }}>
+            <MobileStepper
+              style={{ width: "100%" }}
+              steps={maxSteps}
+              position="static"
+              activeStep={activeStep}
+              nextButton={
+                <Button
+                  size="small"
+                  onClick={handleNext}
+                  disabled={activeStep === maxSteps - 1}
+                >
+                  {theme.direction === "rtl" ? (
+                    <KeyboardArrowLeft />
+                  ) : (
+                    <KeyboardArrowRight />
+                  )}
+                </Button>
+              }
+              backButton={
+                <Button
+                  size="small"
+                  onClick={handleBack}
+                  disabled={activeStep === 0}
+                >
+                  {theme.direction === "rtl" ? (
+                    <KeyboardArrowRight />
+                  ) : (
+                    <KeyboardArrowLeft />
+                  )}
+                </Button>
+              }
+            />
+          </Grid>
+        </Grid>
         <Grid container alignItems="center" justifyContent="center">
           <Grid xs={12} md={6} lg={6}>
             <img
