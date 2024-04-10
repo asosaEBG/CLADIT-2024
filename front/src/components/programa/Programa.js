@@ -1,7 +1,7 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
-import { Grid, Typography, Paper, Divider, Alert } from "@mui/material";
+import { Grid, Typography, Paper, Alert } from "@mui/material";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import Button from "@mui/material/Button";
 import programa_json from "../../info/programa.json";
@@ -61,8 +61,8 @@ const Programa = () => {
         <Stack
           spacing={5}
           sx={{
-            paddingLeft: { lg: "15%", xs: "2%", md: "5%" },
-            paddingRight: { lg: "15%", xs: "2%", md: "5%" },
+            paddingLeft: { lg: "5%", xs: "1%", md: "3%" },
+            paddingRight: { lg: "5%", xs: "1%", md: "3%" },
           }}
         >
           {talleres_json.talleres.map((actual, index) => (
@@ -145,7 +145,7 @@ const Programa = () => {
                             <img
                               src={speaker.bandera}
                               alt="bandera"
-                              style={{ width: "45%" }}
+                              style={{ width: "15%" }}
                             />
                           )}
                         </Grid>
@@ -160,8 +160,8 @@ const Programa = () => {
         <Stack
           spacing={5}
           sx={{
-            paddingLeft: { lg: "15%", xs: "2%", md: "5%" },
-            paddingRight: { lg: "15%", xs: "2%", md: "5%" },
+            paddingLeft: { lg: "5%", xs: "1%", md: "3%" },
+            paddingRight: { lg: "5%", xs: "1%", md: "3%" },
           }}
         >
           {programa_json.programa.map((actual, index) => (
@@ -249,7 +249,7 @@ const Programa = () => {
                         <img
                           src={speaker.bandera}
                           alt="bandera"
-                          style={{ width: "45%" }}
+                          style={{ width: "15%" }}
                         />
                       )}
                     </Grid>
