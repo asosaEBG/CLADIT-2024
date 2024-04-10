@@ -1,0 +1,90 @@
+{
+    "talleres": [
+        {
+            "sector": "Sector Bancario",
+            "talleres": [
+                {
+                    "fecha": "Miércoles 15 de Mayo",
+                    "hora_inicio": "08:30",
+                    "hora_fin": "10:30",
+                    "concepto": "Taller 1: Como realizar investigaciones de manera eficiente en el área de cumplimiento ",
+                    "speakers": [
+                        {
+                            "nombre": "Juan Carlos Medrano",
+                            "puesto": "Especialista AML",
+                            "institucion": "Invitado especial del Crédito Hipotecario Nacional, CHN",
+                            "pais": "VENEZUELA, MIAMI",
+                            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/USA-banderas.png",
+                            "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/foto+de+Medarano.png"
+                        }
+                    ]
+                },
+                {
+                    "fecha": "Miércoles 15 de Mayo",
+                    "hora_inicio": "10:30",
+                    "hora_fin": "12:20",
+                    "concepto": "Taller 2: KYC Perpetuo: Garantizando la integridad financiera en el sector bancario de Guatemala",
+                    "speakers": [
+                        {
+                            "nombre": "Juan Uribe",
+                            "puesto": "Gerente Planeación de Mercados LATAM, Crímenes Financieros y Cumplimiento",
+                            "institucion": "LexisNexis Risk Solutions",
+                            "pais": "COLOMBIA - USA",
+                            "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/URIBE-Conferencistas-CLADIT-2024.png"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "sector": "Sector Cooperativas de ahorro y crédito",
+            "talleres": [
+                {
+                    "fecha": "Miércoles 15 de Mayo",
+                    "hora_inicio": "08:30",
+                    "hora_fin": "11:30",
+                    "concepto": "Taller 1: Matrices de riesgo LDFT según guía IVE ",
+                    "speakers": [
+                        {
+                            "nombre": "Lic. Jorge Gonzalez",
+                            "puesto": "Oficial de Cumplimiento",
+                            "institucion": "INTERBANCO",
+                            "pais": "GUATEMALA",
+                            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+                            "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/Lic+Gonzalez.png",
+                            "tipo_speaker": "MODERADOR"
+                        }
+                    ]
+                },
+                {
+                    "fecha": "Miércoles 15 de Mayo",
+                    "hora_inicio": "11:30",
+                    "hora_fin": "12:30",
+                    "concepto": "Taller 2: La Responsabilidad de la Auditoría Interna en el desarrollo de un aseguramiento razonable en las Cooperativas",
+                    "speakers": [
+                        {
+                            "nombre": "Gabriel Quinteros",
+                            "puesto": "Presidente",
+                            "institucion": "ASOCUPA",
+                            "pais": "PANAMÁ",
+                            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/PANAMA-banderas.png",
+                            "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/QUINTEROS-Conferencistas-CLADIT-2024.png"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "sector": "Sector Otros sujetos obligados",
+            "talleres": [
+                {
+                    "fecha": "Miércoles 15 de Mayo",
+                    "hora_inicio": "08:30",
+                    "hora_fin": "12:30",
+                    "concepto": "Taller 1: Pendiente",
+                    "speakers": []
+                }               
+            ]
+        }
+    ]
+}

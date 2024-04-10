@@ -1,20 +1,19 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
-import {
-  Grid,
-  Typography,
-  Paper,
-  List,
-  ListItem,
-  Avatar,
-  ListItemAvatar,
-  Divider,
-  ListItemText,
-} from "@mui/material";
+import { Grid, Typography, Paper, Divider, Alert } from "@mui/material";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import Button from "@mui/material/Button";
 import programa_json from "../../info/programa.json";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import InfoIcon from "@mui/icons-material/Info";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import talleres_json from "../../info/talleres.json";
 const Programa = () => {
   return (
     <Box>
@@ -66,26 +65,166 @@ const Programa = () => {
             paddingRight: { lg: "15%", xs: "2%", md: "5%" },
           }}
         >
+          {talleres_json.talleres.map((actual, index) => (
+            <Paper
+              key={index}
+              elevation={5}
+              sx={{
+                padding: { lg: "3%", xs: "1%", md: "2%" },
+              }}
+            >
+              <Stack spacing={4}>
+                <Alert severity="success">{actual.sector}</Alert>
+                {actual.talleres.map((taller, indice) => (
+                  <Stack key={`taller-${index}`}>
+                    <List>
+                      <ListItem disablePadding>
+                        <ListItemButton>
+                          <ListItemIcon>
+                            <CalendarMonthIcon />
+                          </ListItemIcon>
+                          <ListItemText primary={taller.fecha} />
+                        </ListItemButton>
+                      </ListItem>
+                      <ListItem disablePadding>
+                        <ListItemButton>
+                          <ListItemIcon>
+                            <AccessTimeIcon />
+                          </ListItemIcon>
+                          <ListItemText
+                            primary={`${taller.hora_inicio} - ${taller.hora_fin}`}
+                          />
+                        </ListItemButton>
+                      </ListItem>
+                      <ListItem disablePadding>
+                        <ListItemButton>
+                          <ListItemIcon>
+                            <InfoIcon />
+                          </ListItemIcon>
+                          <ListItemText primary={taller.concepto} />
+                        </ListItemButton>
+                      </ListItem>
+                    </List>
+                    {taller.speakers.map((speaker, indice) => (
+                      <Grid
+                        container
+                        alignItems="center"
+                        justifyContent="center"
+                        key={indice}
+                      >
+                        <Grid xs={2} md={2} lg={2}>
+                          <img src={speaker.foto} style={{ width: "100%" }} />
+                        </Grid>
+                        <Grid
+                          xs={8}
+                          md={8}
+                          lg={8}
+                          style={{ paddingLeft: "2%" }}
+                        >
+                          <Typography variant="p" component="strong">
+                            {speaker.nombre}
+                            <br />
+                          </Typography>
+                          <Typography variant="p">
+                            {speaker.puesto}
+                            <br />
+                          </Typography>
+                          <Typography variant="p">
+                            {speaker.institucion}
+                            <br />
+                          </Typography>
+                          <Typography variant="p">
+                            {speaker.pais}
+                            <br />
+                          </Typography>
+                          <Typography variant="p" component="strong">
+                            {speaker.tipo_speaker}
+                            <br />
+                          </Typography>
+                          {speaker.bandera && (
+                            <img
+                              src={speaker.bandera}
+                              alt="bandera"
+                              style={{ width: "45%" }}
+                            />
+                          )}
+                        </Grid>
+                      </Grid>
+                    ))}
+                  </Stack>
+                ))}
+              </Stack>
+            </Paper>
+          ))}
+        </Stack>
+        <Stack
+          spacing={5}
+          sx={{
+            paddingLeft: { lg: "15%", xs: "2%", md: "5%" },
+            paddingRight: { lg: "15%", xs: "2%", md: "5%" },
+          }}
+        >
           {programa_json.programa.map((actual, index) => (
             <Paper
               key={index}
               elevation={5}
-              sx={{ padding: { lg: "5%", xs: "1%", md: "2%" } }}
+              sx={{
+                padding: { lg: "3%", xs: "1%", md: "2%" },
+                backgroundColor:
+                  actual.speakers.length > 0 ? "white" : "#397d51",
+                color: actual.speakers.length > 0 ? "black" : "white",
+              }}
             >
               <Stack spacing={3}>
-                <Typography variant="p" component="strong">
-                  {actual.fecha}
-                </Typography>
-                <Typography variant="p" component="strong">
-                  {actual.hora_inicio} - {actual.hora_fin}
-                </Typography>
-                <Typography variant="h5">{actual.concepto}</Typography>
+                <List>
+                  <ListItem disablePadding>
+                    <ListItemButton>
+                      <ListItemIcon>
+                        <CalendarMonthIcon
+                          style={{
+                            color:
+                              actual.speakers.length > 0 ? "black" : "white",
+                          }}
+                        />
+                      </ListItemIcon>
+                      <ListItemText primary={actual.fecha} />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem disablePadding>
+                    <ListItemButton>
+                      <ListItemIcon>
+                        <AccessTimeIcon
+                          style={{
+                            color:
+                              actual.speakers.length > 0 ? "black" : "white",
+                          }}
+                        />
+                      </ListItemIcon>
+                      <ListItemText
+                        primary={`${actual.hora_inicio} - ${actual.hora_fin}`}
+                      />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem disablePadding>
+                    <ListItemButton>
+                      <ListItemIcon>
+                        <InfoIcon
+                          style={{
+                            color:
+                              actual.speakers.length > 0 ? "black" : "white",
+                          }}
+                        />
+                      </ListItemIcon>
+                      <ListItemText primary={actual.concepto} />
+                    </ListItemButton>
+                  </ListItem>
+                </List>
                 {actual.speakers.map((speaker, indice) => (
                   <Grid container alignItems="center" justifyContent="center">
                     <Grid xs={2} md={2} lg={2}>
                       <img src={speaker.foto} style={{ width: "100%" }} />
                     </Grid>
-                    <Grid xs={8} md={8} lg={8}>
+                    <Grid xs={8} md={8} lg={8} style={{ paddingLeft: "2%" }}>
                       <Typography variant="p" component="strong">
                         {speaker.nombre}
                         <br />
@@ -106,6 +245,13 @@ const Programa = () => {
                         {speaker.tipo_speaker}
                         <br />
                       </Typography>
+                      {speaker.bandera && (
+                        <img
+                          src={speaker.bandera}
+                          alt="bandera"
+                          style={{ width: "45%" }}
+                        />
+                      )}
                     </Grid>
                   </Grid>
                 ))}
