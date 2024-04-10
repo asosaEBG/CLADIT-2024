@@ -1,12 +1,19 @@
 import React from "react";
 import Stack from "@mui/material/Stack";
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, Box, Divider } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import talleres_json from "../../info/talleres.json";
+import InfoIcon from "@mui/icons-material/Info";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
 const Talleres = () => {
   return (
-    <Stack spacing={3} alignItems="center">
+    <Stack spacing={3} alignItems="center" p={5}>
       <Grid container p={2}>
         <Grid xs={12} md={12} lg={6} style={{ textAlign: "center" }}>
           <Typography
@@ -57,110 +64,92 @@ const Talleres = () => {
           />
         </Grid>
       </Grid>
-      <Grid container p={5}>
-        <Grid
-          xs={12}
-          md={12}
-          lg={12}
-          style={{ backgroundColor: "#397d51" }}
-          marginBottom={4}
-        >
-          <Typography
-            variant="h3"
-            style={{ color: "white", textAlign: "center" }}
+      {talleres_json.talleres.map((actual, index) => (
+        <Stack spacing={4} p={5} key={"taller-" + index}>
+          <Box
+            xs={12}
+            md={12}
+            lg={12}
+            style={{ backgroundColor: "#397d51" }}
+            marginBottom={4}
           >
-            <strong>Sector Bancario</strong>
-          </Typography>
-        </Grid>
-        <Grid xs={12} md={12} lg={4} style={{ textAlign: "center" }}>
-          <img
-            src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/foto+de+Medarano.png"
-            alt="conferencista"
-            style={{ width: "50%" }}
-          />
-        </Grid>
-        <Grid xs={12} md={12} lg={4} style={{ textAlign: "left" }}>
-          <Stack>
-            <Typography variant="h4">
-              <strong>TALLER</strong>
-            </Typography>
-            <Typography variant="P" style={{ fontSize: "2em" }}>
-              Como realizar investigaciones de manera eficiente en el área de
-              cumplimiento
-            </Typography>
-            <Typography variant="p" style={{ fontSize: "1.5em" }}>
-              <AccessTimeIcon />
-              &nbsp;8:30 AM - 10:30 AM
-            </Typography>
             <Typography
-              variant="p"
-              style={{ color: "#397d51", fontSize: "1.5em" }}
+              variant="h3"
+              style={{ color: "white", textAlign: "center" }}
             >
-              Juan Carlos Medrano
+              <strong>{actual.sector}</strong>
             </Typography>
-            <Typography variant="p">Especialista AML</Typography>
-            <Typography variant="p">
-              Invitado especial del Crédito Hipotecario Nacional, CHN
-            </Typography>
-            <Typography variant="p">Venezuela, Miami</Typography>
-            <img
-              src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/Banderas+USA+y+VENEZUELA.png"
-              alt="img-paises"
-              style={{ width: "20%" }}
-            />
-          </Stack>
-        </Grid>
-      </Grid>
-      <Grid container p={5}>
-        <Grid
-          xs={12}
-          md={12}
-          lg={12}
-          style={{ backgroundColor: "#397d51" }}
-          marginBottom={4}
-        >
-          <Typography
-            variant="h3"
-            style={{ color: "white", textAlign: "center" }}
-          >
-            <strong>Sector Cooperativas de Ahorro y Crédito</strong>
-          </Typography>
-        </Grid>
-        <Grid xs={12} md={12} lg={4} style={{ textAlign: "center" }}>
-          <img
-            src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/Lic+Gonzalez.png"
-            alt="conferencista"
-            style={{ width: "50%" }}
-          />
-        </Grid>
-        <Grid xs={12} md={12} lg={4} style={{ textAlign: "left" }}>
-          <Stack>
-            <Typography variant="h4">
-              <strong>TALLER</strong>
-            </Typography>
-            <Typography variant="P" style={{ fontSize: "2em" }}>
-              Matrices de Riesgo LDFT según guía IVE
-            </Typography>
-            <Typography variant="p" style={{ fontSize: "1.5em" }}>
-              <AccessTimeIcon />
-              &nbsp;8:30 AM - 12:30 AM
-            </Typography>
-            <Typography
-              variant="p"
-              style={{ color: "#397d51", fontSize: "1.5em" }}
-            >
-              Lic. Jorge González
-            </Typography>
-            <Typography variant="p">Oficial de Cumplimiento</Typography>
-            <Typography variant="p">INTERBANCO</Typography>
-            <img
-              src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/Bandera+Guatemala.png"
-              alt="img-paises"
-              style={{ width: "20%" }}
-            />
-          </Stack>
-        </Grid>
-      </Grid>
+          </Box>
+          {actual.talleres.map((taller, indice) => (
+            <Stack spacing={3} key={"talleres-" + indice}>
+              <List>
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <ListItemIcon>
+                      <CalendarMonthIcon />
+                    </ListItemIcon>
+                    <ListItemText primary={taller.fecha} />
+                  </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <ListItemIcon>
+                      <AccessTimeIcon />
+                    </ListItemIcon>
+                    <ListItemText
+                      primary={`${taller.hora_inicio} - ${taller.hora_fin}`}
+                    />
+                  </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <ListItemIcon>
+                      <InfoIcon />
+                    </ListItemIcon>
+                    <ListItemText primary={taller.concepto} />
+                  </ListItemButton>
+                </ListItem>
+              </List>
+              {taller.speakers.map((speaker, indicador) => (
+                <Grid container key={"speaker-" + indicador}>
+                  <Grid xs={4} md={4} lg={4} style={{ textAlign: "center" }}>
+                    <img
+                      src={speaker.foto}
+                      alt="conferencista"
+                      style={{ width: "50%" }}
+                    />
+                  </Grid>
+                  <Grid xs={8} md={8} lg={8} style={{ textAlign: "left" }}>
+                    <Stack>
+                      <Typography
+                        variant="p"
+                        style={{ color: "#397d51", fontSize: "1.5em" }}
+                      >
+                        {speaker.nombre}
+                      </Typography>
+                      <Typography variant="p">{speaker.puesto}</Typography>
+                      <Typography variant="p">{speaker.institucion}</Typography>
+                      <Typography variant="p">{speaker.pais}</Typography>
+                      {speaker.bandera && (
+                        <img
+                          src={speaker.bandera}
+                          alt="img-paises"
+                          style={{ width: "15%" }}
+                        />
+                      )}
+                    </Stack>
+                  </Grid>
+                </Grid>
+              ))}
+              {indice != actual.talleres.length - 1 && (
+                <Divider
+                  style={{ backgroundColor: "#397d51", height: "2px" }}
+                />
+              )}
+            </Stack>
+          ))}
+        </Stack>
+      ))}
     </Stack>
   );
 };
