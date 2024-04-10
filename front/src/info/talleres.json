@@ -30,7 +30,7 @@
                             "puesto": "Gerente Planeación de Mercados LATAM, Crímenes Financieros y Cumplimiento",
                             "institucion": "LexisNexis Risk Solutions",
                             "pais": "COLOMBIA - USA",
-                            "bandera":"https://escuela-bancaria.s3.us-east-2.amazonaws.com/COLOMBIA-USA-banderas.png",
+                            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/COLOMBIA-USA-banderas.png",
                             "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/URIBE-Conferencistas-CLADIT-2024.png"
                         }
                     ]
@@ -83,8 +83,17 @@
                     "hora_inicio": "08:30",
                     "hora_fin": "12:30",
                     "concepto": "Taller 1: Pendiente",
-                    "speakers": []
-                }               
+                    "speakers": [
+                        {
+                            "nombre": "Representante",
+                            "puesto": "",
+                            "institucion": "Empresa",
+                            "pais": "GUATEMALA",
+                            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+                            "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/SILUETA-Conferencistas-CLADIT-2024.png"
+                        }
+                    ]
+                }
             ]
         }
     ]
