@@ -5,6 +5,7 @@
             "puesto": "Gerente Planeación de Mercados LATAM, Crímenes Financieros y Cumplimiento",
             "institucion": "LexisNexis Risk Solutions",
             "pais": "COLOMBIA - USA",
+            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/COLOMBIA-USA-banderas.png",
             "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.08.jpeg"
         },
         {
@@ -12,6 +13,7 @@
             "puesto": "Presidente",
             "institucion": "ASOCUPA",
             "pais": "PANAMÁ",
+            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/PANAMA-banderas-fix.png",
             "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.25.jpeg"
         },
         {
@@ -19,6 +21,7 @@
             "puesto": "Gerente General",
             "institucion": "Grupo AMLC",
             "pais": "BOLIVIA",
+            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/BOLIVIA-banderas-fix.png",
             "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.00.36.jpeg"
         },
         {
@@ -26,6 +29,7 @@
             "puesto": "Profesora de práctica",
             "institucion": "Centro de Estudios de Defensa Hemisférica William J. Perry en la Universidad Nacional de Defensa",
             "pais": "ESTADOS UNIDOS",
+            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/USA-banderas-fix.png",
             "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.00.52.jpeg"
         },
         {
@@ -33,6 +37,7 @@
             "puesto": "Presidente CSMB",
             "institucion": "RiskRator",
             "pais": "ESTADOS UNIDOS",
+            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/USA-banderas-fix.png",
             "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.01.00.jpeg"
         },
         {
@@ -40,6 +45,7 @@
             "puesto": "Co-Fundador y CEO",
             "institucion": "Inbestgo",
             "pais": "GUATEMALA",
+            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas-fix.png",
             "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.01.24.jpeg"
         },
         {
@@ -47,13 +53,15 @@
             "puesto": "Gerente de cumplimiento",
             "institucion": "Banco PROMERICA",
             "pais": "GUATEMALA",
+            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas-fix.png",
             "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.01.33.jpeg"
         },
         {
             "nombre": "Adrián Sánchez",
             "puesto": "Director, América Latina y el Caribe, Crímenes Financieros y Cumplimiento",
             "institucion": "LexisNexis Risk Solutions",
-            "pais": "MÉXICO- USA",
+            "pais": "MÉXICO - USA",
+            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/MEX-USA-banderas.png",
             "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.01.56.jpeg"
         },
         {
@@ -61,6 +69,7 @@
             "puesto": "Especialista AML",
             "institucion": "Invitado especial del Crédito Hipotecario Nacional, CHN",
             "pais": "VENEZUELA, MIAMI",
+            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/VENEZUELA-USA-banderas.png",
             "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.58.56.jpeg"
         },
         {
@@ -68,6 +77,7 @@
             "puesto": "Director",
             "institucion": "Superintendencia de Bancos de Guatemala -SIB",
             "pais": "GUATEMALA",
+            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas-fix.png",
             "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.02.29.jpeg"
         },
         {
@@ -75,6 +85,7 @@
             "puesto": "Oficial de Cumplimiento",
             "institucion": "INTERBANCO",
             "pais": "GUATEMALA",
+            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas-fix.png",
             "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+15.59.16.jpeg"
         },
         {
@@ -82,6 +93,7 @@
             "puesto": "Consultora Independiente y Facilitadora de la EBG",
             "institucion": "ESCUELA BANCARIA DE GUATEMALA",
             "pais": "GUATEMALA",
+            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas-fix.png",
             "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.02.43.jpeg"
         },
         {
@@ -89,6 +101,7 @@
             "puesto": "Consultor Independiente, Facilitador EBG",
             "institucion": "ESCUELA BANCARIA DE GUATEMALA",
             "pais": "GUATEMALA",
+            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas-fix.png",
             "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.02.52.jpeg"
         }
     ]
