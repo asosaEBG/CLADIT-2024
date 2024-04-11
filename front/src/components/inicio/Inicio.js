@@ -20,13 +20,19 @@ import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
+const helpers = require("../../helpers/helpers");
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const Inicio = () => {
   const [cambios, setCambios] = useState(0);
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = conferencistas_json.conferencistas.length;
+  const arr_expositores = helpers.chunkArray(
+    conferencistas_json.conferencistas,
+    4
+  );
+  const maxSteps = arr_expositores.length;
+
   useEffect(() => {}, [cambios]);
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -318,7 +324,7 @@ const Inicio = () => {
               onChangeIndex={handleStepChange}
               enableMouseEvents
             >
-              {conferencistas_json.conferencistas.map((actual, index) => (
+              {arr_expositores.map((actual, index) => (
                 <Box
                   alignItems="center"
                   justifyContent="center"
@@ -326,41 +332,69 @@ const Inicio = () => {
                   style={{ width: "100%" }}
                 >
                   {Math.abs(activeStep - index) <= 2 ? (
-                    <Card
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        width: "100%",
-                        padding: "5%",
-                      }}
+                    <Grid
+                      container
+                      justifyContent="center"
+                      alignItems="stretch"
                     >
-                      <CardActionArea>
-                        <CardMedia
-                          component="img"
-                          style={{
-                            width: "100%",
-                            height: "140px",
-                            objectFit: "contain",
-                          }}
-                          image={actual.foto}
-                          alt="conferencista-cladit"
-                        />
-                        <CardContent>
-                          <Typography gutterBottom variant="h5" component="div">
-                            {actual.nombre}
-                          </Typography>
-                          <Typography variant="body" color="text.secondary">
-                            {actual.puesto}
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                            {actual.institucion}
-                          </Typography>
-                          <Typography variant="body3" color="text.secondary">
-                            {actual.pais}
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                    </Card>
+                      {actual.map((speaker, indice) => (
+                        <Grid
+                          xs={6}
+                          md={6}
+                          lg={3}
+                          item
+                          key={`speaker-${indice}`}
+                          style={{ display: "flex" }}
+                          p={5}
+                        >
+                          <Card
+                            style={{
+                              display: "flex",
+                              flexDirection: "column",
+                              width: "100%",
+                            }}
+                          >
+                            <CardMedia
+                              component="img"
+                              style={{
+                                width: "100%",
+                                height: "140px",
+                                objectFit: "contain",
+                                alignSelf: "flex-start", // Align photo to the top
+                              }}
+                              image={speaker.foto}
+                              alt="conferencista-cladit"
+                            />
+                            <CardContent style={{ alignSelf: "flex-start" }}>
+                              {" "}
+                              {/* Align content to the top */}
+                              <Typography
+                                gutterBottom
+                                variant="h5"
+                                component="div"
+                              >
+                                {speaker.nombre}
+                              </Typography>
+                              <Typography variant="body" color="text.secondary">
+                                {speaker.puesto}
+                              </Typography>
+                              <Typography
+                                variant="body2"
+                                color="text.secondary"
+                              >
+                                {speaker.institucion}
+                              </Typography>
+                              <Typography
+                                variant="body3"
+                                color="text.secondary"
+                              >
+                                {speaker.pais}
+                              </Typography>
+                            </CardContent>
+                          </Card>
+                        </Grid>
+                      ))}
+                    </Grid>
                   ) : null}
                 </Box>
               ))}
