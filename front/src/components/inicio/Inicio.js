@@ -242,7 +242,7 @@ const Inicio = () => {
             <ImageListItem></ImageListItem>
             <ImageListItem cols={2}>
               <img
-                style={{ width: "100%" }}
+                style={{ width: "100%", objectFit: "contain" }}
                 src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/1+BANRURAL.png`}
                 alt="cladit-img"
                 loading="lazy"
@@ -263,7 +263,7 @@ const Inicio = () => {
             <ImageListItem></ImageListItem>
             <ImageListItem cols={2} style={{ padding: "5%" }}>
               <img
-                style={{ width: "100%", objectFit: "contain" }}
+                style={{ height: "100px", width: "100%", objectFit: "contain" }}
                 src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/LNRS_CMYK_POS_+(2).jpg`}
                 alt="cladit-img"
                 loading="lazy"
@@ -271,7 +271,7 @@ const Inicio = () => {
             </ImageListItem>
             <ImageListItem cols={2} style={{ padding: "5%" }}>
               <img
-                style={{ width: "100%", objectFit: "contain" }}
+                style={{ height: "100px", width: "100%", objectFit: "contain" }}
                 src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/Risk+Consulting+Global+Group+-+1.png`}
                 alt="cladit-img"
                 loading="lazy"
@@ -291,7 +291,7 @@ const Inicio = () => {
             <ImageListItem></ImageListItem>
             <ImageListItem cols={2} style={{ padding: "5%" }}>
               <img
-                style={{ width: "100%", objectFit: "contain" }}
+                style={{ height: "100px", width: "100%", objectFit: "contain" }}
                 src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/logo+CHN.jpg`}
                 alt="cladit-img"
                 loading="lazy"
@@ -299,7 +299,7 @@ const Inicio = () => {
             </ImageListItem>
             <ImageListItem cols={2} style={{ padding: "5%" }}>
               <img
-                style={{ width: "100%", objectFit: "contain" }}
+                style={{ height: "100px", width: "100%", objectFit: "contain" }}
                 src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/logo+BI.png`}
                 alt="cladit-img"
                 loading="lazy"
@@ -307,7 +307,7 @@ const Inicio = () => {
             </ImageListItem>
             <ImageListItem cols={2} style={{ padding: "5%" }}>
               <img
-                style={{ width: "100%", objectFit: "contain" }}
+                style={{ height: "100px", width: "100%", objectFit: "contain" }}
                 src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/logo+Banco+Promerica.png`}
                 alt="cladit-img"
                 loading="lazy"
@@ -323,24 +323,30 @@ const Inicio = () => {
           <ImageList cols={10}>
             <ImageListItem></ImageListItem>
             <ImageListItem></ImageListItem>
-            <ImageListItem></ImageListItem>
-            <ImageListItem cols={2}>
+            <ImageListItem cols={2} style={{ padding: "5%" }}>
               <img
-                style={{ width: "100%" }}
+                style={{ height: "100px", width: "100%", objectFit: "contain" }}
                 src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/logo+AMLC.png`}
                 alt="cladit-img"
                 loading="lazy"
               />
             </ImageListItem>
-            <ImageListItem cols={2}>
+            <ImageListItem cols={2} style={{ padding: "5%" }}>
               <img
-                style={{ width: "100%" }}
+                style={{ height: "100px", width: "100%", objectFit: "contain" }}
                 src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/logo+interbanco.png`}
                 alt="cladit-img"
                 loading="lazy"
               />
             </ImageListItem>
-            <ImageListItem></ImageListItem>
+            <ImageListItem cols={2} style={{ padding: "5%" }}>
+              <img
+                style={{ height: "100px", width: "100%", objectFit: "contain" }}
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-11+at+16.24.16.jpeg`}
+                alt="cladit-img"
+                loading="lazy"
+              />
+            </ImageListItem>
             <ImageListItem></ImageListItem>
             <ImageListItem></ImageListItem>
           </ImageList>
