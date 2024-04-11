@@ -323,6 +323,7 @@ const Inicio = () => {
               index={activeStep}
               onChangeIndex={handleStepChange}
               enableMouseEvents
+              interval={5000}
             >
               {arr_expositores.map((actual, index) => (
                 <Box
@@ -365,31 +366,50 @@ const Inicio = () => {
                               image={speaker.foto}
                               alt="conferencista-cladit"
                             />
-                            <CardContent style={{ alignSelf: "flex-start" }}>
-                              {" "}
-                              {/* Align content to the top */}
-                              <Typography
-                                gutterBottom
-                                variant="h5"
-                                component="div"
-                              >
-                                {speaker.nombre}
-                              </Typography>
-                              <Typography variant="body" color="text.secondary">
-                                {speaker.puesto}
-                              </Typography>
-                              <Typography
-                                variant="body2"
-                                color="text.secondary"
-                              >
-                                {speaker.institucion}
-                              </Typography>
-                              <Typography
-                                variant="body3"
-                                color="text.secondary"
-                              >
-                                {speaker.pais}
-                              </Typography>
+
+                            <CardContent
+                              style={{
+                                alignSelf: "flex-start",
+                                textAlign: "center",
+                                width: "100%",
+                              }}
+                            >
+                              <Stack alignItems="center">
+                                <img
+                                  src={speaker.bandera}
+                                  alt="bandera-speaker"
+                                  style={{
+                                    width: "25%",
+                                    height: "35px",
+                                    objectFit: "contain",
+                                  }}
+                                />
+                                <Typography
+                                  gutterBottom
+                                  variant="h5"
+                                  component="div"
+                                >
+                                  {speaker.nombre}
+                                </Typography>
+                                <Typography
+                                  variant="body"
+                                  color="text.secondary"
+                                >
+                                  {speaker.puesto}
+                                </Typography>
+                                <Typography
+                                  variant="body2"
+                                  color="text.secondary"
+                                >
+                                  {speaker.institucion}
+                                </Typography>
+                                <Typography
+                                  variant="body3"
+                                  color="text.secondary"
+                                >
+                                  {speaker.pais}
+                                </Typography>
+                              </Stack>
                             </CardContent>
                           </Card>
                         </Grid>
