@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import "./style.css";
@@ -20,6 +20,10 @@ import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
+import PauseIcon from "@mui/icons-material/Pause";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import FastRewindIcon from "@mui/icons-material/FastRewind";
+import FastForwardIcon from "@mui/icons-material/FastForward";
 const helpers = require("../../helpers/helpers");
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -27,6 +31,9 @@ const Inicio = () => {
   const [cambios, setCambios] = useState(0);
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef(null);
+
   const arr_expositores = helpers.chunkArray(
     conferencistas_json.conferencistas,
     4
@@ -48,6 +55,17 @@ const Inicio = () => {
     setActiveStep(step);
     setCambios(cambios + 1);
   };
+  const handleTogglePlay = () => {
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    } else {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
+    setCambios(cambios + 1);
+  };
+
   return (
     <Box paddingTop={10}>
       <Stack spacing={4} alignItems="center">
@@ -88,12 +106,27 @@ const Inicio = () => {
             style={{ textAlign: "justify" }}
           >
             <Grid xs={12} md={6} lg={6} p={3}>
-              <video controls style={{ width: "100%" }}>
-                <source
-                  src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/V3+B+Invitacion+Juan+Carlos+Medrano.mp4"
-                  type="video/mp4"
-                />
-              </video>
+              <Stack spacing={5}>
+                <Button
+                  onClick={handleTogglePlay}
+                  startIcon={isPlaying ? <PauseIcon /> : <PlayArrowIcon />}
+                  style={{
+                    backgroundColor: "#397d51",
+                    color: "white",
+                    border: "1px solid transparent",
+                  }}
+                >
+                  {isPlaying
+                    ? "Click para pausar video"
+                    : "Click para reproducir video"}
+                </Button>
+                <video ref={videoRef} controls style={{ width: "100%" }}>
+                  <source
+                    src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/V3+B+Invitacion+Juan+Carlos+Medrano.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </Stack>
             </Grid>
             <Grid xs={12} md={6} lg={6} p={3}>
               <Typography variant="h4">¿Qué es CLADIT?</Typography>
