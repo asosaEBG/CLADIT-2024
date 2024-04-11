@@ -52,8 +52,7 @@
                             "institucion": "INTERBANCO",
                             "pais": "GUATEMALA",
                             "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
-                            "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/Lic+Gonzalez.png",
-                            "tipo_speaker": "MODERADOR"
+                            "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/Lic+Gonzalez.png"
                         }
                     ]
                 },
