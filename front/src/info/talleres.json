@@ -86,10 +86,10 @@
                         {
                             "nombre": "Representante",
                             "puesto": "",
-                            "institucion": "Empresa",
-                            "pais": "GUATEMALA",
-                            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
-                            "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/SILUETA-Conferencistas-CLADIT-2024.png"
+                            "institucion": "Risk Consulting Global Group",
+                            "pais": "",
+                            "bandera": null,
+                            "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/Risk+Consulting+Global+Group+-+1.png"
                         }
                     ]
                 }
