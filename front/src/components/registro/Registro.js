@@ -24,7 +24,7 @@ const Registro = () => {
               </Typography>
               <Typography
                 variant="p"
-                style={{ fontSize: "1.5em", color: "red" }}
+                style={{ fontSize: "1.5em" }}
               >
                 Necesitará usar un e-mail diferente para cada persona. Si elige
                 la inscripción grupal el sistema le hará la sumatoria con los
