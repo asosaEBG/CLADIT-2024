@@ -38,7 +38,7 @@ const Programa = () => {
               </Typography>
               <Button
                 startIcon={<PictureAsPdfIcon />}
-                href="https://escuela-bancaria.s3.us-east-2.amazonaws.com/Programa+CLADIT+2024+(10).pdf"
+                href="https://escuela-bancaria.s3.us-east-2.amazonaws.com/Programa+CLADIT+2024+(12).pdf"
                 target="_blank"
                 style={{
                   backgroundColor: "#397d51",

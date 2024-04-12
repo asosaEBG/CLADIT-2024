@@ -44,7 +44,7 @@ const Talleres = () => {
             variant="p"
             style={{ textAlign: "center", color: "#1e3d52" }}
           >
-            <strong>*Cupo limitado</strong>
+            <strong>*Cupo limitado primeras 50 personas</strong>
           </Typography>
         </Grid>
         <Grid xs={12} md={12} lg={6} style={{ textAlign: "center" }}>
