@@ -25,7 +25,7 @@ const Patrocinio = () => {
           variant="h4"
           style={{ color: "#1e3d52", textAlign: "center" }}
         >
-          Diamante - US$6,700*
+          Diamante - US $6,700.00
         </Typography>
         <Typography variant="h5" style={{ textAlign: "left" }}>
           <strong>Derecho a los siguientes beneficios:</strong>
@@ -87,7 +87,7 @@ const Patrocinio = () => {
           variant="h4"
           style={{ color: "#1e3d52", textAlign: "center" }}
         >
-          Oro - US$5,000*
+          Oro - US $5,000.00
         </Typography>
         <Typography variant="h5" style={{ textAlign: "left" }}>
           <strong>Derecho a los siguientes beneficios:</strong>
@@ -137,7 +137,7 @@ const Patrocinio = () => {
           variant="h4"
           style={{ color: "#1e3d52", textAlign: "center" }}
         >
-          Plata - US$3,900*
+          Plata - US $3,900.00
         </Typography>
         <Typography variant="h5" style={{ textAlign: "left" }}>
           <strong>Derecho a los siguientes beneficios:</strong>
