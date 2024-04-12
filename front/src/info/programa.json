@@ -89,14 +89,14 @@
             "fecha": "Miércoles 15 de Mayo",
             "hora_inicio": "17:00",
             "hora_fin": "17:45",
-            "concepto": "Auditoría: El pilar que valida la efectividad de los programas PLD-FT",
+            "concepto": "Tipologías de lavado de dinero en Latinoamérica (GAFILAT, IVE, UIFs)",
             "speakers": [
                 {
-                    "nombre": "Representante",
-                    "puesto": "",
+                    "nombre": "Luis Ramiro Díaz Briceño",
+                    "puesto": "Chief Executive Officer (CEO)",
                     "institucion": "Risk Consulting Global Group",
-                    "pais": "GUATEMALA",
-                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+                    "pais": "COLOMBIA",
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/COLOMBIA-banderas.png",
                     "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/SILUETA-Conferencistas-CLADIT-2024.png"
                 }
             ]
@@ -277,15 +277,15 @@
             "fecha": "Jueves 16 de Mayo",
             "hora_inicio": "15:45",
             "hora_fin": "16:30",
-            "concepto": "Tema pendiente",
+            "concepto": "Gestión de Clientes con malas referencias, cuándo y cómo aplicar el derisking",
             "speakers": [
                 {
-                    "nombre": "Representante",
-                    "puesto": "",
+                    "nombre": "Claudia Armone",
+                    "puesto": "Gerente de Consultoría",
                     "institucion": "Risk Consulting Global Group",
-                    "pais": "GUATEMALA",
-                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/SILUETA-Conferencistas-CLADIT-2024.png"
+                    "pais": "COLOMBIA",
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/COLOMBIA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/Claudia+Armone.jpg"
                 }
             ]
         },

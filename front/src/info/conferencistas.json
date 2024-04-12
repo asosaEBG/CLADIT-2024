@@ -103,6 +103,14 @@
             "pais": "GUATEMALA",
             "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas-fix.png",
             "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-08+at+16.02.52.jpeg"
+        },
+        {
+            "nombre": "Claudia Armone",
+            "puesto": "Gerente de Consultoría",
+            "institucion": "Risk Consulting Global Group",
+            "pais": "COLOMBIA",
+            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/COLOMBIA-banderas.png",
+            "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/Claudia+Armone.jpg"
         }
     ]
 }
