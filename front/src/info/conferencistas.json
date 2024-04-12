@@ -110,7 +110,31 @@
             "institucion": "Risk Consulting Global Group",
             "pais": "COLOMBIA",
             "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/COLOMBIA-banderas.png",
-            "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/Claudia+Armone.jpg"
+            "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-12+at+08.51.25+(2).jpeg"
+        },
+        {
+            "nombre": "Juan Fernando Argueta",
+            "puesto": "Director del Departamento de Prevención y Cumplimiento",
+            "institucion": "Intendencia de Verifcación Especial -IVE-",
+            "pais": "GUATEMALA",
+            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+            "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-12+at+08.51.26.jpeg"
+        },
+        {
+            "nombre": "Luis Alfredo Nájera",
+            "puesto": "",
+            "institucion": "Intendencia de Verifcación Especial -IVE",
+            "pais": "GUATEMALA",
+            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+            "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-12+at+08.51.25+(1).jpeg"
+        },
+        {
+            "nombre": "Luis Ramiro Díaz Briceño",
+            "puesto": "Chief Executive Officer (CEO)",
+            "institucion": "Risk Consulting Global Group",
+            "pais": "COLOMBIA",
+            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/COLOMBIA-banderas.png",
+            "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-12+at+08.51.25.jpeg"
         }
     ]
 }
