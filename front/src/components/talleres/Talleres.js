@@ -83,7 +83,7 @@ const Talleres = () => {
             variant="h4"
             style={{ textAlign: "center", color: "#1e3d52" }}
           >
-            <strong>*Cupo limitado primeras 50 personas</strong>
+            <strong>*Cupo limitado primeras 100 personas</strong>
           </Typography>
           {actual.talleres.map((taller, indice) => (
             <Stack spacing={3} key={"talleres-" + indice}>
