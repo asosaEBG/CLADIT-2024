@@ -32,7 +32,7 @@ const Tarifas = () => {
           >
             <ul>
               <li>Conferencias</li>
-              <li>Taller precongreso</li>
+              <li>Taller precongreso (cupo limitado)</li>
               <li>Refrigerios a.m. y p.m.</li>
               <li>Almuerzos</li>
               <li>Acceso al área de stands</li>
