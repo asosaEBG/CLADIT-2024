@@ -300,22 +300,6 @@
             "fecha": "Jueves 16 de Mayo",
             "hora_inicio": "17:00",
             "hora_fin": "17:45",
-            "concepto": "Auditoría: El pilar que valida la efectividad de los programas PLD-FT",
-            "speakers": [
-                {
-                    "nombre": "Representante",
-                    "puesto": "",
-                    "institucion": "BDO",
-                    "pais": "GUATEMALA",
-                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/SILUETA-Conferencistas-CLADIT-2024.png"
-                }
-            ]
-        },
-        {
-            "fecha": "Jueves 16 de Mayo",
-            "hora_inicio": "17:45",
-            "hora_fin": "18:30",
             "concepto": "FORO \"Preguntemos a la IVE\" / Auditorías, RTS, FEIC, FEIS",
             "speakers": [
                 {
@@ -342,6 +326,22 @@
                     "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
                     "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/Lic+Gonzalez.png",
                     "tipo_speaker": "MODERADOR"
+                }
+            ]
+        },
+        {
+            "fecha": "Jueves 16 de Mayo",
+            "hora_inicio": "17:45",
+            "hora_fin": "18:30",
+            "concepto": "Auditoría: El pilar que valida la efectividad de los programas PLD-FT",
+            "speakers": [
+                {
+                    "nombre": "Representante",
+                    "puesto": "",
+                    "institucion": "BDO",
+                    "pais": "GUATEMALA",
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/SILUETA-Conferencistas-CLADIT-2024.png"
                 }
             ]
         },
