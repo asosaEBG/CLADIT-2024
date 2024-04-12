@@ -40,12 +40,6 @@ const Talleres = () => {
               &nbsp;Hotel Westin Camino Real z.10
             </strong>
           </Typography>
-          <Typography
-            variant="p"
-            style={{ textAlign: "center", color: "#1e3d52" }}
-          >
-            <strong>*Cupo limitado primeras 50 personas</strong>
-          </Typography>
         </Grid>
         <Grid xs={12} md={12} lg={6} style={{ textAlign: "center" }}>
           <Typography
@@ -65,12 +59,17 @@ const Talleres = () => {
         </Grid>
       </Grid>
       {talleres_json.talleres.map((actual, index) => (
-        <Stack spacing={4} p={5} key={"taller-" + index}>
+        <Stack
+          spacing={4}
+          p={5}
+          key={"taller-" + index}
+          style={{ width: "100%" }}
+        >
           <Box
             xs={12}
             md={12}
             lg={12}
-            style={{ backgroundColor: "#397d51" }}
+            style={{ backgroundColor: "#397d51", width: "100%" }}
             marginBottom={4}
           >
             <Typography
@@ -80,6 +79,12 @@ const Talleres = () => {
               <strong>{actual.sector}</strong>
             </Typography>
           </Box>
+          <Typography
+            variant="h4"
+            style={{ textAlign: "center", color: "#1e3d52" }}
+          >
+            <strong>*Cupo limitado primeras 50 personas</strong>
+          </Typography>
           {actual.talleres.map((taller, indice) => (
             <Stack spacing={3} key={"talleres-" + indice}>
               <List>
