@@ -122,10 +122,11 @@ const Inicio = () => {
                 </Button>
                 <video ref={videoRef} controls style={{ width: "100%" }}>
                   <source
-                    src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/V3+B+Invitacion+Juan+Carlos+Medrano.mp4"
+                    src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/LIC++JORGE+GONZALEZ+++CLADIT+2024.mp4"
                     type="video/mp4"
                   />
                 </video>
+               
               </Stack>
             </Grid>
             <Grid xs={12} md={6} lg={6} p={3}>
