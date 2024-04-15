@@ -289,7 +289,6 @@ const Inicio = () => {
           </Typography>
           <ImageList cols={10}>
             <ImageListItem></ImageListItem>
-            <ImageListItem></ImageListItem>
             <ImageListItem cols={2} style={{ padding: "5%" }}>
               <img
                 style={{ height: "100px", width: "100%", objectFit: "contain" }}
@@ -314,7 +313,14 @@ const Inicio = () => {
                 loading="lazy"
               />
             </ImageListItem>
-            <ImageListItem></ImageListItem>
+            <ImageListItem cols={2} style={{ padding: "5%" }}>
+              <img
+                style={{ height: "100px", width: "100%", objectFit: "contain" }}
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/Logo1.png`}
+                alt="cladit-img"
+                loading="lazy"
+              />
+            </ImageListItem>
             <ImageListItem></ImageListItem>
           </ImageList>
           <Divider style={{ backgroundColor: "#397d51", height: "5px" }} />
