@@ -358,6 +358,34 @@ const Inicio = () => {
             <ImageListItem></ImageListItem>
           </ImageList>
           <Divider style={{ backgroundColor: "#397d51", height: "5px" }} />
+          <Typography variant="h4" style={{ textAlign: "center" }}>
+            Apoyos Institucionales
+          </Typography>
+          <ImageList cols={10}>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem cols={2} style={{ padding: "5%" }}>
+              <img
+                style={{ height: "100px", width: "100%", objectFit: "contain" }}
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/1698428165217-5%20BANGUAT.png`}
+                alt="cladit-img"
+                loading="lazy"
+              />
+            </ImageListItem>
+            <ImageListItem cols={2} style={{ padding: "5%" }}>
+              <img
+                style={{ height: "100px", width: "100%", objectFit: "contain" }}
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/1698428218346-5%20SIB.png`}
+                alt="cladit-img"
+                loading="lazy"
+              />
+            </ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+            <ImageListItem></ImageListItem>
+          </ImageList>
+          <Divider style={{ backgroundColor: "#397d51", height: "5px" }} />
         </Stack>
         <Typography variant="h3" style={{ textAlign: "center" }}>
           Conferencistas
