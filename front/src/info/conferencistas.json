@@ -135,6 +135,14 @@
             "pais": "COLOMBIA",
             "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/COLOMBIA-banderas.png",
             "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-12+at+08.51.25.jpeg"
+        },
+        {
+            "nombre": "Raúl Castellanos",
+            "puesto": "Global Partner Account Manager",
+            "institucion": "PLUS TI",
+            "pais": "GUATEMALA",
+            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+            "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-04-17+at+13.12.55.jpeg"
         }
     ]
 }
