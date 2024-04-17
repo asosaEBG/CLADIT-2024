@@ -126,7 +126,6 @@ const Inicio = () => {
                     type="video/mp4"
                   />
                 </video>
-               
               </Stack>
             </Grid>
             <Grid xs={12} md={6} lg={6} p={3}>
@@ -288,7 +287,6 @@ const Inicio = () => {
             Oro
           </Typography>
           <ImageList cols={10}>
-            <ImageListItem></ImageListItem>
             <ImageListItem cols={2} style={{ padding: "5%" }}>
               <img
                 style={{ height: "100px", width: "100%", objectFit: "contain" }}
@@ -316,12 +314,19 @@ const Inicio = () => {
             <ImageListItem cols={2} style={{ padding: "5%" }}>
               <img
                 style={{ height: "100px", width: "100%", objectFit: "contain" }}
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/2+AZTECA.png`}
+                alt="cladit-img"
+                loading="lazy"
+              />
+            </ImageListItem>
+            <ImageListItem cols={2} style={{ padding: "5%" }}>
+              <img
+                style={{ height: "100px", width: "100%", objectFit: "contain" }}
                 src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/Logo1.png`}
                 alt="cladit-img"
                 loading="lazy"
               />
             </ImageListItem>
-            <ImageListItem></ImageListItem>
           </ImageList>
           <Divider style={{ backgroundColor: "#397d51", height: "5px" }} />
           <Typography variant="h4" style={{ textAlign: "center" }}>
