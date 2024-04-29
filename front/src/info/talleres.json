@@ -8,7 +8,7 @@
                     "fecha": "Miércoles 15 de Mayo",
                     "hora_inicio": "08:30",
                     "hora_fin": "10:30",
-                    "concepto": "Taller 1: Como realizar investigaciones de manera eficiente en el área de cumplimiento ",
+                    "concepto": "Taller 1: Cómo realizar investigaciones eficientes en el área de cumplimiento",
                     "speakers": [
                         {
                             "nombre": "Juan Carlos Medrano",
@@ -39,7 +39,7 @@
             ]
         },
         {
-            "sector": "Sector Cooperativas de ahorro y crédito",
+            "sector": "Sector Cooperativas de Ahorro y Crédito",
             "capacidad": "50 personas",
             "talleres": [
                 {

@@ -37,8 +37,8 @@
                     "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/SILUETA-Conferencistas-CLADIT-2024.png"
                 },
                 {
-                    "nombre": "Representante",
-                    "puesto": "",
+                    "nombre": "Ing. Luis Fernando Samayoa Delgado",
+                    "puesto": "Presidente",
                     "institucion": "Asociación Bancaria de Guatemala",
                     "pais": "GUATEMALA",
                     "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
@@ -66,7 +66,7 @@
             "fecha": "Miércoles 15 de Mayo",
             "hora_inicio": "15:45",
             "hora_fin": "16:30",
-            "concepto": "Cómo las cooperativas pueden implementar y beneficiarse de un programa de cumplimiento normativo y ético.",
+            "concepto": "El Financiamiento del Terrorismo en Latinoamerica, un Riesgo Latente en Nuestra Región",
             "speakers": [
                 {
                     "nombre": "Gabriel Quintero G.",
@@ -292,14 +292,23 @@
         {
             "fecha": "Jueves 16 de Mayo",
             "hora_inicio": "16:30",
-            "hora_fin": "17:00",
-            "concepto": "Coffee break y visita a los stands",
-            "speakers": []
+            "hora_fin": "17:15",
+            "concepto": "Auditoría: El pilar que valida la efectividad de los programas PLD-FT",
+            "speakers": [
+                {
+                    "nombre": "Julio Aguirre",
+                    "puesto": "Presidente",
+                    "institucion": "AGUIRRE & SCHWARZ, S.A",
+                    "pais": "PANAMÁ",
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/PANAMA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/SILUETA-Conferencistas-CLADIT-2024.png"
+                }
+            ]
         },
         {
             "fecha": "Jueves 16 de Mayo",
-            "hora_inicio": "17:00",
-            "hora_fin": "17:45",
+            "hora_inicio": "17:15",
+            "hora_fin": "18:00",
             "concepto": "FORO \"Preguntemos a la IVE\" / Auditorías, RTS, FEIC, FEIS",
             "speakers": [
                 {
@@ -331,16 +340,16 @@
         },
         {
             "fecha": "Jueves 16 de Mayo",
-            "hora_inicio": "17:45",
-            "hora_fin": "18:30",
-            "concepto": "Auditoría: El pilar que valida la efectividad de los programas PLD-FT",
+            "hora_inicio": "18:00",
+            "hora_fin": "18:45",
+            "concepto": "Inteligencia Artificial en la Prevención de Lavado de Dinero",
             "speakers": [
                 {
-                    "nombre": "Representante",
-                    "puesto": "",
-                    "institucion": "BDO",
-                    "pais": "GUATEMALA",
-                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+                    "nombre": "Lic. Alberto Lozano Vila",
+                    "puesto": "Director",
+                    "institucion": "INFOLAFT",
+                    "pais": "COLOMBIA",
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/COLOMBIA-banderas.png",
                     "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/SILUETA-Conferencistas-CLADIT-2024.png"
                 }
             ]

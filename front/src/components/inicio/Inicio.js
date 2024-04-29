@@ -122,7 +122,7 @@ const Inicio = () => {
                 </Button>
                 <video ref={videoRef} controls style={{ width: "100%" }}>
                   <source
-                    src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/LIC++JORGE+GONZALEZ+++CLADIT+2024.mp4"
+                    src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/Lic++Jorge+Gonza%CC%81les.mp4"
                     type="video/mp4"
                   />
                 </video>
@@ -334,7 +334,6 @@ const Inicio = () => {
           </Typography>
           <ImageList cols={10}>
             <ImageListItem></ImageListItem>
-            <ImageListItem></ImageListItem>
             <ImageListItem cols={2} style={{ padding: "5%" }}>
               <img
                 style={{ height: "100px", width: "100%", objectFit: "contain" }}
@@ -359,7 +358,14 @@ const Inicio = () => {
                 loading="lazy"
               />
             </ImageListItem>
-            <ImageListItem></ImageListItem>
+            <ImageListItem cols={2} style={{ padding: "5%" }}>
+              <img
+                style={{ height: "100px", width: "100%", objectFit: "contain" }}
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/Logo+Infolaft+S.A.S..png`}
+                alt="cladit-img"
+                loading="lazy"
+              />
+            </ImageListItem>
             <ImageListItem></ImageListItem>
           </ImageList>
           <Divider style={{ backgroundColor: "#397d51", height: "5px" }} />

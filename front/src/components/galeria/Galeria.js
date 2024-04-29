@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
-import { Typography, Button } from "@mui/material";
+import { Typography, Button, Grid } from "@mui/material";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import PauseIcon from "@mui/icons-material/Pause";
@@ -32,34 +32,25 @@ const Galeria = () => {
         <Typography variant="h3" style={{ textAlign: "center" }}>
           GALERIA CLADIT
         </Typography>
-        <Stack
-          spacing={2}
-          sx={{
-            width: { xs: "100%", md: "100%", lg: "50%" },
-            textAlign: "center",
-          }}
-        >
-          <Button
-            onClick={handleTogglePlay}
-            startIcon={isPlaying ? <PauseIcon /> : <PlayArrowIcon />}
-            style={{
-              backgroundColor: "#397d51",
-              color: "white",
-              border: "1px solid transparent",
-              width: "100%",
-            }}
-          >
-            {isPlaying
-              ? "Click para pausar video"
-              : "Click para reproducir video"}
-          </Button>
-          <video ref={videoRef} controls style={{ width: "100%" }}>
-            <source
-              src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/V3+B+Invitacion+Juan+Carlos+Medrano.mp4"
-              type="video/mp4"
-            />
-          </video>
-        </Stack>
+
+        <Grid container alignItems="center" justifyContent="center">
+          <Grid xs={12} md={12} lg={6}>
+            <video controls style={{ width: "100%" }}>
+              <source
+                src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/Lic++Juan+Carlos+Medrano.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </Grid>
+          <Grid xs={12} md={12} lg={6}>
+            <video controls style={{ width: "100%" }}>
+              <source
+                src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/Lic++Alberto+Lozano.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </Grid>
+        </Grid>
 
         <ImageList cols={2}>
           <ImageListItem>
