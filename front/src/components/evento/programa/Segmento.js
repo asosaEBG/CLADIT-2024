@@ -92,7 +92,8 @@ const Segmento = (props) => {
         ))}
         {((props.actual.master[4] != "" && props.actual.master[4] != null) ||
           (props.actual.master[5] != "" && props.actual.master[5] != null) ||
-          (props.actual.master[6] != "" && props.actual.master[6] != null)) && (
+          (props.actual.master[6] != "" && props.actual.master[6] != null) ||
+          (props.actual.master[7] != "" && props.actual.master[7] != null)) && (
           <Box>
             {props.actual.master[7] == "HABILITADAS" && (
               <Accordion

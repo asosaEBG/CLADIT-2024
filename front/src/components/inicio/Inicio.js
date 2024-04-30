@@ -122,7 +122,7 @@ const Inicio = () => {
                 </Button>
                 <video ref={videoRef} controls style={{ width: "100%" }}>
                   <source
-                    src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/Lic++Jorge+Gonza%CC%81les.mp4"
+                    src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/Video+Jorge+Gonzalez++2.mp4"
                     type="video/mp4"
                   />
                 </video>
