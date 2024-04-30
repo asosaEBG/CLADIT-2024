@@ -286,7 +286,7 @@ const Inicio = () => {
           <Typography variant="h4" style={{ textAlign: "center" }}>
             Oro
           </Typography>
-          <ImageList cols={10}>
+          <ImageList cols={12}>
             <ImageListItem cols={2} style={{ padding: "5%" }}>
               <img
                 style={{ height: "100px", width: "100%", objectFit: "contain" }}
@@ -323,6 +323,14 @@ const Inicio = () => {
               <img
                 style={{ height: "100px", width: "100%", objectFit: "contain" }}
                 src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/Logo1.png`}
+                alt="cladit-img"
+                loading="lazy"
+              />
+            </ImageListItem>
+            <ImageListItem cols={2} style={{ padding: "5%" }}>
+              <img
+                style={{ height: "100px", width: "100%", objectFit: "contain" }}
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/logo+BAC.png`}
                 alt="cladit-img"
                 loading="lazy"
               />
@@ -375,7 +383,6 @@ const Inicio = () => {
           <ImageList cols={10}>
             <ImageListItem></ImageListItem>
             <ImageListItem></ImageListItem>
-            <ImageListItem></ImageListItem>
             <ImageListItem cols={2} style={{ padding: "5%" }}>
               <img
                 style={{ height: "100px", width: "100%", objectFit: "contain" }}
@@ -392,7 +399,14 @@ const Inicio = () => {
                 loading="lazy"
               />
             </ImageListItem>
-            <ImageListItem></ImageListItem>
+            <ImageListItem cols={2} style={{ padding: "5%" }}>
+              <img
+                style={{ height: "100px", width: "100%", objectFit: "contain" }}
+                src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/logo+FIBA.png`}
+                alt="cladit-img"
+                loading="lazy"
+              />
+            </ImageListItem>
             <ImageListItem></ImageListItem>
             <ImageListItem></ImageListItem>
           </ImageList>
