@@ -4,7 +4,7 @@
             "fecha": "Miércoles 15 de Mayo",
             "hora_inicio": "12:30",
             "hora_fin": "14:00",
-            "concepto": "Almuerzo",
+            "concepto": "Almuerzo Centro de Convenciones AVIA",
             "speakers": []
         },
         {
@@ -207,13 +207,13 @@
             "fecha": "Jueves 16 de Mayo",
             "hora_inicio": "11:45",
             "hora_fin": "12:30",
-            "concepto": "Tema pendiente",
+            "concepto": "Tendencias en normativa en prevención LD-FT en la región LATAM",
             "speakers": [
                 {
-                    "nombre": "Representante",
-                    "puesto": "",
-                    "institucion": "BAC Latam",
-                    "pais": "PAIS",
+                    "nombre": "Daniel Fernando Bañados Maticorena",
+                    "puesto": "VP. Corp. Gobierno & Cumplimiento",
+                    "institucion": "Dirección de Gobierno & Cumplimiento BAC Credomatic",
+                    "pais": "PERÚ-COSTA RICA",
                     "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/SILUETA-Conferencistas-CLADIT-2024.png"
                 }
             ]
@@ -265,7 +265,7 @@
             "speakers": [
                 {
                     "nombre": "Luis Alfredo Nájera",
-                    "puesto": "",
+                    "puesto": "Supervisor del Área de Supervisión de Riesgos LD/FT I de personas obligadas",
                     "institucion": "Intendencia de Verifcación Especial -IVE",
                     "pais": "GUATEMALA",
                     "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
@@ -309,8 +309,16 @@
             "fecha": "Jueves 16 de Mayo",
             "hora_inicio": "17:15",
             "hora_fin": "18:00",
-            "concepto": "FORO \"Preguntemos a la IVE\" / Auditorías, RTS, FEIC, FEIS",
+            "concepto": "FORO \"Preguntemos a la IVE\"",
             "speakers": [
+                {
+                    "nombre": "Juan Carlos Monroy",
+                    "puesto": "Intendente de Verificación Especial - IVE -",
+                    "institucion": "Superintendencia de Bancos de Guatemala -SIB",
+                    "pais": "GUATEMALA",
+                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/MONROY-Conferencistas-CLADIT-2024.png"
+                },
                 {
                     "nombre": "Juan Fernando Argueta",
                     "puesto": "Director del Departamento de Prevención y Cumplimiento",
@@ -318,14 +326,6 @@
                     "pais": "GUATEMALA",
                     "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
                     "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/ARGUETA-Conferencistas-CLADIT-2024.png"
-                },
-                {
-                    "nombre": "Juan Carlos Monroy",
-                    "puesto": "Director",
-                    "institucion": "Superintendencia de Bancos de Guatemala -SIB",
-                    "pais": "GUATEMALA",
-                    "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
-                    "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/MONROY-Conferencistas-CLADIT-2024.png"
                 },
                 {
                     "nombre": "Lic. Jorge Gonzalez",
@@ -377,6 +377,12 @@
                     "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/VELEZ-Conferencistas-CLADIT-2024.png"
                 }
             ]
+        },
+        {
+            "fecha": "Jueves 16 de Mayo",
+            "hora_inicio": "18:30",
+            "hora_fin": "18:45",
+            "concepto": "Cóctel de Clausura - Gracias al patrocinio de Banco Azteca"
         }
     ]
 }

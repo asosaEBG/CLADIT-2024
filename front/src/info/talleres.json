@@ -84,15 +84,23 @@
                     "fecha": "Miércoles 15 de Mayo",
                     "hora_inicio": "08:30",
                     "hora_fin": "12:30",
-                    "concepto": "Taller 1: Pendiente",
+                    "concepto": "Taller 1: La importancia de una Adecuada Validación en Listas de Control",
                     "speakers": [
                         {
-                            "nombre": "Representante",
-                            "puesto": "",
+                            "nombre": "Luis Ramiro Díaz Briceño",
+                            "puesto": "Chief Executive Officer (CEO)",
                             "institucion": "Risk Consulting Global Group",
-                            "pais": "",
-                            "bandera": null,
-                            "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/Risk+Consulting+Global+Group+-+1.png"
+                            "pais": "COLOMBIA",
+                            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/COLOMBIA-banderas.png",
+                            "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/DIAZ-Conferencistas-CLADIT-2024.png"
+                        },
+                        {
+                            "nombre": "Claudia Armone",
+                            "puesto": "Gerente de Consultoría",
+                            "institucion": "Risk Consulting Global Group",
+                            "pais": "COLOMBIA",
+                            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/COLOMBIA-banderas.png",
+                            "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/ARMONE-Conferencistas-CLADIT-2024.png"
                         }
                     ]
                 }
