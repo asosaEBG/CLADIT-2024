@@ -14,6 +14,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import talleres_json from "../../info/talleres.json";
+import ViewPrograma from '../evento/programa/Programa'
 const Programa = () => {
   return (
     <Box>
@@ -157,7 +158,7 @@ const Programa = () => {
             </Paper>
           ))}
         </Stack>
-        <Stack
+       {/* <Stack
           spacing={5}
           sx={{
             paddingLeft: { lg: "5%", xs: "1%", md: "3%" },
@@ -258,7 +259,18 @@ const Programa = () => {
               </Stack>
             </Paper>
           ))}
-        </Stack>
+        </Stack>*/}
+            <Box
+          sx={{
+            paddingLeft: { lg: "5%", xs: "1%", md: "3%" },
+            paddingRight: { lg: "5%", xs: "1%", md: "3%" },
+          }}
+        >
+          <ViewPrograma
+            speaker={false}
+            hash="129f0d0c6df63b15f4c71caef724c6cbd0101c7c62123b5f3a78e50411555a2f"
+          />
+        </Box>
       </Stack>
     </Box>
   );
