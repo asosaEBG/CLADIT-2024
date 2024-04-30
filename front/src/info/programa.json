@@ -382,7 +382,8 @@
             "fecha": "Jueves 16 de Mayo",
             "hora_inicio": "18:30",
             "hora_fin": "18:45",
-            "concepto": "Cóctel de Clausura - Gracias al patrocinio de Banco Azteca"
+            "concepto": "Cóctel de Clausura - Gracias al patrocinio de Banco Azteca",
+            "speakers": []
         }
     ]
 }
