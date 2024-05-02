@@ -11,7 +11,7 @@ const CladitXela = () => {
         <Grid xs={12} md={12} lg={6} style={{ textAlign: "center" }}>
           {" "}
           <img
-            src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/1705957601583-CLADIT%20XELA%202024.jpg"
+            src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/1714668428125-CLADIT%20XELA%202024%20%282%29.jpg"
             style={{ width: "100%", padding: "10%" }}
             alt="img-cladit-xela"
           />
