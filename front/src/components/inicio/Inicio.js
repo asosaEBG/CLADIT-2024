@@ -94,7 +94,7 @@ const Inicio = () => {
 
         <video autoPlay muted loop style={{ width: "50%" }}>
           <source
-            src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/2024+CLADIT.mp4"
+            src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/2024+CLADIT+3.mp4"
             type="video/mp4"
           />
         </video>
