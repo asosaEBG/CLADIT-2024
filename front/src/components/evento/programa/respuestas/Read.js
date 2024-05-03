@@ -6,9 +6,9 @@ import RefreshIcon from "@mui/icons-material/Refresh";
 import Item from "./Item";
 const admin_service = require("../../../../helpers/admin_service");
 
-const ReadPreguntas = (props) => {
+const ReadRespuesta = (props) => {
   const [contador, setContador] = useState(0);
-  const [preguntas, setPreguntas] = useState([]);
+  const [respuestas, setRespuestas] = useState([]);
   const [loading, setLoading] = useState(true);
   const [cambios, setCambios] = useState(0);
   useEffect(() => {}, [cambios]);
@@ -16,10 +16,10 @@ const ReadPreguntas = (props) => {
   useEffect(() => {
     setLoading(true);
     admin_service
-      .getData("/preguntas/read/" + props.id_speaker)
+      .getData("/respuestas/read/" + props.id_pregunta)
       .then((data) => {
         setLoading(false);
-        setPreguntas(
+        setRespuestas(
           data.data.response.result.sort((a, b) => {
             return new Date(b.fecha_registro) - new Date(a.fecha_registro);
           })
@@ -49,24 +49,22 @@ const ReadPreguntas = (props) => {
           Refrescar
         </Button>
         <List sx={{ width: "100%", bgcolor: "background.paper" }}>
-          {preguntas.map((actual, index) => {
-            if (actual.estado == 0) {
-              return (
-                <Item
-                  speaker={props.speaker}
-                  actual={actual}
-                  index={index}
-                  id_speaker={props.id_speaker}
-                  refresh={() => {
-                    setContador(contador + 1);
-                  }}
-                  loading={() => {
-                    setLoading(true);
-                    setCambios(cambios + 1);
-                  }}
-                />
-              );
-            }
+          {respuestas.map((actual, index) => {
+            return (
+              <Item
+                speaker={props.speaker}
+                actual={actual}
+                index={index}
+                id_pregunta={props.id_pregunta}
+                refresh={() => {
+                  setContador(contador + 1);
+                }}
+                loading={() => {
+                  setLoading(true);
+                  setCambios(cambios + 1);
+                }}
+              />
+            );
           })}
         </List>
       </Stack>
@@ -74,4 +72,4 @@ const ReadPreguntas = (props) => {
   );
 };
 
-export default ReadPreguntas;
+export default ReadRespuesta;

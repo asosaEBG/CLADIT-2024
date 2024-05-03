@@ -1,18 +1,17 @@
 import React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
-import Formulario from "../../../../components/utils/forms/Formulario";
+import Formulario from "../../../utils/forms/Formulario";
 import { Box } from "@mui/material";
 const admin_service = require("../../../../helpers/admin_service");
 
-const CreatePregunta = (props) => {
+const CreateRespuesta = (props) => {
   const afterSubmit = (body) => {
     return new Promise((resolve, reject) => {
-      body.id_speaker = props.id_speaker;
-      body.estado = 0;
+      body.id_pregunta = props.id_pregunta;
       admin_service
-        .postData("/preguntas", body)
+        .postData("/respuestas",  body)
         .then((response_database) => {
-          props.goToPreguntas();
+          props.goToRespuestas();
           resolve();
         })
         .catch((error) => {
@@ -30,16 +29,16 @@ const CreatePregunta = (props) => {
         <Formulario
           afterSubmit={afterSubmit}
           formConfig={{
-            title: `Registrar Pregunta`,
+            title: `Registrar Respuesta`,
             submitTitle: "Registrar",
             formConfig: [
               {
                 type: 8,
                 required: true,
                 value: "",
-                name: "pregunta",
-                label: "Ingrese su pregunta",
-                title: "Pregunta",
+                name: "respuesta",
+                label: "Ingrese su respuesta",
+                title: "respuesta",
               },
             ],
           }}
@@ -49,4 +48,4 @@ const CreatePregunta = (props) => {
   );
 };
 
-export default CreatePregunta;
+export default CreateRespuesta;
