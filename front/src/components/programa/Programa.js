@@ -14,7 +14,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import talleres_json from "../../info/talleres.json";
-import ViewPrograma from '../evento/programa/Programa'
+import ViewPrograma from "../evento/programa/Programa";
 const Programa = () => {
   return (
     <Box>
@@ -73,16 +73,27 @@ const Programa = () => {
               sx={{
                 padding: { lg: "3%", xs: "1%", md: "2%" },
               }}
+              style={{
+                backgroundColor: actual.sector == null ? "#397d51" : "white",
+                color: actual.sector == null ? "white" : "black",
+              }}
             >
               <Stack spacing={4}>
-                <Alert severity="success">{actual.sector}</Alert>
+                {actual.sector && (
+                  <Alert severity="success">{actual.sector}</Alert>
+                )}
                 {actual.talleres.map((taller, indice) => (
                   <Stack key={`taller-${index}`}>
                     <List>
                       <ListItem disablePadding>
                         <ListItemButton>
                           <ListItemIcon>
-                            <CalendarMonthIcon />
+                            <CalendarMonthIcon
+                              style={{
+                                color:
+                                  actual.sector == null ? "white" : "black",
+                              }}
+                            />
                           </ListItemIcon>
                           <ListItemText primary={taller.fecha} />
                         </ListItemButton>
@@ -90,7 +101,12 @@ const Programa = () => {
                       <ListItem disablePadding>
                         <ListItemButton>
                           <ListItemIcon>
-                            <AccessTimeIcon />
+                            <AccessTimeIcon
+                              style={{
+                                color:
+                                  actual.sector == null ? "white" : "black",
+                              }}
+                            />
                           </ListItemIcon>
                           <ListItemText
                             primary={`${taller.hora_inicio} - ${taller.hora_fin}`}
@@ -100,7 +116,12 @@ const Programa = () => {
                       <ListItem disablePadding>
                         <ListItemButton>
                           <ListItemIcon>
-                            <InfoIcon />
+                            <InfoIcon
+                              style={{
+                                color:
+                                  actual.sector == null ? "white" : "black",
+                              }}
+                            />
                           </ListItemIcon>
                           <ListItemText primary={taller.concepto} />
                         </ListItemButton>
@@ -158,7 +179,7 @@ const Programa = () => {
             </Paper>
           ))}
         </Stack>
-       {/* <Stack
+        {/* <Stack
           spacing={5}
           sx={{
             paddingLeft: { lg: "5%", xs: "1%", md: "3%" },
@@ -260,7 +281,7 @@ const Programa = () => {
             </Paper>
           ))}
         </Stack>*/}
-            <Box
+        <Box
           sx={{
             paddingLeft: { lg: "5%", xs: "1%", md: "3%" },
             paddingRight: { lg: "5%", xs: "1%", md: "3%" },

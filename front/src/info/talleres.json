@@ -1,6 +1,17 @@
 {
     "talleres": [
         {
+            "talleres": [
+                {
+                    "fecha": "Miércoles 15 de Mayo",
+                    "hora_inicio": "07:00",
+                    "hora_fin": "08:30",
+                    "concepto": "Registro de participantes a talleres",
+                    "speakers": []
+                }
+            ]
+        },
+        {
             "sector": "Sector Bancario",
             "capacidad": "100 personas",
             "talleres": [
