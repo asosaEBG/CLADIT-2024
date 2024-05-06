@@ -13,7 +13,7 @@
         },
         {
             "sector": "Sector Bancario",
-            "capacidad": "100 personas",
+            "capacidad": "CUPO LLENO",
             "talleres": [
                 {
                     "fecha": "Miércoles 15 de Mayo",
@@ -51,7 +51,7 @@
         },
         {
             "sector": "Sector Cooperativas de Ahorro y Crédito",
-            "capacidad": "50 personas",
+            "capacidad": "*Cupo limitado primeras 50 personas",
             "talleres": [
                 {
                     "fecha": "Miércoles 15 de Mayo",
@@ -89,7 +89,7 @@
         },
         {
             "sector": "Sector Otros Sujetos Obligados",
-            "capacidad": "40 personas",
+            "capacidad": "*Cupo limitado primeras 40 personas",
             "talleres": [
                 {
                     "fecha": "Miércoles 15 de Mayo",

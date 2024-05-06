@@ -80,7 +80,9 @@ const Programa = () => {
             >
               <Stack spacing={4}>
                 {actual.sector && (
-                  <Alert severity="success">{actual.sector}</Alert>
+                  <Alert severity="success">
+                    {actual.sector} ({actual.capacidad})
+                  </Alert>
                 )}
                 {actual.talleres.map((taller, indice) => (
                   <Stack key={`taller-${index}`}>
