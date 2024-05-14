@@ -73,6 +73,10 @@ const Inicio = () => {
           <Typography variant="h4" style={{ textAlign: "center" }}>
             <EventIcon /> &nbsp;15 y 16 de mayo
           </Typography>
+          <img
+            src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-05-13+at+11.55.39.jpeg"
+            style={{ width: "100%" }}
+          />
           <Button
             style={{
               backgroundColor: "#397d51",
@@ -88,7 +92,7 @@ const Inicio = () => {
               );
             }}
           >
-            Inscríbete en Línea
+            Inscríbete en Línea (Modalidad Virtual)
           </Button>
         </Stack>
 
