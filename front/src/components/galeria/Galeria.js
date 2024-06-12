@@ -1,152 +1,70 @@
 import React, { useEffect, useState, useRef } from "react";
-import Box from "@mui/material/Box";
-import Stack from "@mui/material/Stack";
-import { Typography, Button, Grid } from "@mui/material";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
-import PauseIcon from "@mui/icons-material/Pause";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-const Galeria = () => {
-  const [cambios, setCambios] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef(null);
-  useEffect(() => {}, [cambios]);
-  const handleTogglePlay = () => {
-    if (videoRef.current.paused) {
-      videoRef.current.play();
-      setIsPlaying(true);
-    } else {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    }
-    setCambios(cambios + 1);
-  };
+import {
+  Typography,
+  ImageList,
+  Grid,
+  ImageListItem,
+  Stack,
+  Box,
+  Tabs,
+  Tab,
+} from "@mui/material";
+import PropTypes from "prop-types";
+import Galeria2023 from "./Galeria2023";
+import Galeria2024 from "./Galeria2024";
+function CustomTabPanel(props) {
+  const { children, value, index, ...other } = props;
+
   return (
-    <Box>
-      <Stack
-        spacing={4}
-        style={{ padding: "5%" }}
-        alignItems="center"
-        justifyContent="center"
-      >
-        <Typography variant="h3" style={{ textAlign: "center" }}>
-          GALERIA CLADIT
-        </Typography>
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+    </div>
+  );
+}
 
-        <Grid container alignItems="center" justifyContent="center">
-          <Grid xs={12} md={12} lg={6}>
-            <video controls style={{ width: "100%" }}>
-              <source
-                src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/Video+Juan+Medrano+final+3.mp4"
-                type="video/mp4"
-              />
-            </video>
-          </Grid>
-          <Grid xs={12} md={12} lg={6}>
-            <video controls style={{ width: "100%" }}>
-              <source
-                src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/Video+Alberto+Lozano++final+2.mp4"
-                type="video/mp4"
-              />
-            </video>
-          </Grid>
-          <Grid xs={12} md={12} lg={6}>
-            <video controls style={{ width: "100%" }}>
-              <source
-                src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/Video+Ana+de+Alba+final+2.mp4"
-                type="video/mp4"
-              />
-            </video>
-          </Grid>
-        </Grid>
+CustomTabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+};
 
-        <ImageList cols={2}>
-          <ImageListItem>
-            <img
-              src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/IMG_2127.jpg`}
-              alt="galeria-img"
-              loading="lazy"
-            />
-          </ImageListItem>
-          <ImageListItem>
-            <img
-              src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/IMG_2128.jpg`}
-              alt="galeria-img"
-              loading="lazy"
-            />
-          </ImageListItem>
-          <ImageListItem>
-            <img
-              src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/IMG_2129.jpg`}
-              alt="galeria-img"
-              loading="lazy"
-            />
-          </ImageListItem>
-          <ImageListItem>
-            <img
-              src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/IMG_2132.jpg`}
-              alt="galeria-img"
-              loading="lazy"
-            />
-          </ImageListItem>
-          <ImageListItem>
-            <img
-              src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/IMG_2133.jpg`}
-              alt="galeria-img"
-              loading="lazy"
-            />
-          </ImageListItem>
-          <ImageListItem>
-            <img
-              src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/IMG_2134.jpg`}
-              alt="galeria-img"
-              loading="lazy"
-            />
-          </ImageListItem>
-          <ImageListItem>
-            <img
-              src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/IMG_2135.jpg`}
-              alt="galeria-img"
-              loading="lazy"
-            />
-          </ImageListItem>
-          <ImageListItem>
-            <img
-              src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/IMG_2136.jpg`}
-              alt="galeria-img"
-              loading="lazy"
-            />
-          </ImageListItem>
-          <ImageListItem>
-            <img
-              src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/IMG_2143.jpg`}
-              alt="galeria-img"
-              loading="lazy"
-            />
-          </ImageListItem>
-          <ImageListItem>
-            <img
-              src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/IMG_2130.jpg`}
-              alt="galeria-img"
-              loading="lazy"
-            />
-          </ImageListItem>
-          <ImageListItem>
-            <img
-              src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/IMG_2131.jpg`}
-              alt="galeria-img"
-              loading="lazy"
-            />
-          </ImageListItem>
-          <ImageListItem>
-            <img
-              src={`https://escuela-bancaria.s3.us-east-2.amazonaws.com/IMG_2144.jpg`}
-              alt="galeria-img"
-              loading="lazy"
-            />
-          </ImageListItem>
-        </ImageList>
-      </Stack>
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
+  };
+}
+const Galeria = () => {
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <Box sx={{ width: "100%", marginTop: { xs: "0%", md: "20%", lg: "15%" } }}>
+      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="basic tabs example"
+        >
+          <Tab label="2023" {...a11yProps(0)} />
+          <Tab label="2024" {...a11yProps(1)} />
+        </Tabs>
+      </Box>
+      <CustomTabPanel value={value} index={0}>
+        <Galeria2023 />
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={1}>
+        <Galeria2024 />
+      </CustomTabPanel>
     </Box>
   );
 };
