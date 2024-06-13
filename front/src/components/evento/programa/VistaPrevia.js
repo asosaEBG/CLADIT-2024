@@ -50,7 +50,7 @@ const VistaPrevia = (props) => {
         <Grid container alignItems="center" justifyContent="center">
           <Grid item xs={12} md={12} lg={12}>
             <Typography variant="h3">
-              No hay programa asociado a este evento
+              
             </Typography>
           </Grid>
         </Grid>
