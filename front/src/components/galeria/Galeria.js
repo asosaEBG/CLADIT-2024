@@ -1,14 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
-import {
-  Typography,
-  ImageList,
-  Grid,
-  ImageListItem,
-  Stack,
-  Box,
-  Tabs,
-  Tab,
-} from "@mui/material";
+import React from "react";
+import { Box, Tabs, Tab } from "@mui/material";
 import PropTypes from "prop-types";
 import Galeria2023 from "./Galeria2023";
 import Galeria2024 from "./Galeria2024";
@@ -55,15 +46,15 @@ const Galeria = () => {
           onChange={handleChange}
           aria-label="basic tabs example"
         >
-          <Tab label="2023" {...a11yProps(0)} />
-          <Tab label="2024" {...a11yProps(1)} />
+          <Tab label="2024" {...a11yProps(0)} />
+          <Tab label="2023" {...a11yProps(1)} />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        <Galeria2023 />
+        <Galeria2024 />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <Galeria2024 />
+        <Galeria2023 />
       </CustomTabPanel>
     </Box>
   );

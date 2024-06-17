@@ -20,9 +20,13 @@ import { Grid, Stack } from "@mui/material";
 import "./style.css";
 const pages = [
   {
-    label: "Inicio",
-    href: "/",
+    label: "Xela",
+    href: "/xela",
   },
+  {
+    label: "Ciudad de Guatemala",
+    href: "/gt",
+  } /*
   {
     label: "Programa",
     href: "/programa",
@@ -30,7 +34,7 @@ const pages = [
   {
     label: "Registro",
     href: "/registro",
-  },
+  },*/,
   {
     label: "Patrocinio",
     href: "/patrocinio",
@@ -39,10 +43,10 @@ const pages = [
     label: "Tarifas de Inscripción",
     href: "/tarifas",
   },
-  {
+  /* {
     label: "Talleres",
     href: "/talleres",
-  },
+  },*/
   {
     label: "Contacto",
     href: "/contacto",
@@ -50,10 +54,6 @@ const pages = [
   {
     label: "Galeria",
     href: "/galeria",
-  },
-  {
-    label: "CLADIT XELA",
-    href: "/cladit-xela",
   },
 ];
 function ScrollTop(props) {

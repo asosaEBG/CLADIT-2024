@@ -1,21 +1,51 @@
-import React from "react";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import { Typography } from "@mui/material";
 import Divider from "@mui/material/Divider";
+import React, { useEffect, useState } from "react";
+import { CircularProgress, Backdrop, Button } from "@mui/material";
+const admin_service = require("../../helpers/admin_service");
 
 const Patrocinio = () => {
-  return (
+  const [evento, setEvento] = useState({});
+  const [loading, setLoading] = useState(true);
+  const [contador] = useState(0);
+  useEffect(() => {
+    admin_service
+      .getData(
+        "/evento/view-by-hash/08c69aa473d0c84349ef86d36f9be213f54dbc4b52f2520ad63c030e5e010603"
+      )
+      .then((response_evt) => {
+        setEvento(response_evt.data.response_database.result[0]);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [contador]);
+  return loading ? (
+    <Backdrop
+      sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      open={loading}
+    >
+      <CircularProgress color="inherit" />
+    </Backdrop>
+  ) : (
     <Box>
       <Stack spacing={4} style={{ padding: "5%" }}>
-        <Typography variant="h3" style={{ textAlign: "center" }}>
-          PLANOS STAND
-        </Typography>
-        <img
-          src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/1714772244812-2%20Plano%20CLADIT%202024%20%288%29.jpg"
-          style={{ width: "100%" }}
-          loading="lazy"
-        />
+        {evento.planos && (
+          <Typography variant="h3" style={{ textAlign: "center" }}>
+            PLANOS STAND
+          </Typography>
+        )}
+        {evento.planos && (
+          <img
+            src={evento.planos}
+            alt={"planos"}
+            style={{ width: "90%" }}
+            loading="lazy"
+          />
+        )}
 
         <Typography variant="h3" style={{ textAlign: "center" }}>
           BRIEF PATROCINIOS
@@ -183,7 +213,7 @@ const Patrocinio = () => {
         </Typography>
         <Divider style={{ backgroundColor: "#397d51", height: "5px" }} />
         <img
-          src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/a536ba50-a89d-4477-850a-5657ec42197b+(2).JPG"
+          src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/GALERIA-CLADIT-2024/Captura-de-pantalla-2024-05-16-a-la(s)-12.43.21%E2%80%AFp.%C2%A0m..jpg"
           style={{ width: "100%" }}
         />
       </Stack>
