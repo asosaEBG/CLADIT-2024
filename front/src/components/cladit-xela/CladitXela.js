@@ -34,6 +34,10 @@ const CladitXela = () => {
           />
         </video>
       </Box>
+      <img
+        src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/WhatsApp+Image+2024-07-23+at+12.29.25+PM.jpeg"
+        style={{ width: "100%" }}
+      />
       <View evt="08c69aa473d0c84349ef86d36f9be213f54dbc4b52f2520ad63c030e5e010603" />
     </Stack>
   );
