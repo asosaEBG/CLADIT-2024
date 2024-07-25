@@ -39,11 +39,11 @@ const pages = [
     label: "Patrocinio",
     href: "/patrocinio",
   },
-  {
+ /* {
     label: "Tarifas de Inscripción",
     href: "/tarifas",
   },
-  /* {
+   {
     label: "Talleres",
     href: "/talleres",
   },*/
