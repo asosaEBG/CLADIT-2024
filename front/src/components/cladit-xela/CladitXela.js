@@ -1,6 +1,7 @@
 import React from "react";
 import View from "../evento/View";
-import { Stack, Box } from "@mui/material";
+import { Stack, Box, Button } from "@mui/material";
+import HighlightAltIcon from "@mui/icons-material/HighlightAlt";
 
 const CladitXela = () => {
   return (
@@ -34,6 +35,17 @@ const CladitXela = () => {
           />
         </video>
       </Box>
+      <Button
+        style={{ backgroundColor: "#292F3B", color: "white", height:'70px' }}
+        href={
+          process.env.REACT_APP_URL_INSCRIPCION +
+          "08c69aa473d0c84349ef86d36f9be213f54dbc4b52f2520ad63c030e5e010603"
+        }
+        target="_blank"
+        startIcon={<HighlightAltIcon />}
+      >
+        Inscríbete en Línea
+      </Button>
       <img
         src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/tarifas.png"
         style={{ width: "100%" }}

@@ -18,6 +18,8 @@ import ListItemText from "@mui/material/ListItemText";
 import CustomMenuList from "./Menu";
 import { Grid, Stack } from "@mui/material";
 import "./style.css";
+import NavigationIcon from "@mui/icons-material/Navigation";
+import DrawIcon from "@mui/icons-material/Draw";
 const pages = [
   {
     label: "Xela",
@@ -39,7 +41,7 @@ const pages = [
     label: "Patrocinio",
     href: "/patrocinio",
   },
- /* {
+  /* {
     label: "Tarifas de Inscripción",
     href: "/tarifas",
   },
@@ -204,7 +206,6 @@ export default function Layout(props) {
                   ))}
                 </Menu>
               </Box>
-
               <Box
                 sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
                 justifyContent="center"
@@ -228,9 +229,21 @@ export default function Layout(props) {
         <Outlet />
       </Box>
       <ScrollTop {...props}>
-        <Fab size="small" aria-label="scroll back to top">
-          <KeyboardArrowUpIcon />
-        </Fab>
+        <Stack spacing={2}>
+          <Fab size="small" aria-label="scroll back to top">
+            <KeyboardArrowUpIcon />
+          </Fab>
+          <Fab
+            variant="extended"
+            href={
+              process.env.REACT_APP_URL_INSCRIPCION +
+              "08c69aa473d0c84349ef86d36f9be213f54dbc4b52f2520ad63c030e5e010603"
+            }
+          >
+            <DrawIcon sx={{ mr: 1 }} />
+            Inscríbete en Línea
+          </Fab>
+        </Stack>
       </ScrollTop>
     </React.Fragment>
   );
