@@ -23,6 +23,7 @@ import TarifasQZ from "../tarifas/TarifasQZ";
 import PauseIcon from "@mui/icons-material/Pause";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import Carrousel from "./Carrousel";
 const helpers = require("../../helpers/helpers");
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -50,8 +51,6 @@ function a11yProps(index) {
 }
 const CladitXela = () => {
   const [cambios, setCambios] = useState(0);
-  const theme = useTheme();
-  const [activeStep, setActiveStep] = React.useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
   const [value, setValue] = React.useState(0);
@@ -59,27 +58,8 @@ const CladitXela = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const arr_expositores = helpers.chunkArray(
-    conferencistas_json.conferencistas,
-    4
-  );
-  const maxSteps = arr_expositores.length;
 
   useEffect(() => {}, [cambios]);
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setCambios(cambios + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-    setCambios(cambios + 1);
-  };
-
-  const handleStepChange = (step) => {
-    setActiveStep(step);
-    setCambios(cambios + 1);
-  };
   const handleTogglePlay = () => {
     if (videoRef.current.paused) {
       videoRef.current.play();
@@ -226,7 +206,7 @@ const CladitXela = () => {
                 </Typography>
               </Grid>
             </Grid>
-
+            <Carrousel />
             <Grid container alignItems="center" justifyContent="center">
               <Grid xs={12} md={6} lg={6} style={{ textAlign: "center" }}>
                 <Typography variant="h4">Gran Karmel</Typography>
