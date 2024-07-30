@@ -41,6 +41,7 @@ const Carrousel = (props) => {
   };
   return (
     <Grid container justifyContent="center" alignItems="center">
+      <Typography variant="h4">Conferencistas</Typography>
       <Grid xs={12} md={12} lg={12}>
         <AutoPlaySwipeableViews
           axis={theme.direction === "rtl" ? "x-reverse" : "x"}
