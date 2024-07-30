@@ -26,7 +26,7 @@ const Patrocinadores = (props) => {
         >
           <Grid xs={12} md={12} lg={12} style={{ textAlign: "left" }} p={2}>
             <Typography variant="h4">
-              Patrocinador Nivel {actual[0].tipo}
+              {actual[0].tipo}
             </Typography>
           </Grid>
           {actual.map((curr) => (
