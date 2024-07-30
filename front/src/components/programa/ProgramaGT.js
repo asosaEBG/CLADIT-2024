@@ -15,7 +15,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import talleres_json from "../../info/talleres.json";
 import ViewPrograma from "../evento/programa/Programa";
-const Programa = () => {
+const ProgramaGT = () => {
   return (
     <Box>
       <Stack spacing={4}>
@@ -299,7 +299,7 @@ const Programa = () => {
   );
 };
 
-export default Programa;
+export default ProgramaGT;
 
 {
   /*<Box component="section" className="video-section">

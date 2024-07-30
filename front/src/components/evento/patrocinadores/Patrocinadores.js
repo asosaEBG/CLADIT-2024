@@ -16,11 +16,7 @@ const Patrocinadores = (props) => {
     setPatrocinadores(helpers.classifyByField(props.patrocinadores, "tipo"));
   }, [contador]);
   return (
-    <Stack
-      spacing={5}
-      style={{ backgroundColor: "#C5C5C5", color: "#004C6C" }}
-      p={5}
-    >
+    <Stack spacing={5} p={5}>
       {patrocinadores.map((actual, indice) => (
         <Grid
           container
@@ -66,7 +62,7 @@ const Patrocinadores = (props) => {
           <Grid xs={12} md={12} lg={12} style={{ textAlign: "center" }} p={2}>
             <Divider
               style={{
-                backgroundColor: "#004C6C",
+                backgroundColor: "#397d51",
                 height: "5px",
                 width: "100%",
               }}

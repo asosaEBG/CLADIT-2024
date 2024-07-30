@@ -28,34 +28,10 @@ const pages = [
   {
     label: "Ciudad de Guatemala",
     href: "/gt",
-  } /*
-  {
-    label: "Programa",
-    href: "/programa",
   },
-  {
-    label: "Registro",
-    href: "/registro",
-  },*/,
-  {
-    label: "Patrocinio",
-    href: "/patrocinio",
-  },
-  /* {
-    label: "Tarifas de Inscripción",
-    href: "/tarifas",
-  },
-   {
-    label: "Talleres",
-    href: "/talleres",
-  },*/
   {
     label: "Contacto",
     href: "/contacto",
-  },
-  {
-    label: "Galeria",
-    href: "/galeria",
   },
 ];
 function ScrollTop(props) {
@@ -98,22 +74,14 @@ ScrollTop.propTypes = {
 
 export default function Layout(props) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
   function ElevationScroll(props) {
     const { children, window } = props;
     const trigger = useScrollTrigger({

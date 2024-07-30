@@ -51,10 +51,14 @@ const View = (props) => {
     </Backdrop>
   ) : (
     <Box>
-      <Stack spacing={5}>
+      <Stack spacing={5} alignItems="center">
         <Carrousel patrocinadores={patrocinadores} />
         <Button
-          style={{ backgroundColor: "#292F3B", color: "white" }}
+          style={{
+            backgroundColor: "#397d51",
+            padding: "1%",
+            color: "white",
+          }}
           href={process.env.REACT_APP_URL_INSCRIPCION + props.evt}
           target="_blank"
           startIcon={<HighlightAltIcon />}
@@ -63,14 +67,17 @@ const View = (props) => {
         </Button>
         <Header evt={props.evt} evento={evento} />
         <Button
-          style={{ backgroundColor: "#292F3B", color: "white" }}
+          style={{
+            backgroundColor: "#397d51",
+            padding: "1%",
+            color: "white",
+          }}
           href={process.env.REACT_APP_URL_INSCRIPCION + props.evt}
           target="_blank"
           startIcon={<HighlightAltIcon />}
         >
           Inscríbete en Línea
         </Button>
-        <ViewPrograma speaker={false} hash={props.evt} programa={programa} />
         <Patrocinadores
           evt={props.evt}
           patrocinadores={patrocinadores}

@@ -6,14 +6,14 @@ import React, { useEffect, useState } from "react";
 import { CircularProgress, Backdrop, Button } from "@mui/material";
 const admin_service = require("../../helpers/admin_service");
 
-const Patrocinio = () => {
+const PatrocinioGT = () => {
   const [evento, setEvento] = useState({});
   const [loading, setLoading] = useState(true);
   const [contador] = useState(0);
   useEffect(() => {
     admin_service
       .getData(
-        "/evento/view-by-hash/08c69aa473d0c84349ef86d36f9be213f54dbc4b52f2520ad63c030e5e010603"
+        "/evento/view-by-hash/129f0d0c6df63b15f4c71caef724c6cbd0101c7c62123b5f3a78e50411555a2f"
       )
       .then((response_evt) => {
         setEvento(response_evt.data.response_database.result[0]);
@@ -221,7 +221,7 @@ const Patrocinio = () => {
   );
 };
 
-export default Patrocinio;
+export default PatrocinioGT;
 
 {
   /*<Box component="section" className="video-section">

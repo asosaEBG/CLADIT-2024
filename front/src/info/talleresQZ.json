@@ -1,0 +1,48 @@
+{
+    "talleres": [
+        {
+            "sector": "Taller #1",
+            "capacidad": "Salón Imperial",
+            "talleres": [
+                {
+                    "fecha": "Lunes 26 de agosto",
+                    "hora_inicio": "14:30",
+                    "hora_fin": "17:30",
+                    "concepto": "Taller 1: Matrices de Riesgos de LDFT según la IVE",
+                    "speakers": [
+                        {
+                            "nombre": "Lic. Francisco Vides",
+                            "puesto": "Asesores & Cumplimiento",
+                            "institucion": "",
+                            "pais": "GUATEMALA",
+                            "bandera": "https://flagcdn.com/h240/gt.png",
+                            "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/45106c87-e92b-4e35-a670-1acb069a094a.png"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "sector": "Taller #2",
+            "capacidad": "Salón El Jardín",
+            "talleres": [
+                {
+                    "fecha": "Lunes 26 de agosto",
+                    "hora_inicio": "14:30",
+                    "hora_fin": "17:30",
+                    "concepto": "Taller 2: Identificación de transacciones inusuales en Agencias, que deben ser escaladas al oficial de cumplimiento",
+                    "speakers": [
+                        {
+                            "nombre": "Licda. Ileana Marroquín",
+                            "puesto": "Gerente de Cumplimiento",
+                            "institucion": "BANCO AZTECA",
+                            "pais": "GUATEMALA",
+                            "bandera": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/GUATEMALA-banderas.png",
+                            "foto": "https://escuela-bancaria.s3.us-east-2.amazonaws.com/12dcb423-9d3d-43ea-afac-ed3292f79d18.png"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

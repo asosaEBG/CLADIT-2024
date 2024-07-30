@@ -9,10 +9,6 @@ const listFolderFilesUrl = (folder) => {
         secretAccessKey: process.env.REACT_APP_S_K,
       });
       var s3 = new AWS.S3();
-      console.log({
-        Bucket: process.env.REACT_APP_BCKT,
-        Prefix: folder,
-      });
       var command = s3.listObjectsV2({
         Bucket: process.env.REACT_APP_BCKT,
         Prefix: folder,
