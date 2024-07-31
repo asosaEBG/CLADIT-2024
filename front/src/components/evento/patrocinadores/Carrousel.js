@@ -9,7 +9,7 @@ const Carrousel = (props) => {
   const [cambios, setCambios] = useState(0);
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const arr_patrocinadores = helpers.chunkArray(props.patrocinadores, 6);
+  const arr_patrocinadores = helpers.chunkArray(props.patrocinadores, 1);
   useEffect(() => {}, [cambios]);
   const handleStepChange = (step) => {
     setActiveStep(step);
