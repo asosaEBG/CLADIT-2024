@@ -1,0 +1,12 @@
+.container-outlet {
+  margin-top: 25vh;
+}
+.img-header {
+  width: 50% !important;
+}
+@media only screen and (max-width: 600px) {
+  /* Estilos CSS específicos para dispositivos móviles */
+  .img-header {
+    width: 100% !important;
+  }
+}
