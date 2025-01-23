@@ -112,7 +112,7 @@ const CladitXela = () => {
                 }}
               >
                 <source
-                  src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/5e6b6a88-2597-4745-b94c-e6cf722e6bd0.mp4"
+                  src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/34e42558-717e-42b3-abf7-640112973fae.mp4"
                   type="video/mp4"
                 />
               </video>
