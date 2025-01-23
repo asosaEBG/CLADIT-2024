@@ -86,7 +86,7 @@ const CladitXela = () => {
           <Stack spacing={5} alignItems="center" justifyContent="center">
             <Typography variant="h4">
               <CalendarMonthIcon />
-              &nbsp; 18 de agosto 2025
+              &nbsp; 11 de agosto 2025
             </Typography>
             <Box
               style={{}}
