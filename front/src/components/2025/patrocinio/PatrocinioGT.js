@@ -1,9 +1,68 @@
-import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
-import { Typography } from "@mui/material";
-import Divider from "@mui/material/Divider";
 import React, { useEffect, useState } from "react";
-import { CircularProgress, Backdrop, Button } from "@mui/material";
+import { Container, Typography, Box, Grid, Card, CardContent, Backdrop, CircularProgress, Button } from "@mui/material";
+import { motion } from "framer-motion";
+import LinkIcon from '@mui/icons-material/Link';
+import EmailIcon from '@mui/icons-material/Email';
+const sponsorships = [
+  {
+    title: "🏆 Diamante",
+    price: "",
+    benefits: [
+      "Stand de 6x2 metros con infraestructura",
+      "3 gafetes de staff y 1 gafete para conferencista (incluye alimentos)",
+      "Presencia de marca en material promocional impreso y digital",
+      "Presencia de marca en back panel de 2x2 metros",
+      "Presencia de marca dentro del salón de conferencias en la pantalla principal",
+      "Mención especial y promocional de 30 segundos durante la conferencia",
+      "Bases de datos de los participantes en el congreso",
+      "Producción y edición de un video exclusivo del conferencista",
+      "1 pauta pagada en redes sociales de EBG",
+      "Promoción del evento en plataformas digitales de EBG (orgánica y pagada)",
+      "E-mail marketing a nuestras bases de datos ABG y EBG",
+      "Mención de patrocinio en la aplicación de ABG",
+      "1 Speaker representando a su entidad en el programa académico (1 conferencia de 30-40 min, previa alineación con el Comité Académico)"
+    ],
+    color: "#f2b440",
+  },
+  {
+    title: "🥇 Oro",
+    price: "",
+    benefits: [
+      "Stand de 3x2 metros con infraestructura",
+      "2 gafetes de staff y 1 gafete para conferencista (incluye alimentos)",
+      "Presencia de marca en material promocional impreso y digital",
+      "Presencia de marca en back panel de 2x2 metros",
+      "Presencia de marca dentro del salón de conferencias en la pantalla principal",
+      "Mención especial y promocional de 30 segundos durante la conferencia",
+      "Bases de datos de los participantes en el congreso",
+      "Producción y edición de un video exclusivo del conferencista",
+      "1 pauta pagada en redes sociales de EBG",
+      "Promoción del evento en plataformas digitales de EBG (orgánica y pagada)",
+      "E-mail marketing a nuestras bases de datos ABG y EBG",
+      "Mención de patrocinio en la aplicación de ABG"
+    ],
+    color: "#c9b037",
+  },
+  {
+    title: "🥈 Plata",
+    price: "",
+    benefits: [
+      "Stand de 3x2 metros con infraestructura",
+      "2 gafetes de staff (incluye alimentos)",
+      "Presencia de marca en material promocional impreso y digital",
+      "Presencia de marca en back panel de 2x2 metros",
+      "Presencia de marca dentro del salón de conferencias en la pantalla principal",
+      "Mención especial y promocional de 30 segundos durante la conferencia",
+      "Bases de datos de los participantes en el congreso",
+      "Promoción del evento en plataformas digitales de EBG (orgánica y pagada)",
+      "E-mail marketing a nuestras bases de datos ABG y EBG",
+      "Mención de patrocinio en la aplicación de ABG"
+    ],
+    color: "#a8a8a8",
+  },
+];
+
 const admin_service = require("../../../helpers/admin_service");
 
 const PatrocinioGT = () => {
@@ -46,176 +105,73 @@ const PatrocinioGT = () => {
             loading="lazy"
           />
         )}
-
-        <Typography variant="h3" style={{ textAlign: "center" }}>
-          BRIEF PATROCINIOS
-        </Typography>
-        <Divider style={{ backgroundColor: "#397d51", height: "5px" }} />
-        <Typography
-          variant="h4"
-          style={{ color: "#1e3d52", textAlign: "center" }}
-        >
-          Diamante - US $6,700.00
-        </Typography>
-        <Typography variant="h5" style={{ textAlign: "left" }}>
-          <strong>Derecho a los siguientes beneficios:</strong>
-        </Typography>
-        <Typography
-          variant="p"
-          style={{ fontSize: "1.5em", textAlign: "justify" }}
-        >
-          <ul>
-            <li>
-              Logotipo de la empresa ubicado en posición adquirida de patrocinio
-              en la página del evento, direccionado a su página web
-            </li>
-            <li>
-              1 Speaker* representando a su entidad en el programa académico (1
-              conferencia de 30 min a 40 min)
-            </li>
-            <li>
-              Reconocimiento en medios impresos y digitales (incluyendo
-              revistas)
-            </li>
-            <li>Mail masivo del conferencista exclusivo</li>
-            <li>
-              1 pauta pagada en redes sociales del conferencista designado (con
-              mención de marca exclusiva)
-            </li>
-            <li>Pautas en redes sociales de EBG</li>
-            <li>Mails masivos a nuestras bases de datos</li>
-            <li>Mención de Patrocinio en la Aplicación de ABG</li>
-            <li>Presencia de marca dentro del salón de conferencias</li>
-            <li>
-              Logotipo en Panel principal sobre pantalla del evento con mención
-              del patrocinio
-            </li>
-            <li>
-              Presencia de marca en 1 back panel de 2 x 2 mts. (junto con los
-              demás patrocinadores)
-            </li>
-            <li>Mails masivos en alianza con media partners</li>
-            <li>Bases de datos de los participantes en el congreso</li>
-            <li>
-              Stand en el Área de Exposición de 3 x 2 mts. (opciones en las
-              siguientes páginas)
-            </li>
-            <li>
-              Gafetes de staff para su personal para atención del stand y
-              conferencista (incluye alimentos y parqueo)
-            </li>
-            <li>Participaciones de cortesía</li>
-            <li>
-              Mención especial y promocional de 30 segundos durante la
-              conferencia, suministrada por el patrocinador
-            </li>
-          </ul>
-        </Typography>
-        <Divider style={{ backgroundColor: "#397d51", height: "5px" }} />
-
-        <Typography
-          variant="h4"
-          style={{ color: "#1e3d52", textAlign: "center" }}
-        >
-          Oro - US $5,000.00
-        </Typography>
-        <Typography variant="h5" style={{ textAlign: "left" }}>
-          <strong>Derecho a los siguientes beneficios:</strong>
-        </Typography>
-        <Typography
-          variant="p"
-          style={{ fontSize: "1.5em", textAlign: "justify" }}
-        >
-          <ul>
-            <li>
-              Logotipo de la empresa ubicado en posición adquirida de patrocinio
-              en la página del evento, direccionado a su página web
-            </li>
-            <li>
-              1 Speaker* representando a su entidad en el programa académico (1
-              conferencia de 30 min a 40 min)
-            </li>
-            <li>
-              Reconocimiento en medios impresos y digitales (incluyendo
-              revistas)
-            </li>
-
-            <li>Pautas en redes sociales de EBG</li>
-            <li>Mails masivos a nuestras bases de datos</li>
-            <li>Mención de Patrocinio en la Aplicación de ABG</li>
-            <li>Presencia de marca dentro del salón de conferencias</li>
-
-            <li>
-              Presencia de marca en 1 back panel de 2 x 2 mts. (junto con los
-              demás patrocinadores)
-            </li>
-            <li>Mails masivos en alianza con media partners</li>
-            <li>Bases de datos de los participantes en el congreso</li>
-            <li>
-              Stand en el Área de Exposición de 3 x 2 mts. (opciones en las
-              siguientes páginas)
-            </li>
-            <li>
-              Gafetes de staff para su personal para atención del stand y
-              conferencista (incluye alimentos y parqueo)
-            </li>
-            <li>Participaciones de cortesía</li>
-          </ul>
-        </Typography>
-        <Divider style={{ backgroundColor: "#397d51", height: "5px" }} />
-        <Typography
-          variant="h4"
-          style={{ color: "#1e3d52", textAlign: "center" }}
-        >
-          Plata - US $3,900.00
-        </Typography>
-        <Typography variant="h5" style={{ textAlign: "left" }}>
-          <strong>Derecho a los siguientes beneficios:</strong>
-        </Typography>
-        <Typography
-          variant="p"
-          style={{ fontSize: "1.5em", textAlign: "justify" }}
-        >
-          <ul>
-            <li>
-              Logotipo de la empresa ubicado en posición adquirida de patrocinio
-              en la página del evento, direccionado a su página web
-            </li>
-            <li>
-              1 Speaker* representando a su entidad en el programa académico (1
-              conferencia de 30 min a 40 min)
-            </li>
-            <li>
-              Reconocimiento en medios impresos y digitales (incluyendo
-              revistas)
-            </li>
-
-            <li>Pautas en redes sociales de EBG</li>
-            <li>Mails masivos a nuestras bases de datos</li>
-            <li>Mención de Patrocinio en la Aplicación de ABG</li>
-            <li>Presencia de marca dentro del salón de conferencias</li>
-
-            <li>
-              Presencia de marca en 1 back panel de 2 x 2 mts. (junto con los
-              demás patrocinadores)
-            </li>
-            <li>Mails masivos en alianza con media partners</li>
-            <li>Bases de datos de los participantes en el congreso</li>
-            <li>
-              Stand en el Área de Exposición de 3 x 2 mts. (opciones en las
-              siguientes páginas)
-            </li>
-            <li>
-              Gafetes de staff para su personal para atención del stand y
-              conferencista (incluye alimentos y parqueo)
-            </li>
-          </ul>
-        </Typography>
-        <Divider style={{ backgroundColor: "#397d51", height: "5px" }} />
-        <img
-          src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/GALERIA-CLADIT-2024/Captura-de-pantalla-2024-05-16-a-la(s)-12.43.21%E2%80%AFp.%C2%A0m..jpg"
-          style={{ width: "100%" }}
-        />
+        <Container maxWidth >
+          <motion.div initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.3 }} transition={{ duration: 1 }}>
+            <Typography variant="h3" fontWeight="bold" gutterBottom color='#397d51'>
+              Patrocinios CLADIT 2025
+            </Typography>
+            <Typography variant="h5" sx={{ marginBottom: 2 }} color='#397d51'>
+              Oportunidad de patrocinio en los eventos más importantes de tecnología y seguridad bancaria.
+            </Typography>
+          </motion.div>
+          <Grid container spacing={3} justifyContent="center">
+            {sponsorships.map((sponsor, index) => (
+              <Grid item size={{ xs: 12, md: 3, lg: 4 }} key={index} display="flex">
+                <motion.div whileHover={{ scale: 1.05 }} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.3 }} transition={{ duration: 0.8 }} style={{ width: '100%', height: '100%' }}>
+                  <Card sx={{
+                    background: "linear-gradient(-45deg, #1b3d2b, #397d51, #1b3d2b, #0e2a1d)",
+                    backgroundSize: "400% 400%",
+                    animation: "gradientBG 6s ease infinite", color: "white", borderRadius: 2,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: '100%'  // Ajuste clave aquí
+                    , width: '100%'
+                  }}>
+                    <CardContent>
+                      <Typography variant="h5" fontWeight="bold" gutterBottom>
+                        {sponsor.title}
+                      </Typography>
+                      <Typography variant="h6" fontWeight="bold" gutterBottom>
+                        {sponsor.price}
+                      </Typography>
+                      {sponsor.benefits.map((benefit, i) => (
+                        <Typography key={i} variant="body1">
+                          - {benefit}
+                        </Typography>
+                      ))}
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </Grid>
+            ))}
+          </Grid>
+          <Grid container spacing={3} justifyContent="center" p={5}>
+            <Grid item size={{ xs: 6, md: 6, lg: 6 }}>
+              <motion.div
+                whileHover={{ scale: 1.1, skewX: -5 }}
+                initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 5, ease: "backOut" }}
+                style={{ width: '100%', height: '100%' }}
+              >
+                <Button style={{ color: '#397d51' }} href={evento.evt_info_pdf} target="_blank" startIcon={<LinkIcon />}>Más información</Button>
+              </motion.div>
+            </Grid>
+            <Grid item size={{ xs: 6, md: 6, lg: 6 }}>
+              <motion.div
+                whileHover={{ scale: 1.08, rotate: -3 }}
+                initial={{ opacity: 0, y: 50, rotate: 5 }}
+                whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 5, type: "spring", stiffness: 120 }}
+                style={{ width: '100%', height: '100%' }}
+              >
+                <Button style={{ color: '#397d51' }} href='mailto:ncuches@ebg.edu.gt?subject=Solicitud%20de%20información%20sobre%20patrocinio%20para%20CLADIT&body=Buenos%20días,%0A%0ANecesito%20más%20información%20sobre%20una%20propuesta%20de%20patrocinio%20para%20CLADIT.%0A%0AGracias.' target="_blank" startIcon={<EmailIcon />}>Click para solicitar más información</Button>
+              </motion.div>
+            </Grid>
+          </Grid>
+        </Container>
       </Stack>
     </Box>
   );
