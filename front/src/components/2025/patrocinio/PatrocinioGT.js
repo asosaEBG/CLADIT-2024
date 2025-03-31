@@ -6,7 +6,7 @@ import LinkIcon from '@mui/icons-material/Link';
 import EmailIcon from '@mui/icons-material/Email';
 const sponsorships = [
   {
-    title: "🏆 Diamante",
+    title: "Diamante",
     price: "",
     benefits: [
       "Stand de 6x2 metros con infraestructura",
@@ -26,7 +26,7 @@ const sponsorships = [
     color: "#f2b440",
   },
   {
-    title: "🥇 Oro",
+    title: "Oro",
     price: "",
     benefits: [
       "Stand de 3x2 metros con infraestructura",
@@ -45,7 +45,7 @@ const sponsorships = [
     color: "#c9b037",
   },
   {
-    title: "🥈 Plata",
+    title: "Plata",
     price: "",
     benefits: [
       "Stand de 3x2 metros con infraestructura",
@@ -146,18 +146,6 @@ const PatrocinioGT = () => {
             ))}
           </Grid>
           <Grid container spacing={3} justifyContent="center" p={5}>
-            <Grid item size={{ xs: 6, md: 6, lg: 6 }}>
-              <motion.div
-                whileHover={{ scale: 1.1, skewX: -5 }}
-                initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                viewport={{ once: false, amount: 0.3 }}
-                transition={{ duration: 5, ease: "backOut" }}
-                style={{ width: '100%', height: '100%' }}
-              >
-                <Button style={{ color: '#397d51' }} href={evento.evt_info_pdf} target="_blank" startIcon={<LinkIcon />}>Más información</Button>
-              </motion.div>
-            </Grid>
             <Grid item size={{ xs: 6, md: 6, lg: 6 }}>
               <motion.div
                 whileHover={{ scale: 1.08, rotate: -3 }}
