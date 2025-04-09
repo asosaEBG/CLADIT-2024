@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Stack from "@mui/material/Stack";
 import { Grid, Typography, Box, Divider } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -11,9 +11,39 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
+import Segmento from "../evento/programa/Segmento";
+const admin_service = require("../../../helpers/admin_service");
+
 const Talleres = () => {
+  const [contador, setContador] = useState(0);
+  const [evento, setEvento] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [programa, setPrograma] = useState(null);
+  useEffect(() => {
+    admin_service
+      .getData("/evento/view-by-hash/" + '1f377385-b7fb-4b32-a2e3-5f906c3c4960')
+      .then((data) => {
+        setEvento(data.data.response_database.result[0]);
+        admin_service
+          .getData("/programa/view/" + '1f377385-b7fb-4b32-a2e3-5f906c3c4960')
+          .then((datos) => {
+            if (datos.data.response_database == null) {
+              setPrograma(null);
+            } else {
+              setPrograma(datos.data.response_database);
+            }
+            setLoading(true);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [contador]);
   return (
-    <Stack spacing={3} alignItems="center" p={5}>
+    <Stack spacing={3} alignItems="center" >
       <Grid container p={2}>
         <Grid xs={12} md={12} lg={6} style={{ textAlign: "center" }}>
           <Typography
@@ -28,7 +58,7 @@ const Talleres = () => {
           >
             <strong>
               <CalendarMonthIcon />
-              &nbsp;20 de mayo 2025
+              &nbsp;21 de mayo 2025
             </strong>
           </Typography>
           <Typography
@@ -53,103 +83,117 @@ const Talleres = () => {
           ></iframe>
         </Grid>
       </Grid>
-      {talleres_json.talleres.map((actual, index) => (
-        <Stack
-          spacing={4}
-          p={5}
-          key={"taller-" + index}
-          style={{ width: "100%" }}
+      <Stack
+        spacing={10}
+        style={{ width: "100%" }}
+      >
+        {programa.programa.speakers.slice(0, 1).map((actual, index) => (
+          <Segmento
+            actual={actual}
+            key={`segmento-${index}`}
+            speaker={false}
+            refreshData={() => {
+              setContador(contador + 1);
+            }}
+          />
+        ))}
+        <Box
+          xs={12}
+          md={12}
+          lg={12}
+          style={{ backgroundColor: "#397d51", width: "100%" }}
+          marginBottom={4}
         >
-          <Box
-            xs={12}
-            md={12}
-            lg={12}
-            style={{ backgroundColor: "#397d51", width: "100%" }}
-            marginBottom={4}
-          >
-            <Typography
-              variant="h3"
-              style={{ color: "white", textAlign: "center" }}
-            >
-              <strong>{actual.sector}</strong>
-            </Typography>
-          </Box>
           <Typography
-            variant="h4"
-            style={{ textAlign: "center", color: "#1e3d52" }}
+            variant="h3"
+            style={{ color: "white", textAlign: "center" }}
           >
-            <strong>{actual.capacidad}</strong>
+            <strong>Sector Bancario</strong>
           </Typography>
-          {actual.talleres.map((taller, indice) => (
-            <Stack spacing={3} key={"talleres-" + indice}>
-              <List>
-                <ListItem disablePadding>
-                  <ListItemButton>
-                    <ListItemIcon>
-                      <CalendarMonthIcon />
-                    </ListItemIcon>
-                    <ListItemText primary={taller.fecha} />
-                  </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
-                  <ListItemButton>
-                    <ListItemIcon>
-                      <AccessTimeIcon />
-                    </ListItemIcon>
-                    <ListItemText
-                      primary={`${taller.hora_inicio} - ${taller.hora_fin}`}
-                    />
-                  </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
-                  <ListItemButton>
-                    <ListItemIcon>
-                      <InfoIcon />
-                    </ListItemIcon>
-                    <ListItemText primary={taller.concepto} />
-                  </ListItemButton>
-                </ListItem>
-              </List>
-              {taller.speakers.map((speaker, indicador) => (
-                <Grid container key={"speaker-" + indicador}>
-                  <Grid xs={4} md={4} lg={4} style={{ textAlign: "center" }}>
-                    <img
-                      src={speaker.foto}
-                      alt="conferencista"
-                      style={{ width: "50%" }}
-                    />
-                  </Grid>
-                  <Grid xs={8} md={8} lg={8} style={{ textAlign: "left" }}>
-                    <Stack>
-                      <Typography
-                        variant="p"
-                        style={{ color: "#397d51", fontSize: "1.5em" }}
-                      >
-                        {speaker.nombre}
-                      </Typography>
-                      <Typography variant="p">{speaker.puesto}</Typography>
-                      <Typography variant="p">{speaker.institucion}</Typography>
-                      <Typography variant="p">{speaker.pais}</Typography>
-                      {speaker.bandera && (
-                        <img
-                          src={speaker.bandera}
-                          alt="img-paises"
-                          style={{ width: "15%" }}
-                        />
-                      )}
-                    </Stack>
-                  </Grid>
-                </Grid>
-              ))}
-              {indice != actual.talleres.length - 1 && (
-                <Divider
-                  style={{ backgroundColor: "#397d51", height: "2px" }}
-                />
-              )}
-            </Stack>
+        </Box>
+        <Typography
+          variant="h4"
+          style={{ textAlign: "center", color: "#1e3d52" }}
+        >
+          <strong>Cupo limitado primeras 200 personas*</strong>
+        </Typography>
+        <Stack spacing={5}>
+          {programa.programa.speakers.slice(1, 6).map((actual, index) => (
+            <Segmento
+              actual={actual}
+              key={`segmento-${index}`}
+              speaker={false}
+              refreshData={() => {
+                setContador(contador + 1);
+              }}
+            />
           ))}
         </Stack>
-      ))}
+        <Box
+          xs={12}
+          md={12}
+          lg={12}
+          style={{ backgroundColor: "#397d51", width: "100%" }}
+          marginBottom={4}
+        >
+          <Typography
+            variant="h3"
+            style={{ color: "white", textAlign: "center" }}
+          >
+            <strong>Sector Cooperativas de Ahorro y Crédito            </strong>
+          </Typography>
+        </Box>
+        <Typography
+          variant="h4"
+          style={{ textAlign: "center", color: "#1e3d52" }}
+        >
+          <strong>Cupo limitado primeras 100 personas*</strong>
+        </Typography>
+        <Stack spacing={5}>
+          {programa.programa.speakers.slice(6, 9).map((actual, index) => (
+            <Segmento
+              actual={actual}
+              key={`segmento-${index}`}
+              speaker={false}
+              refreshData={() => {
+                setContador(contador + 1);
+              }}
+            />
+          ))}
+        </Stack>
+        <Box
+          xs={12}
+          md={12}
+          lg={12}
+          style={{ backgroundColor: "#397d51", width: "100%" }}
+          marginBottom={4}
+        >
+          <Typography
+            variant="h3"
+            style={{ color: "white", textAlign: "center" }}
+          >
+            <strong>Sector Otros Sujetos Obligados</strong>
+          </Typography>
+        </Box>
+        <Typography
+          variant="h4"
+          style={{ textAlign: "center", color: "#1e3d52" }}
+        >
+          <strong>Cupo limitado primeras 100 personas*</strong>
+        </Typography>
+        <Stack spacing={5}>
+          {programa.programa.speakers.slice(9, 12).map((actual, index) => (
+            <Segmento
+              actual={actual}
+              key={`segmento-${index}`}
+              speaker={false}
+              refreshData={() => {
+                setContador(contador + 1);
+              }}
+            />
+          ))}
+        </Stack>
+      </Stack>
     </Stack>
   );
 };
