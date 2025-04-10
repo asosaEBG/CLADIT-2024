@@ -1,30 +1,25 @@
 import React, { useState, useEffect } from "react";
-import { autoPlay } from "react-swipeable-views-utils";
-import { useTheme } from "@mui/material/styles";
-import SwipeableViews from "react-swipeable-views";
 import {
-  Grid,
-  CardActionArea,
   Box,
-  Card,
-  CardMedia,
-  CardContent,
+  Stack,
   Typography,
 } from "@mui/material";
-const helpers = require("../../../helpers/helpers");
+import ImageList from '@mui/material/ImageList';
+import ImageListItem from '@mui/material/ImageListItem';
+import ImageListItemBar from '@mui/material/ImageListItemBar';
+import ListSubheader from '@mui/material/ListSubheader';
+import IconButton from '@mui/material/IconButton';
+import PersonIcon from '@mui/icons-material/Person';
 const admin_service = require("../../../helpers/admin_service");
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-const Carrousel = (props) => {
+const Carrousel = () => {
   const [contador] = useState(0);
-  const [cambios, setCambios] = useState(0);
-  const theme = useTheme();
-  const [activeStep, setActiveStep] = React.useState(0);
   const [conferencistas, setConferencistas] = useState([]);
   useEffect(() => {
     admin_service
       .getData("/conferencista/read/1f377385-b7fb-4b32-a2e3-5f906c3c4960")
       .then((response) => {
+        console.log(response.data.response.result)
         setConferencistas(response.data.response.result);
       })
       .catch((error) => {
@@ -32,77 +27,92 @@ const Carrousel = (props) => {
       });
   }, [contador]);
 
-  useEffect(() => {}, [cambios]);
-  const handleStepChange = (step) => {
-    setActiveStep(step);
-    setCambios(cambios + 1);
-  };
-  return (
-    <Grid container justifyContent="center" alignItems="center">
-      {conferencistas.length > 0 && (
-        <Typography variant="h4">Conferencistas</Typography>
-      )}
-      <Grid xs={12} md={12} lg={12}>
-        <AutoPlaySwipeableViews
-          axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-          index={activeStep}
-          onChangeIndex={handleStepChange}
-          enableMouseEvents
-          interval={5000}
-        >
-          {conferencistas.map((actual, index) => (
-            <Box
-              alignItems="center"
-              justifyContent="center"
-              key={index}
-              style={{ width: "100%" }}
-            >
-              {Math.abs(activeStep - index) <= 2 ? (
-                <Box
-                  container
-                  justifyContent="center"
-                  alignItems="stretch"
-                  key={index}
-                >
-                  <Card
-                    style={{
-                      width: "100%",
-                      backgroundColor: "transparent",
-                    }}
-                  >
-                    <CardMedia
-                      component="img"
-                      style={{
-                        width: "100%",
-                        height: "500px",
-                        objectFit: "contain",
-                      }}
-                      image={actual.foto}
-                      alt={`logo ${actual.nombre}`}
-                    />
-                    <CardContent style={{ textAlign: "center" }}>
-                      <Typography gutterBottom variant="h5" component="div">
-                        {actual.nombre}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {actual.puesto}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {actual.institucion}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {actual.pais}
-                      </Typography>
-                    </CardContent>
-                  </Card>
-                </Box>
-              ) : null}
-            </Box>
-          ))}
-        </AutoPlaySwipeableViews>
-      </Grid>
-    </Grid>
-  );
+
+  return <Box>
+    {conferencistas.length > 0 && <Box sx={{ display: { xs: 'none', md: 'none', lg: 'block' } }}><ImageList cols={4} >
+      <ImageListItem key="Subheader" cols={4}>
+        <ListSubheader component="div">Conferencistas</ListSubheader>
+      </ImageListItem>
+      {conferencistas.map((item) => (
+        <ImageListItem key={item.id} style={{ alignItems: 'center' }}>
+          <img
+            src={`${item.foto}`}
+            alt={item.title}
+            loading="lazy"
+            style={{ objectFit: 'contain', width: '75%' }}
+          />
+          <ImageListItemBar
+            title={item.nombre}
+            subtitle={item.pais}
+            actionIcon={
+              <IconButton
+                sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                aria-label={`info about ${item.nombre}`}
+              >
+                <PersonIcon />
+              </IconButton>
+            }
+          />
+        </ImageListItem>
+      ))}
+    </ImageList></Box>}
+    {conferencistas.length > 0 && <Box sx={{ display: { xs: 'none', md: 'block', lg: 'none' } }}><ImageList cols={2} >
+      <ImageListItem key="Subheader" cols={2}>
+        <ListSubheader component="div">Conferencistas</ListSubheader>
+      </ImageListItem>
+      {conferencistas.map((item) => (
+        <ImageListItem key={item.id} style={{ alignItems: 'center' }}>
+          <img
+            src={`${item.foto}`}
+            alt={item.title}
+            loading="lazy"
+            style={{ objectFit: 'contain', width: '75%' }}
+          />
+          <ImageListItemBar
+            title={item.nombre}
+            subtitle={item.pais}
+            actionIcon={
+              <IconButton
+                sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                aria-label={`info about ${item.nombre}`}
+              >
+                <PersonIcon />
+              </IconButton>
+            }
+          />
+        </ImageListItem>
+      ))}
+    </ImageList></Box>}
+    {conferencistas.length > 0 && <Box sx={{ display: { xs: 'block', md: 'none', lg: 'none' } }}><ImageList cols={1} >
+      <ImageListItem key="Subheader" cols={1}>
+        <ListSubheader component="div">Conferencistas</ListSubheader>
+      </ImageListItem>
+      {conferencistas.map((item) => (
+        <ImageListItem key={item.id} style={{ alignItems: 'center' }}>
+          <img
+            src={`${item.foto}`}
+            alt={item.title}
+            loading="lazy"
+            style={{ objectFit: 'contain', width: '75%' }}
+          />
+          <ImageListItemBar
+            title={item.nombre}
+            subtitle={item.pais}
+            actionIcon={
+              <IconButton
+                sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                aria-label={`info about ${item.nombre}`}
+              >
+                <PersonIcon />
+              </IconButton>
+            }
+          />
+        </ImageListItem>
+      ))}
+    </ImageList></Box>}
+  </Box>
+
+
 };
 
 export default Carrousel;
