@@ -118,7 +118,7 @@ const Talleres = () => {
           <strong>Cupo limitado primeras 200 personas*</strong>
         </Typography>
         <Stack spacing={5}>
-          {programa != null && programa.programa.speakers.slice(1, 6).map((actual, index) => (
+          {programa != null && programa.programa.speakers.slice(1, 4).map((actual, index) => (
             <Segmento
               actual={actual}
               key={`segmento-${index}`}
@@ -150,7 +150,7 @@ const Talleres = () => {
           <strong>Cupo limitado primeras 100 personas*</strong>
         </Typography>
         <Stack spacing={5}>
-          {programa != null && programa.programa.speakers.slice(6, 9).map((actual, index) => (
+          {programa != null && programa.programa.speakers.slice(4, 7).map((actual, index) => (
             <Segmento
               actual={actual}
               key={`segmento-${index}`}
@@ -182,7 +182,7 @@ const Talleres = () => {
           <strong>Cupo limitado primeras 100 personas*</strong>
         </Typography>
         <Stack spacing={5}>
-          {programa != null && programa.programa.speakers.slice(9, 12).map((actual, index) => (
+          {programa != null && programa.programa.speakers.slice(7, 10).map((actual, index) => (
             <Segmento
               actual={actual}
               key={`segmento-${index}`}
