@@ -1,16 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Stack from "@mui/material/Stack";
-import { Grid, Typography, Box, Divider } from "@mui/material";
+import { Grid, Typography, Box } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import talleres_json from "../../../info/talleres.json";
-import InfoIcon from "@mui/icons-material/Info";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
 import Segmento from "../evento/programa/Segmento";
 const admin_service = require("../../../helpers/admin_service");
 

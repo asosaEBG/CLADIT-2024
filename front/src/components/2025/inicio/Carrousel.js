@@ -19,8 +19,7 @@ const Carrousel = () => {
     admin_service
       .getData("/conferencista/read/1f377385-b7fb-4b32-a2e3-5f906c3c4960")
       .then((response) => {
-        console.log(response.data.response.result)
-        setConferencistas(response.data.response.result);
+        setConferencistas([...new Map(response.data.response.result.sort((a, b) => a.hora.localeCompare(b.hora)).map(item => [item.conferencista.nombre, item])).values()])
       })
       .catch((error) => {
         console.log(error);
@@ -34,20 +33,20 @@ const Carrousel = () => {
         <ListSubheader component="div">Conferencistas</ListSubheader>
       </ImageListItem>
       {conferencistas.map((item) => (
-        <ImageListItem key={item.id} style={{ alignItems: 'center' }}>
+        <ImageListItem key={item.conferencista.id} style={{ alignItems: 'center' }}>
           <img
-            src={`${item.foto}`}
-            alt={item.title}
+            src={`${item.conferencista.foto}`}
+            alt={item.conferencista.title}
             loading="lazy"
             style={{ objectFit: 'contain', width: '75%' }}
           />
           <ImageListItemBar
-            title={item.nombre}
-            subtitle={item.pais}
+            title={item.conferencista.nombre}
+            subtitle={item.conferencista.pais}
             actionIcon={
               <IconButton
                 sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                aria-label={`info about ${item.nombre}`}
+                aria-label={`info about ${item.conferencista.nombre}`}
               >
                 <PersonIcon />
               </IconButton>
