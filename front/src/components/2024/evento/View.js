@@ -22,7 +22,7 @@ const View = (props) => {
             admin_service
               .getData(
                 "/patrocinador/view-by-evento/" +
-                  response_evt.data.response_database.result[0].UniqueID
+                   props.evt
               )
               .then((response_patrocinador) => {
                 setEvento(response_evt.data.response_database.result[0]);
