@@ -45,7 +45,11 @@ const Patrocinadores = (props) => {
                   }}
                 >
                   <CardMedia
-                    style={{
+                    style={actual[0].tipo == 'DIAMANTE' ? {
+                      width: "100%",
+                      height: "150px",
+                      objectFit: "cover",
+                    } : {
                       width: "100%",
                       height: "150px",
                       objectFit: "contain",
