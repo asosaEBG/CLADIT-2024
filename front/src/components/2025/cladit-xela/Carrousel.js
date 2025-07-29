@@ -24,7 +24,7 @@ const Carrousel = (props) => {
   useEffect(() => {
     admin_service
       .getData("/conferencista/read/ffd12104-932e-4ad9-8e1d-ef449aef6b58")
-      .then((response) => {
+      .then((response) => {        
         setConferencistas(response.data.response.result);
       })
       .catch((error) => {
@@ -77,21 +77,21 @@ const Carrousel = (props) => {
                         height: "500px",
                         objectFit: "contain",
                       }}
-                      image={actual.foto}
-                      alt={`logo ${actual.nombre}`}
+                      image={actual.conferencista.foto}
+                      alt={`logo ${actual.conferencista.nombre}`}
                     />
                     <CardContent style={{ textAlign: "center" }}>
                       <Typography gutterBottom variant="h5" component="div">
-                        {actual.nombre}
+                        {actual.conferencista.nombre}
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        {actual.puesto}
+                        {actual.conferencista.puesto}
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        {actual.institucion}
+                        {actual.conferencista.institucion}
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        {actual.pais}
+                        {actual.conferencista.pais}
                       </Typography>
                     </CardContent>
                   </Card>
