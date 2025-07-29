@@ -54,7 +54,7 @@ const VistaPrevia = (props) => {
         </Grid>
       ) : (
         <Stack spacing={5}>
-          {programa.programa.speakers.slice(10).map((actual, index) => (
+          {programa.programa.speakers.map((actual, index) => (
             <Segmento
               actual={actual}
               key={`segmento-${index}`}
