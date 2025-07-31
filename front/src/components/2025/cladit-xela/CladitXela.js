@@ -155,7 +155,7 @@ const CladitXela = () => {
                   </Button>
                   <video ref={videoRef} controls style={{ width: "100%" }}>
                     <source
-                      src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/4e65b57c-4799-48c4-a9ba-7fab628d3490.mp4"
+                      src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/aad46d36-e421-485e-9c99-64d849fb832a.mp4"
                       type="video/mp4"
                     />
                   </video>
