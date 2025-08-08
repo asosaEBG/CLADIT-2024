@@ -326,7 +326,6 @@ const MasterDetail = (props) => {
                                     disabled={props.disabled}
                                   />
                                 )}
-
                                 {actual.type == 11 && (
                                   <CheckBox
                                     index={index}
@@ -423,7 +422,7 @@ const MasterDetail = (props) => {
                             conf.name = `${conf.name}-${indice}-${pos}`;
                             conf.value = current_detail[det_pos];
                             return (
-                              <Grid xs={12} md={6} lg={4} item p={3}>
+                              <Grid xs={12} md={6} lg={12} item>
                                 <Stack
                                   spacing={2}
                                   style={{ width: "100%" }}
@@ -515,7 +514,6 @@ const MasterDetail = (props) => {
                                         disabled={props.disabled}
                                       />
                                     )}
-
                                     {actual.type == 11 && (
                                       <CheckBox
                                         index={det_pos}

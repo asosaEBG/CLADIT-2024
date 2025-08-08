@@ -23,6 +23,7 @@ export default function CustomizedRating(props) {
     <Box style={props.style}>
       <div style={{ width: "100%" }}>
         <StyledRating
+          style={{ color: 'white' }}
           required={props.conf.required}
           value={parseFloat(props.conf.value)}
           onChange={props.onChange}
@@ -32,16 +33,20 @@ export default function CustomizedRating(props) {
           precision={0.5}
           icon={
             props.conf.icon == 0 ? (
-              <EmojiEventsIcon fontSize="inherit" />
+              <EmojiEventsIcon fontSize="inherit" style={{ color: 'white' }}
+              />
             ) : (
-              <ThumbUpIcon fontSize="inherit" />
+              <ThumbUpIcon fontSize="inherit" style={{ color: 'white' }}
+              />
             )
           }
           emptyIcon={
             props.conf.icon == 0 ? (
-              <EmojiEventsOutlinedIcon fontSize="inherit" />
+              <EmojiEventsOutlinedIcon fontSize="inherit" style={{ color: 'white' }}
+              />
             ) : (
-              <ThumbUpOutlinedIcon fontSize="inherit" />
+              <ThumbUpOutlinedIcon fontSize="inherit" style={{ color: 'white' }}
+              />
             )
           }
         />

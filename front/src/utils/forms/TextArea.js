@@ -7,7 +7,7 @@ export default function TextArea(props) {
   return (
     <Box style={props.style}>
       <div style={{ width: "100%" }}>
-        <FormControl fullWidth variant="outlined">
+        <FormControl fullWidth variant="outlined" >
           <TextField
             label={props.conf.label}
             required={props.conf.required}
@@ -18,6 +18,30 @@ export default function TextArea(props) {
             fullWidth
             multiline
             rows={4}
+            InputProps={{
+              style: {
+                color: 'white',
+                backgroundColor: 'transparent',
+                border: '1px solid white',
+              },
+            }}
+            InputLabelProps={{
+              style: { color: 'white' },
+            }}
+            sx={{
+              "& .MuiOutlinedInput-root": {
+                "& fieldset": {
+                  borderColor: "white",
+                },
+                "&:hover fieldset": {
+                  borderColor: "white",
+                },
+                "&.Mui-focused fieldset": {
+                  borderColor: "white",
+                  boxShadow: "none", // Remove blue shadow
+                },
+              },
+            }}
           />
         </FormControl>
       </div>

@@ -248,8 +248,7 @@ const SimpleList = (props) => {
                                 onChange={onChange}
                                 disabled={props.disabled}
                               />
-                            )}
-
+                            )}                    
                             {actual.type == 11 && (
                               <CheckBox
                                 index={index}

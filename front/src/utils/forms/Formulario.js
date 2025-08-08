@@ -18,7 +18,6 @@ import FileField from "./File";
 import NumberField from "./Number";
 import TextArea from "./TextArea";
 import DateTimeField from "./DateTime";
-import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import TableSelect from "./TableSelect";
@@ -27,6 +26,10 @@ import Paper from "@mui/material/Paper";
 import Modal from "@mui/material/Modal";
 import Alert from "@mui/material/Alert";
 import MasterDetail from "./MasterDetail";
+import TimeField from "./Time";
+import RadioButtonsGroupRow from "./RadioRow";
+import SelectChipField from "./SelectChip";
+import RadioButtonsGroupOther from "./RadioOther";
 const helpers = require("../../helpers/helpers");
 const Formulario = (props) => {
   const [cambios, setCambios] = useState([]);
@@ -42,7 +45,7 @@ const Formulario = (props) => {
       setLoaded(true);
     }
   }, [props.formConfig]);
-  useEffect(() => {}, [cambios]);
+  useEffect(() => { }, [cambios]);
 
   const onChangeCheck = async (evt) => {
     let indice = evt.target.name.split("-")[0];
@@ -89,8 +92,6 @@ const Formulario = (props) => {
           props
             .afterSubmit(body)
             .then((res) => {
-              setFormConfig(null);
-              setFormConfig(props.formConfig);
               setCargando(false);
             })
             .catch((err) => {
@@ -107,174 +108,7 @@ const Formulario = (props) => {
     }
     setCambios(cambios + 1);
   };
-  const addToList = (index) => {
-    let newFormConfig = formConfig;
-    newFormConfig.formConfig[index].value.push({
-      value: "",
-    });
-    setFormConfig(newFormConfig);
-    setCambios(cambios + 1);
-  };
-  const pushValue = (evt) => {
-    let index = evt.target.name.split("-")[2];
-    let newFormConfig = formConfig;
-    if (evt.target.checked) {
-      newFormConfig.formConfig[index].value.push(evt.target.value);
-    } else {
-      newFormConfig.formConfig[index].value = newFormConfig.formConfig[
-        index
-      ].value.filter((actual) => actual != evt.target.value);
-    }
-    setFormConfig(newFormConfig);
-    setCambios(cambios + 1);
-  };
-  const checkAll = (evt) => {
-    let index = evt.target.name.split("-")[2];
-    let newFormConfig = formConfig;
-    if (evt.target.checked) {
-      evt.target.value.split(",").map((actual) => {
-        if (
-          newFormConfig.formConfig[index].value.find(
-            (search) => search == actual
-          ) == null
-        ) {
-          newFormConfig.formConfig[index].value.push(actual);
-        }
-      });
-    } else {
-      newFormConfig.formConfig[index].value = newFormConfig.formConfig[
-        index
-      ].value.filter(
-        (actual) =>
-          evt.target.value.split(",").find((curr) => curr == actual) == null
-      );
-    }
-    setFormConfig(newFormConfig);
-    setCambios(cambios + 1);
-  };
-  const addToListList = (index) => {
-    let newFormConfig = formConfig;
-    newFormConfig.formConfig[index].value.push(
-      formConfig.formConfig[index].fields.map((actual) => {
-        if (actual.type != 6) {
-          return { value: "" };
-        } else {
-          return { value: null };
-        }
-      })
-    );
-    setFormConfig(newFormConfig);
-    setCambios(cambios + 1);
-  };
-  const delFromList = (index, list_index) => {
-    let newFormConfig = formConfig;
-    newFormConfig.formConfig[index].value.splice(list_index, 1);
-    setFormConfig(newFormConfig);
-    setCambios(cambios + 1);
-  };
-  const onChangeList = async (evt) => {
-    let index = evt.target.name.split("-")[0];
-    let list_index = evt.target.name.split("-")[1];
-    let newFormConfig = formConfig;
-    if (evt.target.files) {
-      newFormConfig.formConfig[index].value[list_index].value = await helpers
-        .getBase64(evt.target.files[0])
-        .catch((err) => {
-          console.log(err);
-        });
-    } else {
-      newFormConfig.formConfig[index].value[list_index].value =
-        evt.target.value;
-    }
-    setFormConfig(newFormConfig);
-    setCambios(cambios + 1);
-  };
-  const onChangeListList = async (evt) => {
-    let index = evt.target.name.split("-")[0];
-    let list_index = evt.target.name.split("-")[1];
-    let field_index = evt.target.name.split("-")[2];
-    let newFormConfig = formConfig;
-    if (evt.target.files) {
-      newFormConfig.formConfig[index].value[list_index][field_index].value =
-        await helpers.getBase64(evt.target.files[0]).catch((err) => {
-          console.log(err);
-        });
-    } else {
-      newFormConfig.formConfig[index].value[list_index][field_index].value =
-        evt.target.value;
-    }
-    setFormConfig(newFormConfig);
-    setCambios(cambios + 1);
-  };
-  const addToMasterRowList = (index) => {
-    let newFormConfig = formConfig;
-    newFormConfig.formConfig[index].value.push({
-      head: newFormConfig.formConfig[index].head.map(() => {
-        return { value: "" };
-      }),
-      rows: [],
-    });
-    setFormConfig(newFormConfig);
-    setCambios(cambios + 1);
-  };
-  const onChangeMaster = async (evt) => {
-    let index = evt.target.name.split("-")[0];
-    let list_index = evt.target.name.split("-")[1];
-    let head_index = evt.target.name.split("-")[2];
-    let newFormConfig = formConfig;
-    if (evt.target.files) {
-      newFormConfig.formConfig[index].value[list_index].head[head_index].value =
-        await helpers.getBase64(evt.target.files[0]).catch((err) => {
-          console.log(err);
-        });
-    } else {
-      newFormConfig.formConfig[index].value[list_index].head[head_index].value =
-        evt.target.value;
-    }
-    setFormConfig(newFormConfig);
-    setCambios(cambios + 1);
-  };
 
-  const addRow = (index, list_index) => {
-    let newFormConfig = formConfig;
-    newFormConfig.formConfig[index].value[list_index].rows.push(
-      formConfig.formConfig[index].fields.map((actual) => {
-        if (actual.type != 6) {
-          return { value: "" };
-        } else {
-          return { value: null };
-        }
-      })
-    );
-    setFormConfig(newFormConfig);
-    setCambios(cambios + 1);
-  };
-  const delRow = (index, list_index, row_index) => {
-    let newFormConfig = formConfig;
-    newFormConfig.formConfig[index].value[list_index].rows.splice(row_index, 1);
-    setFormConfig(newFormConfig);
-    setCambios(cambios + 1);
-  };
-  const onChangeRow = async (evt) => {
-    let index = evt.target.name.split("-")[0];
-    let list_index = evt.target.name.split("-")[1];
-    let row_index = evt.target.name.split("-")[2];
-    let field_index = evt.target.name.split("-")[3];
-    let newFormConfig = formConfig;
-    if (evt.target.files) {
-      newFormConfig.formConfig[index].value[list_index].rows[row_index][
-        field_index
-      ].value = await helpers.getBase64(evt.target.files[0]).catch((err) => {
-        console.log(err);
-      });
-    } else {
-      newFormConfig.formConfig[index].value[list_index].rows[row_index][
-        field_index
-      ].value = evt.target.value;
-    }
-    setFormConfig(newFormConfig);
-    setCambios(cambios + 1);
-  };
   const onEditorChange = async (value, editor) => {
     let indice = editor.iframeElement.id.split("-")[0];
     let newFormConfig = formConfig;
@@ -282,47 +116,7 @@ const Formulario = (props) => {
     setFormConfig(newFormConfig);
     setCambios(cambios + 1);
   };
-  const onEditorChangeListList = async (value, editor) => {
-    let index = editor.iframeElement.id.split("-")[0];
-    let list_index = editor.iframeElement.id.split("-")[1];
-    let field_index = editor.iframeElement.id.split("-")[2].split("_")[0];
-    let newFormConfig = formConfig;
-    newFormConfig.formConfig[index].value[list_index][field_index].value =
-      value;
-    setFormConfig(newFormConfig);
-    setCambios(cambios + 1);
-  };
-  const onChangeEditorRow = async (value, editor) => {
-    console.log(editor.iframeElement.id);
-    let index = editor.iframeElement.id.split("-")[0];
-    let list_index = editor.iframeElement.id.split("-")[1];
-    let row_index = editor.iframeElement.id.split("-")[2];
-    let field_index = editor.iframeElement.id.split("-")[3].split("_")[0];
-    let newFormConfig = formConfig;
-    newFormConfig.formConfig[index].value[list_index].rows[row_index][
-      field_index
-    ].value = value;
-    setFormConfig(newFormConfig);
-    setCambios(cambios + 1);
-  };
-  const onChangeEditorMaster = async (value, editor) => {
-    let index = editor.iframeElement.id.split("-")[0];
-    let list_index = editor.iframeElement.id.split("-")[1];
-    let head_index = editor.iframeElement.id.split("-")[2].split("_")[0];
-    let newFormConfig = formConfig;
-    newFormConfig.formConfig[index].value[list_index].head[head_index].value =
-      value;
-    setFormConfig(newFormConfig);
-    setCambios(cambios + 1);
-  };
-  const onChangeEditorList = async (value, editor) => {
-    let index = editor.iframeElement.id.split("-")[0];
-    let list_index = editor.iframeElement.id.split("-")[1].split("_")[0];
-    let newFormConfig = formConfig;
-    newFormConfig.formConfig[index].value[list_index].value = value;
-    setFormConfig(newFormConfig);
-    setCambios(cambios + 1);
-  };
+
   const style = {
     position: "absolute",
     top: "50%",
@@ -367,8 +161,12 @@ const Formulario = (props) => {
       autoComplete="off"
       style={{ backgroundColor: "transparent" }}
     >
-      <Stack spacing={2}>
-        <Typography component="h5" variant="h5" style={{ textAlign: "center" }}>
+      <Stack spacing={3}>
+        <Typography
+          component="h1"
+          variant="h1"
+          style={{ textAlign: "center", color: "white" }}
+        >
           {props.formConfig.title}
         </Typography>
         <Box>
@@ -381,6 +179,7 @@ const Formulario = (props) => {
         {props.formConfig.formConfig &&
           props.formConfig.formConfig.map((actual, index) => (
             <Stack
+              spacing={1}
               key={`form-field-${index}`}
               alignItems="center"
               justifyContent="center"
@@ -389,29 +188,26 @@ const Formulario = (props) => {
                 style={{
                   width: "100%",
                   padding: "1%",
-                  borderLeft: "5px solid #1e3d52",
                   backgroundColor: "transparent",
                 }}
                 elevation={3}
               >
-                <Stack spacing={5}>
-                  <Stack direction="row" spacing={2} style={{ width: "100%" }}>
-                    {actual.required && (
-                      <Chip
-                        label="*"
-                        color="error"
-                        variant="outlined"
-                        style={{ maxWidth: "35%" }}
-                      />
-                    )}
+                <Stack spacing={1}>
+                  {/*<Stack direction="row" spacing={2} style={{ width: "100%" }}>
                     <Typography
                       component="strong"
-                      variant="p"
-                      style={{ textAlign: "justify" }}
+                      variant="h4"
+                      style={{ textAlign: "justify", color: "white" }}
                     >
-                      {`${index + 1}) ${actual.title}`}
-                    </Typography>
-                  </Stack>
+                      {`${actual.title}`}
+                    </Typography>                  
+                  </Stack>*/}
+                  <div
+                    style={{ color: 'white' }}
+                    dangerouslySetInnerHTML={{
+                      __html: DOMPurify.sanitize(actual.title),
+                    }}
+                  ></div>
                   {actual.type == 1 && (
                     <Textfield
                       index={index}
@@ -538,7 +334,6 @@ const Formulario = (props) => {
                       }
                     />
                   )}
-
                   {actual.type == 11 && (
                     <CheckBox
                       index={index}
@@ -651,6 +446,62 @@ const Formulario = (props) => {
                       }
                     />
                   )}
+                  {actual.type == 19 && (
+                    <TimeField
+                      index={index}
+                      conf={actual}
+                      style={{ width: "100%" }}
+                      onChange={onChange}
+                      disabled={
+                        cargando ||
+                        actual.lock ||
+                        props.formConfig.locked ||
+                        props.lockForm
+                      }
+                    />
+                  )}
+                  {actual.type == 20 && (
+                    <RadioButtonsGroupRow
+                      index={index}
+                      conf={actual}
+                      style={{ width: "100%" }}
+                      onChange={onChange}
+                      disabled={
+                        cargando ||
+                        actual.lock ||
+                        props.formConfig.locked ||
+                        props.lockForm
+                      }
+                    />
+                  )}
+                  {actual.type == 21 && (
+                    <SelectChipField
+                      index={index}
+                      conf={actual}
+                      style={{ width: "100%" }}
+                      onChange={onChange}
+                      disabled={
+                        cargando ||
+                        actual.lock ||
+                        props.formConfig.locked ||
+                        props.lockForm
+                      }
+                    />
+                  )}
+                  {actual.type == 22 && (
+                    <RadioButtonsGroupOther
+                      index={index}
+                      conf={actual}
+                      style={{ width: "100%" }}
+                      onChange={onChange}
+                      disabled={
+                        cargando ||
+                        actual.lock ||
+                        props.formConfig.locked ||
+                        props.lockForm
+                      }
+                    />
+                  )}
                 </Stack>
               </Paper>
             </Stack>
@@ -668,7 +519,7 @@ const Formulario = (props) => {
             style={
               props.formConfig.buttonStyle != null
                 ? props.formConfig.buttonStyle
-                : { width: "100%" }
+                : { width: "100%", color: 'white', backgroundColor: 'transparent', border: '1px solid white' }
             }
           >
             {props.formConfig.submitTitle}

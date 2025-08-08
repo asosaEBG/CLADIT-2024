@@ -14,8 +14,6 @@ import {
 import HighlightAltIcon from "@mui/icons-material/HighlightAlt";
 import PatrocinioQZ from "../patrocinio/PatrocinioQZ";
 import ProgramaQZ from "../programa/ProgramaQZ";
-import TalleresQZ from "../talleres/TalleresQZ";
-import TarifasQZ from "../tarifas/TarifasQZ";
 import PauseIcon from "@mui/icons-material/Pause";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
@@ -53,7 +51,17 @@ const CladitXela = () => {
     setValue(newValue);
   };
 
-  useEffect(() => {}, [cambios]);
+  useEffect(() => { }, [cambios]);
+  const encuestas = ['d151e71b-e47a-4e2a-b8ae-0333215ea716',
+    '8f9d9aac-48b4-4081-95d8-e624903f5bfe',
+    'd0957f2a-84d9-4e15-a932-54b0d8fd93af',
+    '8bb4a3c7-dd03-4690-932c-79a42e4e68f3',
+    '6b2a0d38-672d-499c-b93e-cdeda5adf353',
+    'e10d7e09-f68f-4b42-9caf-a15c81f5324b',
+    'dc442d08-b1e8-4aa5-a221-95ef04030050',
+    '76dcb94f-b2df-4861-8048-20d7cd216c58',
+    '84e9cf34-b806-42e3-909c-6c7d42e76334',
+    '7889fd69-f4fc-4d5d-a44c-dda61ea1ebc0']
   const handleTogglePlay = () => {
     if (videoRef.current.paused) {
       videoRef.current.play();
@@ -269,7 +277,7 @@ const CladitXela = () => {
         <PatrocinioQZ />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        <ProgramaQZ evt="ffd12104-932e-4ad9-8e1d-ef449aef6b58" />
+        <ProgramaQZ evt="ffd12104-932e-4ad9-8e1d-ef449aef6b58" encuestas={encuestas} />
       </CustomTabPanel>
       {/*  <CustomTabPanel value={value} index={3}>
         <TalleresQZ />

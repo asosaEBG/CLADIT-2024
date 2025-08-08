@@ -25,9 +25,19 @@ const VistaPrevia = (props) => {
             if (datos.data.response_database == null) {
               setPrograma(null);
             } else {
-              setPrograma(datos.data.response_database);
+              let iterador = 0;
+              let programa_preliminar = datos.data.response_database;
+              programa_preliminar.programa.speakers.map((actual, indice) => {
+                if (actual.detail.length > 0 && indice > 1) {
+                  actual.encuesta = props.encuestas[iterador]
+                  iterador++;
+                }
+                if (indice == (programa_preliminar.programa.speakers.length - 1)) {
+                  setPrograma(programa_preliminar);
+                  setLoading(true);
+                }
+              })
             }
-            setLoading(true);
           })
           .catch((err) => {
             console.log(err);
@@ -54,16 +64,16 @@ const VistaPrevia = (props) => {
         </Grid>
       ) : (
         <Stack spacing={5}>
-          {programa.programa.speakers.map((actual, index) => (
-            <Segmento
+          {
+            programa.programa.speakers.map((actual, index) => (<Segmento
               actual={actual}
               key={`segmento-${index}`}
               speaker={props.speaker}
               refreshData={() => {
                 setContador(contador + 1);
               }}
-            />
-          ))}
+            />)
+            )}
         </Stack>
       )}
     </React.Fragment>

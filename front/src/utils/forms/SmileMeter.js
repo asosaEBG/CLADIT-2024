@@ -11,7 +11,7 @@ import Box from "@mui/material/Box";
 
 const StyledRating = styled(Rating)(({ theme }) => ({
   "& .MuiRating-iconEmpty .MuiSvgIcon-root": {
-    color: theme.palette.action.disabled,
+    color: 'white',
   },
 }));
 

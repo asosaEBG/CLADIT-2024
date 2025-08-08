@@ -9,7 +9,7 @@ export default function RadioButtonsGroup(props) {
   return (
     <Box style={props.style}>
       <div style={{ width: "100%" }}>
-        <FormControl fullWidth>
+        <FormControl fullWidth style={{ color: 'white' }}>
           <RadioGroup
             aria-labelledby={props.index + "-" + props.conf.name}
             onChange={props.onChange}
@@ -20,9 +20,17 @@ export default function RadioButtonsGroup(props) {
             {props.conf.options &&
               props.conf.options.map((actual, indice) => (
                 <FormControlLabel
+                  sx={{
+                    color: "white", // Label color
+                  }}
                   key={`radio-${props.index}-${props.conf.name}-${indice}`}
                   value={actual.value}
-                  control={<Radio />}
+                  control={<Radio sx={{
+                    color: "white", // Default color
+                    "&.Mui-checked": {
+                      color: "white", // Selected color
+                    },
+                  }} />}
                   label={actual.label}
                   required={props.conf.required && props.conf.value == ""}
                   name={props.index + "-" + props.conf.name}

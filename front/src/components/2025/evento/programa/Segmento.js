@@ -21,10 +21,11 @@ import {
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import PanelPreguntasRespuestas from "./Panel";
 import DeviceUnknownIcon from "@mui/icons-material/DeviceUnknown";
+import EncuestaSatisfaccion from "./EncuestaSatisfaccion";
 const Segmento = (props) => {
   const [contador, setContador] = useState(0);
   const [expanded, setExpanded] = useState(false);
-  useEffect(() => {}, [contador]);
+  useEffect(() => { }, [contador]);
   const handleChange = (panel) => (event, isExpanded) => {
     props.refreshData();
     setExpanded(isExpanded ? panel : false);
@@ -94,36 +95,57 @@ const Segmento = (props) => {
           (props.actual.master[5] != "" && props.actual.master[5] != null) ||
           (props.actual.master[6] != "" && props.actual.master[6] != null) ||
           (props.actual.master[7] != "" && props.actual.master[7] != null)) && (
-          <Box>
-            {props.actual.master[7] == "HABILITADAS" && (
-              <Accordion
-                expanded={expanded === "panel3"}
-                onChange={handleChange("panel3")}
-              >
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel3bh-content"
-                  id="panel3bh-header"
-                  style={{ backgroundColor: "#397d51", color: "white" }}
+            <Box>
+              {props.actual.master[7] == "HABILITADAS" && (
+                <Accordion
+                  expanded={expanded === "panel3"}
+                  onChange={handleChange("panel3")}
                 >
-                  <Typography
-                    sx={{ width: "100%", flexShrink: 0, textAlign: "center" }}
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel3bh-content"
+                    id="panel3bh-header"
+                    style={{ backgroundColor: "#397d51", color: "white" }}
                   >
-                    <DeviceUnknownIcon fontSize="small" /> &nbsp;Panel de
-                    preguntas
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <PanelPreguntasRespuestas
-                    id_speaker={props.actual.id}
-                    speaker={props.speaker}
-                    preguntas={props.actual.master[7]}
-                  />
-                </AccordionDetails>
-              </Accordion>
-            )}
-          </Box>
-        )}
+                    <Typography
+                      sx={{ width: "100%", flexShrink: 0, textAlign: "center" }}
+                    >
+                      <DeviceUnknownIcon fontSize="small" /> &nbsp;Panel de
+                      preguntas
+                    </Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <PanelPreguntasRespuestas
+                      id_speaker={props.actual.id}
+                      speaker={props.speaker}
+                      preguntas={props.actual.master[7]}
+                    />
+                  </AccordionDetails>
+                </Accordion>
+              )}
+            </Box>
+          )}
+        {props.actual.encuesta != null && <Box>
+          <Accordion
+            expanded={expanded === "panel3"}
+            onChange={handleChange("panel3")}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel3bh-content"
+              id="panel3bh-header"
+              style={{ backgroundColor: "#397d51", color: "white" }}
+            >
+              <Typography
+                sx={{ width: "100%", flexShrink: 0, textAlign: "center" }}
+              >
+                <DeviceUnknownIcon fontSize="small" />Encuesta de Satisfacción
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <EncuestaSatisfaccion id={props.actual.encuesta} />
+            </AccordionDetails>
+          </Accordion></Box>}
       </Stack>
     </Paper>
   );

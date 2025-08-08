@@ -16,7 +16,7 @@ const VisuallyHiddenInput = styled("input")({
 });
 export default function FileField(props) {
   return (
-    <Box style={{ ...props.style }}>
+    <Box style={props.style}>
       <div style={{ width: "100%" }}>
         <Button
           component="label"
@@ -34,16 +34,9 @@ export default function FileField(props) {
             name={props.index + "-" + props.conf.name}
             disabled={props.disabled}
             fullWidth
+            accept={props.conf.accept}
           />
         </Button>
-        {((props.conf.required && props.conf.value == null) ||
-          props.conf.value == null) && (
-          <p>No se ha seleccionado ningún archivo</p>
-        )}
-        {props.conf.value != null && (
-          <p>1 archivo seleccionado:&nbsp;{props.conf.value.split(";")[0]}</p>
-        )}
-        {<p></p>}
       </div>
     </Box>
   );

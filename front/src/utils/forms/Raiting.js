@@ -39,10 +39,10 @@ export default function HoverRating(props) {
           onChangeActive={(event, newHover) => {
             setHover(newHover);
           }}
-          emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+          emptyIcon={<StarIcon style={{ opacity: 0.55, color: 'white' }} fontSize="inherit" />}
         />
         {props.conf.value !== null && (
-          <Box sx={{ ml: 2 }}>
+          <Box sx={{ ml: 2, color: 'white' }}>
             {labels[hover !== -1 ? hover : props.conf.value]}
           </Box>
         )}

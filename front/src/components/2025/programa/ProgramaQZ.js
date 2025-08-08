@@ -27,7 +27,7 @@ const ProgramaQZ = (props) => {
             admin_service
               .getData(
                 "/patrocinador/view-by-evento/" +
-                  props.evt
+                props.evt
               )
               .then((response_patrocinador) => {
                 setEvento(response_evt.data.response_database.result[0]);
@@ -103,7 +103,7 @@ const ProgramaQZ = (props) => {
             paddingRight: { lg: "5%", xs: "1%", md: "3%" },
           }}
         >
-          <ViewPrograma speaker={false} hash={props.evt} />
+          <ViewPrograma speaker={false} hash={props.evt} encuestas={props.encuestas} />
         </Box>
       </Stack>
     </Box>

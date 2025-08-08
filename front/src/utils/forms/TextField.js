@@ -17,6 +17,31 @@ export default function Textfield(props) {
             disabled={props.disabled}
             fullWidth
             type="text"
+            InputProps={{
+              style: {
+                color: 'white',
+                backgroundColor: 'transparent',
+                border: '1px solid white',
+              },
+            }}
+            InputLabelProps={{
+              style: { color: 'white' },
+            }}
+
+            sx={{
+              "& .MuiOutlinedInput-root": {
+                "& fieldset": {
+                  borderColor: "white",
+                },
+                "&:hover fieldset": {
+                  borderColor: "white",
+                },
+                "&.Mui-focused fieldset": {
+                  borderColor: "white",
+                  boxShadow: "none", // Remove blue shadow
+                },
+              },
+            }}
           />
         </FormControl>
       </div>

@@ -8,7 +8,7 @@ export default function ViewPrograma(props) {
     <React.Fragment>
       <CssBaseline />
       <Box sx={{ width: "100%" }} paddingTop={5} paddingBottom={5}>
-        <VistaPrevia hash={props.hash} speaker={props.speaker} />
+        <VistaPrevia hash={props.hash} speaker={props.speaker} encuestas={props.encuestas} />
       </Box>
     </React.Fragment>
   );
