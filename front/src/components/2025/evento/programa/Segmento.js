@@ -127,13 +127,13 @@ const Segmento = (props) => {
           )}
         {props.actual.encuesta != null && <Box>
           <Accordion
-            expanded={expanded === "panel3"}
-            onChange={handleChange("panel3")}
+            expanded={expanded === "panel4"}
+            onChange={handleChange("panel4")}
           >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel3bh-content"
-              id="panel3bh-header"
+              aria-controls="panel4bh-content"
+              id="panel4bh-header"
               style={{ backgroundColor: "#397d51", color: "white" }}
             >
               <Typography
