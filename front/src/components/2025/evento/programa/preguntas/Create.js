@@ -26,7 +26,7 @@ const CreatePregunta = (props) => {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Box p={2}>
+      <Box p={2} style={{ backgroundColor: '#397d51' }}>
         <Formulario
           afterSubmit={afterSubmit}
           formConfig={{
