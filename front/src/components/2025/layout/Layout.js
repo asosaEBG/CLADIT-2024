@@ -118,7 +118,7 @@ export default function Layout(props) {
               <Grid container justifyContent="center">
                 <Grid xs={4} md={4} lg={4} style={{ textAlign: "center" }}>
                   <img
-                    src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/22f8ac9d-3b92-4986-b39b-3c7e32a89ea2.png"
+                    src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/8ff2041f-2791-4a80-8e28-33b2f091497b.png"
                     loading="lazy"
                     className="img-header"
                   />
