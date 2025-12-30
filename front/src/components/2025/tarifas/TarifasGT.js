@@ -14,15 +14,15 @@ const admin_service = require("../../../helpers/admin_service");
 const TarifasGT = (props) => {
   const [contador] = useState(0);
   const [tarifas, setTarifas] = useState([]);
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
+  const [loading, setLoading] = useState(false);
+ /* useEffect(() => {
     admin_service
       .getData("/evento/view-by-hash/" + props.evt)
       .then((response_evt) => {
         admin_service
           .getData(
             "/tarifa/client/" +
-              response_evt.data.response_database.result[0].UniqueID
+            response_evt.data.response_database.result[0].UniqueID
           )
           .then((response_tarifa) => {
             setTarifas(response_tarifa.data.response);
@@ -35,7 +35,7 @@ const TarifasGT = (props) => {
       .catch((error) => {
         console.log(error);
       });
-  }, [contador]);
+  }, [contador]);*/
   return loading ? (
     <Backdrop
       sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
@@ -45,7 +45,14 @@ const TarifasGT = (props) => {
     </Backdrop>
   ) : (
     <Box>
-      <Stack spacing={3}>
+
+      <img src='https://escuela-bancaria.s3.us-east-2.amazonaws.com/7cfd596b-1117-4f8d-8563-9ae44e707246.jpeg' style={{
+        width: "100%",
+        height: "auto",
+        objectFit: "contain"
+      }} />
+
+      {/*<Stack spacing={3}>
         <Typography textAlign="center" variant="h3">
           Tarifas
         </Typography>
@@ -125,7 +132,7 @@ const TarifasGT = (props) => {
             </Box>
           );
         })}
-      </Stack>
+      </Stack>*/}
     </Box>
   );
 };

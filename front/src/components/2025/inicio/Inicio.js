@@ -54,7 +54,7 @@ const Inicio = () => {
     setValue(newValue);
   };
 
-  useEffect(() => {}, [cambios]);
+  useEffect(() => { }, [cambios]);
   const handleTogglePlay = () => {
     if (videoRef.current.paused) {
       videoRef.current.play();
@@ -78,7 +78,7 @@ const Inicio = () => {
           <Tab label="Evento" {...a11yProps(0)} />
           <Tab label="Patrocinio" {...a11yProps(1)} />
           <Tab label="Programa" {...a11yProps(2)} />
-          <Tab label="Talleres" {...a11yProps(3)} />
+          {/*<Tab label="Talleres" {...a11yProps(3)} />*/}
           <Tab label="Tarifas" {...a11yProps(4)} />
         </Tabs>
       </Box>
@@ -87,7 +87,8 @@ const Inicio = () => {
           <Stack spacing={5} alignItems="center" justifyContent="center">
             <Typography variant="h4">
               <CalendarMonthIcon />
-              &nbsp; 21 y 22 de mayo 2025
+              {/*&nbsp; 21 y 22 de mayo 2025*/}
+              &nbsp; 25 y 26 de mayo 2026
             </Typography>
             <Box
               style={{}}
@@ -98,7 +99,7 @@ const Inicio = () => {
                 position: "relative",
               }}
             >
-              <video
+              { /* <video
                 autoPlay
                 muted
                 playsInline
@@ -116,7 +117,7 @@ const Inicio = () => {
                   src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/89a56fe2-c6ce-4046-ac40-c9889014b8bc.mp4"
                   type="video/mp4"
                 />
-              </video>
+              </video>*/}
             </Box>
             <Button
               style={{
@@ -181,7 +182,7 @@ const Inicio = () => {
                   <br />
                   Para ello, invita a participar en su&nbsp;
                   <strong>
-                    XXII CONGRESO REGIONAL PARA LA PREVENCIÓN DE LAVADO DE DINERO
+                    XXIII CONGRESO REGIONAL PARA LA PREVENCIÓN DE LAVADO DE DINERO
                     U OTROS ACTIVOS Y EL FINANCIAMIENTO DEL TERRORISMO -CLADIT-.
                   </strong>
                   Este congreso esta diseñado para toda persona que tenga un
@@ -195,7 +196,7 @@ const Inicio = () => {
                   financiamiento del terrorismo.
                   <br />
                   <br />
-                  CLADIT 2025 presenta una serie de invitados del más alto nivel
+                  CLADIT 2026 presenta una serie de invitados del más alto nivel
                   y diferentes actividades que será toda una experiencia
                   novedosa para los participantes.
                 </Typography>
@@ -207,7 +208,7 @@ const Inicio = () => {
                 <Typography variant="h4">Hotel Westin Camino Real</Typography>
                 <Typography variant="h5">
                   Centro de Convenciones
-                </Typography>                
+                </Typography>
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4579.929436469436!2d-90.5184367242587!3d14.598149677135387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f5fed3668f4548f%3A0x966beff74fe51ab!2sThe%20Westin%20Camino%20Real%2C%20Guatemala!5e1!3m2!1ses!2sgt!4v1726596420542!5m2!1ses!2sgt"
                   width="75%"
@@ -262,7 +263,7 @@ const Inicio = () => {
                 />
               </ImageListItem>
             </ImageList>
-            <View evt="1f377385-b7fb-4b32-a2e3-5f906c3c4960" />
+            <View evt={process.env.REACT_APP_EVT} />
           </Stack>
         </Box>
       </CustomTabPanel>
@@ -270,13 +271,13 @@ const Inicio = () => {
         <PatrocinioGT />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        <ProgramaGT  evt="1f377385-b7fb-4b32-a2e3-5f906c3c4960"/>
+        <ProgramaGT evt={process.env.REACT_APP_EVT} />
       </CustomTabPanel>
-      <CustomTabPanel value={value} index={3}>
+      {/*  <CustomTabPanel value={value} index={3}>
         <TalleresGT />
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={4}>
-        <TarifasGT evt="1f377385-b7fb-4b32-a2e3-5f906c3c4960"/>
+      </CustomTabPanel>*/}
+      <CustomTabPanel value={value} index={3}>
+        <TarifasGT evt={process.env.REACT_APP_EVT} />
       </CustomTabPanel>
     </Box>
   );

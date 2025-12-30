@@ -17,16 +17,16 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route estrict path="/" element={<Navigate to="/2025/xela" replace />} />
+        <Route estrict path="/" element={<Navigate to="/2026/gt" replace />} />
         <Route element={<Layout2024 />}>
           <Route path="/2024/gt" element={<Inicio2024 />} />
           <Route path="/2024/contacto" element={<Contacto2024 />} />
           <Route path="/2024/xela" element={<CladitXela2024 />} />
         </Route>
         <Route element={<Layout2025 />}>
-          <Route path="/2025/gt" element={<Inicio2025 />} />
-          <Route path="/2025/contacto" element={<Contacto2025 />} />
-          <Route path="/2025/xela" element={<CladitXela2025 />} />
+          <Route path="/2026/gt" element={<Inicio2025 />} />
+          <Route path="/2026/contacto" element={<Contacto2025 />} />
+          <Route path="/2026/xela" element={<CladitXela2025 />} />
         </Route>
       </Routes>
     </Router>

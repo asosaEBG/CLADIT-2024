@@ -25,18 +25,8 @@ const VistaPrevia = (props) => {
             if (datos.data.response_database == null) {
               setPrograma(null);
             } else {
-              let iterador = 0;
-              let programa_preliminar = datos.data.response_database;
-              programa_preliminar.programa.speakers.map((actual, indice) => {
-                if (actual.detail.length > 0 && indice > 1) {
-                  actual.encuesta = props.encuestas[iterador]
-                  iterador++;
-                }
-                if (indice == (programa_preliminar.programa.speakers.length - 1)) {
-                  setPrograma(programa_preliminar);
-                  setLoading(true);
-                }
-              })
+              setPrograma(datos.data.response_database);
+              setLoading(true);
             }
           })
           .catch((err) => {

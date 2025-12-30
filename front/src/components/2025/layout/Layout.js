@@ -22,15 +22,15 @@ import DrawIcon from "@mui/icons-material/Draw";
 const pages = [
   {
     label: "Ciudad de Guatemala",
-    href: "/2025/gt",
+    href: "/2026/gt",
   },
   {
     label: "Xela",
-    href: "/2025/xela",
+    href: "/2026/xela",
   },
   {
     label: "Contacto",
-    href: "/2025/contacto",
+    href: "/2026/contacto",
   },
   {
     label: "Ver edición 2024",
@@ -208,7 +208,7 @@ export default function Layout(props) {
             variant="extended"
             href={
               process.env.REACT_APP_URL_INSCRIPCION +
-              "1f377385-b7fb-4b32-a2e3-5f906c3c4960"
+              process.env.REACT_APP_EVT
             }
           >
             <DrawIcon sx={{ mr: 1 }} />
