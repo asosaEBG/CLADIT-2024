@@ -94,9 +94,9 @@ const CladitXela = () => {
           <Stack spacing={5} alignItems="center" justifyContent="center">
             <Typography variant="h4">
               <CalendarMonthIcon />
-              &nbsp; 11 de agosto 2025
+              &nbsp; 10 de agosto 2026
             </Typography>
-            <Box
+            {/*<Box
               style={{}}
               sx={{
                 width: "100%",
@@ -124,7 +124,7 @@ const CladitXela = () => {
                   type="video/mp4"
                 />
               </video>
-            </Box>
+            </Box>*/}
             <Button
               style={{
                 backgroundColor: "#397d51",
@@ -133,7 +133,7 @@ const CladitXela = () => {
               }}
               href={
                 process.env.REACT_APP_URL_INSCRIPCION +
-                "ffd12104-932e-4ad9-8e1d-ef449aef6b58"
+                process.env.REACT_APP_EVT_XELA
               }
               target="_blank"
               startIcon={<HighlightAltIcon />}
@@ -188,7 +188,7 @@ const CladitXela = () => {
                   <br />
                   Para ello, invita a participar en su&nbsp;
                   <strong>
-                    VI CONGRESO REGIONAL PARA LA PREVENCIÓN DE LAVADO DE DINERO
+                    V CONGRESO REGIONAL PARA LA PREVENCIÓN DE LAVADO DE DINERO
                     U OTROS ACTIVOS Y EL FINANCIAMIENTO DEL TERRORISMO -CLADIT-.
                   </strong>
                   Este congreso esta diseñado para toda persona que tenga un
@@ -202,7 +202,7 @@ const CladitXela = () => {
                   financiamiento del terrorismo.
                   <br />
                   <br />
-                  CLADIT 2025 presenta una serie de invitados del más alto nivel
+                  CLADIT 2026 presenta una serie de invitados del más alto nivel
                   y diferentes actividades que será toda una experiencia
                   novedosa para los participantes.
                 </Typography>
@@ -269,7 +269,7 @@ const CladitXela = () => {
                 />
               </ImageListItem>
             </ImageList>
-            <View evt="ffd12104-932e-4ad9-8e1d-ef449aef6b58" />
+            <View evt={process.env.REACT_APP_EVT_XELA} />
           </Stack>
         </Box>
       </CustomTabPanel>
@@ -277,7 +277,7 @@ const CladitXela = () => {
         <PatrocinioQZ />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        <ProgramaQZ evt="ffd12104-932e-4ad9-8e1d-ef449aef6b58" encuestas={encuestas} />
+        <ProgramaQZ evt={process.env.REACT_APP_EVT_XELA} encuestas={encuestas} />
       </CustomTabPanel>
       {/*  <CustomTabPanel value={value} index={3}>
         <TalleresQZ />

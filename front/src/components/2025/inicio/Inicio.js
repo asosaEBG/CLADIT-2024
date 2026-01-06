@@ -88,7 +88,7 @@ const Inicio = () => {
             <Typography variant="h4">
               <CalendarMonthIcon />
               {/*&nbsp; 21 y 22 de mayo 2025*/}
-              &nbsp; 25 y 26 de mayo 2026
+              &nbsp; 21 y 22 de mayo 2026
             </Typography>
             <Box
               style={{}}
@@ -127,7 +127,7 @@ const Inicio = () => {
               }}
               href={
                 process.env.REACT_APP_URL_INSCRIPCION +
-                "1f377385-b7fb-4b32-a2e3-5f906c3c4960"
+                process.env.REACT_APP_EVT
               }
               target="_blank"
               startIcon={<HighlightAltIcon />}
@@ -157,7 +157,7 @@ const Inicio = () => {
                   </Button>
                   <video ref={videoRef} controls style={{ width: "100%" }}>
                     <source
-                      src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/51a6811a-cf6d-4762-b449-1a6e71690e3d.mp4"
+                      src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/649ad4e4-c45e-4c2f-bf0e-883eb546970c.mp4"
                       type="video/mp4"
                     />
                   </video>

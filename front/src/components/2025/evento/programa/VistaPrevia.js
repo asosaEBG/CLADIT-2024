@@ -24,6 +24,7 @@ const VistaPrevia = (props) => {
           .then((datos) => {
             if (datos.data.response_database == null) {
               setPrograma(null);
+              setLoading(true);
             } else {
               setPrograma(datos.data.response_database);
               setLoading(true);

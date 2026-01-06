@@ -32,10 +32,10 @@ const pages = [
     label: "Contacto",
     href: "/2026/contacto",
   },
-  {
-    label: "Ver edición 2024",
-    href: "/2024/xela",
-  },
+  /* {
+     label: "Ver edición 2024",
+     href: "/2024/xela",
+   },*/
 ];
 function ScrollTop(props) {
   const { children, window } = props;

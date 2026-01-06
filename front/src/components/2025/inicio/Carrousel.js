@@ -17,7 +17,7 @@ const Carrousel = () => {
   const [conferencistas, setConferencistas] = useState([]);
   useEffect(() => {
     admin_service
-      .getData("/conferencista/read/1f377385-b7fb-4b32-a2e3-5f906c3c4960")
+      .getData(`/conferencista/read/${process.env.REACT_APP_EVT}`)
       .then((response) => {
         setConferencistas([...new Map(response.data.response.result.sort((a, b) => a.hora.localeCompare(b.hora)).map(item => [item.conferencista.nombre, item])).values()])
       })

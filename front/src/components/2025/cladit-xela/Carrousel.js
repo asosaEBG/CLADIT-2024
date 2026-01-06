@@ -23,8 +23,8 @@ const Carrousel = (props) => {
   const [conferencistas, setConferencistas] = useState([]);
   useEffect(() => {
     admin_service
-      .getData("/conferencista/read/ffd12104-932e-4ad9-8e1d-ef449aef6b58")
-      .then((response) => {        
+      .getData("/conferencista/read/" + process.env.REACT_APP_EVT_XELA)
+      .then((response) => {
         setConferencistas(response.data.response.result);
       })
       .catch((error) => {
@@ -32,7 +32,7 @@ const Carrousel = (props) => {
       });
   }, [contador]);
 
-  useEffect(() => {}, [cambios]);
+  useEffect(() => { }, [cambios]);
   const handleStepChange = (step) => {
     setActiveStep(step);
     setCambios(cambios + 1);

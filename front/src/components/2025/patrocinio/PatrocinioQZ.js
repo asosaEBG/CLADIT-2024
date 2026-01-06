@@ -72,7 +72,7 @@ const PatrocinioQZ = () => {
   useEffect(() => {
     admin_service
       .getData(
-        "/evento/view-by-hash/ffd12104-932e-4ad9-8e1d-ef449aef6b58"
+        "/evento/view-by-hash/" + process.env.REACT_APP_EVT_XELA
       )
       .then((response_evt) => {
         setEvento(response_evt.data.response_database.result[0]);
@@ -108,7 +108,7 @@ const PatrocinioQZ = () => {
         <Container maxWidth >
           <motion.div initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.3 }} transition={{ duration: 1 }}>
             <Typography variant="h3" fontWeight="bold" gutterBottom color='#397d51'>
-              Patrocinios CLADIT XELA 2025
+              Patrocinios CLADIT XELA 2026
             </Typography>
             <Typography variant="h5" sx={{ marginBottom: 2 }} color='#397d51'>
               Oportunidad de patrocinio en los eventos más importantes de tecnología y seguridad bancaria.
