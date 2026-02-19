@@ -29,7 +29,7 @@ const pricingData = [
     category: "Tarifa Marzo hasta el día del evento",
     rows: [
       { participants: "1 Participante", gtq: "Q 4,760.00", usd: "$ 595.00" },
-      { participants: "3 Participantes", gtq: "Q 4,320.00", usd: "$ 540.00" }
+      { participants: "3 Participantes", gtq: "Q 4,320.00 c/u", usd: "$ 540.00 c/u" }
     ]
   },
   {
@@ -37,7 +37,7 @@ const pricingData = [
     highlight: true,
     rows: [
       { participants: "1 Participante", gtq: "Q 4,200.00", usd: "$ 525.00" },
-      { participants: "3 Participantes", gtq: "Q 3,800.00", usd: "$ 475.00" }
+      { participants: "3 Participantes", gtq: "Q 3,800.00 c/u", usd: "$ 475.00 c/u" }
     ]
   }
 ];
