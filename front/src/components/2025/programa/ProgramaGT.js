@@ -7,7 +7,9 @@ import {
   Grid,
   Typography,
   Button,
+  Container
 } from "@mui/material";
+import Carousel from "react-material-ui-carousel";
 import ViewPrograma from "../evento/programa/Programa";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 const admin_service = require("../../../helpers/admin_service");
@@ -80,6 +82,11 @@ const ProgramaGT = (props) => {
         </Grid>
       </Grid>
       <Box
+
+      >
+        <CarouselHero />
+      </Box>
+      <Box
         sx={{
           paddingLeft: { lg: "5%", xs: "1%", md: "3%" },
           paddingRight: { lg: "5%", xs: "1%", md: "3%" },
@@ -91,5 +98,43 @@ const ProgramaGT = (props) => {
   </Box>
 
 };
+const images = [
 
+  "https://escuela-bancaria.s3.us-east-2.amazonaws.com/a871b40d-2878-4208-a0b7-37edf2aac0ad.png",
+
+
+  "https://escuela-bancaria.s3.us-east-2.amazonaws.com/8c7845ea-b712-445c-9f24-0effbf93eafd.png",
+
+
+  "https://escuela-bancaria.s3.us-east-2.amazonaws.com/ddb28b74-69b8-4739-b0b8-fcb3478a77d9.png"
+
+
+];
+
+function CarouselHero() {
+  return (
+    <Carousel
+      autoPlay
+      interval={5000}
+      animation="slide"
+      indicators={true}
+      navButtonsAlwaysVisible={false}
+      swipe={true}
+    >
+      {images.map((img, index) => (
+        <Box
+          key={index}
+          component="img"
+          src={img}
+          alt={`slide-${index}`}
+          sx={{
+            width: "100%",
+            height: { xs: 250, md: 500 },
+            objectFit: "contain"
+          }}
+        />
+      ))}
+    </Carousel>
+  );
+}
 export default ProgramaGT;
