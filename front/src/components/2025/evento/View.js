@@ -3,6 +3,8 @@ import { Stack, CircularProgress, Box, Backdrop } from "@mui/material";
 import Header from "./header/Header";
 import Patrocinadores from "./patrocinadores/Patrocinadores";
 import Carrousel from "./patrocinadores/Carrousel";
+import CarrouselConferencistas from "./Carrousel";
+
 const admin_service = require("../../../helpers/admin_service");
 const View = (props) => {
   const [contador] = useState(0);
@@ -20,7 +22,7 @@ const View = (props) => {
             admin_service
               .getData(
                 "/patrocinador/view-by-evento/" +
-                   props.evt
+                props.evt
               )
               .then((response_patrocinador) => {
                 setEvento(response_evt.data.response_database.result[0]);
@@ -52,6 +54,7 @@ const View = (props) => {
       <Stack spacing={5} alignItems="center">
         <Carrousel patrocinadores={patrocinadores} />
         <Header evt={props.evt} evento={evento} />
+        <CarrouselConferencistas />
         <Patrocinadores
           evt={props.evt}
           patrocinadores={patrocinadores}

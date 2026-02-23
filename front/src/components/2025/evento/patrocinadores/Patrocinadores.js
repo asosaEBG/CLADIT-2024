@@ -48,7 +48,8 @@ const Patrocinadores = (props) => {
                     style={actual[0].tipo == 'DIAMANTE' ? {
                       width: "100%",
                       height: "150px",
-                      objectFit: "cover",
+                      objectFit: "contain",
+                      padding: "3%",
                     } : {
                       width: "100%",
                       height: "150px",

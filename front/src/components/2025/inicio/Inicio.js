@@ -14,12 +14,9 @@ import {
 import HighlightAltIcon from "@mui/icons-material/HighlightAlt";
 import PatrocinioGT from "../patrocinio/PatrocinioGT";
 import ProgramaGT from "../programa/ProgramaGT";
-import TalleresGT from "../talleres/Talleres";
 import TarifasGT from "../tarifas/TarifasGT";
 import PauseIcon from "@mui/icons-material/Pause";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-import Carrousel from "./Carrousel";
 
 
 function CustomTabPanel(props) {
@@ -85,40 +82,7 @@ const Inicio = () => {
       <CustomTabPanel value={value} index={0}>
         <Box sx={{ width: "100%" }}>
           <Stack spacing={5} alignItems="center" justifyContent="center">
-            <Typography variant="h4">
-              <CalendarMonthIcon />
-              {/*&nbsp; 21 y 22 de mayo 2025*/}
-              &nbsp; 21 y 22 de mayo 2026
-            </Typography>
-            <Box
-              style={{}}
-              sx={{
-                width: "100%",
-                height: { lg: "40vh", md: "20vh", xs: "5vh" },
-                overflow: "hidden",
-                position: "relative",
-              }}
-            >
-              { /* <video
-                autoPlay
-                muted
-                playsInline
-                loop
-                style={{
-                  width: "100vw",
-                  height: "auto",
-                  position: "absolute",
-                  top: "50%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
-                }}
-              >
-                <source
-                  src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/89a56fe2-c6ce-4046-ac40-c9889014b8bc.mp4"
-                  type="video/mp4"
-                />
-              </video>*/}
-            </Box>
+            <img src='https://escuela-bancaria.s3.us-east-2.amazonaws.com/d8335327-633d-4fb9-841f-c445ce8c0a1e.png' style={{ width: '100%' }} />
             <Button
               style={{
                 backgroundColor: "#397d51",
@@ -202,7 +166,6 @@ const Inicio = () => {
                 </Typography>
               </Grid>
             </Grid>
-            <Carrousel />
             <Grid container alignItems="center" justifyContent="center">
               <Grid xs={12} md={6} lg={6} style={{ textAlign: "center" }}>
                 <Typography variant="h4">Hotel Westin Camino Real</Typography>
