@@ -26,6 +26,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import MapIcon from '@mui/icons-material/Map';
 import FilePreviewModal from "../tools/Modal";
+import EmailIcon from '@mui/icons-material/Email';
 const live_events_service = require('../../helpers/live_events_service')
 
 const Inicio = () => {
@@ -38,10 +39,6 @@ const Inicio = () => {
     if (isXs) { cols = 1; cols_detalles = 1; }
     else if (isMd) { cols = 1; cols_detalles = 1; }
     else if (isLg) { cols = 5; cols_detalles = 2; }
-    const [cambios, setCambios] = useState(0);
-    const [isPlaying, setIsPlaying] = useState(false);
-    const videoRef = useRef(null);
-    const [value, setValue] = React.useState(0);
     const stats_arr = [
         { img: "https://escuela-bancaria.s3.us-east-2.amazonaws.com/9c616b0a-7c5a-4357-9aae-51584e68cb8d.jpeg", title: "ASISTENTES", value: "+500" },
         { img: "https://escuela-bancaria.s3.us-east-2.amazonaws.com/91e32109-0226-4148-8f04-3626d422ad6d.jpeg", title: "STANDS EXPO", value: "+10" },
@@ -53,11 +50,20 @@ const Inicio = () => {
         { img: "https://escuela-bancaria.s3.us-east-2.amazonaws.com/d887e158-984e-4537-9d6c-53441c9a2a8a.jpeg", title: "PROGRAMA ACADÉMICO", value: "Click para ver detalles", href: '/programa' },
         { img: "https://escuela-bancaria.s3.us-east-2.amazonaws.com/933f62f1-b423-4097-8d3f-82b2dd1800b6.jpeg", title: "MEDIA PARTNERS", value: "Click para más detalles", href: '/media-partners' },
     ]
+    const varios_arr = [
+        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/52ae58d7-24cc-4954-ae58-e6a33590d9dd.jpeg",
+        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/f7bce16e-1a2c-4731-a66b-5a91ecc3eeaa.jpeg",
+        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/d8d7a616-dab4-44e7-853e-0fff815fceeb.jpeg",
+        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/431f5b17-fa11-4930-b6ef-3f0b1feb573a.jpeg",
+        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/451f7bb8-1d05-427e-8f18-4e94145c1e86.jpeg",
+        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/7b9c2c52-6f0d-40e8-acb3-a6d545b2d6a5.jpeg",
+        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/47129e5f-2a5e-4348-a0d5-752d53d3ecf4.jpeg",
+        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/620c27f5-eedc-4a94-b052-c3ee2093c749.jpeg",
+        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/b6010e2c-5019-4bad-b411-bf8cccc61532.jpeg",
+    ]
     const [contador] = useState(0);
     const [evento, setEvento] = useState({});
     const [conferencistas, setConferencistas] = useState([]);
-    const [patrocinadores, setPatrocinadores] = useState([]);
-    const [patrocinadores_diamante, setPatrocinadores_diamante] = useState([]);
     const [loading, setLoading] = useState(true);
     const [open, setOpen] = useState(false);
     const [url, setUrl] = useState("");
@@ -75,7 +81,6 @@ const Inicio = () => {
                             .getData(`/conferencista/read/${process.env.REACT_APP_EVT}`)
                             .then((response) => {
                                 setEvento(response_evt.data.response_database.result[0]);
-                                setPatrocinadores(response_patrocinador.data.response.result);
                                 setLoading(false);
                                 setConferencistas([...new Map(response.data.response.result.sort((a, b) => a.hora.localeCompare(b.hora)).map(item => [item.conferencista.nombre, item])).values()])
                             })
@@ -246,7 +251,7 @@ const Inicio = () => {
                             Reserva una de las posiciones disponibles
                         </Typography>
                         <Typography variant="h5" align="center" style={{ color: "#65a630", fontWeight: "bold", textAlign: 'justify' }}>
-                            Patrocinador / Stand
+                            Patrocinador / Stand / Taller Pre Congreso / Sala de reuniones VIP
                         </Typography>
                         <List style={{ color: '#65a630' }}>
                             <ListItem disablePadding>
@@ -342,36 +347,38 @@ const Inicio = () => {
 
                 {/* Contenido */}
                 <Box sx={{ position: "relative", zIndex: 2 }} p={15}>
-                    <Typography
-                        variant="h3"
-                        fontWeight="bold"
-                        color="white"
-                        gutterBottom
-                    >
-                        XXIII CLADIT 2026
-                    </Typography>
-                    <Typography
-                        variant="P"
-                        fontWeight="bold"
-                        color="white"
-                        gutterBottom
-                    >
-                        +20 expositores
-                    </Typography>
-                    <Typography
-                        variant="p"
-                        color="white"
-                        sx={{ maxWidth: "600px", opacity: 0.9 }}
-                        gutterBottom
-                        style={{ textAlign: 'justify' }}
-                    >
-                        Soluciones en AML/CFT, RegTech, Inteligencia Artificial aplicada al Compliance, Analítica Avanzada, Monitoreo Transaccional, Automatización (RPA), Ciberseguridad, Gestión de Riesgos, Sanciones Internacionales, Activos Virtuales, Blockchain, Investigación Financiera y Data Governance que fortalecerán la prevención y el cumplimiento en tu institución.
+                    <Stack spacing={1}>
+                        <Typography
+                            variant="h3"
+                            fontWeight="bold"
+                            color="white"
+                            gutterBottom
+                        >
+                            XXIII CLADIT 2026
+                        </Typography>
+                        <Typography
+                            variant="P"
+                            fontWeight="bold"
+                            color="white"
+                            gutterBottom
+                        >
+                            +20 expositores
+                        </Typography>
+                        <Typography
+                            variant="p"
+                            color="white"
+                            sx={{ maxWidth: "600px", opacity: 0.9 }}
+                            gutterBottom
+                            style={{ textAlign: 'justify' }}
+                        >
+                            Soluciones en AML/CFT, RegTech, Inteligencia Artificial aplicada al Compliance, Analítica Avanzada, Monitoreo Transaccional, Automatización (RPA), Ciberseguridad, Gestión de Riesgos, Sanciones Internacionales, Activos Virtuales, Blockchain, Investigación Financiera y Data Governance que fortalecerán la prevención y el cumplimiento en tu institución.
 
-                        Conecta con proveedores especializados, expertos internacionales y líderes del sector financiero y no financiero en CLADIT 2026 y lleva tu estrategia de prevención al siguiente nivel.
-                    </Typography>
+                            Conecta con proveedores especializados, expertos internacionales y líderes del sector financiero y no financiero en CLADIT 2026 y lleva tu estrategia de prevención al siguiente nivel.
+                        </Typography>
+                    </Stack>
                 </Box>
             </Box>
-            <Box sx={{ width: "100%", padding: '5%' , overflow:'hidden'}}>
+            <Box sx={{ width: "100%", padding: '5%', overflow: 'hidden' }}>
                 <Stack spacing={6}>
                     <Typography variant="h4" align="center" style={{ color: "#1e3d52", fontWeight: "bold", textAlign: 'center' }}>
                         NUESTROS CONFERENCISTAS
@@ -384,10 +391,10 @@ const Inicio = () => {
                                 sx={{
                                     borderRadius: 3,
                                     overflow: "hidden",
-                                    transition: "all 0.3s ease",
                                     cursor: "pointer",
+                                    position: "relative",
+                                    transition: "box-shadow 0.3s ease",
                                     "&:hover": {
-                                        transform: "scale(1.03)",
                                         boxShadow: "0 0 20px rgba(101,166,48,0.8)",
                                     },
                                     "&:hover img": {
@@ -404,7 +411,8 @@ const Inicio = () => {
                                         width: "100%",
                                         height: "100%",
                                         objectFit: "cover",
-                                        transition: "all 0.3s ease",
+                                        display: "block",
+                                        transition: "filter 0.3s ease",
                                     }}
                                 />
 
@@ -420,6 +428,147 @@ const Inicio = () => {
                     </ImageList>
                 </Stack>
             </Box >
+            <Box
+                sx={{
+                    width: "100%",
+                    height: "600px",
+                    position: "relative",
+                    backgroundImage: `url("https://escuela-bancaria.s3.us-east-2.amazonaws.com/4f34078f-3f61-4b29-9d1e-0710e6eea487.jpeg")`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center bottom",
+                    backgroundRepeat: "no-repeat",
+                    display: "flex",
+                    alignItems: "center",
+                }}
+            >
+                {/* Overlay oscuro con degradado */}
+                <Box
+                    sx={{
+                        position: "absolute",
+                        inset: 0,
+                        backdropFilter: "blur(3px)",
+                        WebkitBackdropFilter: "blur(3px)", // soporte Safari
+                        backgroundColor: "rgba(0,0,0,0.4)", // oscurece ligeramente
+                        zIndex: 1,
+                    }}
+                />
+
+                {/* Contenido */}
+                <Box sx={{ position: "relative", zIndex: 2 }} p={15}>
+                    <Stack spacing={1}>
+                        <Typography
+                            variant="h3"
+                            fontWeight="bold"
+                            color="white"
+                            gutterBottom
+                        >
+                            Salas de Negocios VIP
+                        </Typography>
+                        <Typography
+                            variant="P"
+                            fontWeight="bold"
+                            color="white"
+                            gutterBottom
+                        >
+                            3 Salas
+                        </Typography>
+                        <Typography
+                            variant="p"
+                            color="white"
+                            sx={{ maxWidth: "600px", opacity: 0.9 }}
+                            gutterBottom
+                            style={{ textAlign: 'justify' }}
+                        >
+                            Espacios de reunión exclusivos para discutir temas estratégicos con expertos en compliance y prevención de lavado de dinero.
+                            Conéctate con proveedores de soluciones, consultores especializados y líderes del sector financiero y no financiero en un entorno privado diseñado para fomentar el diálogo abierto, la colaboración y la generación de oportunidades de negocio.
+                        </Typography>
+                        <Grid container alignItems="center" justifyContent="center" style={{ textAlign: "justify", width: '100%' }} spacing={2}>
+                            <Grid size={{ xs: 12, md: 6, lg: 6 }}  >
+                                <Button startIcon={<MapIcon />} variant="contained" color="primary" fullWidth onClick={() => { setOpen(true); setUrl(evento.planos) }} style={{ backgroundColor: '#65a630', color: 'white' }}> Click para ver espacio de salas VIP</Button>
+                            </Grid>
+                            <Grid size={{ xs: 12, md: 6, lg: 6 }}   >
+                                <Button style={{ backgroundColor: '#65a630', color: 'white' }} startIcon={<EmailIcon />} variant="contained" color="primary" fullWidth href="mailto:ncuches@ebg.edu.gt?subject=Quiero%20más%20información%20sobre%20salas%20VIP%20CLADIT%202026"> Solicitar más información</Button>
+                            </Grid>
+                        </Grid>
+                    </Stack>
+                </Box>
+            </Box>
+            <ImageList variant="woven" cols={3} gap={8}>
+                {varios_arr.map((item) => (
+                    <ImageListItem key={item}>
+                        <img
+                            srcSet={`${item}?w=161&fit=crop&auto=format&dpr=2 2x`}
+                            src={`${item}?w=161&fit=crop&auto=format`}
+                            alt={"varios"}
+                            loading="lazy"
+                        />
+                    </ImageListItem>
+                ))}
+            </ImageList>
+            <Box
+                sx={{
+                    width: "100%",
+                    height: "600px",
+                    position: "relative",
+                    backgroundImage: `url("https://escuela-bancaria.s3.us-east-2.amazonaws.com/a74f005a-8c6a-41ec-9c85-bb3aa7268f02.png")`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center center",
+                    backgroundRepeat: "no-repeat",
+                    display: "flex",
+                    alignItems: "center",
+                }}
+            >
+                {/* Overlay oscuro con degradado */}
+                <Box
+                    sx={{
+                        position: "absolute",
+                        inset: 0,
+                        backdropFilter: "blur(3px)",
+                        WebkitBackdropFilter: "blur(3px)", // soporte Safari
+                        backgroundColor: "rgba(0,0,0,0.4)", // oscurece ligeramente
+                        zIndex: 1,
+                    }}
+                />
+
+                {/* Contenido */}
+                <Box sx={{ position: "relative", zIndex: 2 }} p={15}>
+                    <Stack spacing={1}>
+                        <Typography
+                            variant="h3"
+                            fontWeight="bold"
+                            color="white"
+                            gutterBottom
+                        >
+                            Talleres Pre Congreso
+                        </Typography>
+                        <Typography
+                            variant="P"
+                            fontWeight="bold"
+                            color="white"
+                            gutterBottom
+                        >
+                            Sector Bancario / Sector Cooperativas / Todos los sectores y personas obligadas
+                        </Typography>
+                        <Typography
+                            variant="p"
+                            color="white"
+                            sx={{ maxWidth: "600px", opacity: 0.9 }}
+                            gutterBottom
+                            style={{ textAlign: 'justify' }}
+                        >
+                            Espacios de reunión exclusivos para discutir temas estratégicos con expertos en compliance y prevención de lavado de dinero.
+                        </Typography>
+                        <Grid container alignItems="center" justifyContent="center" style={{ textAlign: "justify", width: '100%' }} spacing={2}>
+                            <Grid size={{ xs: 12, md: 6, lg: 6 }}  >
+                                <Button startIcon={<MapIcon />} variant="contained" color="primary" fullWidth onClick={() => { setOpen(true); setUrl(evento.planos) }} style={{ backgroundColor: '#65a630', color: 'white' }}> Click para ver espacio de salas VIP</Button>
+                            </Grid>
+                            <Grid size={{ xs: 12, md: 6, lg: 6 }}   >
+                                <Button style={{ backgroundColor: '#65a630', color: 'white' }} startIcon={<EmailIcon />} variant="contained" color="primary" fullWidth href="mailto:ncuches@ebg.edu.gt?subject=Quiero%20más%20información%20sobre%20talleres%20Pre%20Congreso%20CLADIT%202026"> Solicitar más información</Button>
+                            </Grid>
+                        </Grid>
+                    </Stack>
+                </Box>
+            </Box>
             <FilePreviewModal open={open} onClose={() => setOpen(false)} url={url} title="Vista previa" />
         </Stack >
     );

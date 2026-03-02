@@ -22,6 +22,7 @@ import DrawIcon from "@mui/icons-material/Draw";
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import EmailIcon from '@mui/icons-material/Email';
 import { useTheme, useMediaQuery } from "@mui/material";
+import Patrocinadores from "./Patrocinadores";
 
 const pages = [
   {
@@ -64,7 +65,7 @@ function ScrollTop(props) {
       behavior: "smooth",
     });
   };
-  
+
 
   return (
     <Fade in={trigger}>
@@ -285,10 +286,13 @@ export default function Layout(props) {
         </AppBar>
       </ElevationScroll>
       <Box id="back-to-top-anchor">
-        <Outlet />
+        <Stack spacing={2} style={{ width: "100%" }} alignItems="center" justifyContent="center">
+          <Outlet />
+          <Patrocinadores />
+        </Stack>
       </Box>
       <ScrollTop {...props}>
-        <Stack spacing={2}>
+        <Stack spacing={2} >
           <Fab size="small" aria-label="scroll back to top">
             <KeyboardArrowUpIcon />
           </Fab>
