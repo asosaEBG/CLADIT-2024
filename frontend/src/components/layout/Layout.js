@@ -178,7 +178,7 @@ export default function Layout(props) {
           </Box>
           <Box style={{ width: "100%", padding: '1%' }}>
             <Grid container style={{ width: '100%' }} alignContent='center' alignItems='center' justifyContent='center'>
-              <Grid size={{ xs: 12, lg: 2, md: 2 }} >
+              <Grid size={{ xs: 12, lg: 4, md: 2 }} >
                 <img
                   src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/8ff2041f-2791-4a80-8e28-33b2f091497b.png"
                   loading="lazy"
@@ -205,12 +205,12 @@ export default function Layout(props) {
                   ))}
                 </Grid>
               </Grid>
-              <Grid size={{ xs: 12, lg: 2, md: 2 }} >
+              <Grid size={{ xs: 12, lg: 12, md: 2 }} >
                 <Grid container style={{ width: '100%' }} alignContent='center' alignItems='center' justifyContent='center' spacing={1}>
-                  <Grid size={{ xs: 6, lg: 6, md: 6 }} >
+                  <Grid size={{ xs: 6, lg: 6, md: 6 }} style ={{textAlign: 'center'}} >
                     <Button style={{ color: 'black' }} startIcon={<WhatsAppIcon style={{ color: '#25D366' }} />} href="https://wa.me/50223827200" target="_blank" > +502 2382-7200</Button>
                   </Grid>
-                  <Grid size={{ xs: 6, lg: 6, md: 6 }} >
+                  <Grid size={{ xs: 6, lg: 6, md: 6 }} style ={{textAlign: 'center'}}>
                     <Button style={{ color: 'black' }} startIcon={<EmailIcon />} href="mailto:ncuches@ebg.edu.gt?subject=Solicitud%20de%20reunión%20para%20más%20información%20de%20CLADIT%202026" >Solicitar una reunión</Button>
                   </Grid>
                 </Grid>

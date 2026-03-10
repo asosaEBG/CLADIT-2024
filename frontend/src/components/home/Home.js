@@ -294,6 +294,67 @@ const Inicio = () => {
                     </Stack>
                 </Grid>
             </Grid>
+                      <Box
+                sx={{
+                    width: "100%",
+                    height: "600px",
+                    position: "relative",
+                    backgroundImage: `url("https://escuela-bancaria.s3.us-east-2.amazonaws.com/53a78163-a027-4504-833e-91fb7b69d022.jpeg")`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center top",
+                    backgroundRepeat: "no-repeat",
+                    display: "flex",
+                    alignItems: "center",
+                }}
+            >
+                {/* Overlay oscuro con degradado */}
+                <Box
+                    sx={{
+                        position: "absolute",
+                        inset: 0,
+                        backdropFilter: "blur(3px)",
+                        WebkitBackdropFilter: "blur(3px)", // soporte Safari
+                        backgroundColor: "rgba(0,0,0,0.4)", // oscurece ligeramente
+                        zIndex: 1,
+                    }}
+                />
+
+                {/* Contenido */}
+                <Box sx={{ position: "relative", zIndex: 2 }} p={15}>
+                    <Stack spacing={1}>
+                        <Typography
+                            variant="h3"
+                            fontWeight="bold"
+                            color="white"
+                            gutterBottom
+                        >
+                            DIRIGIDO A:
+                        </Typography>
+                        <Typography
+                            variant="P"
+                            fontWeight="bold"
+                            color="white"
+                            gutterBottom
+                        >
+                            Sector Financiero
+                        </Typography>
+                        <Typography
+                            variant="p"
+                            color="white"
+                            sx={{ maxWidth: "600px", opacity: 0.9 }}
+                            gutterBottom
+                            style={{ textAlign: 'justify' }}
+                        >
+                            Involucrados y tomadores de decisión en el esquema de Riesgo de LD FT como:
+                            Compliance officer, analistas de cumplimiento, monitoreo, prevención de fraudes,
+                            auditores, financieros, consejos de administración, comités de cumplimiento,
+                            vigilancia, riesgos, personal y Jefes de agencias como primer línea de defensa, así
+                            como todos los Sujetos Obligados y empresas con prácticas éticas en sus
+                            operaciones.
+                        </Typography>
+                    </Stack>
+                </Box>
+            </Box>
             <ImageList cols={cols_detalles}>
                 {detalles_arr.map((item) => (
                     <ImageListItem key={item.img}>
@@ -378,6 +439,7 @@ const Inicio = () => {
                     </Stack>
                 </Box>
             </Box>
+  
             <Box sx={{ width: "100%", padding: '5%', overflow: 'hidden' }}>
                 <Stack spacing={6}>
                     <Typography variant="h4" align="center" style={{ color: "#1e3d52", fontWeight: "bold", textAlign: 'center' }}>
