@@ -67,6 +67,8 @@ const Inicio = () => {
     const [loading, setLoading] = useState(true);
     const [open, setOpen] = useState(false);
     const [url, setUrl] = useState("");
+    const [hoveredIndex, setHoveredIndex] = useState(null);
+
     useEffect(() => {
         live_events_service
             .getData("/evento/view-by-hash/" + process.env.REACT_APP_EVT)
@@ -294,7 +296,7 @@ const Inicio = () => {
                     </Stack>
                 </Grid>
             </Grid>
-                      <Box
+            <Box
                 sx={{
                     width: "100%",
                     height: "600px",
@@ -439,7 +441,7 @@ const Inicio = () => {
                     </Stack>
                 </Box>
             </Box>
-  
+
             <Box sx={{ width: "100%", padding: '5%', overflow: 'hidden' }}>
                 <Stack spacing={6}>
                     <Typography variant="h4" align="center" style={{ color: "#1e3d52", fontWeight: "bold", textAlign: 'center' }}>
@@ -449,7 +451,7 @@ const Inicio = () => {
                     <ImageList cols={cols}>
                         {conferencistas.map((item) => (
                             <ImageListItem
-                                key={item.conferencista.foto_alt}
+                                key={item.conferencista.foto}
                                 sx={{
                                     borderRadius: 3,
                                     overflow: "hidden",
@@ -465,8 +467,8 @@ const Inicio = () => {
                                 }}
                             >
                                 <img
-                                    srcSet={`${item.conferencista.foto_alt}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                                    src={`${item.conferencista.foto_alt}?w=248&fit=crop&auto=format`}
+                                    srcSet={`${item.conferencista.foto}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                                    src={`${item.conferencista.foto}?w=248&fit=crop&auto=format`}
                                     alt={item.conferencista.nombre}
                                     loading="lazy"
                                     style={{
@@ -475,7 +477,14 @@ const Inicio = () => {
                                         objectFit: "cover",
                                         display: "block",
                                         transition: "filter 0.3s ease",
+                                        filter: "grayscale(100%)",
                                     }}
+                                    onMouseEnter={(e) =>
+                                        (e.currentTarget.style.filter = "grayscale(0%)")
+                                    }
+                                    onMouseLeave={(e) =>
+                                        (e.currentTarget.style.filter = "grayscale(100%)")
+                                    }
                                 />
 
                                 <ImageListItemBar

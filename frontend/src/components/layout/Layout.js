@@ -151,7 +151,7 @@ export default function Layout(props) {
       <ElevationScroll {...props}>
 
         <AppBar
-          position={isMobile ? "static" : "sticky"}
+          position={isMobile ? "static" : "static"}
 
           style={{
             backgroundColor: "white",
