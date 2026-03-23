@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Home from "./components/home/Home";
-
+import Patrocinio from "./components/patrocinio/Patrocinio";
 function App() {
   return (
     <Router>
@@ -16,6 +16,8 @@ function App() {
         }
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
+
+          <Route path="/patrocinio" element={<Patrocinio />} />
         </Route>
       </Routes>
     </Router>

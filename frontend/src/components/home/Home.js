@@ -27,6 +27,8 @@ import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import MapIcon from '@mui/icons-material/Map';
 import FilePreviewModal from "../tools/Modal";
 import EmailIcon from '@mui/icons-material/Email';
+import ModalInfo from "../tools/ModalInfo";
+
 const live_events_service = require('../../helpers/live_events_service')
 
 const Inicio = () => {
@@ -68,7 +70,8 @@ const Inicio = () => {
     const [open, setOpen] = useState(false);
     const [url, setUrl] = useState("");
     const [hoveredIndex, setHoveredIndex] = useState(null);
-
+    const [modalOpen, setModalOpen] = useState(false);
+    const [info, setInfo] = useState({ conferencista: "", cv: "", foto: "", puesto: "", institucion: "", bandera: "", pais: "" });
     useEffect(() => {
         live_events_service
             .getData("/evento/view-by-hash/" + process.env.REACT_APP_EVT)
@@ -493,6 +496,18 @@ const Inicio = () => {
                                         background:
                                             "linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2))",
                                     }}
+                                    actionIcon={item.conferencista.cv &&
+                                        <IconButton
+                                            sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                                            aria-label={`info about ${item.title}`}
+                                            onClick={() => {
+                                                setInfo({ conferencista: item.conferencista.nombre, cv: item.conferencista.cv, foto: item.conferencista.foto, puesto: item.conferencista.puesto, institucion: item.conferencista.institucion, bandera: item.conferencista.bandera, pais: item.conferencista.pais })
+                                                setModalOpen(true);
+                                            }}
+                                        >
+                                            <InfoIcon />
+                                        </IconButton>
+                                    }
                                 />
                             </ImageListItem>
                         ))}
@@ -641,6 +656,7 @@ const Inicio = () => {
                 </Box>
             </Box>
             <FilePreviewModal open={open} onClose={() => setOpen(false)} url={url} title="Vista previa" />
+            <ModalInfo open={modalOpen} onClose={() => { setModalOpen(false) }} conferencista={info} />
         </Stack >
     );
 };
