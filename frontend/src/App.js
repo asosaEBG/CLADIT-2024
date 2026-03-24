@@ -8,6 +8,8 @@ import {
 import Layout from "./components/layout/Layout";
 import Home from "./components/home/Home";
 import Patrocinio from "./components/patrocinio/Patrocinio";
+import Tarifas from "./components/tarifas/Tarifas";
+import Contacto from "./components/contacto/Contacto";
 function App() {
   return (
     <Router>
@@ -18,6 +20,9 @@ function App() {
           <Route path="/" element={<Home />} />
 
           <Route path="/patrocinio" element={<Patrocinio />} />
+          <Route path="/tarifas" element={<Tarifas />} />
+          <Route path="/contacto" element={<Contacto />} />
+
         </Route>
       </Routes>
     </Router>

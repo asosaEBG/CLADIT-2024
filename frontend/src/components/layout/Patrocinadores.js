@@ -72,7 +72,7 @@ const Patrocinadores = () => {
                                         style={{ textAlign: "center" }}
                                         p={2}
                                     >
-                                        <img src={curr.promocional_landing} alt="sponsor-img" style={actual[0].tipo == 'DIAMANTE' ? { width: "100%", objectFit: "contain" } : actual[0].tipo == 'PLATINO' ? { width: "100%", objectFit: "contain" } : actual[0].tipo == 'ORO' ? { width: "100%", objectFit: "contain" } : { width: "100%", objectFit: "contain" }} />
+                                        <img loading="lazy" src={curr.promocional_landing} alt="sponsor-img" style={actual[0].tipo == 'DIAMANTE' ? { width: "100%", objectFit: "contain" } : actual[0].tipo == 'PLATINO' ? { width: "100%", objectFit: "contain" } : actual[0].tipo == 'ORO' ? { width: "100%", objectFit: "contain" } : { width: "100%", objectFit: "contain" }} />
                                     </Grid>
                                 ))}
                             </Grid>

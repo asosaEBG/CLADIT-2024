@@ -10,6 +10,7 @@ import { Typography, Box, Stack } from '@mui/material';
 import CloseIcon from "@mui/icons-material/Close";
 import { IconButton } from "@mui/material";
 import { motion } from "framer-motion";
+
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });

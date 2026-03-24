@@ -142,11 +142,11 @@ const Inicio = () => {
             </Box >
             <Box sx={{ width: "100%" }}>
 
-                <img src='https://escuela-bancaria.s3.us-east-2.amazonaws.com/d8335327-633d-4fb9-841f-c445ce8c0a1e.png' style={{ width: '100%' }} />
+                <img src='https://escuela-bancaria.s3.us-east-2.amazonaws.com/d8335327-633d-4fb9-841f-c445ce8c0a1e.png' style={{ width: '100%' }} loading="lazy"/>
             </Box>
             <Box sx={{ display: { xs: 'none', md: 'none', lg: 'block' } }} style={{ width: '100%', padding: '10%', backgroundImage: 'url(https://escuela-bancaria.s3.us-east-2.amazonaws.com/16416305-43f2-45dc-a0a3-7fab9219bcf0.jpeg)', backgroundSize: 'cover', backgroundPosition: 'center', textAlign: 'center' }}>
                 <video controls style={{ width: '60%' }} >
-                    <source
+                    <source 
                         src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/649ad4e4-c45e-4c2f-bf0e-883eb546970c.mp4"
                         type="video/mp4"
                     />
