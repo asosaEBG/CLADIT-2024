@@ -33,14 +33,10 @@ const pages = [
     label: "Patrocinio",
     href: "/patrocinio",
   },
-  /*{
+  {
     label: "Programa",
     href: "/programa",
   },
-  {
-    label: "Talleres",
-    href: "/talleres",
-  },*/
   {
     label: "Tarifas",
     href: "/tarifas",

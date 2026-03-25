@@ -10,6 +10,7 @@ import Home from "./components/home/Home";
 import Patrocinio from "./components/patrocinio/Patrocinio";
 import Tarifas from "./components/tarifas/Tarifas";
 import Contacto from "./components/contacto/Contacto";
+import Programa from "./components/programa/Programa";
 function App() {
   return (
     <Router>
@@ -17,12 +18,11 @@ function App() {
         {//<Route estrict path="/" element={<Navigate to="/2026/gt" replace />} />
         }
         <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-
+          <Route estrict path="/" element={<Home />} />
           <Route path="/patrocinio" element={<Patrocinio />} />
           <Route path="/tarifas" element={<Tarifas />} />
           <Route path="/contacto" element={<Contacto />} />
-
+          <Route path="/programa" element={<Programa />} />
         </Route>
       </Routes>
     </Router>

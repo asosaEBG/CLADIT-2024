@@ -6,7 +6,7 @@ import PendingActionsIcon from '@mui/icons-material/PendingActions';
 import { Button, Stack } from '@mui/material';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import Reel from '../tools/Reel';
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import {
     Box,
     Container,
@@ -20,9 +20,13 @@ import {
     ListItemIcon,
     ListItemText,
     Chip,
+    Backdrop,
+    CircularProgress
 } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { motion } from "framer-motion";
+import FilePreview from '../tools/FilePreview';
+const live_events_service = require('../../helpers/live_events_service')
 
 const MotionCard = motion(Card);
 
@@ -116,9 +120,45 @@ const extras = [
 
 const Patrocinio = () => {
     const [tab, setTab] = useState("diamante");
-
+    const [contador] = useState(0);
+    const [loading, setLoading] = useState(true);
+    const [url, setUrl] = useState("");
+    useEffect(() => {
+        live_events_service
+            .getData("/evento/view-by-hash/" + process.env.REACT_APP_EVT)
+            .then((response_evt) => {
+                live_events_service
+                    .getData(
+                        "/patrocinador/view-by-evento/" +
+                        process.env.REACT_APP_EVT
+                    )
+                    .then((response_patrocinador) => {
+                        live_events_service
+                            .getData(`/conferencista/read/${process.env.REACT_APP_EVT}`)
+                            .then((response) => {
+                                setUrl(response_evt.data.response_database.result[0].planos);
+                                setLoading(false)
+                            })
+                            .catch((error) => {
+                                console.log(error);
+                            });
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, [contador]);
     return (
         <Stack spacing={5} alignItems='center' style={{ background: "#f5f7f6" }} pt={3}>
+            <Backdrop
+                sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                open={loading}
+            >
+                <CircularProgress color="inherit" />
+            </Backdrop>
             <Breadcrumbs aria-label="breadcrumb">
                 <Link
                     underline="hover"
@@ -158,6 +198,7 @@ const Patrocinio = () => {
                         sx={{ mb: 5 }}
                         textColor="inherit"
                         indicatorColor="primary"
+                        
                     >
                         {Object.keys(levels).map((key) => (
                             <Tab
@@ -201,7 +242,7 @@ const Patrocinio = () => {
                             ))}
                         </List>
                     </MotionCard>
-
+                    <FilePreview url={url} />
                     {/* BENEFICIOS GENERALES */}
                     <Box mt={10}>
                         <Typography variant="h5" fontWeight="bold" sx={{ color: primary, mb: 4 }}>

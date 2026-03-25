@@ -116,27 +116,42 @@ const Inicio = () => {
                         XXIII CONGRESO REGIONAL PARA LA PREVENCIÓN DE LAVADO DE DINERO U OTROS ACTIVOS Y EL FINANCIAMIENTO DEL TERRORISMO
                     </Typography>
                     <Divider />
-                    <Typography variant="p" align="center" style={{ color: "#1e3d52", fontWeight: "bold", textAlign: 'center' }}>
-                        AML & CFT
-                        ·
-                        COMPLIANCE
-                        ·
-                        GESTIÓN DE RIESGOS
-                        ·
-                        GOBIERNO CORPORATIVO
-                        ·
-                        ANTICORRUPCIÓN
-                        ·
-                        SANCIONES INTERNACIONALES
-                        ·
-                        FINANCIAMIENTO DEL TERRORISMO
-                        ·
-                        SUJETOS OBLIGADOS
-                        ·
-                        DEBIDA DILIGENCIA (CDD/KYC)
-                        ·
-                        GAFILAT & ESTÁNDARES GLOBALES
+                    <Typography
+                        variant="h5"
+                        sx={{
+                            color: "#1e3d52",
+                            fontWeight: "bold",
+                            mb: 1,
+                            textAlign: "center",
+                        }}
+                    >
+                        Nuestras verticales estratégicas
+                    </Typography>
 
+                    <Typography
+                        variant="p"
+                        sx={{
+                            color: "#1e3d52",
+                            fontWeight: 500,
+                            textAlign: "center",
+                            margin: "0 auto",
+                            lineHeight: 1.6
+                        }}
+                    >
+                        MONITOREO TRANSACCIONAL Y ALERTAS
+                        · ANALÍTICA AVANZADA E IA
+                        · REGULACIÓN LDFT/FPADM
+                        · TIPOLOGÍAS DE LAVADO DE DINERO
+                        · GESTIÓN DE RIESGOS
+                        · COMPLIANCE Y GOBERNANZA
+                        · TENDENCIAS EMERGENTES AML
+                        · CIBERSEGURIDAD Y FRAUDE
+                        · ACTIVOS VIRTUALES Y BLOCKCHAIN
+                        · SANCIONES INTERNACIONALES
+                        · RIESGO JURISDICCIONAL
+                        · NARCOTRÁFICO Y CRIMEN ORGANIZADO
+                        · PROLIFERACIÓN Y WMD
+                        · GAFILAT Y EVALUACIONES INTERNACIONALES
                     </Typography>
                 </Stack>
             </Box >

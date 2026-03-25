@@ -34,7 +34,7 @@ export default function Contacto() {
                     underline="hover"
                     sx={{ display: 'flex', alignItems: 'center' }}
                     color="inherit"
-                    href="/"
+                    to="/"
                 >
                     <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
                     Inicio
