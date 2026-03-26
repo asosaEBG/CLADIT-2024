@@ -29,7 +29,7 @@ function CustomTabPanel(props) {
             {...other}
             style={{ width: '100%' }}
         >
-            {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+            {value === index && <Box sx={{ paddingLeft: { xs: '0%', md: '5%', lg: '10%' }, paddingRight: { xs: '0%', md: '5%', lg: '10%' } }} >{children}</Box>}
         </div>
     );
 }

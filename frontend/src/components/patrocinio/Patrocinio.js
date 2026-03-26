@@ -6,7 +6,7 @@ import PendingActionsIcon from '@mui/icons-material/PendingActions';
 import { Button, Stack } from '@mui/material';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import Reel from '../tools/Reel';
-import React, { useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import {
     Box,
     Container,
@@ -198,7 +198,7 @@ const Patrocinio = () => {
                         sx={{ mb: 5 }}
                         textColor="inherit"
                         indicatorColor="primary"
-                        
+
                     >
                         {Object.keys(levels).map((key) => (
                             <Tab
@@ -308,10 +308,7 @@ const Patrocinio = () => {
                             Conviértete en patrocinador y conecta con los líderes del sector financiero.
                         </Typography>
 
-                        <Box
-
-
-                        >
+                        <Box>
                             <Button
                                 href="mailto:ncuches@ebg.edu.gt?subject=Interés%20en%20Patrocinio%20CLADIT%202026&body=Hola%20equipo%20EBG,%0A%0AEstoy%20interesado(a)%20en%20convertirme%20en%20patrocinador%20del%20CLADIT%202026.%20Me%20gustaría%20recibir%20más%20información%20sobre%20los%20niveles%20de%20patrocinio,%20beneficios%20y%20disponibilidad.%0A%0AEmpresa:%20%0ANombre:%20%0ACargo:%20%0ATeléfono:%20%0APaís:%20%0A%0AQuedo%20atento(a)%20a%20su%20respuesta.%0A%0ASaludos."
                                 variant="contained"
@@ -332,7 +329,8 @@ const Patrocinio = () => {
                                 }}
                             >
                                 Quiero ser patrocinador
-                            </Button>                        </Box>
+                            </Button>
+                        </Box>
                     </Box>
                 </Container>
             </Box>

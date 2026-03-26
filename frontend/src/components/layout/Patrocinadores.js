@@ -68,7 +68,7 @@ const Patrocinadores = () => {
 
                                     <Grid
                                         key={curr.UniqueID}
-                                        size={actual[0].tipo == 'DIAMANTE' ? { xs: 4, md: 4, lg: 4 } : actual[0].tipo == 'PLATINO' ? { xs: 3, md: 3, lg: 3 } : actual[0].tipo == 'ORO' ? { xs: 2, md: 2, lg: 2 } : { xs: 1, md: 1, lg: 1 }}
+                                        size={actual[0].tipo == 'DIAMANTE' ? { xs: 4, md: 4, lg: 4 } : actual[0].tipo == 'PLATINO' ? { xs: 4, md: 3, lg: 3 } : actual[0].tipo == 'ORO' ? { xs: 4, md: 2, lg: 2 } : { xs: 4, md: 1, lg: 1 }}
                                         style={{ textAlign: "center" }}
                                         p={2}
                                     >
