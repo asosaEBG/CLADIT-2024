@@ -43,23 +43,6 @@ const tarifas = [
       },
     ],
   },
-  {
-    title: "Tarifa Early Bird",
-    highlight: true,
-    note: "Disponible hasta el 31 de marzo",
-    data: [
-      {
-        label: "1 Participante",
-        qt: "Q 4,200.00",
-        usd: "$ 525.00",
-      },
-      {
-        label: "3 Participantes",
-        qt: "Q 3,800.00 c/u",
-        usd: "$ 475.00 c/u",
-      },
-    ],
-  },
 ];
 
 const includes = [

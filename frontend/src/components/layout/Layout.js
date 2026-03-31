@@ -154,24 +154,6 @@ export default function Layout(props) {
             color: "#1e3d52",
           }}
         >
-          <Box style={{ backgroundColor: "black", width: "100%", padding: '1%' }}>
-            <Grid container style={{ width: '100%' }} alignContent='center' alignItems='center' justifyContent='center'>
-              <Grid size={{ xs: 12, lg: 3, md: 3 }} >
-              </Grid>
-              <Grid size={{ xs: 12, lg: 4, md: 4 }} style={{ textAlign: 'center' }}>
-                <Typography variant="p" style={{ color: "white", fontWeight: "bold", textAlign: 'center', width: '100%' }} >
-                  Aprovecha la Tarifa Early Bird hasta el 31 de marzo 2026
-                </Typography>
-              </Grid>
-              <Grid size={{ xs: 12, lg: 2, md: 2 }} style={{ textAlign: 'center' }} alignContent='center' alignItems='center' justifyContent='center'>
-                <Button variant="contained" color="primary" size="small" style={{ marginTop: '5px', backgroundColor: '#65a630', color: 'white' }} href={process.env.REACT_APP_URL_INSCRIPCION + process.env.REACT_APP_EVT} target="_blank">
-                  Comprar Entradas
-                </Button>
-              </Grid>
-              <Grid size={{ xs: 12, lg: 3, md: 3 }} >
-              </Grid>
-            </Grid>
-          </Box>
           <Box style={{ width: "100%", padding: '1%' }}>
             <Grid container style={{ width: '100%' }} alignContent='center' alignItems='center' justifyContent='center'>
               <Grid size={{ xs: 12, lg: 4, md: 2 }} >
