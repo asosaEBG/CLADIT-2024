@@ -74,13 +74,13 @@ export default function Programa() {
         {
             title: "Talleres simultáneos CLADIT", segments: [
                 { title: "Sector Bancario (Talleres simultáneos)", begin: 1, end: 3 },
-                { title: "Sector Cooperativas (Talleres simultáneos)", begin: 4, end: 8 },
-                { title: "Todos los sectores y Nuevas Personas Obligadas (Talleres simultáneos)", begin: 9, end: 12 },
+                { title: "Sector Cooperativas (Talleres simultáneos)", begin: 4, end: 6 },
+                { title: "Todos los sectores y Nuevas Personas Obligadas (Talleres simultáneos)", begin: 7, end: 9 },
             ]
         },
         afternoon: {
             title: null, segments: [
-                { title: null, begin: 13, end: 19 },
+                { title: null, begin: 10, end: 16 },
             ]
         }
     }
@@ -88,12 +88,12 @@ export default function Programa() {
         morning:
         {
             title: null, segments: [
-                { title: null, begin: 20, end: 27 },
+                { title: null, begin: 17, end: 24 },
             ]
         },
         afternoon: {
             title: null, segments: [
-                { title: null, begin: 28, end: 33 },
+                { title: null, begin: 25, end: 30 },
             ]
         }
     }
