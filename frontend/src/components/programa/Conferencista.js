@@ -45,10 +45,7 @@ const Conferencista = ({ speaker }) => {
                 sx={{
                     width: 56,
                     height: 56,
-                    borderRadius: "50%",
                     objectFit: "cover",
-                    border: "2px solid",
-                    borderColor: "rgba(101,166,48,0.6)",
                 }}
             />
 
