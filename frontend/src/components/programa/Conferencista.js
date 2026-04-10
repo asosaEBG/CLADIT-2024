@@ -40,7 +40,7 @@ const Conferencista = ({ speaker }) => {
             {/* FOTO */}
             <Box
                 component="img"
-                src={conferencista.foto}
+                src={conferencista.foto_alt}
                 alt={conferencista.nombre}
                 sx={{
                     width: 56,
