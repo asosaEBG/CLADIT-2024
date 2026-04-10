@@ -43,8 +43,8 @@ const Conferencista = ({ speaker }) => {
                 src={conferencista.foto_alt}
                 alt={conferencista.nombre}
                 sx={{
-                    width: 56,
-                    height: 56,
+                    width: 102,
+                    height: 102,
                     objectFit: "cover",
                 }}
             />
