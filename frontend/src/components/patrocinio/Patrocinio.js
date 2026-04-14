@@ -226,9 +226,9 @@ const Patrocinio = () => {
                         </Typography>
 
                         <Box mt={2} mb={3}>
-                            <Chip label={`Guatemala: ${levels[tab].price.gt}`} sx={{ mr: 1 }} />
-                            <Chip label={`El Salvador: ${levels[tab].price.sv}`} sx={{ mr: 1 }} />
-                            <Chip label={`Honduras: ${levels[tab].price.hn}`} />
+                            <Chip label={`Guatemala`} sx={{ mr: 1 }} />
+                            <Chip label={`El Salvador`} sx={{ mr: 1 }} />
+                            <Chip label={`Honduras`} />
                         </Box>
 
                         <List>
@@ -284,9 +284,6 @@ const Patrocinio = () => {
                                                 {item.title}
                                             </Typography>
 
-                                            <Typography sx={{ color: primary, fontWeight: "bold", mt: 1 }}>
-                                                {item.price}
-                                            </Typography>
 
                                             <Typography variant="body2" color="text.secondary" mt={1}>
                                                 {item.desc}
