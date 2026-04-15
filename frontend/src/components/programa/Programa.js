@@ -98,7 +98,7 @@ export default function Programa() {
         }
     }
     return (
-        <Stack spacing={5} alignItems='center' style={{ background: "#f5f7f6", width: '100%' }} pt={3}>
+        <Stack spacing={5} alignItems='center' style={{ backgroundImage: "url('https://escuela-bancaria.s3.us-east-2.amazonaws.com/e9f84203-6749-4522-8de4-ea87bce35801.png')", width: '100%'}} pt={3}>
             <Backdrop
                 sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
                 open={loading}
