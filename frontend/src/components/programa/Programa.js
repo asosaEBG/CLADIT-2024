@@ -98,54 +98,56 @@ export default function Programa() {
         }
     }
     return (
-        <Stack spacing={5} alignItems='center' style={{ backgroundImage: "url('https://escuela-bancaria.s3.us-east-2.amazonaws.com/e9f84203-6749-4522-8de4-ea87bce35801.png')", width: '100%'}} pt={3}>
-            <Backdrop
-                sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
-                open={loading}
-            >
-                <CircularProgress color="inherit" />
-            </Backdrop>
-            <Breadcrumbs aria-label="breadcrumb">
-                <Link
-                    underline="hover"
-                    sx={{ display: 'flex', alignItems: 'center' }}
-                    color="inherit"
-                    to="/"
+        <Box style={{ backgroundImage: "url('https://escuela-bancaria.s3.us-east-2.amazonaws.com/e9f84203-6749-4522-8de4-ea87bce35801.png')", width: '100%', backgroundPosition: 'top' , backgroundRepeat: 'no-repeat', backgroundSize: 'cover', minHeight: '100vh'     }}>
+            <Stack spacing={5} alignItems='center' pt={3}>
+                <Backdrop
+                    sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                    open={loading}
                 >
-                    <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-                    Inicio
-                </Link>
-                <Typography
-                    sx={{ color: 'text.primary', display: 'flex', alignItems: 'center' }}
-                >
-                    <ScheduleIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-                    Programa
-                </Typography>
-            </Breadcrumbs>
-            <Box sx={{ width: '100%' }}>
-                <Tabs
-                    value={value}
-                    onChange={handleChange}
-                    sx={{
-                        '& .MuiTabs-indicator': {
-                            backgroundColor: 'rgba(101,166,48,1)',
-                        },
-                        '& .Mui-selected': {
-                            color: 'rgba(101,166,48,1) !important',
-                        },
-                    }}
-                    centered
-                >
-                    <Tab  {...a11yProps(0)} label="Día 1" />
-                    <Tab  {...a11yProps(1)} label="Día 2" />
-                </Tabs>
-            </Box>
-            <CustomTabPanel value={value} index={0}>
-                <Dia config={dia_1} programa={programa} />
-            </CustomTabPanel>
-            <CustomTabPanel value={value} index={1}>
-                <Dia config={dia2} programa={programa} />
-            </CustomTabPanel>
-        </Stack>
+                    <CircularProgress color="inherit" />
+                </Backdrop>
+                <Breadcrumbs aria-label="breadcrumb">
+                    <Link
+                        underline="hover"
+                        sx={{ display: 'flex', alignItems: 'center' }}
+                        color="inherit"
+                        to="/"
+                    >
+                        <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+                        Inicio
+                    </Link>
+                    <Typography
+                        sx={{ color: 'text.primary', display: 'flex', alignItems: 'center' }}
+                    >
+                        <ScheduleIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+                        Programa
+                    </Typography>
+                </Breadcrumbs>
+                <Box sx={{ width: '100%' }}>
+                    <Tabs
+                        value={value}
+                        onChange={handleChange}
+                        sx={{
+                            '& .MuiTabs-indicator': {
+                                backgroundColor: 'rgba(101,166,48,1)',
+                            },
+                            '& .Mui-selected': {
+                                color: 'rgba(101,166,48,1) !important',
+                            },
+                        }}
+                        centered
+                    >
+                        <Tab  {...a11yProps(0)} label="Día 1" />
+                        <Tab  {...a11yProps(1)} label="Día 2" />
+                    </Tabs>
+                </Box>
+                <CustomTabPanel value={value} index={0}>
+                    <Dia config={dia_1} programa={programa} />
+                </CustomTabPanel>
+                <CustomTabPanel value={value} index={1}>
+                    <Dia config={dia2} programa={programa} />
+                </CustomTabPanel>
+            </Stack>
+        </Box>
     );
 }
