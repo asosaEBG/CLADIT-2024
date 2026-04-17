@@ -15,8 +15,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        {//<Route estrict path="/" element={<Navigate to="/2026/gt" replace />} />
-        }
+        <Route estrict path="/2026/gt" element={<Navigate to="/" replace />} />
         <Route element={<Layout />}>
           <Route estrict path="/" element={<Home />} />
           <Route path="/patrocinio" element={<Patrocinio />} />
