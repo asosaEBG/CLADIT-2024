@@ -208,7 +208,6 @@ export default function Layout(props) {
                     </Stack>
                   </Grid>
                 </Grid>
-
               </Grid>
             </Grid>
           </Box>
