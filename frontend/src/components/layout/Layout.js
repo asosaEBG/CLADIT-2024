@@ -23,7 +23,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import EmailIcon from '@mui/icons-material/Email';
 import { useTheme, useMediaQuery } from "@mui/material";
 import Patrocinadores from "./Patrocinadores";
-
+import HotelIcon from '@mui/icons-material/Hotel';
 const pages = [
   {
     label: "CLADIT 2026",
@@ -201,7 +201,11 @@ export default function Layout(props) {
                     <Button style={{ color: 'black' }} startIcon={<WhatsAppIcon style={{ color: '#25D366' }} />} href="https://wa.me/50223827200" target="_blank" > +502 2382-7200</Button>
                   </Grid>
                   <Grid size={{ xs: 6, lg: 6, md: 6 }} style={{ textAlign: 'center' }}>
-                    <Button style={{ color: 'black' }} startIcon={<EmailIcon />} href="mailto:ncuches@ebg.edu.gt?subject=Solicitud%20de%20reunión%20para%20más%20información%20de%20CLADIT%202026" >Solicitar una reunión</Button>
+                    <Stack spacing={2} style={{ width: "100%" }} alignItems="center" justifyContent="center">
+                      <Button style={{ color: 'black' }} startIcon={<HotelIcon />} target="_blank" href="https://www.marriott.com/es/event-reservations/reservation-link.mi?id=1776961284590&key=GRP&guestreslink2=true&app=resvlink" >Hospedaje Hotel Westin Camino Real</Button>
+                      <Button style={{ color: 'black' }} startIcon={<HotelIcon />} target="_blank" href="https://caminobiltmore-guatemala.ihotelier.com/book/dates-of-stay?groupID=5229234" >Hospedaje Hotel Biltmore</Button>
+                      <Button style={{ color: 'black' }} startIcon={<EmailIcon />} href="mailto:ncuches@ebg.edu.gt?subject=Solicitud%20de%20reunión%20para%20más%20información%20de%20CLADIT%202026" >Solicitar una reunión</Button>
+                    </Stack>
                   </Grid>
                 </Grid>
 
