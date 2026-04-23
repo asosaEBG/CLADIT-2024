@@ -157,12 +157,24 @@ export default function Layout(props) {
           <Box style={{ width: "100%", padding: '1%' }}>
             <Grid container style={{ width: '100%' }} alignContent='center' alignItems='center' justifyContent='center'>
               <Grid size={{ xs: 12, lg: 4, md: 2 }} >
-                <img
-                  src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/f5d56a87-7561-4b37-b443-215853238d90.png"
-                  loading="lazy"
-                  className="img-header"
-                  style={{ width: '100%' }}
-                />
+                <Grid container>
+                  <Grid size={{ xs: 6, lg: 6, md: 6 }} >
+                    <img
+                      src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/37460b05-fbb4-4578-b54f-d2c3c90c0f42.png"
+                      loading="lazy"
+                      className="img-header"
+                      style={{ width: '100%' }}
+                    />
+                  </Grid>
+                  <Grid size={{ xs: 6, lg: 6, md: 6 }} >
+                    <img
+                      src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/f5d56a87-7561-4b37-b443-215853238d90.png"
+                      loading="lazy"
+                      className="img-header"
+                      style={{ width: '100%' }}
+                    />
+                  </Grid>
+                </Grid>
               </Grid>
               <Grid size={{ xs: 12, lg: 2, md: 2 }} style={{ textAlign: 'center' }}>
                 <Typography variant="p" style={{ fontWeight: "bold", textAlign: 'center', width: '100%' }} >

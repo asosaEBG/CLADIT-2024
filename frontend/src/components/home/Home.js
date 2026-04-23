@@ -271,7 +271,7 @@ const Inicio = () => {
                             Reserva una de las posiciones disponibles
                         </Typography>
                         <Typography variant="h5" align="center" style={{ color: "#65a630", fontWeight: "bold", textAlign: 'justify' }}>
-                            Patrocinador / Stand / Taller Pre Congreso / Sala de reuniones VIP
+                            Patrocinador / Stand / Taller Pre Congreso
                         </Typography>
                         <List style={{ color: '#65a630' }}>
                             <ListItem disablePadding>
@@ -595,9 +595,7 @@ const Inicio = () => {
                             Espacios de reunión exclusivos para discutir temas estratégicos con expertos en compliance y prevención de lavado de dinero.
                         </Typography>
                         <Grid container alignItems="center" justifyContent="center" style={{ textAlign: "justify", width: '100%' }} spacing={2}>
-                            <Grid size={{ xs: 12, md: 6, lg: 6 }}  >
-                                <Button startIcon={<MapIcon />} variant="contained" color="primary" fullWidth onClick={() => { setOpen(true); setUrl(evento.planos) }} style={{ backgroundColor: '#65a630', color: 'white' }}> Click para ver espacio de salas VIP</Button>
-                            </Grid>
+
                             <Grid size={{ xs: 12, md: 6, lg: 6 }}   >
                                 <Button style={{ backgroundColor: '#65a630', color: 'white' }} startIcon={<EmailIcon />} variant="contained" color="primary" fullWidth href="mailto:ncuches@ebg.edu.gt?subject=Quiero%20más%20información%20sobre%20talleres%20Pre%20Congreso%20CLADIT%202026"> Solicitar más información</Button>
                             </Grid>

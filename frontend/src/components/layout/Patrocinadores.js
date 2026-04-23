@@ -1,86 +1,451 @@
-import {
-    Grid,
-    Stack,
-    Typography,
-    Divider,
-    Box
-} from "@mui/material";
-import Slider from "react-slick";
-import React, { useEffect, useState } from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import './style.css'
-const live_events_service = require('../../helpers/live_events_service')
+import React, { useEffect, useState, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const live_events_service = require('../../helpers/live_events_service');
 const helpers = require("../../helpers/helpers");
+
+// ─── Configuración de niveles ───────────────────────────────────────────────
+const NIVEL_CONFIG = {
+    DIAMANTE: {
+        order: 0,
+        color: "#b9f2ff",
+        bg: "linear-gradient(135deg, #0a1628 0%, #0d2040 50%, #0a1628 100%)",
+        badge: "linear-gradient(90deg, #67e8f9, #a78bfa, #67e8f9)",
+        badgeText: "#0a0a0a",
+        glow: "0 0 32px rgba(103,232,249,0.35), 0 0 64px rgba(167,139,250,0.15)",
+        border: "transparent",
+        logoMaxWidth: 280,
+        logoMaxHeight: 130,
+        gridCols: "repeat(auto-fit, minmax(220px, 1fr))",
+        shimmer: true,
+    },
+    PLATINO: {
+        order: 1,
+        color: "#e2e8f0",
+        bg: "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)",
+        badge: "linear-gradient(90deg, #cbd5e1, #94a3b8, #cbd5e1)",
+        badgeText: "#0f172a",
+        glow: "0 0 24px rgba(203,213,225,0.2)",
+        border: "transparent",
+        logoMaxWidth: 200,
+        logoMaxHeight: 100,
+        gridCols: "repeat(auto-fit, minmax(160px, 1fr))",
+        shimmer: true,
+    },
+    ORO: {
+        order: 2,
+        color: "#fbbf24",
+        bg: "linear-gradient(135deg, #1a0f00 0%, #2d1a00 50%, #1a0f00 100%)",
+        badge: "linear-gradient(90deg, #f59e0b, #fbbf24, #f59e0b)",
+        badgeText: "#1a0800",
+        glow: "0 0 24px rgba(251,191,36,0.25)",
+        border: "transparent",
+        logoMaxWidth: 160,
+        logoMaxHeight: 80,
+        gridCols: "repeat(auto-fit, minmax(130px, 1fr))",
+        shimmer: false,
+    },
+    PLATA: {
+        order: 3,
+        color: "#94a3b8",
+        bg: "linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1117 100%)",
+        badge: "linear-gradient(90deg, #64748b, #94a3b8, #64748b)",
+        badgeText: "#0d1117",
+        glow: "0 0 16px rgba(148,163,184,0.15)",
+        border: "transparent",
+        logoMaxWidth: 120,
+        logoMaxHeight: 65,
+        gridCols: "repeat(auto-fit, minmax(100px, 1fr))",
+        shimmer: false,
+    },
+    "APOYO INSTITUCIONAL": {
+        order: 4,
+        color: "#34d399",
+        bg: "linear-gradient(135deg, #001a12 0%, #00241a 50%, #001a12 100%)",
+        badge: "linear-gradient(90deg, #059669, #34d399, #059669)",
+        badgeText: "#001a10",
+        glow: "0 0 16px rgba(52,211,153,0.15)",
+        border: "transparent",
+        logoMaxWidth: 100,
+        logoMaxHeight: 55,
+        gridCols: "repeat(auto-fit, minmax(90px, 1fr))",
+        shimmer: false,
+    },
+    "ALIANZA ESTRATÉGICA": {
+        order: 5,
+        color: "#818cf8",
+        bg: "linear-gradient(135deg, #0d0a1a 0%, #1a1530 50%, #0d0a1a 100%)",
+        badge: "linear-gradient(90deg, #6366f1, #818cf8, #6366f1)",
+        badgeText: "#0d0a1a",
+        glow: "0 0 16px rgba(129,140,248,0.15)",
+        border: "transparent",
+        logoMaxWidth: 95,
+        logoMaxHeight: 52,
+        gridCols: "repeat(auto-fit, minmax(85px, 1fr))",
+        shimmer: false,
+    },
+    "MEDIA PARTNER": {
+        order: 6,
+        color: "#f472b6",
+        bg: "linear-gradient(135deg, #1a001a 0%, #2d002d 50%, #1a001a 100%)",
+        badge: "linear-gradient(90deg, #db2777, #f472b6, #db2777)",
+        badgeText: "#1a001a",
+        glow: "0 0 16px rgba(244,114,182,0.15)",
+        border: "transparent",
+        logoMaxWidth: 90,
+        logoMaxHeight: 50,
+        gridCols: "repeat(auto-fit, minmax(80px, 1fr))",
+        shimmer: false,
+    },
+};
+
+const NIVEL_ORDER = Object.keys(NIVEL_CONFIG);
+
+// ─── Variantes de animación ─────────────────────────────────────────────────
+const slideVariants = {
+    enter: (dir) => ({
+        x: dir > 0 ? "100%" : "-100%",
+        opacity: 0,
+        scale: 0.96,
+    }),
+    center: {
+        x: 0,
+        opacity: 1,
+        scale: 1,
+        transition: { duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] },
+    },
+    exit: (dir) => ({
+        x: dir < 0 ? "100%" : "-100%",
+        opacity: 0,
+        scale: 0.96,
+        transition: { duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] },
+    }),
+};
+
+const logoVariants = {
+    hidden: { opacity: 0, y: 20, scale: 0.9 },
+    visible: (i) => ({
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: { delay: i * 0.07, duration: 0.45, ease: "easeOut" },
+    }),
+};
+
+const badgeVariants = {
+    hidden: { opacity: 0, y: -12, scale: 0.85 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: { duration: 0.5, ease: [0.34, 1.56, 0.64, 1] },
+    },
+};
+
+// ─── Shimmer animado para diamante/platino ──────────────────────────────────
+const ShimmerBadge = ({ config, nivel }) => (
+    <motion.div
+        variants={badgeVariants}
+        initial="hidden"
+        animate="visible"
+        style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 8,
+            padding: "6px 20px",
+            borderRadius: 999,
+            background: config.badge,
+            backgroundSize: "200% 100%",
+            position: "relative",
+            overflow: "hidden",
+            boxShadow: config.glow,
+            marginBottom: 4,
+        }}
+    >
+        {config.shimmer && (
+            <motion.div
+                animate={{ x: ["-100%", "200%"] }}
+                transition={{ duration: 2.5, repeat: Infinity, ease: "linear", repeatDelay: 1 }}
+                style={{
+                    position: "absolute",
+                    inset: 0,
+                    background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.35) 50%, transparent 100%)",
+                    pointerEvents: "none",
+                }}
+            />
+        )}
+        <span style={{ fontSize: 11, letterSpacing: "0.18em", fontWeight: 800, color: config.badgeText, textTransform: "uppercase" }}>
+            ✦ {nivel}
+        </span>
+    </motion.div>
+);
+
+// ─── Puntos de navegación ───────────────────────────────────────────────────
+const NavDots = ({ total, current, onSelect, configs }) => (
+    <div style={{ display: "flex", gap: 8, justifyContent: "center", alignItems: "center", paddingTop: 20 }}>
+        {configs.map((cfg, i) => (
+            <motion.button
+                key={i}
+                onClick={() => onSelect(i)}
+                whileHover={{ scale: 1.3 }}
+                whileTap={{ scale: 0.9 }}
+                style={{
+                    width: i === current ? 28 : 8,
+                    height: 8,
+                    borderRadius: 999,
+                    background: i === current ? cfg.color : "rgba(255,255,255,0.2)",
+                    border: "none",
+                    cursor: "pointer",
+                    padding: 0,
+                    transition: "width 0.3s ease, background 0.3s ease",
+                    boxShadow: i === current ? `0 0 12px ${cfg.color}66` : "none",
+                }}
+            />
+        ))}
+    </div>
+);
+
+// ─── Flechas de navegación ──────────────────────────────────────────────────
+const NavArrow = ({ dir, onClick, color }) => (
+    <motion.button
+        onClick={onClick}
+        whileHover={{ scale: 1.15, x: dir === "left" ? -2 : 2 }}
+        whileTap={{ scale: 0.9 }}
+        style={{
+            position: "absolute",
+            top: "50%",
+            [dir === "left" ? "left" : "right"]: 12,
+            transform: "translateY(-50%)",
+            zIndex: 10,
+            background: "transparent",
+            border: `1px solid #25D366`,
+            borderRadius: "50%",
+            width: 40,
+            height: 40,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            color,
+            fontSize: 18,
+            backdropFilter: "blur(8px)",
+            boxShadow: `0 0 16px #25D366`,
+        }}
+    >
+        {dir === "left" ? "‹" : "›"}
+    </motion.button>
+);
+
+// ─── Componente principal ───────────────────────────────────────────────────
 const Patrocinadores = () => {
     const [contador] = useState(0);
-    const [patrocinadores, setPatrocinadores] = useState([]);
+    const [grupos, setGrupos] = useState([]);
+    const [slide, setSlide] = useState(0);
+    const [direction, setDirection] = useState(1);
+    const [paused, setPaused] = useState(false);
+
     useEffect(() => {
         live_events_service
-            .getData(
-                "/patrocinador/view-by-evento/" +
-                process.env.REACT_APP_EVT
-            )
-            .then((response_patrocinador) => {
-                setPatrocinadores(helpers.classifyByField(response_patrocinador.data.response.result, "tipo"));
+            .getData("/patrocinador/view-by-evento/" + process.env.REACT_APP_EVT)
+            .then((res) => {
+                const classified = helpers.classifyByField(res.data.response.result, "tipo");
+                // Ordenar según jerarquía definida
+                const sorted = [...classified].sort((a, b) => {
+                    const orderA = NIVEL_CONFIG[a[0]?.tipo]?.order ?? 99;
+                    const orderB = NIVEL_CONFIG[b[0]?.tipo]?.order ?? 99;
+                    return orderA - orderB;
+                });
+                setGrupos(sorted);
             })
-            .catch((error) => {
-                console.log(error);
-            });
-
+            .catch(console.error);
     }, [contador]);
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,        // activa el movimiento automático
-        autoplaySpeed: 3000,
-    };
+
+    const goTo = useCallback((next) => {
+        setDirection(next > slide ? 1 : -1);
+        setSlide(next);
+    }, [slide]);
+
+    const prev = useCallback(() => goTo((slide - 1 + grupos.length) % grupos.length), [slide, grupos.length, goTo]);
+    const next = useCallback(() => goTo((slide + 1) % grupos.length), [slide, grupos.length, goTo]);
+
+    // Autoplay
+    useEffect(() => {
+        if (paused || grupos.length === 0) return;
+        const timer = setInterval(() => {
+            setDirection(1);
+            setSlide((s) => (s + 1) % grupos.length);
+        }, 4000);
+        return () => clearInterval(timer);
+    }, [paused, grupos.length]);
+
+    if (grupos.length === 0) return null;
+
+    const grupoActual = grupos[slide];
+    const nivel = grupoActual?.[0]?.tipo ?? "";
+    const config = NIVEL_CONFIG[nivel] ?? NIVEL_CONFIG["PLATA"];
+    const cfgsOrdenados = grupos.map((g) => NIVEL_CONFIG[g[0]?.tipo] ?? NIVEL_CONFIG["PLATA"]);
+
     return (
-        <Box sx={{ width: "100%", margin: "0 auto" }}>
-            <Slider {...settings}>
-                {patrocinadores.map((actual, indice) => (
-                    <Box sx={{ p: 2 }}>
+        <div
+            style={{
+                width: "100%",
+                fontFamily: "'Inter', 'Segoe UI', sans-serif",
+                userSelect: "none",
+            }}
+        >
+            {/* Contenedor del carrusel */}
+            <div
+                onMouseEnter={() => setPaused(true)}
+                onMouseLeave={() => setPaused(false)}
+                style={{
+                    position: "relative",
+                    overflow: "hidden",
+                    borderRadius: 20,
+                    minHeight: 280,
+                }}
+            >
 
-                        <Stack spacing={2} key={`FILA-PATROCINADORES-${indice}`} >
-                            <Typography variant="h5">
-                                PATROCINADORES
-                                NIVEL {actual[0].tipo}
-                            </Typography>
-                            <Divider
+
+                {/* Flecha izquierda */}
+                {grupos.length > 1 && (
+                    <NavArrow dir="left" onClick={prev} />
+                )}
+
+                {/* Slide animado */}
+                <AnimatePresence mode="wait" custom={direction}>
+                    <motion.div
+                        key={slide}
+                        custom={direction}
+                        variants={slideVariants}
+                        initial="enter"
+                        animate="center"
+                        exit="exit"
+                        style={{
+                            position: "relative",
+                            zIndex: 2,
+                            padding: "32px 60px 28px",
+                        }}
+                    >
+                        {/* Badge de nivel */}
+                        <div style={{ textAlign: "center", marginBottom: 20 }}>
+                            <ShimmerBadge config={config} nivel={nivel} />
+                            <motion.p
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 0.2 }}
                                 style={{
-                                    backgroundColor: "#397d51",
-                                    height: "3px",
-                                    width: "100%",
+                                    margin: "6px 0 0",
+                                    fontSize: 11,
+                                    letterSpacing: "0.2em",
+                                    color: `black`,
+                                    textTransform: "uppercase",
+                                    fontWeight: 600,
                                 }}
-                            />
-                            <Grid
-                                container
-                                alignItems="center"
-                                justifyContent="center"
-                                alignContent='center'
-                                justifyItems='center'
-                                key={`segmento-patrocinadores-${indice}`}
                             >
-                                {actual.map((curr) => (
+                                Patrocinadores
+                            </motion.p>
+                        </div>
 
-                                    <Grid
-                                        key={curr.UniqueID}
-                                        size={actual[0].tipo == 'DIAMANTE' ? { xs: 4, md: 4, lg: 4 } : actual[0].tipo == 'PLATINO' ? { xs: 4, md: 3, lg: 3 } : actual[0].tipo == 'ORO' ? { xs: 4, md: 2, lg: 2 } : { xs: 4, md: 1, lg: 1 }}
-                                        style={{ textAlign: "center" }}
-                                        p={2}
-                                    >
-                                        <img loading="lazy" src={curr.promocional_landing} alt="sponsor-img" style={actual[0].tipo == 'DIAMANTE' ? { width: "100%", objectFit: "contain" } : actual[0].tipo == 'PLATINO' ? { width: "100%", objectFit: "contain" } : actual[0].tipo == 'ORO' ? { width: "100%", objectFit: "contain" } : { width: "100%", objectFit: "contain" }} />
-                                    </Grid>
-                                ))}
-                            </Grid>
-                        </Stack>
-                    </Box>
-                ))}
-            </Slider>
-        </Box>
+                        {/* Separador animado */}
+                        <motion.div
+                            initial={{ scaleX: 0 }}
+                            animate={{ scaleX: 1 }}
+                            transition={{ duration: 0.5, delay: 0.15 }}
+                            style={{
+                                height: 1,
+                                background: `linear-gradient(90deg, transparent, #25D366, transparent)`,
+                                marginBottom: 24,
+                                transformOrigin: "center",
+                            }}
+                        />
+
+                        {/* Grid de logos */}
+                        <motion.div
+                            style={{
+                                display: "grid",
+                                gridTemplateColumns: config.gridCols,
+                                gap: 16,
+                                alignItems: "center",
+                                justifyItems: "center",
+                            }}
+                        >
+                            {grupoActual.map((pat, i) => (
+                                <motion.div
+                                    key={pat.UniqueID}
+                                    custom={i}
+                                    variants={logoVariants}
+                                    initial="hidden"
+                                    animate="visible"
+                                    whileHover={{ scale: 1.07, filter: `drop-shadow(0 0 12px #25D366)` }}
+                                    style={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        padding: 12,
+                                        borderRadius: 12,
+                                        background: "rgba(255,255,255,0.04)",
+                                        transition: "filter 0.3s",
+                                        cursor: "default",
+                                    }}
+                                >
+                                    <img
+                                        loading="lazy"
+                                        src={pat.promocional_landing}
+                                        alt="sponsor"
+                                        style={{
+                                            maxWidth: config.logoMaxWidth,
+                                            maxHeight: config.logoMaxHeight,
+                                            width: "100%",
+                                            height: "auto",
+                                            objectFit: "contain",
+                                            filter: "brightness(0.92) contrast(1.05)",
+                                        }}
+                                    />
+                                </motion.div>
+                            ))}
+                        </motion.div>
+                    </motion.div>
+                </AnimatePresence>
+
+                {/* Flecha derecha */}
+                {grupos.length > 1 && (
+                    <NavArrow dir="right" onClick={next} color="#25D366" style={{ backgroundColor: 'transparent' }} />
+                )}
+            </div>
+
+            {/* Dots de navegación */}
+            {grupos.length > 1 && (
+                <NavDots
+                    total={grupos.length}
+                    current={slide}
+                    onSelect={goTo}
+                    configs={cfgsOrdenados}
+                />
+            )}
+
+            {/* Mini indicador de nivel actual */}
+            <AnimatePresence mode="wait">
+                <motion.div
+                    key={`label-${slide}`}
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.3 }}
+                    style={{
+                        textAlign: "center",
+                        marginTop: 10,
+                        fontSize: 11,
+                        color: config.color,
+                        letterSpacing: "0.15em",
+                        fontWeight: 700,
+                        textTransform: "uppercase",
+                        opacity: 0.7,
+                    }}
+                >
+                    {slide + 1} / {grupos.length}
+                </motion.div>
+            </AnimatePresence>
+        </div>
     );
 };
 
