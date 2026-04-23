@@ -45,7 +45,7 @@ const Conferencista = ({ speaker }) => {
                 sx={{
                     width: 102,
                     height: 102,
-                    objectFit: "cover",
+                    objectFit: "contain",
                 }}
             />
 
