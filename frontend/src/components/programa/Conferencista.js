@@ -51,18 +51,18 @@ const Conferencista = ({ speaker }) => {
 
             {/* INFO */}
             <Box sx={{ flex: 1 }}>
-                <Typography fontWeight="bold" sx={{ lineHeight: 1.2 }}>
+                <Typography   variant="body1" fontWeight="bold" sx={{ lineHeight: 1.2 }}>
                     {conferencista.nombre}
                 </Typography>
 
                 <Typography
-                    variant="body2"
+                    variant="body1"
                     sx={{ color: "rgba(101,166,48,0.9)", fontWeight: 500 }}
                 >
                     {conferencista.puesto}
                 </Typography>
 
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body1" color="text.secondary">
                     {conferencista.institucion}
                 </Typography>
             </Box>
@@ -79,7 +79,7 @@ const Conferencista = ({ speaker }) => {
                         borderRadius: "2px",
                     }}
                 />
-                <Typography variant="caption" color="text.secondary">
+                <Typography variant="body1" color="text.secondary">
                     {conferencista.pais}
                 </Typography>
             </Stack>

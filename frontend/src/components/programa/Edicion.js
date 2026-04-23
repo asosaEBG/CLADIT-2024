@@ -6,7 +6,7 @@ const light = "rgba(101,166,48,0.1)";
 const Edicion = ({ config, programa }) => {
     return (
         <Stack spacing={2}>
-            {config.title && <Typography variant="h4" fontWeight="bold" sx={{ color: primary }}>
+            {config.title && <Typography variant="h3" fontWeight="bold" sx={{ color: primary }}>
                 {config.title}
             </Typography>
             }
@@ -16,7 +16,7 @@ const Edicion = ({ config, programa }) => {
             {config.segments.map((segment, i) => (
                 <Box key={i} sx={{ p: 2 }}>
                     {segment.title && <Box style={{ background: light }} p={3}>
-                        <Typography color={primary} variant="h6" fontWeight="bold" textAlign='center'>
+                        <Typography color={primary} variant="h4" fontWeight="bold" textAlign='center'>
                             {segment.title}
                         </Typography>
                     </Box>}

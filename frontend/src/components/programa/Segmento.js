@@ -19,11 +19,11 @@ const Segmento = ({ segmento }) => {
             <Stack>
                 <Stack direction="row" alignItems="center">
                     <AccessTimeIcon sx={{ fontSize: 18, color: primary }} />
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography variant="h6" color="text.secondary">
                         {formatHour(segmento.master[1])} - {formatHour(segmento.master[2])}
                     </Typography>
                 </Stack>
-                <Typography variant="body1" color="text.primary" fontWeight="bold">
+                <Typography variant="h6" color="text.primary" fontWeight="bold">
                     {segmento.master[0]}
                 </Typography>
                 {segmento.detail && segmento.detail.map((item, i) => (
