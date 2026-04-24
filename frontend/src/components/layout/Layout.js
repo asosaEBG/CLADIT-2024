@@ -24,6 +24,8 @@ import EmailIcon from '@mui/icons-material/Email';
 import { useTheme, useMediaQuery } from "@mui/material";
 import Patrocinadores from "./Patrocinadores";
 import HotelIcon from '@mui/icons-material/Hotel';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+
 const pages = [
   {
     label: "CLADIT 2026",
@@ -45,8 +47,23 @@ const pages = [
     label: "Contacto",
     href: "/contacto",
   },
+  {
+    label: "OPCIONES DE HOSPEDAJE",
+    submenu: [
+      {
+        label: "Hotel Westin Camino Real",
+        href: "https://www.marriott.com/es/event-reservations/reservation-link.mi?id=1776961284590&key=GRP&guestreslink2=true&app=resvlink",
+      },
+      {
+        label: "Hotel Biltmore",
+        href: "https://caminobiltmore-guatemala.ihotelier.com/book/dates-of-stay?groupID=5229234",
+      },
+    ],
+  },
 ];
+
 const live_events_service = require('../../helpers/live_events_service')
+
 function ScrollTop(props) {
   const { children, windowRef } = props;
   const trigger = useScrollTrigger({
@@ -61,7 +78,6 @@ function ScrollTop(props) {
       behavior: "smooth",
     });
   };
-
 
   return (
     <Fade in={trigger}>
@@ -81,6 +97,72 @@ ScrollTop.propTypes = {
   window: PropTypes.func,
 };
 
+// Componente para el dropdown de hospedaje en desktop
+function HospedajeDropdown() {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleLinkClick = (href) => {
+    window.open(href, '_blank');
+    handleClose();
+  };
+
+  return (
+    <>
+      <Button
+        id="hospedaje-button"
+        aria-controls={open ? 'hospedaje-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+        endIcon={<KeyboardArrowDownIcon />}
+        sx={{
+          color: "#1e3d52",
+          fontWeight: "bold",
+          textTransform: "none",
+          fontSize: "1rem",
+          '&:hover': {
+            backgroundColor: 'rgba(30, 61, 82, 0.04)',
+          },
+        }}
+      >
+        OPCIONES DE HOSPEDAJE
+      </Button>
+      <Menu
+        id="hospedaje-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+      >
+        <MenuItem onClick={() => handleLinkClick("https://www.marriott.com/es/event-reservations/reservation-link.mi?id=1776961284590&key=GRP&guestreslink2=true&app=resvlink")}>
+          <HotelIcon sx={{ mr: 1, color: "#1e3d52" }} />
+          <ListItemText style={{ color: "#1e3d52" }}>Hotel Westin Camino Real</ListItemText>
+        </MenuItem>
+        <MenuItem onClick={() => handleLinkClick("https://caminobiltmore-guatemala.ihotelier.com/book/dates-of-stay?groupID=5229234")}>
+          <HotelIcon sx={{ mr: 1, color: "#1e3d52" }} />
+          <ListItemText style={{ color: "#1e3d52" }}>Hotel Biltmore</ListItemText>
+        </MenuItem>
+      </Menu>
+    </>
+  );
+}
+
 export default function Layout(props) {
   const [contador] = useState(0);
   const [evento, setEvento] = useState({});
@@ -90,6 +172,7 @@ export default function Layout(props) {
   const [loading, setLoading] = useState(true);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   useEffect(() => {
     live_events_service
       .getData("/evento/view-by-hash/" + process.env.REACT_APP_EVT)
@@ -119,6 +202,7 @@ export default function Layout(props) {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
+  
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
@@ -145,55 +229,92 @@ export default function Layout(props) {
     <React.Fragment>
       <CssBaseline />
       <ElevationScroll {...props}>
-
         <AppBar
           position={isMobile ? "static" : "static"}
-
           style={{
             backgroundColor: "white",
             color: "#1e3d52",
           }}
         >
-          <Box style={{ width: "100%", padding: '1%' }}>
-            <Grid container style={{ width: '100%' }} alignContent='center' alignItems='center' justifyContent='center'>
-              <Grid size={{ xs: 12, lg: 4, md: 2 }} >
-                <Grid container>
-                  <Grid size={{ xs: 6, lg: 6, md: 6 }} >
+          <Box style={{ width: "100%", padding: '2%' }}>
+            <Grid container style={{ width: '100%' }} spacing={3} alignItems="center" justifyContent="center">
+              {/* Columna Izquierda - Primeras dos imágenes */}
+              <Grid size={{ xs: 12, sm: 12, md: 4, lg: 4 }} sx={{ display: 'flex', justifyContent: 'center' }}>
+                <Grid container spacing={2} justifyContent="center">
+                  <Grid size={{ xs: 6, sm: 6 }}>
                     <img
                       src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/37460b05-fbb4-4578-b54f-d2c3c90c0f42.png"
                       loading="lazy"
                       className="img-header"
-                      style={{ width: '100%' }}
+                      style={{ width: '100%', display: 'block' }}
                     />
                   </Grid>
-                  <Grid size={{ xs: 6, lg: 6, md: 6 }} >
-                    <img
-                      src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/f5d56a87-7561-4b37-b443-215853238d90.png"
-                      loading="lazy"
-                      className="img-header"
-                      style={{ width: '100%' }}
-                    />
-                  </Grid>
+      
                 </Grid>
               </Grid>
-              <Grid size={{ xs: 12, lg: 2, md: 2 }} style={{ textAlign: 'center' }}>
-                <Typography variant="p" style={{ fontWeight: "bold", textAlign: 'center', width: '100%' }} >
-                  Patrocinadores Diamante
-                </Typography>
+
+              {/* Columna Centro - Logo CLADIT Principal (solo visible en desktop) */}
+              <Grid size={{ xs: 0, sm: 0, md: 4, lg: 4 }} sx={{ display: { xs: 'none', sm: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center' }}>
+                <img
+                  src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/f5d56a87-7561-4b37-b443-215853238d90.png"
+                  loading="lazy"
+                  className="img-header"
+                  style={{ width: '90%', maxWidth: '300px', display: 'block' }}
+                />
               </Grid>
-              <Grid size={{ xs: 12, lg: 4, md: 4 }}>
-                <Grid container style={{ width: '100%' }} alignContent='center' alignItems='center' justifyContent='center' spacing={2}>
-                  {patrocinadores_diamante && patrocinadores_diamante.map((patrocinador, index) => (
-                    <Grid size={{ xs: 2, lg: 2, md: 2 }} key={index}>
-                      <img
-                        src={patrocinador.promocional_landing}
-                        loading="lazy"
-                        className="img-patrocinador"
-                        style={{ width: '100%' }}
-                      />
-                    </Grid>
-                  ))}
-                </Grid>
+
+              {/* Columna Derecha - Patrocinadores Diamante */}
+              <Grid size={{ xs: 12, sm: 12, md: 4, lg: 4 }}>
+                <Stack direction="column" spacing={2} alignItems="center" justifyContent="center" sx={{ width: '100%' }}>
+                  <Typography 
+                    variant="subtitle1" 
+                    sx={{ 
+                      fontWeight: "bold", 
+                      textAlign: 'center', 
+                      width: '100%',
+                      fontSize: { xs: '0.95rem', sm: '1rem', md: '1.1rem' },
+                      color: '#1e3d52'
+                    }}
+                  >
+                    Patrocinadores Diamante
+                  </Typography>
+                  <Stack 
+                    direction="row" 
+                    spacing={1.5} 
+                    alignItems="center" 
+                    justifyContent="center" 
+                    sx={{ 
+                      width: '100%', 
+                      flexWrap: 'wrap',
+                      gap: '1rem'
+                    }}
+                  >
+                    {patrocinadores_diamante && patrocinadores_diamante.map((patrocinador, index) => (
+                      <Box 
+                        key={index} 
+                        sx={{ 
+                          width: { xs: '60px', sm: '70px', md: '80px' },
+                          height: { xs: '60px', sm: '70px', md: '80px' },
+                          display: 'flex', 
+                          alignItems: 'center', 
+                          justifyContent: 'center',
+                          flexShrink: 0
+                        }}
+                      >
+                        <img
+                          src={patrocinador.promocional_landing}
+                          loading="lazy"
+                          className="img-patrocinador"
+                          style={{ 
+                            maxWidth: '100%', 
+                            maxHeight: '100%', 
+                            objectFit: 'contain' 
+                          }}
+                        />
+                      </Box>
+                    ))}
+                  </Stack>
+                </Stack>
               </Grid>
               <Grid size={{ xs: 12, lg: 12, md: 2 }} >
                 <Grid container style={{ width: '100%' }} alignContent='center' alignItems='center' justifyContent='center' spacing={1}>
@@ -202,8 +323,6 @@ export default function Layout(props) {
                   </Grid>
                   <Grid size={{ xs: 6, lg: 6, md: 6 }} style={{ textAlign: 'center' }}>
                     <Stack spacing={2} style={{ width: "100%" }} alignItems="center" justifyContent="center">
-                      <Button style={{ color: 'black' }} startIcon={<HotelIcon />} target="_blank" href="https://www.marriott.com/es/event-reservations/reservation-link.mi?id=1776961284590&key=GRP&guestreslink2=true&app=resvlink" >Hospedaje Hotel Westin Camino Real</Button>
-                      <Button style={{ color: 'black' }} startIcon={<HotelIcon />} target="_blank" href="https://caminobiltmore-guatemala.ihotelier.com/book/dates-of-stay?groupID=5229234" >Hospedaje Hotel Biltmore</Button>
                       <Button style={{ color: 'black' }} startIcon={<EmailIcon />} href="mailto:ncuches@ebg.edu.gt?subject=Solicitud%20de%20reunión%20para%20más%20información%20de%20CLADIT%202026" >Solicitar una reunión</Button>
                     </Stack>
                   </Grid>
@@ -244,18 +363,43 @@ export default function Layout(props) {
                     }}
                   >
                     {pages.map((page, index) => (
-                      <MenuItem
-                        key={`MENU-ITEM-${index}`}
-                        onClick={() => {
-                          window.location.href = page.href;
-                        }}
-                      >
-                        <ListItemText
-                          style={{ color: "#1e3d52", fontWeight: "bold" }}
-                        >
-                          {page.label}
-                        </ListItemText>
-                      </MenuItem>
+                      <div key={`MENU-ITEM-${index}`}>
+                        {page.submenu ? (
+                          <>
+                            <MenuItem disabled style={{ color: "#1e3d52", fontWeight: "bold" }}>
+                              <ListItemText>{page.label}</ListItemText>
+                              <KeyboardArrowDownIcon fontSize="small" />
+                            </MenuItem>
+                            {page.submenu.map((item, subIndex) => (
+                              <MenuItem
+                                key={`SUBMENU-ITEM-${subIndex}`}
+                                onClick={() => {
+                                  window.open(item.href, '_blank');
+                                  handleCloseNavMenu();
+                                }}
+                                style={{ paddingLeft: '32px' }}
+                              >
+                                <HotelIcon sx={{ mr: 1, fontSize: 18 }} />
+                                <ListItemText style={{ color: "#1e3d52" }}>
+                                  {item.label}
+                                </ListItemText>
+                              </MenuItem>
+                            ))}
+                          </>
+                        ) : (
+                          <MenuItem
+                            onClick={() => {
+                              window.location.href = page.href;
+                            }}
+                          >
+                            <ListItemText
+                              style={{ color: "#1e3d52", fontWeight: "bold" }}
+                            >
+                              {page.label}
+                            </ListItemText>
+                          </MenuItem>
+                        )}
+                      </div>
                     ))}
                   </Menu>
                 </Box>
@@ -265,12 +409,17 @@ export default function Layout(props) {
                   alignItems={"center"}
                 >
                   {pages.map((page, index) => (
-                    <MenuItem
-                      key={`MENU-ITEM-${index}`}
-                      onClick={handleCloseNavMenu}
-                    >
-                      <CustomMenuList title={page.label} href={page.href} />
-                    </MenuItem>
+                    <div key={`MENU-ITEM-${index}`}>
+                      {page.submenu ? (
+                        <HospedajeDropdown />
+                      ) : (
+                        <MenuItem
+                          onClick={handleCloseNavMenu}
+                        >
+                          <CustomMenuList title={page.label} href={page.href} />
+                        </MenuItem>
+                      )}
+                    </div>
                   ))}
                 </Box>
               </Stack>

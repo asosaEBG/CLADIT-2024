@@ -15,8 +15,7 @@ const NIVEL_CONFIG = {
         glow: "0 0 32px rgba(103,232,249,0.35), 0 0 64px rgba(167,139,250,0.15)",
         border: "transparent",
         logoMaxWidth: 280,
-        logoMaxHeight: 130,
-        gridCols: "repeat(auto-fit, minmax(220px, 1fr))",
+        logoMaxHeight: 160,
         shimmer: true,
     },
     PLATINO: {
@@ -27,9 +26,8 @@ const NIVEL_CONFIG = {
         badgeText: "#0f172a",
         glow: "0 0 24px rgba(203,213,225,0.2)",
         border: "transparent",
-        logoMaxWidth: 200,
-        logoMaxHeight: 100,
-        gridCols: "repeat(auto-fit, minmax(160px, 1fr))",
+        logoMaxWidth: 240,
+        logoMaxHeight: 140,
         shimmer: true,
     },
     ORO: {
@@ -40,9 +38,8 @@ const NIVEL_CONFIG = {
         badgeText: "#1a0800",
         glow: "0 0 24px rgba(251,191,36,0.25)",
         border: "transparent",
-        logoMaxWidth: 160,
-        logoMaxHeight: 80,
-        gridCols: "repeat(auto-fit, minmax(130px, 1fr))",
+        logoMaxWidth: 200,
+        logoMaxHeight: 120,
         shimmer: false,
     },
     PLATA: {
@@ -53,9 +50,8 @@ const NIVEL_CONFIG = {
         badgeText: "#0d1117",
         glow: "0 0 16px rgba(148,163,184,0.15)",
         border: "transparent",
-        logoMaxWidth: 120,
-        logoMaxHeight: 65,
-        gridCols: "repeat(auto-fit, minmax(100px, 1fr))",
+        logoMaxWidth: 180,
+        logoMaxHeight: 100,
         shimmer: false,
     },
     "APOYO INSTITUCIONAL": {
@@ -66,9 +62,8 @@ const NIVEL_CONFIG = {
         badgeText: "#001a10",
         glow: "0 0 16px rgba(52,211,153,0.15)",
         border: "transparent",
-        logoMaxWidth: 100,
-        logoMaxHeight: 55,
-        gridCols: "repeat(auto-fit, minmax(90px, 1fr))",
+        logoMaxWidth: 160,
+        logoMaxHeight: 90,
         shimmer: false,
     },
     "ALIANZA ESTRATÉGICA": {
@@ -79,9 +74,8 @@ const NIVEL_CONFIG = {
         badgeText: "#0d0a1a",
         glow: "0 0 16px rgba(129,140,248,0.15)",
         border: "transparent",
-        logoMaxWidth: 95,
-        logoMaxHeight: 52,
-        gridCols: "repeat(auto-fit, minmax(85px, 1fr))",
+        logoMaxWidth: 155,
+        logoMaxHeight: 88,
         shimmer: false,
     },
     "MEDIA PARTNER": {
@@ -92,14 +86,11 @@ const NIVEL_CONFIG = {
         badgeText: "#1a001a",
         glow: "0 0 16px rgba(244,114,182,0.15)",
         border: "transparent",
-        logoMaxWidth: 90,
-        logoMaxHeight: 50,
-        gridCols: "repeat(auto-fit, minmax(80px, 1fr))",
+        logoMaxWidth: 150,
+        logoMaxHeight: 85,
         shimmer: false,
     },
 };
-
-const NIVEL_ORDER = Object.keys(NIVEL_CONFIG);
 
 // ─── Variantes de animación ─────────────────────────────────────────────────
 const slideVariants = {
@@ -124,12 +115,12 @@ const slideVariants = {
 
 const logoVariants = {
     hidden: { opacity: 0, y: 20, scale: 0.9 },
-    visible: (i) => ({
+    visible: {
         opacity: 1,
         y: 0,
         scale: 1,
-        transition: { delay: i * 0.07, duration: 0.45, ease: "easeOut" },
-    }),
+        transition: { duration: 0.5, ease: "easeOut" },
+    },
 };
 
 const badgeVariants = {
@@ -181,27 +172,30 @@ const ShimmerBadge = ({ config, nivel }) => (
 );
 
 // ─── Puntos de navegación ───────────────────────────────────────────────────
-const NavDots = ({ total, current, onSelect, configs }) => (
-    <div style={{ display: "flex", gap: 8, justifyContent: "center", alignItems: "center", paddingTop: 20 }}>
-        {configs.map((cfg, i) => (
-            <motion.button
-                key={i}
-                onClick={() => onSelect(i)}
-                whileHover={{ scale: 1.3 }}
-                whileTap={{ scale: 0.9 }}
-                style={{
-                    width: i === current ? 28 : 8,
-                    height: 8,
-                    borderRadius: 999,
-                    background: i === current ? cfg.color : "rgba(255,255,255,0.2)",
-                    border: "none",
-                    cursor: "pointer",
-                    padding: 0,
-                    transition: "width 0.3s ease, background 0.3s ease",
-                    boxShadow: i === current ? `0 0 12px ${cfg.color}66` : "none",
-                }}
-            />
-        ))}
+const NavDots = ({ total, current, onSelect, patrocinadores }) => (
+    <div style={{ display: "flex", gap: 6, justifyContent: "center", alignItems: "center", paddingTop: 20, flexWrap: "wrap", maxWidth: "80%", margin: "0 auto" }}>
+        {patrocinadores.map((pat, i) => {
+            const cfg = NIVEL_CONFIG[pat.tipo] ?? NIVEL_CONFIG["PLATA"];
+            return (
+                <motion.button
+                    key={i}
+                    onClick={() => onSelect(i)}
+                    whileHover={{ scale: 1.3 }}
+                    whileTap={{ scale: 0.9 }}
+                    style={{
+                        width: i === current ? 28 : 8,
+                        height: 8,
+                        borderRadius: 999,
+                        background: i === current ? cfg.color : "rgba(255,255,255,0.2)",
+                        border: "none",
+                        cursor: "pointer",
+                        padding: 0,
+                        transition: "width 0.3s ease, background 0.3s ease",
+                        boxShadow: i === current ? `0 0 12px ${cfg.color}66` : "none",
+                    }}
+                />
+            );
+        })}
     </div>
 );
 
@@ -226,7 +220,7 @@ const NavArrow = ({ dir, onClick, color }) => (
             alignItems: "center",
             justifyContent: "center",
             cursor: "pointer",
-            color,
+            color: color ?? "#25D366",
             fontSize: 18,
             backdropFilter: "blur(8px)",
             boxShadow: `0 0 16px #25D366`,
@@ -239,7 +233,8 @@ const NavArrow = ({ dir, onClick, color }) => (
 // ─── Componente principal ───────────────────────────────────────────────────
 const Patrocinadores = () => {
     const [contador] = useState(0);
-    const [grupos, setGrupos] = useState([]);
+    // Lista plana de todos los patrocinadores ordenada por jerarquía de nivel
+    const [patrocinadores, setPatrocinadores] = useState([]);
     const [slide, setSlide] = useState(0);
     const [direction, setDirection] = useState(1);
     const [paused, setPaused] = useState(false);
@@ -248,14 +243,14 @@ const Patrocinadores = () => {
         live_events_service
             .getData("/patrocinador/view-by-evento/" + process.env.REACT_APP_EVT)
             .then((res) => {
-                const classified = helpers.classifyByField(res.data.response.result, "tipo");
-                // Ordenar según jerarquía definida
-                const sorted = [...classified].sort((a, b) => {
-                    const orderA = NIVEL_CONFIG[a[0]?.tipo]?.order ?? 99;
-                    const orderB = NIVEL_CONFIG[b[0]?.tipo]?.order ?? 99;
+                const todos = res.data.response.result;
+                // Ordenar por jerarquía de nivel y luego por nombre dentro del mismo nivel
+                const sorted = [...todos].sort((a, b) => {
+                    const orderA = NIVEL_CONFIG[a.tipo]?.order ?? 99;
+                    const orderB = NIVEL_CONFIG[b.tipo]?.order ?? 99;
                     return orderA - orderB;
                 });
-                setGrupos(sorted);
+                setPatrocinadores(sorted);
             })
             .catch(console.error);
     }, [contador]);
@@ -265,25 +260,24 @@ const Patrocinadores = () => {
         setSlide(next);
     }, [slide]);
 
-    const prev = useCallback(() => goTo((slide - 1 + grupos.length) % grupos.length), [slide, grupos.length, goTo]);
-    const next = useCallback(() => goTo((slide + 1) % grupos.length), [slide, grupos.length, goTo]);
+    const prev = useCallback(() => goTo((slide - 1 + patrocinadores.length) % patrocinadores.length), [slide, patrocinadores.length, goTo]);
+    const next = useCallback(() => goTo((slide + 1) % patrocinadores.length), [slide, patrocinadores.length, goTo]);
 
     // Autoplay
     useEffect(() => {
-        if (paused || grupos.length === 0) return;
+        if (paused || patrocinadores.length === 0) return;
         const timer = setInterval(() => {
             setDirection(1);
-            setSlide((s) => (s + 1) % grupos.length);
+            setSlide((s) => (s + 1) % patrocinadores.length);
         }, 4000);
         return () => clearInterval(timer);
-    }, [paused, grupos.length]);
+    }, [paused, patrocinadores.length]);
 
-    if (grupos.length === 0) return null;
+    if (patrocinadores.length === 0) return null;
 
-    const grupoActual = grupos[slide];
-    const nivel = grupoActual?.[0]?.tipo ?? "";
+    const patActual = patrocinadores[slide];
+    const nivel = patActual?.tipo ?? "";
     const config = NIVEL_CONFIG[nivel] ?? NIVEL_CONFIG["PLATA"];
-    const cfgsOrdenados = grupos.map((g) => NIVEL_CONFIG[g[0]?.tipo] ?? NIVEL_CONFIG["PLATA"]);
 
     return (
         <div
@@ -304,14 +298,12 @@ const Patrocinadores = () => {
                     minHeight: 280,
                 }}
             >
-
-
                 {/* Flecha izquierda */}
-                {grupos.length > 1 && (
+                {patrocinadores.length > 1 && (
                     <NavArrow dir="left" onClick={prev} />
                 )}
 
-                {/* Slide animado */}
+                {/* Slide animado — un patrocinador a la vez */}
                 <AnimatePresence mode="wait" custom={direction}>
                     <motion.div
                         key={slide}
@@ -324,6 +316,9 @@ const Patrocinadores = () => {
                             position: "relative",
                             zIndex: 2,
                             padding: "32px 60px 28px",
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
                         }}
                     >
                         {/* Badge de nivel */}
@@ -337,7 +332,7 @@ const Patrocinadores = () => {
                                     margin: "6px 0 0",
                                     fontSize: 11,
                                     letterSpacing: "0.2em",
-                                    color: `black`,
+                                    color: "black",
                                     textTransform: "uppercase",
                                     fontWeight: 600,
                                 }}
@@ -352,78 +347,66 @@ const Patrocinadores = () => {
                             animate={{ scaleX: 1 }}
                             transition={{ duration: 0.5, delay: 0.15 }}
                             style={{
+                                width: "100%",
                                 height: 1,
                                 background: `linear-gradient(90deg, transparent, #25D366, transparent)`,
-                                marginBottom: 24,
+                                marginBottom: 32,
                                 transformOrigin: "center",
                             }}
                         />
 
-                        {/* Grid de logos */}
+                        {/* Logo individual centrado */}
                         <motion.div
+                            variants={logoVariants}
+                            initial="hidden"
+                            animate="visible"
+                            whileHover={{ scale: 1.07, filter: `drop-shadow(0 0 12px #25D366)` }}
                             style={{
-                                display: "grid",
-                                gridTemplateColumns: config.gridCols,
-                                gap: 16,
+                                display: "flex",
                                 alignItems: "center",
-                                justifyItems: "center",
+                                justifyContent: "center",
+                                padding: 20,
+                                borderRadius: 16,
+                                background: "rgba(255,255,255,0.04)",
+                                transition: "filter 0.3s",
+                                cursor: "default",
+                                minHeight: 120,
                             }}
                         >
-                            {grupoActual.map((pat, i) => (
-                                <motion.div
-                                    key={pat.UniqueID}
-                                    custom={i}
-                                    variants={logoVariants}
-                                    initial="hidden"
-                                    animate="visible"
-                                    whileHover={{ scale: 1.07, filter: `drop-shadow(0 0 12px #25D366)` }}
-                                    style={{
-                                        display: "flex",
-                                        alignItems: "center",
-                                        justifyContent: "center",
-                                        padding: 12,
-                                        borderRadius: 12,
-                                        background: "rgba(255,255,255,0.04)",
-                                        transition: "filter 0.3s",
-                                        cursor: "default",
-                                    }}
-                                >
-                                    <img
-                                        loading="lazy"
-                                        src={pat.promocional_landing}
-                                        alt="sponsor"
-                                        style={{
-                                            maxWidth: config.logoMaxWidth,
-                                            maxHeight: config.logoMaxHeight,
-                                            width: "100%",
-                                            height: "auto",
-                                            objectFit: "contain",
-                                            filter: "brightness(0.92) contrast(1.05)",
-                                        }}
-                                    />
-                                </motion.div>
-                            ))}
+                            <img
+                                loading="lazy"
+                                src={patActual.promocional_landing}
+                                alt="sponsor"
+                                style={{
+                                    maxWidth: config.logoMaxWidth,
+                                    maxHeight: config.logoMaxHeight,
+                                    width: "100%",
+                                    height: "auto",
+                                    objectFit: "contain",
+                                    filter: "brightness(0.92) contrast(1.05)",
+                                }}
+                            />
                         </motion.div>
                     </motion.div>
                 </AnimatePresence>
 
                 {/* Flecha derecha */}
-                {grupos.length > 1 && (
-                    <NavArrow dir="right" onClick={next} color="#25D366" style={{ backgroundColor: 'transparent' }} />
+                {patrocinadores.length > 1 && (
+                    <NavArrow dir="right" onClick={next} color="#25D366" />
                 )}
             </div>
 
             {/* Dots de navegación */}
-            {grupos.length > 1 && (
+            {patrocinadores.length > 1 && (
                 <NavDots
-                    total={grupos.length}
+                    total={patrocinadores.length}
                     current={slide}
                     onSelect={goTo}
-                    configs={cfgsOrdenados}
+                    patrocinadores={patrocinadores}
                 />
             )}
 
-            {/* Mini indicador de nivel actual */}
+            {/* Indicador de posición actual */}
             <AnimatePresence mode="wait">
                 <motion.div
                     key={`label-${slide}`}
@@ -442,7 +425,7 @@ const Patrocinadores = () => {
                         opacity: 0.7,
                     }}
                 >
-                    {slide + 1} / {grupos.length}
+                    {slide + 1} / {patrocinadores.length}
                 </motion.div>
             </AnimatePresence>
         </div>
