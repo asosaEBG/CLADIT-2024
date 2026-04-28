@@ -324,7 +324,7 @@ const Patrocinadores = () => {
                         {/* Badge de nivel */}
                         <div style={{ textAlign: "center", marginBottom: 20 }}>
                             <ShimmerBadge config={config} nivel={nivel} />
-                            <motion.p
+                            {(nivel == 'DIAMANTE' || nivel == "ORO" || nivel == 'PLATINO' || nivel== 'PLATA')&&<motion.p
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.2 }}
@@ -338,7 +338,7 @@ const Patrocinadores = () => {
                                 }}
                             >
                                 Patrocinadores
-                            </motion.p>
+                            </motion.p>}
                         </div>
 
                         {/* Separador animado */}
