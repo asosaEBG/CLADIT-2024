@@ -152,7 +152,16 @@ const Patrocinio = () => {
             });
     }, [contador]);
     return (
-        <Stack spacing={5} alignItems='center' style={{ background: "#f5f7f6" }} pt={3}>
+        <Stack
+            spacing={5}
+            alignItems="center"
+            sx={{
+                background: '#f5f7f6',
+                width: '100%',
+                overflowX: 'hidden',
+            }}
+            pt={3}
+        >
             <Backdrop
                 sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
                 open={loading}
