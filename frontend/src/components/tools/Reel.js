@@ -68,7 +68,7 @@ const Reel = () => {
                     display: 'flex',
                     gap: { xs: 1.5, sm: 2, md: 3 },
                     width: 'max-content',
-                    animation: 'reelScroll 350s linear infinite',
+                    animation: 'reelScroll 450s linear infinite',
                     willChange: 'transform',
                     '&:hover': {
                         animationPlayState: 'paused',
