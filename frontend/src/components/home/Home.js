@@ -36,11 +36,14 @@ const Inicio = () => {
     const isXs = useMediaQuery(theme.breakpoints.down("sm"));
     const isMd = useMediaQuery(theme.breakpoints.between("sm", "lg"));
     const isLg = useMediaQuery(theme.breakpoints.up("lg"));
+
+    // cols para stats: 1 en mobile, 3 en tablet, 5 en desktop
     let cols = 5;
     let cols_detalles = 2;
     if (isXs) { cols = 1; cols_detalles = 1; }
-    else if (isMd) { cols = 1; cols_detalles = 1; }
+    else if (isMd) { cols = 3; cols_detalles = 2; }
     else if (isLg) { cols = 5; cols_detalles = 2; }
+
     const stats_arr = [
         { img: "https://escuela-bancaria.s3.us-east-2.amazonaws.com/9c616b0a-7c5a-4357-9aae-51584e68cb8d.jpeg", title: "ASISTENTES", value: "+500" },
         { img: "https://escuela-bancaria.s3.us-east-2.amazonaws.com/91e32109-0226-4148-8f04-3626d422ad6d.jpeg", title: "STANDS EXPO", value: "+10" },
@@ -72,6 +75,7 @@ const Inicio = () => {
     const [hoveredIndex, setHoveredIndex] = useState(null);
     const [modalOpen, setModalOpen] = useState(false);
     const [info, setInfo] = useState({ conferencista: "", cv: "", foto: "", puesto: "", institucion: "", bandera: "", pais: "" });
+
     useEffect(() => {
         live_events_service
             .getData("/evento/view-by-hash/" + process.env.REACT_APP_EVT)
@@ -89,17 +93,11 @@ const Inicio = () => {
                                 setLoading(false);
                                 setConferencistas([...new Map(response.data.response.result.sort((a, b) => a.hora.localeCompare(b.hora)).map(item => [item.conferencista.nombre, item])).values()].filter((item) => item.conferencista.nombre != 'Representante'))
                             })
-                            .catch((error) => {
-                                console.log(error);
-                            });
+                            .catch((error) => { console.log(error); });
                     })
-                    .catch((error) => {
-                        console.log(error);
-                    });
+                    .catch((error) => { console.log(error); });
             })
-            .catch((error) => {
-                console.log(error);
-            });
+            .catch((error) => { console.log(error); });
     }, [contador]);
 
     return (
@@ -110,9 +108,19 @@ const Inicio = () => {
             >
                 <CircularProgress color="inherit" />
             </Backdrop>
-            <Box sx={{ width: "100%", padding: '5%' }}>
-                <Stack spacing={6}>
-                    <Typography variant="h4" align="center" style={{ color: "#1e3d52", fontWeight: "bold", textAlign: 'center' }}>
+
+            {/* Título principal */}
+            <Box sx={{ width: "100%", px: { xs: '5%', md: '8%', lg: '10%' }, py: { xs: '6%', md: '5%' } }}>
+                <Stack spacing={{ xs: 3, md: 6 }}>
+                    <Typography
+                        variant="h4"
+                        sx={{
+                            color: "#1e3d52",
+                            fontWeight: "bold",
+                            textAlign: 'center',
+                            fontSize: { xs: '1.1rem', sm: '1.4rem', md: '1.8rem', lg: '2.125rem' },
+                        }}
+                    >
                         XXIII CONGRESO REGIONAL PARA LA PREVENCIÓN DE LAVADO DE DINERO U OTROS ACTIVOS Y EL FINANCIAMIENTO DEL TERRORISMO
                     </Typography>
                     <Divider />
@@ -123,11 +131,11 @@ const Inicio = () => {
                             fontWeight: "bold",
                             mb: 1,
                             textAlign: "center",
+                            fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem' },
                         }}
                     >
                         Nuestras verticales estratégicas
                     </Typography>
-
                     <Typography
                         variant="p"
                         sx={{
@@ -135,7 +143,8 @@ const Inicio = () => {
                             fontWeight: 500,
                             textAlign: "center",
                             margin: "0 auto",
-                            lineHeight: 1.6
+                            lineHeight: 1.6,
+                            fontSize: { xs: '0.8rem', sm: '0.9rem', md: '1rem' },
                         }}
                     >
                         MONITOREO TRANSACCIONAL Y ALERTAS
@@ -154,34 +163,63 @@ const Inicio = () => {
                         · GAFILAT Y EVALUACIONES INTERNACIONALES
                     </Typography>
                 </Stack>
-            </Box >
-            <Box sx={{ width: "100%" }}>
+            </Box>
 
-                <img src='https://escuela-bancaria.s3.us-east-2.amazonaws.com/d8335327-633d-4fb9-841f-c445ce8c0a1e.png' style={{ width: '100%' }} loading="lazy" />
+            {/* Banner imagen */}
+            <Box sx={{ width: "100%" }}>
+                <img
+                    src='https://escuela-bancaria.s3.us-east-2.amazonaws.com/d8335327-633d-4fb9-841f-c445ce8c0a1e.png'
+                    style={{ width: '100%', display: 'block' }}
+                    loading="lazy"
+                />
             </Box>
-            <Box sx={{ display: { xs: 'none', md: 'none', lg: 'block' } }} style={{ width: '100%', padding: '10%', backgroundImage: 'url(https://escuela-bancaria.s3.us-east-2.amazonaws.com/16416305-43f2-45dc-a0a3-7fab9219bcf0.jpeg)', backgroundSize: 'cover', backgroundPosition: 'center', textAlign: 'center' }}>
-                <video controls style={{ width: '60%' }} >
+
+            {/* Video - unificado con width responsivo */}
+            <Box
+                style={{
+                    width: '100%',
+                    backgroundImage: 'url(https://escuela-bancaria.s3.us-east-2.amazonaws.com/16416305-43f2-45dc-a0a3-7fab9219bcf0.jpeg)',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    textAlign: 'center',
+                }}
+                sx={{ py: { xs: '8%', md: '6%', lg: '5%' }, px: { xs: '5%', md: '10%', lg: '15%' } }}
+            >
+                <video
+                    controls
+                    style={{ width: '100%', maxWidth: '900px', display: 'block', margin: '0 auto' }}
+                >
                     <source
                         src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/649ad4e4-c45e-4c2f-bf0e-883eb546970c.mp4"
                         type="video/mp4"
                     />
                 </video>
             </Box>
-            <Box sx={{ display: { xs: 'block', md: 'block', lg: 'none' } }} style={{ width: '100%', padding: '10%', backgroundImage: 'url(https://escuela-bancaria.s3.us-east-2.amazonaws.com/16416305-43f2-45dc-a0a3-7fab9219bcf0.jpeg)', backgroundSize: 'cover', backgroundPosition: 'center', textAlign: 'center' }}>
-                <video controls style={{ width: '100%' }} >
-                    <source
-                        src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/649ad4e4-c45e-4c2f-bf0e-883eb546970c.mp4"
-                        type="video/mp4"
-                    />
-                </video>
-            </Box>
-            <Box sx={{ width: "100%", padding: '5%' }}>
-                <Stack spacing={6}>
-                    <Typography variant="h5" align="center" style={{ color: "#1e3d52", fontWeight: "bold", textAlign: 'center' }}>
+
+            {/* Texto descriptivo */}
+            <Box sx={{ width: "100%", px: { xs: '5%', md: '8%', lg: '10%' }, py: { xs: '6%', md: '5%' } }}>
+                <Stack spacing={{ xs: 3, md: 6 }}>
+                    <Typography
+                        variant="h5"
+                        sx={{
+                            color: "#1e3d52",
+                            fontWeight: "bold",
+                            textAlign: 'center',
+                            fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem' },
+                        }}
+                    >
                         ¿Cómo estar a la vanguardia y liderar en la nueva era del Compliance y la Prevención?
                     </Typography>
-                    <Typography variant="p" align="center" style={{ color: "#1e3d52", fontWeight: "bold", textAlign: 'justify' }}>
-
+                    <Typography
+                        variant="p"
+                        sx={{
+                            color: "#1e3d52",
+                            fontWeight: "bold",
+                            textAlign: 'justify',
+                            fontSize: { xs: '0.85rem', sm: '0.9rem', md: '1rem' },
+                            lineHeight: { xs: 1.7, md: 1.8 },
+                        }}
+                    >
                         La transformación digital también está redefiniendo la prevención del lavado de dinero, el financiamiento del terrorismo y la gestión de riesgos.
 
                         La Inteligencia Artificial, el análisis de datos, la automatización, los activos virtuales, las sanciones internacionales y las nuevas tipologías de fraude están cambiando el rol del oficial de cumplimiento y de los líderes del sistema financiero.
@@ -205,8 +243,10 @@ const Inicio = () => {
                         La pregunta es: ¿tu institución está preparada para anticiparlo? 🔐🌎
                     </Typography>
                 </Stack>
-            </Box >
-            <ImageList cols={cols}>
+            </Box>
+
+            {/* Stats ImageList */}
+            <ImageList cols={cols} sx={{ m: 0 }}>
                 {stats_arr.map((item) => (
                     <ImageListItem key={item.img}>
                         <img
@@ -222,21 +262,39 @@ const Inicio = () => {
                     </ImageListItem>
                 ))}
             </ImageList>
-            <Grid container alignItems="center" justifyContent="center" style={{ textAlign: "justify", width: '100%' }}>
-                <Grid size={{ xs: 12, md: 6, lg: 6 }} sx={{ padding: { xs: '5%', md: '8%', lg: '10%' } }} style={{ backgroundColor: '#041b42' }}>
-                    <Stack spacing={2} >
-                        <Typography variant="h4" align="center" style={{ color: "white", fontWeight: "bold", textAlign: 'justify' }}>
+
+            {/* Precio grupal + Patrocinio */}
+            <Grid container alignItems="stretch" justifyContent="center" style={{ width: '100%' }}>
+                <Grid size={{ xs: 12, md: 6, lg: 6 }} sx={{ padding: { xs: '8%', sm: '6%', md: '8%', lg: '10%' } }} style={{ backgroundColor: '#041b42' }}>
+                    <Stack spacing={2}>
+                        <Typography
+                            variant="h4"
+                            sx={{
+                                color: "white",
+                                fontWeight: "bold",
+                                textAlign: 'justify',
+                                fontSize: { xs: '1.3rem', sm: '1.6rem', md: '2rem', lg: '2.125rem' },
+                            }}
+                        >
                             Precio Especial por Grupos
                         </Typography>
-                        <Typography variant="p" align="center" style={{ color: "white", fontWeight: "bold", textAlign: 'justify' }}>
+                        <Typography
+                            variant="p"
+                            sx={{
+                                color: "white",
+                                fontWeight: "bold",
+                                textAlign: 'justify',
+                                fontSize: { xs: '0.85rem', md: '1rem' },
+                            }}
+                        >
                             Reserva para ti y tu equipo el acceso a CLADIT 2026 con un precio especial por grupos. Asegura tu lugar en el evento de cumplimiento más importante de la región y aprovecha esta oferta exclusiva para organizaciones que buscan fortalecer su estrategia de prevención.
                         </Typography>
                         <List style={{ color: 'white' }}>
                             <ListItem disablePadding>
-                                <ListItemButton href={
-                                    process.env.REACT_APP_URL_INSCRIPCION +
-                                    process.env.REACT_APP_EVT
-                                } target="_blank">
+                                <ListItemButton
+                                    href={process.env.REACT_APP_URL_INSCRIPCION + process.env.REACT_APP_EVT}
+                                    target="_blank"
+                                >
                                     <ListItemIcon>
                                         <ShoppingCartIcon style={{ color: 'white' }} />
                                     </ListItemIcon>
@@ -262,22 +320,44 @@ const Inicio = () => {
                         </List>
                     </Stack>
                 </Grid>
-                <Grid size={{ xs: 12, md: 6, lg: 6 }} sx={{ padding: { xs: '5%', md: '8%', lg: '10%' } }}>
-                    <Stack spacing={2} >
-                        <Typography variant="h4" align="center" style={{ color: "#65a630", fontWeight: "bold", textAlign: 'justify' }}>
+                <Grid size={{ xs: 12, md: 6, lg: 6 }} sx={{ padding: { xs: '8%', sm: '6%', md: '8%', lg: '10%' } }}>
+                    <Stack spacing={2}>
+                        <Typography
+                            variant="h4"
+                            sx={{
+                                color: "#65a630",
+                                fontWeight: "bold",
+                                textAlign: 'justify',
+                                fontSize: { xs: '1.3rem', sm: '1.6rem', md: '2rem', lg: '2.125rem' },
+                            }}
+                        >
                             Patrocinio
                         </Typography>
-                        <Typography variant="p" align="center" style={{ color: "#65a630", fontWeight: "bold", textAlign: 'justify' }}>
+                        <Typography
+                            variant="p"
+                            sx={{
+                                color: "#65a630",
+                                fontWeight: "bold",
+                                textAlign: 'justify',
+                                fontSize: { xs: '0.85rem', md: '1rem' },
+                            }}
+                        >
                             Reserva una de las posiciones disponibles
                         </Typography>
-                        <Typography variant="h5" align="center" style={{ color: "#65a630", fontWeight: "bold", textAlign: 'justify' }}>
+                        <Typography
+                            variant="h5"
+                            sx={{
+                                color: "#65a630",
+                                fontWeight: "bold",
+                                textAlign: 'justify',
+                                fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem' },
+                            }}
+                        >
                             Patrocinador / Stand / Taller Pre Congreso
                         </Typography>
                         <List style={{ color: '#65a630' }}>
                             <ListItem disablePadding>
-                                <ListItemButton
-                                    onClick={() => { setOpen(true); setUrl(evento.evt_info_pdf) }}
-                                >
+                                <ListItemButton onClick={() => { setOpen(true); setUrl(evento.evt_info_pdf) }}>
                                     <ListItemIcon>
                                         <PictureAsPdfIcon style={{ color: '#65a630' }} />
                                     </ListItemIcon>
@@ -285,9 +365,7 @@ const Inicio = () => {
                                 </ListItemButton>
                             </ListItem>
                             <ListItem disablePadding>
-                                <ListItemButton
-                                    onClick={() => { setOpen(true); setUrl(evento.planos) }}
-                                >
+                                <ListItemButton onClick={() => { setOpen(true); setUrl(evento.planos) }}>
                                     <ListItemIcon>
                                         <MapIcon style={{ color: '#65a630' }} />
                                     </ListItemIcon>
@@ -307,17 +385,20 @@ const Inicio = () => {
                                     <ListItemIcon>
                                         <VideoChatIcon style={{ color: '#65a630' }} />
                                     </ListItemIcon>
-                                    <ListItemText primary="Webinar Open House CLADIT 2026 -  Sponsors" />
+                                    <ListItemText primary="Webinar Open House CLADIT 2026 - Sponsors" />
                                 </ListItemButton>
                             </ListItem>
                         </List>
                     </Stack>
                 </Grid>
             </Grid>
+
+            {/* Hero: DIRIGIDO A */}
             <Box
                 sx={{
                     width: "100%",
-                    height: "600px",
+                    // Altura flexible: fija en desktop, auto en mobile para que no recorte contenido
+                    minHeight: { xs: 'auto', md: '500px', lg: '600px' },
                     position: "relative",
                     backgroundImage: `url("https://escuela-bancaria.s3.us-east-2.amazonaws.com/53a78163-a027-4504-833e-91fb7b69d022.jpeg")`,
                     backgroundSize: "cover",
@@ -327,43 +408,55 @@ const Inicio = () => {
                     alignItems: "center",
                 }}
             >
-                {/* Overlay oscuro con degradado */}
                 <Box
                     sx={{
                         position: "absolute",
                         inset: 0,
                         backdropFilter: "blur(3px)",
-                        WebkitBackdropFilter: "blur(3px)", // soporte Safari
-                        backgroundColor: "rgba(0,0,0,0.4)", // oscurece ligeramente
+                        WebkitBackdropFilter: "blur(3px)",
+                        backgroundColor: "rgba(0,0,0,0.4)",
                         zIndex: 1,
                     }}
                 />
-
-                {/* Contenido */}
-                <Box sx={{ position: "relative", zIndex: 2 }} p={15}>
+                {/* Padding responsivo en lugar de p={15} fijo */}
+                <Box
+                    sx={{
+                        position: "relative",
+                        zIndex: 2,
+                        px: { xs: '5%', sm: '8%', md: '10%', lg: '15%' },
+                        py: { xs: '8%', sm: '6%', md: '5%' },
+                    }}
+                >
                     <Stack spacing={1}>
                         <Typography
                             variant="h3"
                             fontWeight="bold"
                             color="white"
                             gutterBottom
+                            sx={{ fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem', lg: '3rem' } }}
                         >
                             DIRIGIDO A:
                         </Typography>
                         <Typography
-                            variant="P"
+                            variant="p"
                             fontWeight="bold"
                             color="white"
                             gutterBottom
+                            sx={{ fontSize: { xs: '0.9rem', md: '1rem' } }}
                         >
                             Sector Financiero
                         </Typography>
                         <Typography
                             variant="p"
                             color="white"
-                            sx={{ maxWidth: "600px", opacity: 0.9 }}
+                            sx={{
+                                maxWidth: "600px",
+                                opacity: 0.9,
+                                textAlign: 'justify',
+                                fontSize: { xs: '0.8rem', sm: '0.85rem', md: '1rem' },
+                                lineHeight: { xs: 1.6, md: 1.7 },
+                            }}
                             gutterBottom
-                            style={{ textAlign: 'justify' }}
                         >
                             Involucrados y tomadores de decisión en el esquema de Riesgo de LD FT como:
                             Compliance officer, analistas de cumplimiento, monitoreo, prevención de fraudes,
@@ -375,7 +468,9 @@ const Inicio = () => {
                     </Stack>
                 </Box>
             </Box>
-            <ImageList cols={cols_detalles}>
+
+            {/* Detalles ImageList */}
+            <ImageList cols={cols_detalles} sx={{ m: 0 }}>
                 {detalles_arr.map((item) => (
                     <ImageListItem key={item.img}>
                         <img
@@ -383,7 +478,11 @@ const Inicio = () => {
                             src={`${item.img}?w=248&fit=crop&auto=format`}
                             alt={item.title}
                             loading="lazy"
-                            style={{ height: '500px', objectFit: 'cover' }}
+                            style={{
+                                // Altura responsiva para que no se vea aplastada en mobile
+                                height: isXs ? '250px' : '500px',
+                                objectFit: 'cover',
+                            }}
                         />
                         <ImageListItemBar
                             title={item.title}
@@ -401,10 +500,12 @@ const Inicio = () => {
                     </ImageListItem>
                 ))}
             </ImageList>
+
+            {/* Hero: XXIII CLADIT 2026 */}
             <Box
                 sx={{
                     width: "100%",
-                    height: "600px",
+                    minHeight: { xs: 'auto', md: '500px', lg: '600px' },
                     position: "relative",
                     backgroundImage: `url("https://escuela-bancaria.s3.us-east-2.amazonaws.com/2cdb630b-7fe3-43ec-a0fe-10288be8da1a.jpeg")`,
                     backgroundSize: "cover",
@@ -414,43 +515,54 @@ const Inicio = () => {
                     alignItems: "center",
                 }}
             >
-                {/* Overlay oscuro con degradado */}
                 <Box
                     sx={{
                         position: "absolute",
                         inset: 0,
                         backdropFilter: "blur(3px)",
-                        WebkitBackdropFilter: "blur(3px)", // soporte Safari
-                        backgroundColor: "rgba(0,0,0,0.4)", // oscurece ligeramente
+                        WebkitBackdropFilter: "blur(3px)",
+                        backgroundColor: "rgba(0,0,0,0.4)",
                         zIndex: 1,
                     }}
                 />
-
-                {/* Contenido */}
-                <Box sx={{ position: "relative", zIndex: 2 }} p={15}>
+                <Box
+                    sx={{
+                        position: "relative",
+                        zIndex: 2,
+                        px: { xs: '5%', sm: '8%', md: '10%', lg: '15%' },
+                        py: { xs: '8%', sm: '6%', md: '5%' },
+                    }}
+                >
                     <Stack spacing={1}>
                         <Typography
                             variant="h3"
                             fontWeight="bold"
                             color="white"
                             gutterBottom
+                            sx={{ fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem', lg: '3rem' } }}
                         >
                             XXIII CLADIT 2026
                         </Typography>
                         <Typography
-                            variant="P"
+                            variant="p"
                             fontWeight="bold"
                             color="white"
                             gutterBottom
+                            sx={{ fontSize: { xs: '0.9rem', md: '1rem' } }}
                         >
                             +20 expositores
                         </Typography>
                         <Typography
                             variant="p"
                             color="white"
-                            sx={{ maxWidth: "600px", opacity: 0.9 }}
+                            sx={{
+                                maxWidth: "600px",
+                                opacity: 0.9,
+                                textAlign: 'justify',
+                                fontSize: { xs: '0.8rem', sm: '0.85rem', md: '1rem' },
+                                lineHeight: { xs: 1.6, md: 1.7 },
+                            }}
                             gutterBottom
-                            style={{ textAlign: 'justify' }}
                         >
                             Soluciones en AML/CFT, RegTech, Inteligencia Artificial aplicada al Compliance, Analítica Avanzada, Monitoreo Transaccional, Automatización (RPA), Ciberseguridad, Gestión de Riesgos, Sanciones Internacionales, Activos Virtuales, Blockchain, Investigación Financiera y Data Governance que fortalecerán la prevención y el cumplimiento en tu institución.
 
@@ -460,13 +572,26 @@ const Inicio = () => {
                 </Box>
             </Box>
 
-            <Box sx={{ width: "100%", padding: '5%', overflow: 'hidden' }}>
-                <Stack spacing={6}>
-                    <Typography variant="h4" align="center" style={{ color: "#1e3d52", fontWeight: "bold", textAlign: 'center' }}>
+            {/* Conferencistas */}
+            <Box sx={{ width: "100%", px: { xs: '3%', md: '4%', lg: '5%' }, py: { xs: '6%', md: '5%' }, overflow: 'hidden' }}>
+                <Stack spacing={{ xs: 3, md: 6 }}>
+                    <Typography
+                        variant="h4"
+                        sx={{
+                            color: "#1e3d52",
+                            fontWeight: "bold",
+                            textAlign: 'center',
+                            fontSize: { xs: '1.2rem', sm: '1.5rem', md: '2rem', lg: '2.125rem' },
+                        }}
+                    >
                         NUESTROS CONFERENCISTAS
                     </Typography>
                     <Divider />
-                    <ImageList cols={cols}>
+                    <ImageList
+                        cols={cols}
+                        // Altura de cada celda responsiva
+                        rowHeight={isXs ? 220 : isMd ? 240 : 280}
+                    >
                         {conferencistas.map((item) => (
                             <ImageListItem
                                 key={item.conferencista.foto}
@@ -497,26 +622,32 @@ const Inicio = () => {
                                         transition: "filter 0.3s ease",
                                         filter: "grayscale(100%)",
                                     }}
-                                    onMouseEnter={(e) =>
-                                        (e.currentTarget.style.filter = "grayscale(0%)")
-                                    }
-                                    onMouseLeave={(e) =>
-                                        (e.currentTarget.style.filter = "grayscale(100%)")
-                                    }
+                                    onMouseEnter={(e) => (e.currentTarget.style.filter = "grayscale(0%)")}
+                                    onMouseLeave={(e) => (e.currentTarget.style.filter = "grayscale(100%)")}
                                 />
-
                                 <ImageListItemBar
                                     title={item.conferencista.nombre}
                                     sx={{
-                                        background:
-                                            "linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2))",
+                                        background: "linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2))",
+                                        // Título más pequeño en mobile
+                                        '& .MuiImageListItemBar-title': {
+                                            fontSize: { xs: '0.75rem', md: '0.875rem' },
+                                        },
                                     }}
                                     actionIcon={item.conferencista.cv &&
                                         <IconButton
                                             sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                                            aria-label={`info about ${item.title}`}
+                                            aria-label={`info about ${item.conferencista.nombre}`}
                                             onClick={() => {
-                                                setInfo({ conferencista: item.conferencista.nombre, cv: item.conferencista.cv, foto: item.conferencista.foto, puesto: item.conferencista.puesto, institucion: item.conferencista.institucion, bandera: item.conferencista.bandera, pais: item.conferencista.pais })
+                                                setInfo({
+                                                    conferencista: item.conferencista.nombre,
+                                                    cv: item.conferencista.cv,
+                                                    foto: item.conferencista.foto,
+                                                    puesto: item.conferencista.puesto,
+                                                    institucion: item.conferencista.institucion,
+                                                    bandera: item.conferencista.bandera,
+                                                    pais: item.conferencista.pais
+                                                })
                                                 setModalOpen(true);
                                             }}
                                         >
@@ -528,8 +659,15 @@ const Inicio = () => {
                         ))}
                     </ImageList>
                 </Stack>
-            </Box >
-            <ImageList variant="woven" cols={3} gap={8}>
+            </Box>
+
+            {/* Galería woven - cols responsivo */}
+            <ImageList
+                variant="woven"
+                cols={isXs ? 2 : 3}
+                gap={isXs ? 4 : 8}
+                sx={{ m: 0 }}
+            >
                 {varios_arr.map((item) => (
                     <ImageListItem key={item}>
                         <img
@@ -541,10 +679,12 @@ const Inicio = () => {
                     </ImageListItem>
                 ))}
             </ImageList>
+
+            {/* Hero: Talleres Pre Congreso */}
             <Box
                 sx={{
                     width: "100%",
-                    height: "600px",
+                    minHeight: { xs: 'auto', md: '500px', lg: '600px' },
                     position: "relative",
                     backgroundImage: `url("https://escuela-bancaria.s3.us-east-2.amazonaws.com/a74f005a-8c6a-41ec-9c85-bb3aa7268f02.png")`,
                     backgroundSize: "cover",
@@ -554,58 +694,79 @@ const Inicio = () => {
                     alignItems: "center",
                 }}
             >
-                {/* Overlay oscuro con degradado */}
                 <Box
                     sx={{
                         position: "absolute",
                         inset: 0,
                         backdropFilter: "blur(3px)",
-                        WebkitBackdropFilter: "blur(3px)", // soporte Safari
-                        backgroundColor: "rgba(0,0,0,0.4)", // oscurece ligeramente
+                        WebkitBackdropFilter: "blur(3px)",
+                        backgroundColor: "rgba(0,0,0,0.4)",
                         zIndex: 1,
                     }}
                 />
-
-                {/* Contenido */}
-                <Box sx={{ position: "relative", zIndex: 2 }} p={15}>
+                <Box
+                    sx={{
+                        position: "relative",
+                        zIndex: 2,
+                        px: { xs: '5%', sm: '8%', md: '10%', lg: '15%' },
+                        py: { xs: '8%', sm: '6%', md: '5%' },
+                        width: '100%',
+                    }}
+                >
                     <Stack spacing={1}>
                         <Typography
                             variant="h3"
                             fontWeight="bold"
                             color="white"
                             gutterBottom
+                            sx={{ fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem', lg: '3rem' } }}
                         >
                             Talleres Pre Congreso
                         </Typography>
                         <Typography
-                            variant="P"
+                            variant="p"
                             fontWeight="bold"
                             color="white"
                             gutterBottom
+                            sx={{ fontSize: { xs: '0.8rem', sm: '0.85rem', md: '1rem' } }}
                         >
                             Sector Bancario / Sector Cooperativas / Todos los sectores y personas obligadas
                         </Typography>
                         <Typography
                             variant="p"
                             color="white"
-                            sx={{ maxWidth: "600px", opacity: 0.9 }}
+                            sx={{
+                                maxWidth: "600px",
+                                opacity: 0.9,
+                                textAlign: 'justify',
+                                fontSize: { xs: '0.8rem', sm: '0.85rem', md: '1rem' },
+                            }}
                             gutterBottom
-                            style={{ textAlign: 'justify' }}
                         >
                             Espacios de reunión exclusivos para discutir temas estratégicos con expertos en compliance y prevención de lavado de dinero.
                         </Typography>
-                        <Grid container alignItems="center" justifyContent="center" style={{ textAlign: "justify", width: '100%' }} spacing={2}>
-
-                            <Grid size={{ xs: 12, md: 6, lg: 6 }}   >
-                                <Button style={{ backgroundColor: '#65a630', color: 'white' }} startIcon={<EmailIcon />} variant="contained" color="primary" fullWidth href="mailto:ncuches@ebg.edu.gt?subject=Quiero%20más%20información%20sobre%20talleres%20Pre%20Congreso%20CLADIT%202026"> Solicitar más información</Button>
+                        <Grid container alignItems="center" justifyContent="flex-start" style={{ width: '100%' }} spacing={2}>
+                            <Grid size={{ xs: 12, sm: 8, md: 6, lg: 6 }}>
+                                <Button
+                                    style={{ backgroundColor: '#65a630', color: 'white' }}
+                                    startIcon={<EmailIcon />}
+                                    variant="contained"
+                                    color="primary"
+                                    fullWidth
+                                    href="mailto:ncuches@ebg.edu.gt?subject=Quiero%20más%20información%20sobre%20talleres%20Pre%20Congreso%20CLADIT%202026"
+                                    sx={{ fontSize: { xs: '0.75rem', md: '0.875rem' } }}
+                                >
+                                    Solicitar más información
+                                </Button>
                             </Grid>
                         </Grid>
                     </Stack>
                 </Box>
             </Box>
+
             <FilePreviewModal open={open} onClose={() => setOpen(false)} url={url} title="Vista previa" />
             <ModalInfo open={modalOpen} onClose={() => { setModalOpen(false) }} conferencista={info} />
-        </Stack >
+        </Stack>
     );
 };
 

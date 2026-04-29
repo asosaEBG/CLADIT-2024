@@ -92,6 +92,43 @@ function ScrollTop(props) {
   );
 }
 
+function InscripcionButton(props) {
+  const { children, windowRef } = props;
+  const trigger = useScrollTrigger({
+    target: windowRef ? windowRef() : undefined,
+    disableHysteresis: true,
+    threshold: -1,
+  });
+
+  const handleClick = () => {
+    window.open(process.env.REACT_APP_URL_INSCRIPCION + process.env.REACT_APP_EVT, '_blank');
+  };
+
+  return (
+    <Fade in={trigger}>
+      <Box
+        onClick={handleClick}
+        role="presentation"
+        sx={{
+          position: "fixed",
+          // Mobile: centrado en la parte inferior con más margen del borde
+          bottom: { xs: 20, md: 'auto' },
+          top: { xs: 'auto', md: '57vh', lg: '32vh' },
+          // Mobile: centrado horizontalmente
+          left: { xs: '50%', md: 'auto' },
+          right: { xs: 'auto', md: '37vw', lg: '10vw' },
+          transform: { xs: 'translateX(-50%)', md: 'none' },
+          zIndex: 1200,
+          // Asegura que no tape elementos importantes en mobile
+          pointerEvents: 'auto',
+        }}
+      >
+        {children}
+      </Box>
+    </Fade>
+  );
+}
+
 ScrollTop.propTypes = {
   children: PropTypes.element.isRequired,
   window: PropTypes.func,
@@ -128,7 +165,9 @@ function HospedajeDropdown() {
           color: "#1e3d52",
           fontWeight: "bold",
           textTransform: "none",
-          fontSize: "1rem",
+          // Fuente más pequeña en tablet para que quepan todos los items
+          fontSize: { md: '0.8rem', lg: '1rem' },
+          px: { md: 0.5, lg: 1 },
           '&:hover': {
             backgroundColor: 'rgba(30, 61, 82, 0.04)',
           },
@@ -202,7 +241,7 @@ export default function Layout(props) {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  
+
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
@@ -230,31 +269,56 @@ export default function Layout(props) {
       <CssBaseline />
       <ElevationScroll {...props}>
         <AppBar
-          position={isMobile ? "static" : "static"}
+          position="static"
           style={{
             backgroundColor: "white",
             color: "#1e3d52",
           }}
         >
-          <Box style={{ width: "100%", padding: '2%' }}>
-            <Grid container style={{ width: '100%' }} spacing={3} alignItems="center" justifyContent="center">
-              {/* Columna Izquierda - Primeras dos imágenes */}
-              <Grid size={{ xs: 12, sm: 12, md: 4, lg: 4 }} sx={{ display: 'flex', justifyContent: 'center' }}>
-                <Grid container spacing={2} justifyContent="center">
-                  <Grid size={{ xs: 6, sm: 6 }}>
-                    <img
-                      src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/37460b05-fbb4-4578-b54f-d2c3c90c0f42.png"
-                      loading="lazy"
-                      className="img-header"
-                      style={{ width: '100%', display: 'block' }}
-                    />
-                  </Grid>
-      
-                </Grid>
+          <Box sx={{ width: "100%", px: { xs: '4%', sm: '3%', md: '2%' }, pt: { xs: 1, md: 2 }, pb: { xs: 1, md: 2 } }}>
+            <Grid
+              container
+              style={{ width: '100%' }}
+              spacing={{ xs: 1, sm: 2, md: 3 }}
+              alignItems="center"
+              justifyContent="center"
+              sx={{ mt: { xs: 0, sm: 0, md: 0, lg: 0 } }}
+            >
+              {/* Logo EBG - visible siempre */}
+              <Grid size={{ xs: 6, sm: 5, md: 4, lg: 4 }} sx={{ display: 'flex', justifyContent: { xs: 'flex-start', sm: 'center' } }}>
+                <img
+                  src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/37460b05-fbb4-4578-b54f-d2c3c90c0f42.png"
+                  loading="lazy"
+                  className="img-header"
+                  style={{ width: '100%', maxWidth: '180px', display: 'block' }}
+                />
               </Grid>
 
-              {/* Columna Centro - Logo CLADIT Principal (solo visible en desktop) */}
-              <Grid size={{ xs: 0, sm: 0, md: 4, lg: 4 }} sx={{ display: { xs: 'none', sm: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center' }}>
+              {/* Logo CLADIT - solo visible en mobile/tablet (en desktop va en la columna central) */}
+              <Grid
+                size={{ xs: 6, sm: 4, md: 0 }}
+                sx={{
+                  display: { xs: 'flex', sm: 'flex', md: 'none' },
+                  justifyContent: { xs: 'flex-end', sm: 'center' },
+                }}
+              >
+                <img
+                  src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/f5d56a87-7561-4b37-b443-215853238d90.png"
+                  loading="lazy"
+                  className="img-header"
+                  style={{ width: '100%', maxWidth: '160px', display: 'block' }}
+                />
+              </Grid>
+
+              {/* Logo CLADIT - solo visible en desktop (columna central) */}
+              <Grid
+                size={{ xs: 0, sm: 0, md: 4, lg: 4 }}
+                sx={{
+                  display: { xs: 'none', sm: 'none', md: 'flex' },
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+              >
                 <img
                   src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/f5d56a87-7561-4b37-b443-215853238d90.png"
                   loading="lazy"
@@ -263,52 +327,57 @@ export default function Layout(props) {
                 />
               </Grid>
 
-              {/* Columna Derecha - Patrocinadores Diamante */}
-              <Grid size={{ xs: 12, sm: 12, md: 4, lg: 4 }}>
-                <Stack direction="column" spacing={2} alignItems="center" justifyContent="center" sx={{ width: '100%' }}>
-                  <Typography 
-                    variant="subtitle1" 
-                    sx={{ 
-                      fontWeight: "bold", 
-                      textAlign: 'center', 
+              {/* Patrocinadores Diamante */}
+              <Grid size={{ xs: 12, sm: 3, md: 4, lg: 4 }}>
+                <Stack
+                  direction="column"
+                  spacing={1}
+                  alignItems="center"
+                  justifyContent="center"
+                  sx={{ width: '100%' }}
+                >
+                  <Typography
+                    variant="subtitle1"
+                    sx={{
+                      fontWeight: "bold",
+                      textAlign: 'center',
                       width: '100%',
-                      fontSize: { xs: '0.95rem', sm: '1rem', md: '1.1rem' },
-                      color: '#1e3d52'
+                      fontSize: { xs: '0.8rem', sm: '0.85rem', md: '1rem', lg: '1.1rem' },
+                      color: '#1e3d52',
                     }}
                   >
                     Patrocinadores Diamante
                   </Typography>
-                  <Stack 
-                    direction="row" 
-                    spacing={1.5} 
-                    alignItems="center" 
-                    justifyContent="center" 
-                    sx={{ 
-                      width: '100%', 
+                  <Stack
+                    direction="row"
+                    alignItems="center"
+                    justifyContent="center"
+                    sx={{
+                      width: '100%',
                       flexWrap: 'wrap',
-                      gap: '1rem'
+                      gap: { xs: '0.5rem', sm: '0.75rem', md: '1rem' },
                     }}
                   >
                     {patrocinadores_diamante && patrocinadores_diamante.map((patrocinador, index) => (
-                      <Box 
-                        key={index} 
-                        sx={{ 
-                          width: { xs: '60px', sm: '70px', md: '80px' },
-                          height: { xs: '60px', sm: '70px', md: '80px' },
-                          display: 'flex', 
-                          alignItems: 'center', 
+                      <Box
+                        key={index}
+                        sx={{
+                          width: { xs: '50px', sm: '55px', md: '70px', lg: '80px' },
+                          height: { xs: '50px', sm: '55px', md: '70px', lg: '80px' },
+                          display: 'flex',
+                          alignItems: 'center',
                           justifyContent: 'center',
-                          flexShrink: 0
+                          flexShrink: 0,
                         }}
                       >
                         <img
                           src={patrocinador.promocional_landing}
                           loading="lazy"
                           className="img-patrocinador"
-                          style={{ 
-                            maxWidth: '100%', 
-                            maxHeight: '100%', 
-                            objectFit: 'contain' 
+                          style={{
+                            maxWidth: '100%',
+                            maxHeight: '100%',
+                            objectFit: 'contain',
                           }}
                         />
                       </Box>
@@ -316,23 +385,48 @@ export default function Layout(props) {
                   </Stack>
                 </Stack>
               </Grid>
-              <Grid size={{ xs: 12, lg: 12, md: 2 }} >
-                <Grid container style={{ width: '100%' }} alignContent='center' alignItems='center' justifyContent='center' spacing={1}>
-                  <Grid size={{ xs: 6, lg: 6, md: 6 }} style={{ textAlign: 'center' }} >
-                    <Button style={{ color: 'black' }} startIcon={<WhatsAppIcon style={{ color: '#25D366' }} />} href="https://wa.me/50223827200" target="_blank" > +502 2382-7200</Button>
+
+              {/* Botones de contacto */}
+              <Grid size={{ xs: 12, sm: 12, md: 12, lg: 12 }}>
+                <Grid
+                  container
+                  style={{ width: '100%' }}
+                  alignContent='center'
+                  alignItems='center'
+                  justifyContent='center'
+                  spacing={0}
+                >
+                  <Grid size={{ xs: 12, sm: 6, md: 6, lg: 6 }} style={{ textAlign: 'center' }}>
+                    <Button
+                      style={{ color: 'black' }}
+                      startIcon={<WhatsAppIcon style={{ color: '#25D366' }} />}
+                      href="https://wa.me/50223827200"
+                      target="_blank"
+                      sx={{ fontSize: { xs: '0.8rem', sm: '0.85rem', md: '0.9rem' } }}
+                    >
+                      +502 2382-7200
+                    </Button>
                   </Grid>
-                  <Grid size={{ xs: 6, lg: 6, md: 6 }} style={{ textAlign: 'center' }}>
-                    <Stack spacing={2} style={{ width: "100%" }} alignItems="center" justifyContent="center">
-                      <Button style={{ color: 'black' }} startIcon={<EmailIcon />} href="mailto:ncuches@ebg.edu.gt?subject=Solicitud%20de%20reunión%20para%20más%20información%20de%20CLADIT%202026" >Solicitar una reunión</Button>
-                    </Stack>
+                  <Grid size={{ xs: 12, sm: 6, md: 6, lg: 6 }} style={{ textAlign: 'center' }}>
+                    <Button
+                      style={{ color: 'black' }}
+                      startIcon={<EmailIcon />}
+                      href="mailto:ncuches@ebg.edu.gt?subject=Solicitud%20de%20reunión%20para%20más%20información%20de%20CLADIT%202026"
+                      sx={{ fontSize: { xs: '0.8rem', sm: '0.85rem', md: '0.9rem' } }}
+                    >
+                      Solicitar una reunión
+                    </Button>
                   </Grid>
                 </Grid>
               </Grid>
             </Grid>
           </Box>
+
+          {/* Navbar */}
           <Container maxWidth="xl">
-            <Toolbar disableGutters>
-              <Stack spacing={2} style={{ width: "100%" }}>
+            <Toolbar disableGutters sx={{ minHeight: { xs: '48px', md: '56px' } }}>
+              <Stack spacing={0} style={{ width: "100%" }}>
+                {/* Mobile menu */}
                 <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
                   <IconButton
                     size="large"
@@ -360,6 +454,11 @@ export default function Layout(props) {
                     onClose={handleCloseNavMenu}
                     sx={{
                       display: { xs: "block", md: "none" },
+                      '& .MuiPaper-root': {
+                        // Asegura que el menú mobile no se salga de la pantalla
+                        maxWidth: '90vw',
+                        minWidth: '200px',
+                      },
                     }}
                   >
                     {pages.map((page, index) => (
@@ -392,9 +491,7 @@ export default function Layout(props) {
                               window.location.href = page.href;
                             }}
                           >
-                            <ListItemText
-                              style={{ color: "#1e3d52", fontWeight: "bold" }}
-                            >
+                            <ListItemText style={{ color: "#1e3d52", fontWeight: "bold" }}>
                               {page.label}
                             </ListItemText>
                           </MenuItem>
@@ -403,19 +500,26 @@ export default function Layout(props) {
                     ))}
                   </Menu>
                 </Box>
+
+                {/* Desktop menu */}
                 <Box
-                  sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
+                  sx={{
+                    flexGrow: 1,
+                    display: { xs: "none", md: "flex" },
+                    // En tablet los items pueden necesitar menos padding
+                    '& .MuiMenuItem-root': {
+                      px: { md: 0.5, lg: 1 },
+                    },
+                  }}
                   justifyContent="center"
-                  alignItems={"center"}
+                  alignItems="center"
                 >
                   {pages.map((page, index) => (
                     <div key={`MENU-ITEM-${index}`}>
                       {page.submenu ? (
                         <HospedajeDropdown />
                       ) : (
-                        <MenuItem
-                          onClick={handleCloseNavMenu}
-                        >
+                        <MenuItem onClick={handleCloseNavMenu}>
                           <CustomMenuList title={page.label} href={page.href} />
                         </MenuItem>
                       )}
@@ -427,28 +531,56 @@ export default function Layout(props) {
           </Container>
         </AppBar>
       </ElevationScroll>
+
       <Box id="back-to-top-anchor">
         <Stack spacing={2} style={{ width: "100%" }} alignItems="center" justifyContent="center">
           <Outlet />
           <Patrocinadores />
         </Stack>
       </Box>
+
+      {/* Botón flotante de inscripción */}
+      <InscripcionButton {...props}>
+        <Fab
+          variant="extended"
+          sx={{
+            background: '#65a630',
+            color: '#fff',
+            fontWeight: 'bold',
+            // Tamaño de fuente adaptado a pantalla
+            fontSize: { xs: '0.85rem', sm: '0.9rem', md: '1rem' },
+            // Padding ajustado en mobile
+            px: { xs: 1.5, md: 2 },
+            animation: 'neon-pulse 2s ease-in-out infinite',
+            boxShadow: '0 0 10px #65a630, 0 0 20px rgba(37, 211, 102, 0.6)',
+            border: '2px solid #65a630',
+            // Evitar que se salga de pantalla en mobile
+            maxWidth: { xs: '85vw', md: 'none' },
+            '&:hover': {
+              color: '#65a630',
+              boxShadow: '0 0 20px #65a630, 0 0 40px rgba(37, 211, 102, 0.8)',
+            },
+            '@keyframes neon-pulse': {
+              '0%, 100%': {
+                boxShadow: '0 0 10px #65a630, 0 0 20px rgba(37, 211, 102, 0.6)',
+                transform: 'translateY(0)',
+              },
+              '50%': {
+                boxShadow: '0 0 20px #65a630, 0 0 40px rgba(37, 211, 102, 1)',
+                transform: 'translateY(-2px)',
+              },
+            },
+          }}
+        >
+          <DrawIcon sx={{ mr: 1 }} />
+          Inscríbete en Línea
+        </Fab>
+      </InscripcionButton>
+
       <ScrollTop {...props}>
-        <Stack spacing={2} >
-          <Fab size="small" aria-label="scroll back to top">
-            <KeyboardArrowUpIcon />
-          </Fab>
-          <Fab
-            variant="extended"
-            href={
-              process.env.REACT_APP_URL_INSCRIPCION +
-              process.env.REACT_APP_EVT
-            }
-          >
-            <DrawIcon sx={{ mr: 1 }} />
-            Inscríbete en Línea
-          </Fab>
-        </Stack>
+        <Fab size="small" aria-label="scroll back to top">
+          <KeyboardArrowUpIcon />
+        </Fab>
       </ScrollTop>
     </React.Fragment>
   );
