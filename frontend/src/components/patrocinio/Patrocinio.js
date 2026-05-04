@@ -251,6 +251,8 @@ const Patrocinio = () => {
                             ))}
                         </List>
                     </MotionCard>
+                    <FilePreview url='https://escuela-bancaria.s3.us-east-2.amazonaws.com/eb15e24b-0529-4cc3-abd6-2814fee6aa5c.jpeg' />
+
                     <FilePreview url={url} />
                     {/* BENEFICIOS GENERALES */}
                     <Box mt={10}>
