@@ -73,9 +73,9 @@ export default function Programa() {
         morning:
         {
             title: "Talleres simultáneos CLADIT", segments: [
-                { title: "Sector Bancario (Talleres simultáneos)", begin: 1, end: 3 },
-                { title: "Sector Cooperativas (Talleres simultáneos)", begin: 4, end: 6 },
-                { title: "Todos los sectores y Nuevas Personas Obligadas (Talleres simultáneos)", begin: 7, end: 9 },
+                { title: "Sector Bancario - Centro de Convenciones (Talleres simultáneos)", begin: 1, end: 3 },
+                { title: "Sector Cooperativas - Salón Izabal / Atitlán (Talleres simultáneos)", begin: 4, end: 6 },
+                { title: "Todos los sectores y Nuevas Personas Obligadas - Salón Petén Itzá (Talleres simultáneos)", begin: 7, end: 9 },
             ]
         },
         afternoon: {
