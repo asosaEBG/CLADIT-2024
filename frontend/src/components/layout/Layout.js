@@ -60,6 +60,10 @@ const pages = [
       },
     ],
   },
+  {
+    label: "CLADIT XELA",
+    href: "https://xela.cladit.gt/",
+  },
 ];
 
 const live_events_service = require('../../helpers/live_events_service')
