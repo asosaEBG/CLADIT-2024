@@ -109,8 +109,16 @@ const Inicio = () => {
                 <CircularProgress color="inherit" />
             </Backdrop>
 
+            {/* Banner imagen */}
+            <Box sx={{ width: "100%" }}>
+                <img
+                    src='https://escuela-bancaria.s3.us-east-2.amazonaws.com/642f0807-1388-4a70-8709-888706548386.jpeg'
+                    style={{ width: '100%', display: 'block' }}
+                    loading="lazy"
+                />
+            </Box>
             {/* Título principal */}
-            <Box sx={{ width: "100%", px: { xs: '5%', md: '8%', lg: '10%' }, py: { xs: '6%', md: '5%' } }}>
+            <Box sx={{ width: "100%", px: { xs: '5%', md: '8%', lg: '10%' }, py: { xs: '6%', md: '5%' }, backgroundImage: 'url(https://escuela-bancaria.s3.us-east-2.amazonaws.com/a78cbfdc-d866-41e9-8b20-8f4de5418100.jpeg)', backgroundSize: 'cover' }}>
                 <Stack spacing={{ xs: 3, md: 6 }}>
                     <Typography
                         variant="h4"
@@ -121,7 +129,7 @@ const Inicio = () => {
                             fontSize: { xs: '1.1rem', sm: '1.4rem', md: '1.8rem', lg: '2.125rem' },
                         }}
                     >
-                        XXIII CONGRESO REGIONAL PARA LA PREVENCIÓN DE LAVADO DE DINERO U OTROS ACTIVOS Y EL FINANCIAMIENTO DEL TERRORISMO
+                        V CONGRESO REGIONAL PARA LA PREVENCIÓN DE LAVADO DE DINERO U OTROS ACTIVOS Y EL FINANCIAMIENTO DEL TERRORISMO
                     </Typography>
                     <Divider />
                     <Typography
@@ -147,58 +155,10 @@ const Inicio = () => {
                             fontSize: { xs: '0.8rem', sm: '0.9rem', md: '1rem' },
                         }}
                     >
-                        MONITOREO TRANSACCIONAL Y ALERTAS
-                        · ANALÍTICA AVANZADA E IA
-                        · REGULACIÓN LDFT/FPADM
-                        · TIPOLOGÍAS DE LAVADO DE DINERO
-                        · GESTIÓN DE RIESGOS
-                        · COMPLIANCE Y GOBERNANZA
-                        · TENDENCIAS EMERGENTES AML
-                        · CIBERSEGURIDAD Y FRAUDE
-                        · ACTIVOS VIRTUALES Y BLOCKCHAIN
-                        · SANCIONES INTERNACIONALES
-                        · RIESGO JURISDICCIONAL
-                        · NARCOTRÁFICO Y CRIMEN ORGANIZADO
-                        · PROLIFERACIÓN Y WMD
-                        · GAFILAT Y EVALUACIONES INTERNACIONALES
+                        ENFOQUE BASADO EN RIESGOS
+                        · CUMPLIMIENTO
+                        · TECNOLOGÍA
                     </Typography>
-                </Stack>
-            </Box>
-
-            {/* Banner imagen */}
-            <Box sx={{ width: "100%" }}>
-                <img
-                    src='https://escuela-bancaria.s3.us-east-2.amazonaws.com/642f0807-1388-4a70-8709-888706548386.jpeg'
-                    style={{ width: '100%', display: 'block' }}
-                    loading="lazy"
-                />
-            </Box>
-
-            {/* Video - unificado con width responsivo */}
-            {/* <Box
-                style={{
-                    width: '100%',
-                    backgroundImage: 'url(https://escuela-bancaria.s3.us-east-2.amazonaws.com/16416305-43f2-45dc-a0a3-7fab9219bcf0.jpeg)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    textAlign: 'center',
-                }}
-                sx={{ py: { xs: '8%', md: '6%', lg: '5%' }, px: { xs: '5%', md: '10%', lg: '15%' } }}
-            >
-                <video
-                    controls
-                    style={{ width: '100%', maxWidth: '900px', display: 'block', margin: '0 auto' }}
-                >
-                    <source
-                        src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/649ad4e4-c45e-4c2f-bf0e-883eb546970c.mp4"
-                        type="video/mp4"
-                    />
-                </video>
-            </Box>*/}
-
-            {/* Texto descriptivo */}
-            <Box sx={{ width: "100%", px: { xs: '5%', md: '8%', lg: '10%' }, py: { xs: '6%', md: '5%' } }}>
-                <Stack spacing={{ xs: 3, md: 6 }}>
                     <Typography
                         variant="h5"
                         sx={{
@@ -244,6 +204,31 @@ const Inicio = () => {
                     </Typography>
                 </Stack>
             </Box>
+
+
+            {/* Video - unificado con width responsivo */}
+            {/* <Box
+                style={{
+                    width: '100%',
+                    backgroundImage: 'url(https://escuela-bancaria.s3.us-east-2.amazonaws.com/16416305-43f2-45dc-a0a3-7fab9219bcf0.jpeg)',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    textAlign: 'center',
+                }}
+                sx={{ py: { xs: '8%', md: '6%', lg: '5%' }, px: { xs: '5%', md: '10%', lg: '15%' } }}
+            >
+                <video
+                    controls
+                    style={{ width: '100%', maxWidth: '900px', display: 'block', margin: '0 auto' }}
+                >
+                    <source
+                        src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/649ad4e4-c45e-4c2f-bf0e-883eb546970c.mp4"
+                        type="video/mp4"
+                    />
+                </video>
+            </Box>*/}
+
+
 
             {/* Stats ImageList */}
             <ImageList cols={cols} sx={{ m: 0 }}>
