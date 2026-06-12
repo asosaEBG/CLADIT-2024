@@ -43,18 +43,17 @@ const tarifas = [
 
 const includes = [
   "Conferencias",
-  "Taller Pre Congreso a elección (cupo limitado)",
+  "Talleres",
   "Refrigerios a.m. y p.m.",
   "Almuerzos",
   "Acceso al área de stands",
-  "Certificado digital",
-  "Grabación de conferencias",
-  "Cóctel de bienvenida (sujeto a patrocinio)",
+  "Certificado de participación digital",
+  "Grabación de conferencias"
 ];
 
 export default function Tarifas() {
   return (
-    <Stack spacing={5} alignItems='center' style={{ background: "#f5f7f6", width:"100%" }} pt={3}>
+    <Stack spacing={5} alignItems='center' style={{ background: "#f5f7f6", width: "100%" }} pt={3}>
       <Breadcrumbs aria-label="breadcrumb">
         <Link
           underline="hover"
@@ -184,27 +183,6 @@ export default function Tarifas() {
                       </ListItem>
                     ))}
                   </List>
-                </Card>
-              </Grid>
-
-              {/* CUPOS */}
-              <Grid item xs={12} md={5}>
-                <Card
-                  sx={{
-                    borderRadius: 4,
-                    p: 3,
-                    background: light,
-                  }}
-                >
-                  <Typography fontWeight="bold" mb={2}>
-                    Cupos Taller Pre Congreso
-                  </Typography>
-
-                  <Box display="flex" gap={1} flexWrap="wrap">
-                    <Chip label="Bancos: 200 personas" />
-                    <Chip label="Cooperativas: 100 personas" />
-                    <Chip label="Otros Sujetos Obligados: 100 personas" />
-                  </Box>
                 </Card>
               </Grid>
             </Grid>

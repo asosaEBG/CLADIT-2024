@@ -29,30 +29,36 @@ const live_events_service = require('../../helpers/live_events_service')
 
 const AGENDA = [
     {
+        time: "07:00 – 08:00",
+        title: "Registro de participantes",
+        type: "break",
+        axis: "Networking",
+    },
+    {
         time: "08:00 – 08:15",
-        title: "Palabras de Bienvenida",
+        title: "Palabras de bienvenida e inauguración",
         type: "apertura",
-        speaker: "Lic. Diana Velásquez",
+        speaker: "Diana Velásquez · Sub-Gerente de Educación Bancaria y Financiera, Asociación Bancaria de Guatemala",
     },
     {
         time: "08:15 – 09:00",
-        title: "Aspectos Importantes de la Ley Integral para la Prevención del LD/FT/FPA — Dto. 15-2026",
+        title: "Sectores y Profesionales que entran bajo supervisión, Guía práctica para sujetos obligados",
         type: "conferencia",
         code: "Conf. 1.1",
-        speaker: "Susan Paola Rojas",
+        speaker: "Susan Paola Rojas · Ex-Intendente IVE, Fundadora de Evalua Compliance, Facilitadora EBG",
         axis: "Enfoque Basado en Riesgos",
     },
     {
         time: "09:00 – 10:00",
-        title: "El rol estratégico del Oficial de Cumplimiento",
+        title: "El rol estratégico del oficial de cumplimiento",
         type: "conferencia",
-        code: "Conf. 1.2",
-        speaker: "Juan Pablo Rodríguez",
+        code: "Keynote Speaker",
+        speaker: "Juan Pablo Rodríguez · Socio, RICS Management — COLOMBIA",
         axis: "Cumplimiento",
     },
     {
         time: "10:00 – 10:30",
-        title: "Coffee Break",
+        title: "Coffee break y networking",
         type: "break",
         axis: "Networking",
     },
@@ -60,70 +66,71 @@ const AGENDA = [
         time: "10:30 – 12:30",
         parallel: [
             {
-                title: "El rol de la Inteligencia Artificial en la prevención del LD/FT",
+                title: "El rol de la Inteligencia Artificial en la prevención del LD/FT: principales casos de uso en la detección y mitigación de riesgos",
                 type: "taller",
                 code: "Taller 1",
-                speaker: "Ariadna Sánchez / Lia Muñoz",
+                speaker: "Eliecer Alberto Castillo · CCO Banco de Occidente (Panamá) / Sheily Lia Muñoz · Docente EBG",
                 axis: "Tecnología",
             },
             {
-                title: "Monitoreo transaccional basado en un Enfoque de Riesgo",
+                title: "Monitoreo transaccional basado en un enfoque de riesgo",
                 type: "taller",
                 code: "Taller 2",
-                speaker: "Rafael Tul",
+                speaker: "Rafael Tul Velásquez · Consultor Independiente, Facilitador EBG",
                 axis: "Enfoque Basado en Riesgos",
             },
         ],
     },
     {
         time: "12:30 – 14:00",
-        title: "Almuerzo",
+        title: "Almuerzo y networking",
         type: "almuerzo",
         axis: "Networking",
     },
     {
         time: "14:00 – 14:45",
-        title: "Tipologías de lavado de dinero aplicables al contexto guatemalteco",
+        title: "El futuro de las remesas bajo un nuevo entorno regulatorio: tecnología y cumplimiento frente a la Orden Ejecutiva 14406 «Restoring Integrity to America's Financial System»",
         type: "conferencia",
-        code: "Conf. 1.3",
-        speaker: "Ileana Marroquín y Jorge Mario Mejía",
-        axis: "Enfoque Basado en Riesgos",
+        code: "Conf. 1.2",
+        speaker: "Representante BANRURAL — GUATEMALA",
+        axis: "Cumplimiento",
     },
     {
         time: "14:45 – 15:30",
-        title: "Gobernanza corporativa y cultura de cumplimiento",
+        title: "Conversatorio: Gobernanza corporativa y cultura de cumplimiento",
         type: "conversatorio",
-        speaker: "Ricardo Estrada",
+        speaker: "Ricardo Estrada · Consultant Lecture, Frankfurt School of Finance & Management — GUATEMALA",
         axis: "Cumplimiento",
     },
     {
         time: "15:30 – 16:15",
         title: "Debida diligencia del cliente (KYC) bajo un enfoque basado en riesgo y beneficiario final",
         type: "conferencia",
-        speaker: "Alfredo Calvo / Lía Muñoz",
+        code: "Conf. 1.3",
+        speaker: "Alfredo Calvo · Director General, Credit Insights Advisory — MÉXICO",
         axis: "Cumplimiento",
     },
     {
         time: "16:15 – 17:00",
-        title: "Como enviar un RTS de forma efectiva por medio del portal de personas obligadas",
+        title: "Buenas Prácticas para el Envío Efectivo de un RTS a través del Portal de Personas Obligadas",
         type: "conferencia",
         code: "Conf. 1.4",
-        speaker: "IVE",
+        speaker: "Representante, Intendencia de Verificación Especial-IVE — GUATEMALA",
         axis: "Cumplimiento",
     },
     {
         time: "17:00 – 17:45",
-        title: "Cooperación internacional en la lucha contra el LD/FT",
+        title: "Panel: Cooperación internacional en la lucha contra el lavado de dinero y el financiamiento del terrorismo",
         type: "panel",
-        speaker: "Juan Pablo Rodríguez · Ariadna Sánchez · Alfredo Calvo",
-        moderator: "Alejandro Arriola",
+        speaker: "Juan Pablo Rodríguez (COLOMBIA) · Alfredo Calvo (MÉXICO) · Eliecer Alberto Castillo (PANAMÁ)",
+        moderator: "Alejandro Arriola · Abogado y Notario, Socio IBR Law & Consulting, Facilitador EBG",
         axis: "Cumplimiento",
     },
     {
         time: "17:45 – 18:00",
-        title: "Cierre · Conclusiones y Coffee Break",
+        title: "Conclusiones y coffee break",
         type: "break",
-        speaker: "Rafael Tul",
+        speaker: "Jesús de León — GUATEMALA",
         axis: "Networking",
     },
 ];
@@ -397,7 +404,7 @@ function ProgramaPreliminar() {
                                 textTransform: "uppercase",
                             }}
                         >
-                            Programa Preliminar · Sujeto a Cambios
+                            Programa Académico Oficial
                         </Typography>
                     </Box>
 
@@ -434,7 +441,7 @@ function ProgramaPreliminar() {
                             mx: "auto",
                         }}
                     >
-                        "Tecnología y experiencia al servicio del cumplimiento normativo"
+                        "Retos, Regulación y Tecnología"
                     </Typography>
 
                     <Chip
@@ -505,7 +512,7 @@ function ProgramaPreliminar() {
                         variant="caption"
                         sx={{ color: G.mid, fontStyle: "italic", fontSize: "0.7rem" }}
                     >
-                        * El programa es preliminar y está sujeto a cambios. La agenda definitiva será publicada próximamente.
+                        Centro de Convenciones Gran Karmel · Lunes 10 de agosto, 2026
                     </Typography>
                 </Box>
             </motion.div>
