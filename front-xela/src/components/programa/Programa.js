@@ -136,29 +136,29 @@ const AGENDA = [
 ];
 
 const G = {
-    dark:   "#1b3d08",
-    mid:    "#2e6b0e",
-    brand:  "#65a630",
-    light:  "#8bc34a",
-    pale:   "#c5e1a5",
+    dark: "#1b3d08",
+    mid: "#2e6b0e",
+    brand: "#65a630",
+    light: "#8bc34a",
+    pale: "#c5e1a5",
     xlight: "#f1f8e9",
 };
 
 const TYPE_CONFIG = {
-    apertura:      { color: G.dark,  label: "Apertura",       Icon: StarIcon },
-    conferencia:   { color: G.brand, label: "Conferencia",    Icon: MicIcon },
-    taller:        { color: G.mid,   label: "Taller",          Icon: FlashOnIcon },
-    panel:         { color: G.light, label: "Panel",           Icon: PeopleAltIcon },
+    apertura: { color: G.dark, label: "Apertura", Icon: StarIcon },
+    conferencia: { color: G.brand, label: "Conferencia", Icon: MicIcon },
+    taller: { color: G.mid, label: "Taller", Icon: FlashOnIcon },
+    panel: { color: G.light, label: "Panel", Icon: PeopleAltIcon },
     conversatorio: { color: "#3a7a18", label: "Conversatorio", Icon: RecordVoiceOverIcon },
-    break:         { color: G.light, label: "Networking",      Icon: LocalCafeIcon },
-    almuerzo:      { color: G.light, label: "Almuerzo",        Icon: RestaurantIcon },
+    break: { color: G.light, label: "Networking", Icon: LocalCafeIcon },
+    almuerzo: { color: G.light, label: "Almuerzo", Icon: RestaurantIcon },
 };
 
 const AXIS_CONFIG = {
-    "Enfoque Basado en Riesgos": { color: G.dark,  bg: "rgba(27,61,8,0.08)"   },
-    "Cumplimiento":               { color: G.brand, bg: "rgba(101,166,48,0.1)" },
-    "Tecnología":                 { color: G.mid,   bg: "rgba(46,107,14,0.09)" },
-    "Networking":                 { color: G.light, bg: "rgba(139,195,74,0.12)"},
+    "Enfoque Basado en Riesgos": { color: G.dark, bg: "rgba(27,61,8,0.08)" },
+    "Cumplimiento": { color: G.brand, bg: "rgba(101,166,48,0.1)" },
+    "Tecnología": { color: G.mid, bg: "rgba(46,107,14,0.09)" },
+    "Networking": { color: G.light, bg: "rgba(139,195,74,0.12)" },
 };
 
 function SessionCard({ session, index }) {
@@ -370,153 +370,153 @@ function ProgramaPreliminar() {
                 },
             }}
         >
-        <Box sx={{ position: "relative", zIndex: 1 }}>
-            {/* Header */}
-            <motion.div
-                initial={{ opacity: 0, y: -22 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.65 }}
-            >
-                <Box sx={{ textAlign: "center", px: { xs: 2, md: 4 }, mb: { xs: 4, md: 5 } }}>
-                    {/* PRELIMINAR badge */}
+            <Box sx={{ position: "relative", zIndex: 1 }}>
+                {/* Header */}
+                <motion.div
+                    initial={{ opacity: 0, y: -22 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.65 }}
+                >
+                    <Box sx={{ textAlign: "center", px: { xs: 2, md: 4 }, mb: { xs: 4, md: 5 } }}>
+                        {/* PRELIMINAR badge */}
+                        <Box
+                            sx={{
+                                display: "inline-block",
+                                background: `linear-gradient(90deg, ${G.dark}, ${G.mid}, ${G.brand}, ${G.mid}, ${G.dark})`,
+                                backgroundSize: "300% 100%",
+                                animation: "badgeShimmer 4s linear infinite",
+                                "@keyframes badgeShimmer": {
+                                    "0%": { backgroundPosition: "0% 50%" },
+                                    "100%": { backgroundPosition: "300% 50%" },
+                                },
+                                borderRadius: "22px",
+                                px: 2.5,
+                                py: 0.5,
+                                mb: 2.5,
+                            }}
+                        >
+                            <Typography
+                                sx={{
+                                    color: "#fff",
+                                    fontWeight: 900,
+                                    fontSize: "0.68rem",
+                                    letterSpacing: "0.16em",
+                                    textTransform: "uppercase",
+                                }}
+                            >
+                                Programa Académico Oficial
+                            </Typography>
+                        </Box>
+
+                        <Typography
+                            sx={{
+                                color: G.dark,
+                                fontWeight: 900,
+                                letterSpacing: "-0.03em",
+                                lineHeight: 0.92,
+                                mb: 1.5,
+                                fontSize: { xs: "2.6rem", sm: "3.5rem", md: "4.5rem" },
+                            }}
+                        >
+                            CLADIT{" "}
+                            <Box
+                                component="span"
+                                sx={{
+                                    color: G.brand,
+                                    textShadow: `0 0 30px ${G.pale}`,
+                                }}
+                            >
+                                XELA
+                            </Box>{" "}
+                            2026
+                        </Typography>
+
+                        <Typography
+                            sx={{
+                                color: G.mid,
+                                fontStyle: "italic",
+                                fontSize: { xs: "0.82rem", md: "0.95rem" },
+                                mb: 2.5,
+                                maxWidth: 520,
+                                mx: "auto",
+                            }}
+                        >
+                            "Retos, Regulación y Tecnología"
+                        </Typography>
+
+                        <Chip
+                            icon={<ScheduleIcon style={{ color: G.brand }} />}
+                            label="Lunes 10 de Agosto, 2026"
+                            sx={{
+                                background: `rgba(101,166,48,0.12)`,
+                                color: G.dark,
+                                border: `1px solid ${G.brand}55`,
+                                fontWeight: 600,
+                                fontSize: "0.78rem",
+                                mb: 2.5,
+                            }}
+                        />
+
+                        {/* Axis legend */}
+                        <Stack direction="row" justifyContent="center" flexWrap="wrap" gap={0.8}>
+                            {Object.entries(AXIS_CONFIG).map(([axis, cfg]) => (
+                                <Chip
+                                    key={axis}
+                                    label={axis}
+                                    size="small"
+                                    sx={{
+                                        background: cfg.bg,
+                                        color: cfg.color,
+                                        border: `1px solid ${cfg.color}45`,
+                                        fontSize: "0.62rem",
+                                    }}
+                                />
+                            ))}
+                        </Stack>
+
+                        {/* Glowing divider */}
+                        <Box
+                            sx={{
+                                mt: 4,
+                                height: "1px",
+                                background: `linear-gradient(90deg, transparent, ${G.brand}, ${G.pale}, ${G.brand}, transparent)`,
+                            }}
+                        />
+                    </Box>
+                </motion.div>
+
+                {/* Timeline */}
+                <Box sx={{ px: { xs: 1.5, sm: 2.5, md: "6%", lg: "12%" } }}>
+                    {AGENDA.map((item, i) => (
+                        <TimelineRow key={i} item={item} index={i} />
+                    ))}
+                </Box>
+
+                {/* Footer disclaimer */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 }}
+                >
                     <Box
                         sx={{
-                            display: "inline-block",
-                            background: `linear-gradient(90deg, ${G.dark}, ${G.mid}, ${G.brand}, ${G.mid}, ${G.dark})`,
-                            backgroundSize: "300% 100%",
-                            animation: "badgeShimmer 4s linear infinite",
-                            "@keyframes badgeShimmer": {
-                                "0%": { backgroundPosition: "0% 50%" },
-                                "100%": { backgroundPosition: "300% 50%" },
-                            },
-                            borderRadius: "22px",
-                            px: 2.5,
-                            py: 0.5,
-                            mb: 2.5,
+                            mt: 5,
+                            mx: { xs: 1.5, sm: 2.5, md: "6%", lg: "12%" },
+                            pt: 2.5,
+                            borderTop: `1px solid ${G.pale}`,
+                            textAlign: "center",
                         }}
                     >
                         <Typography
-                            sx={{
-                                color: "#fff",
-                                fontWeight: 900,
-                                fontSize: "0.68rem",
-                                letterSpacing: "0.16em",
-                                textTransform: "uppercase",
-                            }}
+                            variant="caption"
+                            sx={{ color: G.mid, fontStyle: "italic", fontSize: "0.7rem" }}
                         >
-                            Programa Académico Oficial
+                            Centro de Convenciones Gran Karmel · Lunes 10 de agosto, 2026
                         </Typography>
                     </Box>
-
-                    <Typography
-                        sx={{
-                            color: G.dark,
-                            fontWeight: 900,
-                            letterSpacing: "-0.03em",
-                            lineHeight: 0.92,
-                            mb: 1.5,
-                            fontSize: { xs: "2.6rem", sm: "3.5rem", md: "4.5rem" },
-                        }}
-                    >
-                        CLADIT{" "}
-                        <Box
-                            component="span"
-                            sx={{
-                                color: G.brand,
-                                textShadow: `0 0 30px ${G.pale}`,
-                            }}
-                        >
-                            XELA
-                        </Box>{" "}
-                        2026
-                    </Typography>
-
-                    <Typography
-                        sx={{
-                            color: G.mid,
-                            fontStyle: "italic",
-                            fontSize: { xs: "0.82rem", md: "0.95rem" },
-                            mb: 2.5,
-                            maxWidth: 520,
-                            mx: "auto",
-                        }}
-                    >
-                        "Retos, Regulación y Tecnología"
-                    </Typography>
-
-                    <Chip
-                        icon={<ScheduleIcon style={{ color: G.brand }} />}
-                        label="Lunes 10 de Agosto, 2026"
-                        sx={{
-                            background: `rgba(101,166,48,0.12)`,
-                            color: G.dark,
-                            border: `1px solid ${G.brand}55`,
-                            fontWeight: 600,
-                            fontSize: "0.78rem",
-                            mb: 2.5,
-                        }}
-                    />
-
-                    {/* Axis legend */}
-                    <Stack direction="row" justifyContent="center" flexWrap="wrap" gap={0.8}>
-                        {Object.entries(AXIS_CONFIG).map(([axis, cfg]) => (
-                            <Chip
-                                key={axis}
-                                label={axis}
-                                size="small"
-                                sx={{
-                                    background: cfg.bg,
-                                    color: cfg.color,
-                                    border: `1px solid ${cfg.color}45`,
-                                    fontSize: "0.62rem",
-                                }}
-                            />
-                        ))}
-                    </Stack>
-
-                    {/* Glowing divider */}
-                    <Box
-                        sx={{
-                            mt: 4,
-                            height: "1px",
-                            background: `linear-gradient(90deg, transparent, ${G.brand}, ${G.pale}, ${G.brand}, transparent)`,
-                        }}
-                    />
-                </Box>
-            </motion.div>
-
-            {/* Timeline */}
-            <Box sx={{ px: { xs: 1.5, sm: 2.5, md: "6%", lg: "12%" } }}>
-                {AGENDA.map((item, i) => (
-                    <TimelineRow key={i} item={item} index={i} />
-                ))}
+                </motion.div>
             </Box>
-
-            {/* Footer disclaimer */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 }}
-            >
-                <Box
-                    sx={{
-                        mt: 5,
-                        mx: { xs: 1.5, sm: 2.5, md: "6%", lg: "12%" },
-                        pt: 2.5,
-                        borderTop: `1px solid ${G.pale}`,
-                        textAlign: "center",
-                    }}
-                >
-                    <Typography
-                        variant="caption"
-                        sx={{ color: G.mid, fontStyle: "italic", fontSize: "0.7rem" }}
-                    >
-                        Centro de Convenciones Gran Karmel · Lunes 10 de agosto, 2026
-                    </Typography>
-                </Box>
-            </motion.div>
-        </Box>
         </Box>
     );
 }
@@ -579,15 +579,15 @@ export default function Programa() {
     const dia_1 = {
         morning:
         {
-            title: "Talleres simultáneos CLADIT", segments: [
-                { title: "Sector Bancario - Centro de Convenciones (Talleres simultáneos)", begin: 1, end: 3 },
-                { title: "Sector Cooperativas - Salón Izabal / Atitlán (Talleres simultáneos)", begin: 4, end: 6 },
-                { title: "Todos los sectores y Nuevas Personas Obligadas - Salón Petén Itzá (Talleres simultáneos)", begin: 7, end: 9 },
+            title: null, segments: [
+                { title: null, begin: 0, end: 4 },
+                { title: "Talleres simultáneos de aplicación CLADIT", begin: 5, end: 7 },
             ]
+
         },
         afternoon: {
-            title: null, segments: [
-                { title: null, begin: 10, end: 16 },
+            title: "Continuación del programa académico", segments: [
+                { title: null, begin: 8, end: 13 },
             ]
         }
     }
@@ -646,15 +646,11 @@ export default function Programa() {
                             }}
                             centered
                         >
-                            <Tab  {...a11yProps(0)} label="Día 1" />
-                            <Tab  {...a11yProps(1)} label="Día 2" />
+                            <Tab  {...a11yProps(0)} label="10 DE AGOSTO 2026" />
                         </Tabs>
                     </Box>
                     <CustomTabPanel value={value} index={0}>
                         <Dia config={dia_1} programa={programa} />
-                    </CustomTabPanel>
-                    <CustomTabPanel value={value} index={1}>
-                        <Dia config={dia2} programa={programa} />
                     </CustomTabPanel>
                 </Stack>) : <ProgramaPreliminar />
             }
