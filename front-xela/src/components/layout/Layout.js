@@ -32,7 +32,7 @@ const pages = [
     href: "/",
   },
   {
-    label: "Patrocinio",
+    label: "Auspicio",
     href: "/patrocinio",
   },
   {

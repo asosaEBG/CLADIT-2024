@@ -135,7 +135,7 @@ export default function Contacto() {
                                     <Stack direction="row" spacing={1} alignItems="center" mb={2}>
                                         <CampaignIcon sx={{ color: primary }} />
                                         <Typography variant="h6" fontWeight="bold">
-                                            Patrocinios
+                                            Auspicio
                                         </Typography>
                                     </Stack>
 

@@ -183,7 +183,7 @@ const Patrocinio = () => {
                     sx={{ color: 'text.primary', display: 'flex', alignItems: 'center' }}
                 >
                     <AttachMoneyIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-                    Patrocinio
+                    Auspicio
                 </Typography>
 
             </Breadcrumbs>
@@ -193,7 +193,7 @@ const Patrocinio = () => {
 
                     {/* HEADER */}
                     <Typography variant="h4" fontWeight="bold" sx={{ color: primary }}>
-                        PATROCINIOS CLADIT 2026
+                        AUSPICIO CLADIT 2026
                     </Typography>
 
                     <Typography sx={{ mt: 2, mb: 6, color: "text.secondary" }}>

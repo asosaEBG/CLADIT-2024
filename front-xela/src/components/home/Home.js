@@ -346,7 +346,7 @@ const Inicio = () => {
                                     <ListItemIcon>
                                         <PictureAsPdfIcon style={{ color: '#65a630' }} />
                                     </ListItemIcon>
-                                    <ListItemText primary="Ver Brief de Patrocinios" />
+                                    <ListItemText primary="Ver Brief de Auspicio" />
                                 </ListItemButton>
                             </ListItem>
                             <ListItem disablePadding>
