@@ -337,7 +337,7 @@ const Patrocinadores = () => {
                                     fontWeight: 600,
                                 }}
                             >
-                                Patrocinadores
+                                Auspiciadores
                             </motion.p>}
                         </div>
 

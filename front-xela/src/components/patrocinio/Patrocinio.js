@@ -335,7 +335,7 @@ const Patrocinio = () => {
                                     },
                                 }}
                             >
-                                Quiero ser patrocinador
+                                Quiero ser auspiciador
                             </Button>
                         </Box>
                     </Box>
