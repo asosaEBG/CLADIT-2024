@@ -56,15 +56,16 @@ const Inicio = () => {
         { img: "https://escuela-bancaria.s3.us-east-2.amazonaws.com/933f62f1-b423-4097-8d3f-82b2dd1800b6.jpeg", title: "MEDIA PARTNERS", value: "Click para más detalles", href: '/media-partners' },
     ]
     const varios_arr = [
-        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/52ae58d7-24cc-4954-ae58-e6a33590d9dd.jpeg",
-        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/f7bce16e-1a2c-4731-a66b-5a91ecc3eeaa.jpeg",
-        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/d8d7a616-dab4-44e7-853e-0fff815fceeb.jpeg",
-        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/431f5b17-fa11-4930-b6ef-3f0b1feb573a.jpeg",
-        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/451f7bb8-1d05-427e-8f18-4e94145c1e86.jpeg",
-        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/7b9c2c52-6f0d-40e8-acb3-a6d545b2d6a5.jpeg",
-        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/47129e5f-2a5e-4348-a0d5-752d53d3ecf4.jpeg",
-        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/620c27f5-eedc-4a94-b052-c3ee2093c749.jpeg",
-        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/b6010e2c-5019-4bad-b411-bf8cccc61532.jpeg",
+        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/PIC+1.jpg",
+        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/PIC+2.jpg",
+        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/PIC+3.jpg",
+        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/PIC+4.jpg",
+        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/PIC+5.jpg",
+        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/PIC+6.jpg",
+        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/PIC+7.jpg",
+        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/PIC+8.jpg",
+        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/PIC+9.jpg",
+        "https://escuela-bancaria.s3.us-east-2.amazonaws.com/PIC+10.jpg",
     ]
     const [contador] = useState(0);
     const [evento, setEvento] = useState({});
