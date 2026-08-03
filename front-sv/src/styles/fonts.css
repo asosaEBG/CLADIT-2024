@@ -1,0 +1,152 @@
+/* BLACK 900 */
+@font-face {
+  font-family: 'Grift';
+  src: url('../assets/fonts/grift/grift-black.otf') format('opentype'),
+       url('../assets/fonts/grift/grift-black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Grift';
+  src: url('../assets/fonts/grift/grift-blackitalic.otf') format('opentype'),
+       url('../assets/fonts/grift/grift-blackitalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* EXTRA BOLD 800 */
+@font-face {
+  font-family: 'Grift';
+  src: url('../assets/fonts/grift/grift-extrabold.otf') format('opentype'),
+       url('../assets/fonts/grift/grift-extrabold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Grift';
+  src: url('../assets/fonts/grift/grift-extrabolditalic.otf') format('opentype'),
+       url('../assets/fonts/grift/grift-extrabolditalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+/* BOLD 700 */
+@font-face {
+  font-family: 'Grift';
+  src: url('../assets/fonts/grift/grift-bold.otf') format('opentype'),
+       url('../assets/fonts/grift/grift-bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Grift';
+  src: url('../assets/fonts/grift/grift-bolditalic.otf') format('opentype'),
+       url('../assets/fonts/grift/grift-bolditalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* SEMIBOLD 600 */
+@font-face {
+  font-family: 'Grift';
+  src: url('../assets/fonts/grift/grift-semibold.otf') format('opentype'),
+       url('../assets/fonts/grift/grift-semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Grift';
+  src: url('../assets/fonts/grift/grift-semibolditalic.otf') format('opentype'),
+       url('../assets/fonts/grift/grift-semibolditalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* MEDIUM 500 */
+@font-face {
+  font-family: 'Grift';
+  src: url('../assets/fonts/grift/grift-medium.otf') format('opentype'),
+       url('../assets/fonts/grift/grift-medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Grift';
+  src: url('../assets/fonts/grift/grift-mediumitalic.otf') format('opentype'),
+       url('../assets/fonts/grift/grift-mediumitalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* REGULAR 400 */
+@font-face {
+  font-family: 'Grift';
+  src: url('../assets/fonts/grift/grift-regular.otf') format('opentype'),
+       url('../assets/fonts/grift/grift-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Grift';
+  src: url('../assets/fonts/grift/grift-italic.otf') format('opentype'),
+       url('../assets/fonts/grift/grift-italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* LIGHT 300 */
+@font-face {
+  font-family: 'Grift';
+  src: url('../assets/fonts/grift/grift-light.otf') format('opentype'),
+       url('../assets/fonts/grift/grift-light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Grift';
+  src: url('../assets/fonts/grift/grift-lightitalic.otf') format('opentype'),
+       url('../assets/fonts/grift/grift-lightitalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* EXTRA LIGHT 200 */
+@font-face {
+  font-family: 'Grift';
+  src: url('../assets/fonts/grift/grift-extralight.otf') format('opentype'),
+       url('../assets/fonts/grift/grift-extralight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Grift';
+  src: url('../assets/fonts/grift/grift-extralightitalic.otf') format('opentype'),
+       url('../assets/fonts/grift/grift-extralightitalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+/* THIN 100 */
+@font-face {
+  font-family: 'Grift';
+  src: url('../assets/fonts/grift/grift-thin.otf') format('opentype'),
+       url('../assets/fonts/grift/grift-thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Grift';
+  src: url('../assets/fonts/grift/grift-thinitalic.otf') format('opentype'),
+       url('../assets/fonts/grift/grift-thinitalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
