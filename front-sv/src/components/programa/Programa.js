@@ -446,7 +446,7 @@ function ProgramaPreliminar() {
 
                         <Chip
                             icon={<ScheduleIcon style={{ color: G.brand }} />}
-                            label="Lunes 10 de Agosto, 2026"
+                            label="Martes 25 de Agosto, 2026"
                             sx={{
                                 background: `rgba(101,166,48,0.12)`,
                                 color: G.dark,
@@ -512,7 +512,7 @@ function ProgramaPreliminar() {
                             variant="caption"
                             sx={{ color: G.mid, fontStyle: "italic", fontSize: "0.7rem" }}
                         >
-                            Centro de Convenciones Gran Karmel · Lunes 10 de agosto, 2026
+                            Centro de Convenciones Gran Karmel · Martes 25 de agosto, 2026
                         </Typography>
                     </Box>
                 </motion.div>
@@ -632,7 +632,7 @@ export default function Programa() {
                             }}
                             centered
                         >
-                            <Tab  {...a11yProps(0)} label="10 DE AGOSTO 2026" />
+                            <Tab  {...a11yProps(0)} label="25 DE AGOSTO 2026" />
                         </Tabs>
                     </Box>
                     <CustomTabPanel value={value} index={0}>
