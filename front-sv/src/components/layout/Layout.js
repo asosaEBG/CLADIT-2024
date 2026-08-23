@@ -287,7 +287,7 @@ export default function Layout(props) {
               {/* Logo EBG - visible siempre */}
               <Grid size={{ xs: 6, sm: 5, md: 4, lg: 4 }} sx={{ display: 'flex', justifyContent: { xs: 'flex-start', sm: 'center' } }}>
                 <img
-                  src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/37460b05-fbb4-4578-b54f-d2c3c90c0f42.png"
+                  src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/2b4055da-a33a-4638-858a-0aebea3299ca.png"
                   loading="lazy"
                   className="img-header"
                   style={{ width: '100%', maxWidth: '180px', display: 'block' }}
@@ -303,7 +303,7 @@ export default function Layout(props) {
                 }}
               >
                 <img
-                  src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/f5d56a87-7561-4b37-b443-215853238d90.png"
+                  src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/053703ef-e7b7-47b3-97a2-cd5e003ac265.png"
                   loading="lazy"
                   className="img-header"
                   style={{ width: '100%', maxWidth: '160px', display: 'block' }}
@@ -320,7 +320,7 @@ export default function Layout(props) {
                 }}
               >
                 <img
-                  src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/f5d56a87-7561-4b37-b443-215853238d90.png"
+                  src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/053703ef-e7b7-47b3-97a2-cd5e003ac265.png"
                   loading="lazy"
                   className="img-header"
                   style={{ width: '90%', maxWidth: '300px', display: 'block' }}
