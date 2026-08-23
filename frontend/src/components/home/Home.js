@@ -168,7 +168,7 @@ const Inicio = () => {
             {/* Banner imagen */}
             <Box sx={{ width: "100%" }}>
                 <img
-                    src='https://escuela-bancaria.s3.us-east-2.amazonaws.com/d8335327-633d-4fb9-841f-c445ce8c0a1e.png'
+                    src={evento.portada_header}
                     style={{ width: '100%', display: 'block' }}
                     loading="lazy"
                 />
