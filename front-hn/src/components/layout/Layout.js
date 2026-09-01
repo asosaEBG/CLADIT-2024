@@ -303,7 +303,7 @@ export default function Layout(props) {
                 }}
               >
                 <img
-                  src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/244d01f1-6f2e-49e1-93a6-001a64c8365e.png"
+                  src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/e4996483-2f2a-4e64-80a7-6f4c478ebaf9.png"
                   loading="lazy"
                   className="img-header"
                   style={{ width: '100%', maxWidth: '160px', display: 'block' }}
@@ -320,7 +320,7 @@ export default function Layout(props) {
                 }}
               >
                 <img
-                  src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/244d01f1-6f2e-49e1-93a6-001a64c8365e.png"
+                  src="https://escuela-bancaria.s3.us-east-2.amazonaws.com/e4996483-2f2a-4e64-80a7-6f4c478ebaf9.png"
                   loading="lazy"
                   className="img-header"
                   style={{ width: '90%', maxWidth: '300px', display: 'block' }}
