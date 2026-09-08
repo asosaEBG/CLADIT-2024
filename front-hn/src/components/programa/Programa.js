@@ -632,7 +632,7 @@ export default function Programa() {
                             }}
                             centered
                         >
-                            <Tab  {...a11yProps(0)} label="25 DE AGOSTO 2026" />
+                            <Tab  {...a11yProps(0)} label="29 DE SEPTIEMBRE 2026" />
                         </Tabs>
                     </Box>
                     <CustomTabPanel value={value} index={0}>
